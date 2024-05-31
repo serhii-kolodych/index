@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serhii Kolodych's Projects 2024</title>
+    <title>Serhii Kolodych's Projects</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Serhii Kolodych's Projects 2024</h1>
+        <h1>Serhii Kolodych's Projects</h1>
         <ul>
             <li>
                 <a href="https://joksglobalsport.com" target="_blank">JOKS Global Sport</a>
@@ -27,7 +27,27 @@
                 <p class="project-description">Check out my video tutorials on various projects and programming techniques.</p>
             </li>
         </ul>
-    </div>
-</body>
-</html>
-
+        <h2 id="random_movie_h2">Random Movie</h2>
+        <div id="movie-container">
+            <img id="movie-image" src="http://45.132.105.229:5000/random_image" alt="Random Movie">
+        </div>
+        
+        <script>
+            // Get the image element
+            var image = document.getElementById("movie-image");
+        
+            // Add a click event listener to the image
+            image.addEventListener("click", function() {
+                // Change the src attribute to fetch a new random movie image
+                var random = Math.floor(Math.random() * 1000) + 1; // Generate a random number between 1 and 1000
+                image.src = "http://45.132.105.229:5000/random_image?" + random;
+            });
+    
+            // Add error handling for image loading failures
+            image.onerror = function() {
+                console.error("Failed to load image.");
+                // Optionally, you can handle the error here (e.g., display an error message)
+            };
+        </script>
+    </body>
+    </html>

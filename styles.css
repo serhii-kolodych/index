@@ -15,7 +15,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     color: #0073e6;
 }
@@ -41,4 +41,23 @@ a:hover {
 
 .project-description {
     color: #555;
+}
+
+#meme-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#meme-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#movie-image {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+    margin: 0 auto;
 }
