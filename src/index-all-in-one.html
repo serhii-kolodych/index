@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix Rain Animation</title>
+    <style>
+        /* CSS styles */
+        :root {
+            --background: #211D2C;
+            --background-container: rgba(33, 29, 44, 0.7);
+            --matrix-text: #B0F04F;
+            --link: #1D73EF;
+            --clicked-link: #34AEFD;
+            --text: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
+        }
+
+        canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container, #movie-container {
+            background-color: var(--background-container);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .container {
+            flex: 1;
+            z-index: 1;
+        }
+
+        #movie-container {
+            max-width: 50%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+            z-index: 1;
+        }
+
+        #movie-image {
+            cursor: pointer;
+            max-height: 95%;
+            width: auto;
+            margin-left: auto;
+        }
+
+        .project-description {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        a {
+            color: var(--link);
+        }
+
+        a:visited {
+            color: var(--clicked-link);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c"></canvas>
+
+    <div class="container">
+        <h1>Serhii Kolodych's Projects</h1>
+        <ul>
+            <li>
+                <a href="https://japalandia.com" target="_blank">JapaLandia</a>
+                <p class="project-description">A WordPress site for people to sign up and receive consultation regarding work opportunities abroad.</p>
+            </li>
+            <li>
+                <a href="https://joksglobalsport.com" target="_blank">JOKS Global Sport</a>
+                <p class="project-description">A WordPress blog with integrated payment functionality to sell services, combining content creation with e-commerce operations.</p>
+            </li>
+            <li>
+                <a href="https://t.me/muuvies_bot" target="_blank">Muuvies Bot</a>
+                <p class="project-description">A Telegram bot deployed on a Debian server, allowing users to get movie recommendations and images fetched from Google.</p>
+            </li>
+            <li>
+                <a href="https://t.me/asos_search_bot" target="_blank">ASOS Search Bot</a>
+                <p class="project-description">A Python script that connects to the asos.com database, compares user product lists, and sends new discounts every minute, 24/7.</p>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/@serhiikolodych/videos" target="_blank">YouTube Tutorials</a>
+                <p class="project-description">Check out my video tutorials on various projects and programming techniques.</p>
+            </li>
+        </ul>
+    </div>
+
+    <div id="movie-container">
+        <h2 id="random_movie_h2">Random Movie</h2>
+        <img id="movie-image" src="http://45.132.105.229:5000/random_image" alt="Random Movie">
+    </div>
+
+    <script>
+        // JavaScript code for matrix rain animation and image replacement
+        var c = document.getElementById("c");
+        var ctx = c.getContext("2d");
+
+        c.height = window.innerHeight;
+        c.width = window.innerWidth;
+
+        var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+        matrix = matrix.split("");
+
+        var font_size = 10;
+        var columns = c.width / font_size;
+        var drops = [];
+        for (var x = 0; x < columns; x++)
+            drops[x] = 1;
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+            ctx.fillRect(0, 0, c.width, c.height);
+
+            ctx.fillStyle = "#42f460";
+            ctx.font = font_size + "px arial";
+
+            for (var i = 0; i < drops.length; i++) {
+                var text = matrix[Math.floor(Math.random() * matrix.length)];
+                ctx.fillText(text, i * font_size, drops[i] * font_size);
+
+                if (drops[i] * font_size > c.height && Math.random() > 0.975)
+                    drops[i] = 0;
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 35);
+
+        var image = document.getElementById("movie-image");
+        image.addEventListener("click", function() {
+            var random = Math.floor(Math.random() * 1000) + 1;
+            image.src = "http://45.132.105.229:5000/random_image?" + random;
+        });
+
+        image.onerror = function() {
+            console.error("Failed to load image.");
+        };
+    </script>
+</body>
+</html>

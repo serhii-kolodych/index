@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Serhii Kolodych's website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="canonical" href="https://kolodych.com/" />
+    <meta name="description" content="Check out Serhii Kolodych’s projects in WordPress, Python, Telegram bots, and SEO. Build optimized websites, automate tasks, and create engaging bots." />
+    <meta name="keywords" content="Custom WordPress Sites, Python Automation, Telegram Bot Services, SEO Improvements, Web Development Tips, E-commerce Customization, WordPress Tutorials" />
+
+    <!-- Favicon start here -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon ends here -->
+
+    <!-- Open Graph Tags -->
+    <meta property="og:logo" content="favicon/favicon-32x32.png" />
+    <meta property="og:title" content="Serhii Kolodych's Web Development and Automation Projects">
+    <meta property="og:description" content="Explore Serhii Kolodych's diverse projects, including WordPress development, Telegram bots, Python automation, and tutorials. Discover how to create professional websites, enhance e-commerce, and optimize web development using Astra, PostGrid, and more.">
+    <meta property="og:url" content="https://kolodych.com/">
+    <meta property="og:image" content="https://kolodych.com/src/kolodych.com-preview-site.webp"> 
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Serhii Kolodych's Web Development and Automation Projects">
+    <!-- END Open Graph Tags -->
+
+    <!-- Schema Markup Addition -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "WebPage",
+        "name": "Serhii Kolodych's Web Development and Automation Projects",
+        "description": "Explore Serhii Kolodych's diverse projects, including WordPress development, Telegram bots, Python automation, and tutorials. Discover how to create professional websites, enhance e-commerce, and optimize web development using Astra, PostGrid, and more.",
+        "url": "https://kolodych.com/",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://kolodych.com/src/kolodych.com-preview-site.webp"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Serhii Kolodych",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://kolodych.com/favicon/favicon-32x32.png"
+            }
+        }
+    }
+    </script>
+    <!-- END Schema Markup Addition -->
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="kolodych.com">
+    <meta name="twitter:title" content="Serhii Kolodych's Web Development and Automation Projects">
+    <meta name="twitter:description" content="Explore Serhii Kolodych's diverse projects, including WordPress development, Telegram bots, Python automation, and tutorials. Discover how to create professional websites, enhance e-commerce, and optimize web development using Astra, PostGrid, and more.">
+    <meta name="twitter:image" content="https://kolodych.com/src/kolodych.com-preview-site.webp">
+    <meta name="twitter:site" content="@serhiikolodych"> 
+    <!-- END Twitter Card Tags -->
+
+</head>
+
+<body>
+    <canvas id="c" style="z-index: -1;"></canvas>
+    <h1 id="heading">Serhii Kolodych's Web Development and Automation Projects</h1>
+
+    <div class="container">
+
+        <!-- This Site Uses Cookies Item -->
+        <div class="item">
+            <h3><a href="website/this-site-uses-cookies.html">This Site Uses Cookies. Do You Agree?</a></h3>
+            <p class="project-description">
+                Explore what cookies are, how they work, and how they can be used against you. This article also covers everything you need to do to comply with regulations on your website.
+                <a href="website/this-site-uses-cookies.html">[Read more]</a>
+            </p>
+            <img class="itemIMG" src="src/cookie-image.webp" width="90%" style="max-height: calc(90% * 0.7);" title="This Site Uses Cookies (kolodych.com)" alt="Image of a desktop setup with a laptop, smartphone, mouse, keyboard, and cookies on a plate">
+        
+            <!-- Buttons for Yes and No -->
+            <div class="button-container">
+                <button id="yesButton" class="response-button" data-color="green">Yes</button>
+                <button id="noButton" class="response-button" data-color="red">No</button>
+            </div>
+        
+            <!-- Hidden paragraph for feedback -->
+            <p id="feedbackMessage" class="feedback-message" style="display: none;">Thank you for your feedback!</p>
+        
+            <!-- JavaScript for button functionality -->
+            <script>
+            // Function to show feedback message with timestamp
+            function showFeedback(message) {
+                var feedbackMessage = document.getElementById('feedbackMessage');
+                var dateTime = new Date().toLocaleString(); // Get current date and time
+                feedbackMessage.textContent = `${message} ${dateTime}`;
+                feedbackMessage.style.display = 'block'; // Ensure the message is visible
+            }
+
+            // Function to apply button styles based on local storage
+            function applyButtonStyles() {
+                var savedColor = localStorage.getItem('buttonColor');
+                var feedbackMessage = document.getElementById('feedbackMessage');
+
+                if (savedColor) {
+                    var buttons = document.querySelectorAll('.response-button');
+                    buttons.forEach(button => {
+                        if (button.dataset.color === savedColor) {
+                            button.classList.add('active');
+                        } else {
+                            button.classList.remove('active');
+                        }
+                    });
+
+                    // Determine the feedback message based on saved color
+                    var message = savedColor === 'green'
+                        ? 'You agreed to use cookies on your device. Date and time:'
+                        : 'You blocked this site from saving cookies on your device. Date and time:';
+
+                    // Display the feedback message with timestamp
+                    showFeedback(message);
+                }
+            }
+
+            // Function to handle button clicks and store preference
+            function handleButtonClick(color) {
+                var message = color === 'green'
+                    ? 'You agreed to use cookies on your device. Date and time:'
+                    : 'You blocked this site from saving cookies on your device. Date and time:';
+                    
+                localStorage.setItem('buttonColor', color);
+                applyButtonStyles();
+                showFeedback(message);
+            }
+
+            document.getElementById('yesButton').addEventListener('click', function() {
+                handleButtonClick('green');
+            });
+
+            document.getElementById('noButton').addEventListener('click', function() {
+                handleButtonClick('red');
+            });
+
+            // Apply saved button styles on page load
+            window.onload = applyButtonStyles;
+
+            </script>
+        </div>              
+
+        <div class="item">
+            <h3><a href="https://nuukmedia.com/2024/08/mastering-google-search-console-a-complete-guide-for-beginners/?kolodych.com" target="_blank">Google Search Console: A Complete Guide For Beginners</a></h3>
+            <section class="project-description"> Start mastering <strong>Google Search Console</strong> today with this simple guide. Discover how to improve your website's performance in search results and get tips on using <strong>Google Analytics</strong> for better SEO tracking. <a href="https://nuukmedia.com/2024/08/mastering-google-search-console-a-complete-guide-for-beginners/?kolodych.com" target="_blank">[Read more at NuukMedia.com]</a> </section>
+            </p>
+            <img class="itemIMG" src="website/google-search-console-performance-report.webp" width="90%" max-height="calc(90% * 0.7)" title="Getting Started with Google Search Console" alt="Visual representation of Google Search Console metrics and analytics">
+        </div>
+
+        <div class="item">
+            <h3><a href="website/virgincourtesans.com.html">Virgin Courtesans Model Agency</a></h3>
+            <p class="project-description">
+                Discover the journey of designing a <strong>modern WordPress site</strong> for a model agency using the Astra theme and The Post Grid plugin. This project showcases my expertise in custom WordPress solutions and WordPress theme customization.
+                <a href="website/virgincourtesans.com.html">[Read more]</a>
+            </p>
+            <img class="itemIMG" src="website/pagespeed-virgincourtesans.com-august-11-2024.webp" width="90%" max-height="calc(90% * 0.7)" title="WordPress Website Design for Virgin Courtesans Model Agency" alt="Screenshot of the WordPress website page speed for Virgin Courtesans Model Agency, designed with Astra theme and The Post Grid plugin">
+        </div>
+        
+        <div class="item">
+            <h3><a href="website/japalandia.com.html">JapaLandia work abroad</a></h3>
+            <p class="project-description">
+                Built a WordPress site with an <strong>engaging landing page</strong> for global work consultation services, highlighting my skills in WordPress design and custom website creation.
+                <a href="website/japalandia.com.html">[Read more]</a>
+            </p>
+            <img class="itemIMG" src="website/home-1-screen-japalandia.webp" width="90%" title="Consultation Services WordPress Site for JapaLandia" alt="Homepage of JapaLandia website showcasing consultation services for work abroad, built with custom WordPress development">
+        </div>
+        
+        <div class="item">
+            <h3><a href="website/joksglobalsport.com.html">JOKS Global Sport Football Academy</a></h3>
+            <p class="project-description">
+                A comprehensive <strong>WordPress blog</strong> integrating e-commerce and payment functionality for selling services. This project is an example of combining content creation with custom WordPress solutions.
+                <a href="website/joksglobalsport.com.html">[Read more]</a>
+            </p>
+            <img class="itemIMG" src="website/articles-joksglobalsport.com.webp" width="90%" title="WordPress Blog and E-Commerce Site for JOKS Global Sport Football Academy"  alt="Screenshot of the JOKS Global Sport Football Academy website featuring integrated blog and e-commerce functionalities">
+        </div>
+        
+        <div class="item">
+            <h3><a href="https://t.me/muuvies_bot" target="_blank">Muuvies Telegram Bot</a></h3>
+            <!-- <p class="project-description"> -->
+            <p style="margin-top: 5px; margin-bottom: 10px;"></p>
+                Explore my <strong>Telegram bot</strong> development work with the Muuvies Bot. Deployed on a Debian server, this bot provides movie recommendations and image fetching from Google, showcasing my expertise in AI and automation bots.
+            </p>
+        </div>
+        
+        <div class="item">
+            <h3><a href="https://t.me/asos_search_bot" target="_blank">ASOS Search Bot</a></h3>
+            <!-- <p class="project-description"> -->
+            <p style="margin-top: 5px; margin-bottom: 10px;"></p>
+                This Python script connects to the asos.com database to track product discounts and notify users in real-time. It's an example of my capabilities in automated <strong>web scraping</strong> and custom Python scripts.
+            </p>
+        </div>
+        
+        <div class="item">
+            <h3><a href="https://www.youtube.com/@serhiikolodych/videos" target="_blank">YouTube Tutorials</a></h3>
+            <!-- <p class="project-description"> -->
+            <p style="margin-top: 5px; margin-bottom: 10px;"></p>
+                Watch my video tutorials on web development and Python scripting to learn about various programming techniques.
+            </p>
+        </div>
+        
+        <div class="item">
+            <h2>Service Pricing</h2>
+            <ul class="price-list">
+                <li>Landing Page / Home (WordPress) = 80 Euro</li>
+                <li>Additional Page = 50 Euro</li>
+                <li>Telegram Bot Development = 50 Euro</li>
+                <li>Hourly Rate = 10 Euro</li>
+            </ul>
+        </div>
+        
+        <div class="item">
+            <h2>Contact Information</h2>
+            <a href="https://www.facebook.com/serhii.kolodych" target="_blank" class="social">
+                <img src="src/social-facebook-svgrepo-com.svg" alt="Facebook">
+            </a>
+            <a href="https://www.t.me/kolodych" target="_blank" class="social">
+                <img src="src/telegram-svgrepo-com.svg" alt="Telegram">
+            </a>
+            <a href="https://www.instagram.com/serhii_kolodych/" target="_blank" class="social">
+                <img src="src/social-instagram-svgrepo-com.svg" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com/@serhiikolodych" target="_blank" class="social">
+                <img src="src/youtube-svgrepo-com.svg" alt="YouTube">
+            </a>
+            <a href="https://wa.me/+37126796193" target="_blank" class="social">
+                <img src="src/whatsapp-svgrepo-com.svg" alt="WhatsApp">
+            </a>
+            <a href="mailto:serhii@kolodych.com" class="social">
+                <img src="src/mail-part-3-svgrepo-com.svg" alt="Email">
+            </a>
+        </div>
+
+        <div class="item">
+            <h3 class="dancing-text">
+            <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span> 
+            <span>a</span><span>n</span><span>y</span><span>t</span><span>h</span><span>i</span><span>n</span><span>g</span><span>?</span>
+            </h3>
+            <form action="send_email.php" method="post">
+                <input type="email" id="email" name="email" placeholder="your-email@example.com" autocomplete="email" required><br><br>
+                <textarea id="message" name="message" rows="2" placeholder="Your question..." required></textarea><br><br>
+                <input type="submit" value="Send" style="display: block; margin: 0 auto;">
+            </form>
+        </div>
+        
+    </div>
+    <style>
+        form {
+    background-color: transparent;
+    color: white;
+    border: none;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+        margin: 0;
+        width: 100%;
+        background-color: transparent;
+        color: white;
+        font-size: 1rem;
+        border: 1px solid white;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    form input[type="text"]::placeholder,
+    form input[type="email"]::placeholder,
+    form textarea::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    form input[type="submit"] {
+        margin: 0 auto;
+        background-color: transparent;
+        color: white;
+        padding: 10px 20px;
+        border: 1px solid white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    form input[type="submit"]:hover {
+        background-color: #42f460;
+    }
+    </style>
+    
+    <script src="background.js"></script>
+    <!-- <script src="zoom.js"></script> -->
+</body>
+</html>
