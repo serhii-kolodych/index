@@ -28,6 +28,15 @@ To get started with the project, follow these steps:
    ```bash
    git clone https://github.com/serhii-kolodych/index.git
 
+2. ***Make Your Changes***
+
+Edit or add files as needed. Once you’ve made the changes, stage and commit them:
+
+   ```bash
+   git add .
+   git commit -m "yeeey"
+
+
 ## Contact
 
 For any questions or inquiries, please contact me at serhii@kolodych.com.
