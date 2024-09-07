@@ -27,6 +27,7 @@ To get started with the project, follow these steps:
 
    ```bash
    git clone https://github.com/serhii-kolodych/index.git
+   ```
 
 2. ***Make Your Changes***
 
@@ -35,6 +36,7 @@ Edit or add files as needed. Once you’ve made the changes, stage and commit th
    ```bash
    git add .
    git commit -m "yeeey"
+```
 
 3. **Fork the Repository**
 
@@ -50,10 +52,24 @@ Edit or add files as needed. Once you’ve made the changes, stage and commit th
 
    ```bash
    git remote add fork https://github.com/<your-username>/index.git
+   ```
 
+5. ***Push your branch to your fork:***
 
+   ```bash
+   git push myfork your-branch-name
+   ```
 
+6. ***Create a Pull Request***
+   
+   Go to your fork on GitHub (https://github.com/your-username/index).
+   
+   You should see a prompt to create a pull request. Click "Compare & pull request."
 
+   Add a title and description for your changes, then submit the pull request.
+
+   The repository owner (serhii-kolodych) will review your pull request and, if everything looks good, merge your changes into the original repository.
+   
 ## Contact
 
 For any questions or inquiries, please contact me at serhii@kolodych.com.
