@@ -28,6 +28,32 @@ To get started with the project, follow these steps:
    ```bash
    git clone https://github.com/serhii-kolodych/index.git
 
+2. ***Make Your Changes***
+
+Edit or add files as needed. Once you’ve made the changes, stage and commit them:
+
+   ```bash
+   git add .
+   git commit -m "yeeey"
+
+3. **Fork the Repository**
+
+   Go to the repository page on GitHub in your web browser: [https://github.com/serhii-kolodych/index](https://github.com/serhii-kolodych/index)
+
+   Click the **Fork** button at the top right of the page to create a fork of the repository in your GitHub account.
+
+4. **Add Your Fork as a Remote**
+
+   Add your forked repository as a new remote:
+
+   Replace `<your-username>` with your GitHub username:
+
+   ```bash
+   git remote add fork https://github.com/<your-username>/index.git
+
+
+
+
 ## Contact
 
 For any questions or inquiries, please contact me at serhii@kolodych.com.
