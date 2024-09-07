@@ -2,7 +2,15 @@ body{
     line-height: 1.2;
 }
 
-div.box {
+a{
+    color:bisque;
+}
+
+a:visited{
+    color:burlywood
+}
+
+.box {
 --s:450px;  /*Size of the circle */
 --p:8px;   /* padding */
 
@@ -12,7 +20,7 @@ width: var(--s);
 border-radius: 50%;
 background: #333;
 color:#fff;
-margin:30px auto;
+margin:10px 20px;
 font-size:20px;
 text-align:justify;
 }
