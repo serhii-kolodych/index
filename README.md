@@ -1,6 +1,6 @@
 # Kolodych.com Web Development Projects
 
-Welcome to the [Kolodych.com](https://kolodych.com) website source code! This repository contains various resources for the Kolodych.com website.
+Welcome to the <a href="https://kolodych.com" target="_blank">Kolodych.com</a> website source code! This repository contains various resources for the Kolodych.com website.
 
 ## Contents
 
