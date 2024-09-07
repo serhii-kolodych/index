@@ -46,7 +46,9 @@ body {
 
 .item {
   margin: 11px 10px;
-  background-color: rgba(33, 29, 44, 0.75); 
+  /* background-color: rgba(33, 29, 44, 0.75);  */
+  background: linear-gradient(to right, rgba(27, 27, 47, 0.9), rgba(45, 45, 68, 0.9));
+
   border: 1px solid black;
   border-radius: 15px;
   display: inline-block;
@@ -59,11 +61,17 @@ body {
 }
 
 h2{
+  font-size: 1.4em;
   text-align: center;
   margin: 10px 0 0 0;
 }
 
-h3{
+.item img{
+  cursor: pointer;
+}
+
+h3, h4, h5{
+  font-size: 1.4em;
   margin: 10px 20px 0 20px;
 }
 
@@ -140,7 +148,9 @@ a:visited {
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
-  background-color: rgba(33, 29, 44, 0.75); 
+  /* background-color: rgba(33, 29, 44, 0.75);  */
+  background: linear-gradient(to right, rgba(20, 20, 30, 0.9), rgba(35, 35, 50, 0.9));
+
   z-index: 4;
   overflow-y: auto;
   height: calc(100vh - 100px);
