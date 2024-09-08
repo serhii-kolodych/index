@@ -62,7 +62,7 @@ Edit or add files as needed. Once you’ve made the changes, stage and commit th
 
 6. ***Create a Pull Request***
    
-   Go to your fork on GitHub (https://github.com/your-username/index).
+   Go to your fork on GitHub (https://github.com/<your-username>/index).
    
    You should see a prompt to create a pull request. Click "Compare & pull request."
 
