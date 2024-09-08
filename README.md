@@ -1,4 +1,4 @@
-# Kolodych.com Web Development Projects
+## Kolodych.com Web Development Projects
 
 Welcome to the <a href="https://kolodych.com" target="_blank">Kolodych.com</a> website source code! This repository contains various resources for the Kolodych.com website.
 
@@ -62,7 +62,7 @@ Edit or add files as needed. Once you’ve made the changes, stage and commit th
 
 6. ***Create a Pull Request***
    
-   Go to your fork on GitHub (https://github.com/<your-username>/index).
+   Go to your fork on GitHub (https://github.com/_your-username_/index).
    
    You should see a prompt to create a pull request. Click "Compare & pull request."
 
