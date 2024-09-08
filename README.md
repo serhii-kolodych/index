@@ -57,7 +57,7 @@ Edit or add files as needed. Once you’ve made the changes, stage and commit th
 5. ***Push your branch to your fork:***
 
    ```bash
-   git push myfork your-branch-name
+   git push fork your-branch-name
    ```
 
 6. ***Create a Pull Request***
