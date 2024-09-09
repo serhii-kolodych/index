@@ -149,7 +149,7 @@ a:visited {
   margin: 20px auto;
   padding: 20px;
   /* background-color: rgba(33, 29, 44, 0.75);  */
-  background: linear-gradient(to right, rgba(20, 20, 30, 0.9), rgba(35, 35, 50, 0.9));
+  background: linear-gradient(to right, rgba(27, 27, 47, 0.9), rgba(45, 45, 68, 0.9));
 
   z-index: 4;
   overflow-y: auto;

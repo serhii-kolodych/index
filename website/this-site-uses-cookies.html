@@ -252,8 +252,15 @@
         </p>
 
         <div style="text-align: center; width: 90%; margin: 0 auto;">
-            <video src="clarity-session-recording.mov" autoplay controls style="max-width: 100%; height: auto;"></video>
+            <!-- Video element with captions and muted by default -->
+            <video src="clarity-session-recording.mov" autoplay controls muted style="max-width: 100%; height: auto;">
+                <!-- Silent caption track indicating no significant audio -->
+                <track src="silent_caption.vtt" kind="captions" srclang="en" label="No Audio">
+            </video>
+            <!-- Descriptive text below the video -->
+            <p><em>This video shows a session recording where the user interacts with various posts, moving the mouse around and clicking a few times on the background. Please note: This video contains no spoken content or important audio elements.</em></p>
         </div>
+        
         
 
         <!-- Conclusion Section -->
