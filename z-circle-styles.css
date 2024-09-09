@@ -4,6 +4,12 @@ body{
 
 a{
     color:bisque;
+    height: 200px;
+    display: block;
+}
+
+a:hover {
+    cursor: pointer;
 }
 
 a:visited{
@@ -14,6 +20,7 @@ a:visited{
 --s:450px;  /*Size of the circle */
 --p:8px;   /* padding */
 
+/* z-index: -2; */
 display: inline-block;
 height: var(--s);
 width: var(--s);
@@ -49,17 +56,17 @@ div.box {
     position: relative; /* Establishes a positioning context for absolute positioning */
 }
 
-.box h3 {
-    margin-top: 10px ; /* Removes default margin */
+.box h2, h3 {
+    font-size: 1.00em;
+    margin-top: -10px ; /* Removes default margin */
     text-align: center; /* Centers heading text */
 }
 
 
 
 
-
-
 .imgcontainer {
+    /* z-index: -1; */
     position: absolute;
     bottom: 225px; /* Aligns the container to the bottom of its parent */
     left: -8px;
@@ -92,5 +99,84 @@ div.box {
 
 }
 
+/* Default state, no additional positioning */
+.box {
+    position: relative; /* Ensures positioning works */
+}
 
+/* For screens smaller than 1000px */
+@media (max-width: 999px) {
+    .box:nth-child(2) {
+        top: -200px;
+    }
+    .box:nth-child(3) {
+        top: -394px;
+    }
+    .box:nth-child(4) {
+        top: -584px;
+    }
+    .box:nth-child(5) {
+        top: -774px;
+    }
+    .box:nth-child(6) {
+        top: -964px;
+    }
+    .box:nth-child(7) {
+        top: -944px;
+    }
+    .box:nth-child(8) {
+        top: -924px;
+    }
+    .box:nth-child(9) {
+        top: -904px;
+    }
+    .box:nth-child(10) {
+        top: -884px;
+    }
+    .box:nth-child(11) {
+        top: -864px;
+    }
+}
 
+/* For screens between 1000px and 1499px */
+@media (min-width: 1000px) and (max-width: 1495px) {
+    .box:nth-child(3),
+    .box:nth-child(4) {
+        top: -200px;
+    }
+    .box:nth-child(5){
+        top: -400px;
+    }
+    .box:nth-child(6) {
+        top: -674px;
+    }
+    .box:nth-child(7),
+    .box:nth-child(8) {
+        top: -634px;
+    }
+    .box:nth-child(9),
+    .box:nth-child(10),
+    .box:nth-child(11)  {
+        top: -614px;
+    }
+}
+
+/* For screens between 1500px and 1999px */
+@media (min-width: 1495px) and (max-width: 1999px) {
+    .box:nth-child(4),
+    .box:nth-child(5){
+        top: -200px;
+    }
+    .box:nth-child(6) {
+        top: -464px;
+    }
+    .box:nth-child(7) {
+        top: -444px;
+    }
+    .box:nth-child(8) {
+        top: -444px;
+    }
+    .box:nth-child(9) {
+        top: -464px;
+    }
+}
