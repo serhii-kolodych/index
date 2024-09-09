@@ -82,6 +82,67 @@
         <!-- Load the tracking.js file -->
         <script src="tracking.js"></script>
 
+        <!-- JavaScript for Red Green buttons functionality -->
+        <script>
+            // Function to apply button styles and feedback message based on local storage
+            function applyButtonStyles() {
+                var savedColor = localStorage.getItem('buttonColor');
+                var savedDateTime = localStorage.getItem('dateTime');
+                var feedbackMessage = document.getElementById('feedbackMessage');
+                if (savedDateTime){
+                    feedbackMessage.textContent = savedDateTime;
+                    feedbackMessage.style.display = 'block'; // Ensure the message is visible
+                }
+                if (savedColor) {
+                    var buttons = document.querySelectorAll('.response-button');
+                    buttons.forEach(button => {
+                        if (button.dataset.color === savedColor) {
+                            button.classList.add('active');
+                        } else {
+                            button.classList.remove('active');
+                        }
+                    });
+                    // Determine the feedback message based on saved color
+                    var message = savedColor === 'green'
+                        ? 'You agreed to use cookies on your device. Date and time:'
+                        : 'You blocked this site from saving cookies on your device. Date and time:';
+                    // Load scripts if the user has agreed
+                    if (savedColor === 'green') {
+                        loadTrackingScripts();
+                    }
+                }
+            }
+            // Function to show feedback message with timestamp
+            function showFeedback(message) {
+                var feedbackMessage = document.getElementById('feedbackMessage');
+                var dateTime = new Date().toLocaleString(); // Get current date and time
+                localStorage.setItem('dateTime', `${message} ${dateTime}`);
+                feedbackMessage.textContent = `${message} ${dateTime}`;
+                feedbackMessage.style.display = 'block'; // Ensure the message is visible
+            }
+            // Function to handle button clicks and store preference
+            function handleButtonClick(color) {
+                var message = color === 'green'
+                    ? 'You agreed to use cookies on your device. Date and time:'
+                    : 'You blocked this site from saving cookies on your device. Date and time:';
+                localStorage.setItem('buttonColor', color);
+                applyButtonStyles();
+                showFeedback(message);
+                if (color === 'green') {
+                    // Load scripts immediately if the user clicks "Yes"
+                    loadTrackingScripts();
+                } 
+            }
+            document.getElementById('yesButton').addEventListener('click', function() {
+                handleButtonClick('green');
+            });
+            document.getElementById('noButton').addEventListener('click', function() {
+                handleButtonClick('red');
+            });
+            // Apply saved button styles and possibly load tracking scripts on page load
+            window.onload = applyButtonStyles;
+        </script>
+
         <!-- This Site Uses Cookies Item -->
         <div class="item">
             <a href="website/this-site-uses-cookies.html">
@@ -95,91 +156,12 @@
                 <button id="yesButton" class="response-button" data-color="green">Yes</button>
                 <button id="noButton" class="response-button" data-color="red">No</button>
             </div>
-
             <!-- Hidden paragraph for feedback -->
             <p id="feedbackMessage" class="feedback-message" style="display: none;">Thank you for your feedback!</p>
-
             <p class="project-description">
-                Explore what cookies are, how they work, and how they can be used against you. This article also covers everything you need to do to comply with regulations on your website.
+                Explore the role of cookies, their potential risks, and how they affect privacy. This article provides insights on compliance with gdpr regulations and managing cookies on your website.            
             </p>
-
-       
-            <!-- JavaScript for button functionality -->
-            <script>
-            // Function to apply button styles and feedback message based on local storage
-            function applyButtonStyles() {
-                var savedColor = localStorage.getItem('buttonColor');
-                var savedDateTime = localStorage.getItem('dateTime');
-                var feedbackMessage = document.getElementById('feedbackMessage');
-
-                if (savedDateTime){
-                    feedbackMessage.textContent = savedDateTime;
-                    feedbackMessage.style.display = 'block'; // Ensure the message is visible
-                }
-
-                if (savedColor) {
-                    var buttons = document.querySelectorAll('.response-button');
-                    buttons.forEach(button => {
-                        if (button.dataset.color === savedColor) {
-                            button.classList.add('active');
-                        } else {
-                            button.classList.remove('active');
-                        }
-                    });
-
-                    // Determine the feedback message based on saved color
-                    var message = savedColor === 'green'
-                        ? 'You agreed to use cookies on your device. Date and time:'
-                        : 'You blocked this site from saving cookies on your device. Date and time:';
-
-                    // Load scripts if the user has agreed
-                    if (savedColor === 'green') {
-                        loadTrackingScripts();
-                    }
-                }
-            }
-
-            // Function to show feedback message with timestamp
-            function showFeedback(message) {
-                var feedbackMessage = document.getElementById('feedbackMessage');
-                var dateTime = new Date().toLocaleString(); // Get current date and time
-                localStorage.setItem('dateTime', `${message} ${dateTime}`);
-                feedbackMessage.textContent = `${message} ${dateTime}`;
-                feedbackMessage.style.display = 'block'; // Ensure the message is visible
-            }
-
-
-            // Function to handle button clicks and store preference
-            function handleButtonClick(color) {
-                var message = color === 'green'
-                    ? 'You agreed to use cookies on your device. Date and time:'
-                    : 'You blocked this site from saving cookies on your device. Date and time:';
-                    
-                localStorage.setItem('buttonColor', color);
-                applyButtonStyles();
-                showFeedback(message);
-
-                if (color === 'green') {
-                    // Load scripts immediately if the user clicks "Yes"
-                    loadTrackingScripts();
-                } 
-            }
-
-            document.getElementById('yesButton').addEventListener('click', function() {
-                handleButtonClick('green');
-            });
-
-            document.getElementById('noButton').addEventListener('click', function() {
-                handleButtonClick('red');
-            });
-
-            // Apply saved button styles and possibly load tracking scripts on page load
-            window.onload = applyButtonStyles;
-
-            </script>
         </div>
-
-         
 
         <!-- Google Search Console ITEM  -->
         <div class="item">
@@ -187,10 +169,10 @@
                 <div class="imgcontainer">
                     <img class="itemIMG" src="website/google-search-console-performance-report.webp"  title="Getting Started with Google Search Console" alt="Visual representation of Google Search Console metrics and analytics">
                 </div>
-                <h2>Google Search Console: A Complete Guide For Beginners</h2>
+                <h2>Beginner's Guide to Google Search Console</h2>
             </a>
                 <p class="project-description"> 
-                Start mastering <strong>Google Search Console</strong> today with this simple guide. Discover how to improve your website's performance in search results and get tips on using <strong>Google Analytics</strong> for better SEO tracking.
+                Get started with Google Search Console and learn how to boost your website's performance in search results. Discover practical tips for using Google Analytics to track SEO success.
             </p>
         </div>
 
@@ -200,10 +182,10 @@
                 <div class="imgcontainer">
                     <img class="itemIMG" src="website/pagespeed-virgincourtesans.com-august-11-2024.webp"  title="WordPress Website Design for Virgin Courtesans Model Agency" alt="Screenshot of the WordPress website page speed for Virgin Courtesans Model Agency, designed with Astra theme and The Post Grid plugin">
                 </div>
-                <h2>Virgin Courtesans Model Agency</h2>
+                <h2>Designing a Modern WordPress Site for Virgin Models</h2>
             </a>
             <p class="project-description">
-                Discover the journey of designing a <strong>modern WordPress site</strong> for a model agency using the Astra theme and The Post Grid plugin. This project showcases my expertise in custom WordPress solutions and WordPress theme customization.
+                Explore the development of a modern WordPress site for a model agency, featuring custom solutions and theme customization. See how I used the Astra theme and The Post Grid plugin.            
             </p>
         </div>
         
@@ -214,10 +196,10 @@
 
                     <img class="itemIMG" src="website/home-1-screen-japalandia.webp" title="Consultation Services WordPress Site for JapaLandia" alt="Homepage of JapaLandia website showcasing consultation services for work abroad, built with custom WordPress development">
                 </div>
-                <h2>JapaLandia work abroad</a></h2>
+                <h2>Creating a WordPress Site for Global Work Consultation</a></h2>
             </a>
             <p class="project-description">
-                Built a WordPress site with an <strong>engaging landing page</strong> for global work consultation services, highlighting my skills in WordPress design and custom website creation.
+                Explore my project for JapaLandia, featuring a custom WordPress site designed to enhance global work consultation services. Discover how I created an engaging landing page and optimized WordPress solutions.            
             </p>
         </div>
         
@@ -227,35 +209,35 @@
                 <div class="imgcontainer">
                     <img class="itemIMG" src="website/articles-joksglobalsport.com.webp" title="WordPress Blog and E-Commerce Site for JOKS Global Sport Football Academy"  alt="Screenshot of the JOKS Global Sport Football Academy website featuring integrated blog and e-commerce functionalities">
                 </div>
-                <h2>JOKS Global Sport Football Academy</h2>
+                <h2>Building a WordPress Blog with E-Commerce for JOKS</h2>
             </a>
             <p class="project-description">
-                A comprehensive <strong>WordPress blog</strong> integrating e-commerce and payment functionality for selling services. This project is an example of combining content creation with custom WordPress solutions.
+                Explore the development of a comprehensive WordPress blog for JOKS Global Sport Academy, integrating e-commerce features for selling services. This WordPress blog project highlights my expertise in integrating blog and e-commerce features.            
             </p>
         </div>
         
         <!-- Muuvies Telegram Bot ITEM  -->
         <div class="item">
-            <h2><a href="https://t.me/muuvies_bot" target="_blank">Muuvies Telegram Bot</a></h2>
+            <h2><a href="https://t.me/muuvies_bot" target="_blank">Muuvies Telegram Bot: Your Movie Recommendation Assistant</a></h2>
             <!-- <p class="project-description"> -->
             <p class="project-description">
-                Explore my <strong>Telegram bot</strong> development work with the Muuvies Bot. Deployed on a Debian server, this bot provides movie recommendations and image fetching from Google, showcasing my expertise in AI and automation bots.
+                Discover the Muuvies Telegram Bot, designed for movie recommendations and Google image fetching. This project highlights my skills in Python automation for Telegram bots.            
             </p>
         </div>
         
         <div class="item">
-            <h2><a href="https://t.me/asos_search_bot" target="_blank">ASOS Search Bot</a></h2>
+            <h2><a href="https://t.me/asos_search_bot" target="_blank">ASOS Search Bot: Real-Time Product Tracking</a></h2>
             <!-- <p class="project-description"> -->
             <p class="project-description">
-                This Python script connects to the asos.com database to track product discounts and notify users in real-time. It's an example of my capabilities in automated <strong>web scraping</strong> and custom Python scripts.
+                See how our Python script tracks ASOS product discounts and notifies users in real-time. This project highlights my skills in automated web scraping and custom Python scripting.            
             </p>
         </div>
         
         <div class="item">
-            <h2><a href="https://www.youtube.com/@serhiikolodych/videos" target="_blank">YouTube Tutorials</a></h2>
+            <h2><a href="https://www.youtube.com/@serhiikolodych/videos" target="_blank">Watch My YouTube Tutorials on Web Development and Python</a></h2>
             <!-- <p class="project-description"> -->
             <p class="project-description">
-                Watch my video tutorials on web development and Python scripting to learn about various programming techniques.
+                Check out my YouTube channel for comprehensive tutorials on web development and Python scripting. Discover practical advice and programming tips to boost your development expertise.            
             </p>
         </div>
         
