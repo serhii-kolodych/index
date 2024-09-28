@@ -263,18 +263,13 @@ form input[type="submit"]:hover {
 .dancing-text span:nth-child(18) { --i: 17; }
 
 
-@media (max-width: 500px) {
-    body {
-        width: 500px;
-        overflow-x: auto; /* Enable horizontal scrolling */
-    }
-}
+
 
 
 
 .article-container {
     line-height: 1.8;
-    width: 90%;
+    width: 85%;
     position: relative;
     max-width: 1200px;
     margin: 20px auto;
@@ -286,7 +281,7 @@ form input[type="submit"]:hover {
 
     z-index: 4;
     overflow-y: auto;
-    height: calc(100vh - 100px);
+    height: 90%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
   }
@@ -390,7 +385,7 @@ form input[type="submit"]:hover {
 
 
 /* Mobile-specific optimizations */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .container {
     display: flex;
     justify-content: center;
@@ -402,5 +397,13 @@ form input[type="submit"]:hover {
     width: calc(48% - 20px);
     margin: 10px auto;
     font-size: 16px;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 705px){
+  .item{
+    text-align: center;
+    display:block;
   }
 }
