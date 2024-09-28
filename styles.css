@@ -5,7 +5,7 @@ body{
     font-size:18px;
     /* color:#e4ccbb; */
     /* #A84C25 - Dark Burnt Orange */
-    
+    min-width: 500px;
     color: #FFE8CC; /* #FFE8CC - Light Apricot */
 
 
@@ -174,11 +174,12 @@ form {
     padding: 1px;
     text-align: center;
     padding-bottom: 12px;
-
+    max-height: 200px;
 
 }
 form div{
-    margin: 16px;
+  margin-top: 10px;
+  margin-bottom: 12px;
 }
 
 
