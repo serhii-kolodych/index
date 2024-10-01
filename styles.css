@@ -1,35 +1,31 @@
 body{
     line-height: 1.2;
-    font-family: Serif, sans-serif;
-    /* font-size: 1.2rem; */
+    font-family:  Source Sans Pro;
+    /* font-family: Serif, sans-serif; */
     font-size:18px;
-    /* color:#e4ccbb; */
-    /* #A84C25 - Dark Burnt Orange */
     min-width: 500px;
-    color: #FFE8CC; /* #FFE8CC - Light Apricot */
-
-
+    color: #C9C5C2; /* #C9C5C2 - Silver Dust */
 
 }
 
-/*color: #42f460; /* green */
-
-
 a{
-  color:bisque;
+  color: #D78A2A; /* #D78A2A - Warm Honey */
+  text-decoration: none;
 }
 
 a:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 a:visited{
-  color:burlywood
+  color:burlywood;
+  text-decoration: none;
 }
 
 em {
-  color: #e0e0e0;
-  /* color: #f5f5f5;  Lightest Grey */
+  color: #BFB1A0;
+  /* color: #f5f5f5; /* Lightest Grey */
   /* color: #bdbdbd;  */
   /* color: #9e9e9e;  */
   /* color: #616161; Darkest Grey */
@@ -278,7 +274,7 @@ form input[type="submit"]:hover {
     /* background-color: rgba(33, 29, 44, 0.75);  */
     /* background: linear-gradient(to right, rgba(27, 27, 47, 0.9), rgba(45, 45, 68, 0.9)); */
     /* background: linear-gradient(to right, rgba(15, 15, 35, 0.9), rgba(30, 30, 50, 0.9)); */
-    background: linear-gradient(to right, rgba(35, 29, 29, 0.95), rgba(28, 25, 25, 0.95));
+    background: linear-gradient(to right, rgba(35, 29, 29, 0.99), rgba(28, 25, 25, 0.99));
 
     z-index: 4;
     overflow-y: auto;
@@ -319,17 +315,6 @@ form input[type="submit"]:hover {
     margin-bottom: 10px;
   }
   
-  .article-container a {
-    /* color: #007BFF; */
-    color: #E0E0E0; /* Very light grey */
-    text-decoration: none;
-  }
-  
-  .article-container a:hover {
-    text-decoration: underline;
-    color: #F5F5F5; /* Near white */
-  }
-  
   .screenshots img {
     max-width: 100%;
     height: auto;
@@ -345,7 +330,7 @@ form input[type="submit"]:hover {
   }
   
   #back-to-home, #copied {
-    position: absolute;
+    position: fixed; /* Changed from absolute to fixed */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -353,10 +338,11 @@ form input[type="submit"]:hover {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 10px 20px;
     border-radius: 8px;
-    display: none;
+    display: none; /* Initially hidden */
     z-index: 5;
     border: 3px solid white;
   }
+  
   
   #c:hover + #back-to-home {
     display: block;
