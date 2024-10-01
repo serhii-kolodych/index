@@ -206,7 +206,7 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     /* background-color: #42f460; */
-    margin-top: -12px;
+    /* margin-top: -12px; */
     background-color: #14a22c; /*rgb(227, 146, 65); /* #D3D3D3; /* Light grey */
   }
 
