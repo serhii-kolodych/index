@@ -66,15 +66,21 @@
 
     <title>Serhii Kolodych's website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" id="stylesheet" type="text/css" href="styles.css">
     <link rel="canonical" href="https://kolodych.com/">
     <meta name="description" content="Serhii Kolodych’s latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇">
     <meta name="keywords" content="Custom WordPress Sites, Python Automation, Telegram Bot Services, SEO Improvements, Web Development Tips, E-commerce Customization, WordPress Tutorials">
 </head>
 
 <body>
-    <canvas id="c" style="z-index: -5;"></canvas>
+    <canvas id="c" style="z-index: -5; opacity: 1;"></canvas>
+
+    <script src="background.js"></script>
+    <!-- <script src="zoom.js"></script> -->
+
     <h1 id="heading">Serhii Kolodych's Web Development and Automation Projects</h1>
+    
+    <a href="#" id="change-style-link">White</a>
 
     <div class="container">
 
@@ -88,6 +94,20 @@
             <h2>This Site Uses Cookies. Do You Agree?</h2>
             <div class="imgcontainer">
                 <img src="src/cookie-image.webp" title="This Site Uses Cookies (kolodych.com)" alt="Image of a desktop setup with a laptop, smartphone, mouse, keyboard, and cookies on a plate">
+            </div>
+            </a>
+        </div>
+
+        <!-- Understanding Telegram Bots -->
+        <div class="box">
+            <i></i> 
+            <p>
+                Uncover the potential of Telegram bots for businesses. This guide explores various applications, including customer support and automated notifications, to enhance user engagement.
+            </p>
+            <a href="bot/telegram.html">
+            <h2>Understanding Telegram Bots</h2>
+            <div class="imgcontainer">
+                <img src="bot/creating_a_telegram_bot_token_api.webp" title="Making a Telegram Bot: Tips and Best Practices" alt="Example of a Telegram chat with BotFather, highlighting the /newbot command and the token for a newly created bot.">
             </div>
             </a>
         </div>
@@ -229,6 +249,9 @@
     
     </div>
 
+
+
+
     <!-- JavaScript for Red Green buttons functionality -->
     <script>
         // Function to apply button styles and feedback message based on local storage
@@ -289,10 +312,51 @@
         // Apply saved button styles and possibly load tracking scripts on page load
         window.onload = applyButtonStyles;
     </script>
-    
-    <script src="background.js"></script>
-    <!-- <script src="zoom.js"></script> -->
-    
+
+    <script>
+        // Set the initial style based on local storage
+        var whiteState = localStorage.getItem('white') || '0'; // Default to '0'
+        var currentStyle = (whiteState === '1') ? 'styles-white.css' : 'styles.css';
+        document.getElementById('stylesheet').setAttribute('href', currentStyle);
+
+        // Control the canvas visibility based on the initial stylesheet
+        var canvas = document.getElementById('c');
+        canvas.style.opacity = (whiteState === '1') ? "0" : "1";
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var link = document.getElementById('change-style-link');
+            var stylesheet = document.getElementById('stylesheet');
+
+            // Set the link text based on the current style
+            link.textContent = (whiteState === '1') ? "Matrix" : "White";
+
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Toggle the style state
+                if (whiteState === '0') {
+                    whiteState = '1'; // Switch to white stylesheet
+                    currentStyle = 'styles-white.css';
+                    canvas.style.opacity = "0"; // Hide the canvas
+                    link.textContent = "Matrix";
+                } else {
+                    whiteState = '0'; // Switch back to default stylesheet
+                    currentStyle = 'styles.css';
+                    canvas.style.opacity = "1"; // Show the canvas
+                    link.textContent = "White";
+                }
+
+                // Update the stylesheet and local storage
+                stylesheet.setAttribute('href', currentStyle);
+                localStorage.setItem('white', whiteState); // Save the current state
+            });
+        });
+    </script>
+
+
+
+
+  
     
 </body>
 </html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon start here -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../manifest.json">
+    <!-- Favicon ends here -->
+
+    <!-- Open Graph Tags -->
+    <meta property="og:logo" content="../favicon/favicon-32x32.png" >
+    <meta property="og:title" content="Creating Your First Telegram Bot: Step-by-Step Instructions">
+    <meta property="og:description" content="Explore the world of Telegram bots! ☆ From creation to best practices, we cover it all. → Join the revolution! ✓">
+    <meta property="og:url" content="https://kolodych.com/bot/telegram.html">
+    <meta property="og:image" content="https://kolodych.com/bot/creating_a_telegram_bot_token_api.webp"> <!-- Replace with a relevant image URL -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Serhii Kolodych's Web Development Projects">
+    <!-- END Open Graph Tags -->
+
+    <!-- Schema Markup Addition -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Article",
+        "headline": "Creating Your First Telegram Bot: Step-by-Step Instructions",
+        "description": "Explore the world of Telegram bots! ☆ From creation to best practices, we cover it all. → Join the revolution! ✓",
+        "url": "https://kolodych.com/bot/telegram.html",
+        "image": "https://kolodych.com/bot/creating_a_telegram_bot_token_api.webp", 
+        "author": {
+            "@type": "Person",
+            "name": "Serhii Kolodych",
+            "url": "https://kolodych.com/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Serhii Kolodych",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://kolodych.com/favicon/favicon-32x32.png"
+            }
+        },
+        "datePublished": "2024-10-10T04:23:00Z"
+    }
+    </script>
+    <!--         "dateModified": "2024-09-03T10:19:00Z" -->
+    <!-- END Schema Markup Addition -->
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Creating Your First Telegram Bot: Step-by-Step Instructions">
+    <meta name="twitter:description" content="Explore the world of Telegram bots! ☆ From creation to best practices, we cover it all. → Join the revolution! ✓">
+    <meta name="twitter:image" content="https://kolodych.com/bot/creating_a_telegram_bot_token_api.webp"> 
+    <meta name="twitter:site" content="@serhiikolodych"> 
+    <!-- END Twitter Card Tags -->
+
+    <!-- Cookies Load or NOT -->
+    <!-- Load the tracking.js file -->
+    <script src="../tracking.js"></script>
+    <script>
+    function cookies_manager() {
+        var savedColor = localStorage.getItem('buttonColor');
+
+        if (savedColor) {
+            // Load scripts if the user has agreed
+            if (savedColor === 'green') {
+                loadTrackingScripts();
+            }
+        }
+    }
+
+    // Ensure the cookies_manager function is called when the window loads
+    window.onload = cookies_manager;
+    </script>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            table-layout: fixed; /* Ensure that the table columns are evenly distributed within the available space */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            word-wrap: break-word; /* Break words that are too long to fit in the cell */
+        }
+        th {
+            background-color: transparent;
+        }
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        /* Optional: To ensure the container doesn't overflow the viewport */
+        .table-container {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto; /* This is a fallback in case content does overflow */
+        }
+    </style>
+
+    <title>Creating Your First Telegram Bot: Step-by-Step Instructions</title>
+    <meta name="keywords" content="Python Telegram bot, creating a Telegram bot, making a Telegram bot, how to use bot in telegram, python telegram, Aiogram, best telegram bots, telegram bot list, scrape Amazon, amazon web scraper, scraping amazon">
+    <meta name="description" content="Explore the world of Telegram bots! ☆ From creation to best practices, we cover it all. → Join the revolution! ✓">
+    <link rel="stylesheet" id="stylesheet" href="../styles.css">
+    <link rel="canonical" href="https://kolodych.com/bot/telegram.html">
+
+</head>
+
+
+<body>
+    <!-- Background Canvas -->
+    <canvas id="c" style="z-index: 0; opacity: 1;"></canvas>
+
+
+    <div id="back-to-home">Back to Home</div>
+
+    <a href="#" id="change-style-link">White</a>
+
+
+    <!-- Article Container -->
+    <div class="article-container">
+        <h1>Telegram Bots: What They Are and How to Create One</h1>
+        <p><em>Published on October 10, 2024</em></p>
+    
+        <h2>What do people use Telegram for?</h2>
+        <p>A Telegram bot is a special account on <a target="_blank" rel="noopener" href="https://telegram.org">Telegram</a> that does not require a phone number to operate. Making a Telegram bot can help businesses automate customer support, manage communities, and send real-time updates.</p>
+        <p>For developers interested in creating a Telegram bot, the Python Telegram bot framework offers a simple way to build bots. This guide will explain how to use bots in Telegram and share proven methods for making a Telegram bot suitable for a range of applications.</p>
+    
+        <h2>How to Create a Telegram Bot</h2>
+        <img loading="lazy" src="creating_a_telegram_bot_token_api.webp" alt="How to use BotFather's /newbot command for creating a Telegram bot" title="BotFather /newbot Command for making a Telegram bot">
+        <p>Creating a Telegram bot is relatively simple. Follow these steps:</p>
+        <ol>
+            <li><b>Sign in to Telegram</b> and search for <a href="https://telegram.me/BotFather" target="_blank">@BotFather</a> — the official bot for creating bots.</li>
+            <li><b>Start a chat</b> with BotFather and use the <code>/newbot</code> command to create your bot.</li>
+            <li><b>Choose a name</b> and a username for your bot. The username must be unique and end with "bot."</li>
+            <li>Once created, you’ll <b>receive a token</b>, which allows you to program the bot's behavior using frameworks like <a target="_blank" rel="noopener" href="https://aiogram.dev">Aiogram</a>, <a target="_blank" rel="noopener" href="https://docs.pyrogram.org">Pyrogram</a>, or <a target="_blank" rel="noopener" href="https://pypi.org/project/telebot/">Telebot</a>.</li>
+            <li>Making a Telegram bot involves <b>writing a script</b> to process and reply to user messages. Most developers prefer using Python Telegram bot send message libraries like Aiogram, Pyrogram or Telebot. But you can also create your bot in JavaScript using <a target="_blank" rel="noopener" href="https://telegraf.js.org">Telegraf</a>. To keep your bot running and responsive, you’ll need to deploy the script on a server. Be sure to include the token from BotFather in your script, which allows your chatbot Telegram to authenticate with Telegram’s servers.</li>
+        </ol>
+        <p>To keep your bot running, you’ll need to deploy the script on a server and include the BotFather token for authentication with Telegram’s servers.</p>
+        <p>For a complete guide, check out my 1-hour video tutorial:</p>
+        <div style="position: relative; width: 98%; padding-bottom: 55.71%; height: 0;">
+            <iframe src="https://www.youtube.com/embed/Dni-ZKLqA0U" 
+                title="1-Hour YouTube Tutorial on making a Telegram bot with Python" 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+        </div>
+        <p><em>Video provides step-by-step instructions on getting a bot token, setting up Python on your PC, and uploading the bot to a server. Whether you're new to Telegram bots or looking for a refresher, this tutorial has you covered.</em></p>
+
+        <h2>Best Telegram Bots Ideas That You Can Create</h2>
+        <table>
+            <caption>Pros and Cons of Different Types of Telegram Bots</caption>
+            <colgroup>
+                <col style="width: 20%;">
+                <col style="width: 40%;">
+                <col style="width: 40%;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Type of Bot</th>
+                    <th>Key Advantages <em>+ Example</em></th>
+                    <th>Key Drawbacks <em>+ Example</em></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Telegram Bot for Youtube Download (TikTok, Instagram, Facebook)</td>
+                    <td>Makes downloading videos easier. <em>Example: YouTube downloader bot.</em></td>
+                    <td>Might violate YouTube’s terms of service. <em>Example: Blocked by YouTube API.</em></td>
+                </tr>
+                <tr>
+                    <td>Telegram Bot for Business Updates</td>
+                    <td>Keeps users informed of business trends and updates in real-time. <em>Example: Tender notification bot for government projects.</em></td>
+                    <td>Overuse of updates can frustrate users. <em>Example: Business bot spamming users with irrelevant updates.</em></td>
+                </tr>
+                <tr>
+                    <td>Scraper Bot with Python</td>
+                    <td>Efficient at extracting and processing data from websites. <em>Example: Scraping Amazon author details with <a href="#Amazon-bot">python telegram bot example</a>.</em></td>
+                    <td>May face ethical or legal issues if misused. <em>Example: Blocked by websites for scraping without permission.</em></td>
+                </tr>
+                <tr>
+                    <td>Chatbot Telegram</td>
+                    <td>Simplifies customer service and FAQ handling. <em>Example: Python chatbot for hotel bookings.</em></td>
+                    <td>Predefined responses limit handling of complex queries. <em>Example: Can't handle multiple booking steps beyond FAQs.</em></td>
+                </tr>
+                <tr>
+                    <td>Tele Chat Bot for E-commerce</td>
+                    <td>Automates product searches and customer interaction. <em>Example: Telegram shopping bot finds deals online.</em></td>
+                    <td>Hard to keep updated with frequent site changes. <em>Example: Bot breaking after a website changes its layout.</em></td>
+                </tr>
+                <tr>
+                    <td>Chatbot Telegram for FAQs</td>
+                    <td>Provides instant answers for common queries. <em>Example: FAQ bot for hotel customer service.</em></td>
+                    <td>Can't handle complicated or unexpected questions. <em>Example: FAQ bot failing to respond to non-standard queries.</em></td>
+                </tr>
+                <tr>
+                    <td>File Converter Bots (Telegram)</td>
+                    <td>Converts files between formats, saving time and effort. <em>Example: PDF to Word converter bot for document management.</em></td>
+                    <td>Limited by file size or format compatibility. <em>Example: Bot unable to convert large image or video files.</em></td>
+                </tr>
+                <tr>
+                    <td>Telegram AI Bot</td>
+                    <td>Provides conversational AI responses in chat. <em>Example: ChatGPT-based bot for customer service queries.</em></td>
+                    <td>Responses may be too generic or lack specific business knowledge. <em>Example: Bot giving irrelevant answers to niche questions.</em></td>
+                </tr>
+                <tr>
+                    <td>Crypto Trading Bots (Aiogram)</td>
+                    <td>Allows users to trade cryptocurrencies automatically. <em>Example: Aiogram-based bot for real-time crypto trading.</em></td>
+                    <td>Vulnerable to market volatility and security breaches. <em>Example: Bot losing funds during a market crash.</em></td>
+                </tr>                
+            </tbody>
+        </table>
+    
+        <h2 id="Amazon-bot">How did I Scrape Amazon Using Python Telegram Bot?</h2>
+        <div style="position: relative; width: 98%; padding-top: 100%; height: 0;">
+            <iframe src="https://www.youtube.com/embed/__l4pE849Tc" 
+                title="Amazon Web Scraping with Python: Build a Telegram Bot Using Aiogram" 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+        </div>
+        
+        <p>
+            One of my recent projects was with a client who found <a target="_blank" rel="noopener" href="https://www.freelancer.com/u/kolodych">me on Freelancer.com</a>. They needed help scraping Amazon Books author profiles to collect contact details like <strong>emails, websites, and social profiles for future outreach</strong>. To do Amazon web scraping I created a Python Telegram bot that was used to automate the process: <a target="_blank" rel="noopener" href="https://github.com/serhii-kolodych/Amazon-books">GitHub link</a>.
+        </p>
+        <p>
+            The first script, <code>Amazon_a.py</code>, starts by opening a browser and retrieving a proxy from the database. It then navigates to the Amazon Books advanced search page, applies filters like category, language, and year, and parses author profile links across 65 pages of results. The second script, <code>Amazon_b.py</code>, scrapes emails, Facebook profiles, and websites from the author "about" pages and stores the data in the database.
+        </p>
+        <p>
+            After 9 months of parsing and completing 5 million comparisons, I managed to collect nearly 90,000 author contact details. Using Neon Console's free PostgreSQL plan, which allows 500MB of storage, I could store up to 500k rows at a time. To continue the process, I had to regularly delete rows without emails or links to free up space.
+        </p>
+        <p>
+            Over the course of this project, I also encountered challenges with Amazon’s frequent layout changes (approximately every 3-4 months) and had to update the scraping script (usually I use XPATH to find text inside divs, p, a or headings) every time it happened, because without it - all parsing stops. 
+        </p>
+        <p>
+            Additionally, before sending data to the client, I normalized parsed data, so in every cell there would be some useful link or mail, and not some gibberish text. 
+        </p>
+        <img loading="lazy" src="Amazon-books-authors-emails-social-profiles-sites-contacts.webp" 
+            title="Raw data extracted by Amazon scraper" 
+            alt="Spreadsheet containing useful links alongside gibberish text" 
+            style="width: 100%; height: auto;">
+        <p><em>
+            The most frequent issues I encountered were misspelled "https://" or finding nicknames like "@god_of_war" instead of actual emails. Sometimes, the email column would contain links to YouTube or TikTok profiles, as both platforms use "@" in their URLs. This improved the overall quality of the final data.
+        </em></p>
+
+            
+        <h2>Conclusion: Data Quality and Maintenance Matter</h2>
+        <p>
+            The success of a project like scraping Amazon with Python isn’t just in creating a Telegram bot that can pull data, but in ensuring that the scraped data is clean and useful. Regularly updating the Amazon scraper Python code and normalizing the data was crucial to delivering accurate results. Whether you’re building a Python Telegram bot to scrape Amazon or using a Telegram bot list for automation, proper maintenance and adaptability to changes are key to long-term success.
+        </p>
+    
+        <div class="item">
+            <h3 class="dancing-text">
+                <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span> 
+                <span>a</span><span>n</span><span>y</span><span>t</span><span>h</span><span>i</span><span>n</span><span>g</span><span>?</span>
+            </h3>
+            <form action="../send_email.php" method="post">
+                <input type="email" id="email" name="email" placeholder="your-email@example.com" autocomplete="email" required><br><br>
+                <textarea id="message" name="message" rows="2" placeholder="Your question..." required></textarea><br><br>
+                <input type="submit" value="Send" style="display: block; margin: 0 auto;">
+            </form>
+        </div>
+
+        <a href="../website/joksglobalsport.com.html"><div class="item">
+            <h3>Football Academy site example</h3>
+            <img src="../website/home-joksglobalsport.com.webp" alt="joksglobalsport.com football academy hero section" title="joksglobalsport landing page, hero section with banner" loading="lazy">
+        </div></a>
+    
+        <a href="../website/japalandia.com.html"><div class="item">
+            <h3>Japalandia work abroad Landing Page</h3>
+            <img src="../website/home-1-screen-japalandia.webp" alt="Japalandia home section with Call To Action Button" title="Japalandia landing page, hero section with banner for work abroad" loading="lazy">
+        </div></a>
+    
+        <a href="../website/virgincourtesans.com.html"><div class="item">
+            <h3>Model Agency site example</h3>
+            <img src="../website/Gallery-preview-using-the-post-grid-plugin-wordpress.webp" alt="VirginCourtesans.com model agency gallery" title="VirginCourtesans.com Models gallery preview" loading="lazy">
+        </div></a>
+
+    </div> <!-- article-container END -->
+
+    
+    
+    <!-- Background script -->
+    <script src="../background.js"></script>
+
+  
+    <script>
+        // Set the initial style based on local storage
+        var whiteState = localStorage.getItem('white') || '0'; // Default to '0'
+        var currentStyle = (whiteState === '1') ? '../styles-white.css' : '../styles.css';
+        document.getElementById('stylesheet').setAttribute('href', currentStyle);
+    
+        // Control the canvas visibility based on the initial stylesheet
+        var canvas = document.getElementById('c');
+        canvas.style.opacity = (whiteState === '1') ? "0" : "1";
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            var link = document.getElementById('change-style-link');
+            var stylesheet = document.getElementById('stylesheet');
+    
+            // Set the link text based on the current style
+            link.textContent = (whiteState === '1') ? "Matrix" : "White";
+    
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+    
+                // Toggle the style state
+                if (whiteState === '0') {
+                    whiteState = '1'; // Switch to white stylesheet
+                    currentStyle = '../styles-white.css';
+                    canvas.style.opacity = "0"; // Hide the canvas
+                    link.textContent = "Matrix";
+                } else {
+                    whiteState = '0'; // Switch back to default stylesheet
+                    currentStyle = '../styles.css';
+                    canvas.style.opacity = "1"; // Show the canvas
+                    link.textContent = "White";
+                }
+    
+                // Update the stylesheet and local storage
+                stylesheet.setAttribute('href', currentStyle);
+                localStorage.setItem('white', whiteState); // Save the current state
+            });
+        });
+    </script>
+    
+
+</body>
+</html>
