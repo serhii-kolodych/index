@@ -75,8 +75,18 @@
 <body>
     <canvas id="c" style="z-index: -5; opacity: 1;"></canvas>
 
-    <script src="background.js"></script>
+    <!-- <script src="background-white.js"></script> -->
     <!-- <script src="zoom.js"></script> -->
+
+    <!-- Load the appropriate background script based on the whiteState -->
+    <script>
+        var whiteState = localStorage.getItem('white') || '0'; // Default to '0'
+        var bgScript = document.createElement('script');
+        bgScript.id = 'backgroundScript'; // Set an ID for the script
+        bgScript.src = (whiteState === '1') ? 'background-white.js' : 'background.js';
+        document.body.appendChild(bgScript); // Append the background script
+    </script>
+    
 
     <h1 id="heading">Serhii Kolodych's Web Development and Automation Projects</h1>
     
@@ -84,18 +94,27 @@
 
     <div class="container">
 
-        <!-- This Site Uses Cookies Item -->
+        <!-- This Site Uses Cookies Item--- Explore the role of cookies, their potential risks, and how they affect privacy. This article provides insights on compliance with GDPR regulations and managing cookies on your website. -->
         <div class="box">
             <i></i> 
             <p>
-                Explore the role of cookies, their potential risks, and how they affect privacy. This article provides insights on compliance with GDPR regulations and managing cookies on your website.            
+                Explore the article about cookies.. 🍪     
             </p>
             <a href="website/this-site-uses-cookies.html">
-            <h2>This Site Uses Cookies. Do You Agree?</h2>
-            <div class="imgcontainer">
-                <img src="src/cookie-image.webp" title="This Site Uses Cookies (kolodych.com)" alt="Image of a desktop setup with a laptop, smartphone, mouse, keyboard, and cookies on a plate">
-            </div>
+                <h2>This Site Uses Cookies. Do You Agree?</h2>
             </a>
+            <div class="button-container">
+                <button id="yesButton" class="response-button" data-color="green">Yes</button>
+                <button id="noButton" class="response-button" data-color="red">No</button>
+            </div>
+            <!-- Hidden paragraph for feedback -->
+            <p id="feedbackMessage" class="feedback-message" style="display: none;">Thank you for your feedback!</p>
+            <a href="website/this-site-uses-cookies.html">
+                <div class="imgcontainer">
+                    <img src="src/cookie-image.webp" title="This Site Uses Cookies (kolodych.com)" alt="Image of a desktop setup with a laptop, smartphone, mouse, keyboard, and cookies on a plate">
+                </div>
+            </a>
+            
         </div>
 
         <!-- Understanding Telegram Bots -->
@@ -104,10 +123,10 @@
             <p>
                 Uncover the potential of Telegram bots for businesses. This guide explores various applications, including customer support and automated notifications, to enhance user engagement.
             </p>
-            <a href="bot/telegram.html">
+            <a href="articles/telegram.html">
             <h2>Understanding Telegram Bots</h2>
             <div class="imgcontainer">
-                <img src="bot/creating_a_telegram_bot_token_api.webp" title="Making a Telegram Bot: Tips and Best Practices" alt="Example of a Telegram chat with BotFather, highlighting the /newbot command and the token for a newly created bot.">
+                <img src="articles/creating_a_telegram_bot_token_api.webp" title="Making a Telegram Bot: Tips and Best Practices" alt="Example of a Telegram chat with BotFather, highlighting the /newbot command and the token for a newly created bot.">
             </div>
             </a>
         </div>
@@ -249,17 +268,25 @@
     
     </div>
 
+    <script>
+        function loadButtonStyles() {
+            var savedColor = localStorage.getItem('buttonColor');
+            // Load scripts if the user has agreed
+            if (savedColor && (savedColor === 'green')) {
+                loadTrackingScripts();
+            }
+        }
+    </script>
+    
 
 
-
-    <!-- JavaScript for Red Green buttons functionality -->
     <script>
         // Function to apply button styles and feedback message based on local storage
         function applyButtonStyles() {
             var savedColor = localStorage.getItem('buttonColor');
             var savedDateTime = localStorage.getItem('dateTime');
             var feedbackMessage = document.getElementById('feedbackMessage');
-            if (savedDateTime){
+            if (savedDateTime) {
                 feedbackMessage.textContent = savedDateTime;
                 feedbackMessage.style.display = 'block'; // Ensure the message is visible
             }
@@ -276,18 +303,28 @@
                 var message = savedColor === 'green'
                     ? 'You agreed to use cookies on your device. Date and time:'
                     : 'You blocked this site from saving cookies on your device. Date and time:';
+                
+                // Update the feedback message and make sure it's displayed
+                showFeedback(message);
+                
                 // Load scripts if the user has agreed
                 if (savedColor === 'green') {
                     loadTrackingScripts();
                 }
             }
         }
+
         // Function to show feedback message with timestamp
         function showFeedback(message) {
             var feedbackMessage = document.getElementById('feedbackMessage');
             var dateTime = new Date().toLocaleString(); // Get current date and time
-            localStorage.setItem('dateTime', `${message} ${dateTime}`);
-            feedbackMessage.textContent = `${message} ${dateTime}`;
+            var fullMessage = `${message} ${dateTime}`;
+
+            // Update local storage with the feedback message and timestamp
+            localStorage.setItem('dateTime', fullMessage);
+            
+            // Display the feedback message
+            feedbackMessage.textContent = fullMessage;
             feedbackMessage.style.display = 'block'; // Ensure the message is visible
         }
         // Function to handle button clicks and store preference
@@ -295,33 +332,38 @@
             var message = color === 'green'
                 ? 'You agreed to use cookies on your device. Date and time:'
                 : 'You blocked this site from saving cookies on your device. Date and time:';
+            // Store the selected color in local storage
             localStorage.setItem('buttonColor', color);
+
+            // Apply the correct styles for the selected button
             applyButtonStyles();
+            
+            // Show the feedback message with the corresponding timestamp
             showFeedback(message);
+
+            // If the user agrees (green), load tracking scripts immediately
             if (color === 'green') {
-                // Load scripts immediately if the user clicks "Yes"
                 loadTrackingScripts();
-            } 
+            }
         }
+
+        // Set up event listeners for the buttons
         document.getElementById('yesButton').addEventListener('click', function() {
             handleButtonClick('green');
         });
         document.getElementById('noButton').addEventListener('click', function() {
             handleButtonClick('red');
         });
+
         // Apply saved button styles and possibly load tracking scripts on page load
         window.onload = applyButtonStyles;
     </script>
 
+
     <script>
         // Set the initial style based on local storage
-        var whiteState = localStorage.getItem('white') || '0'; // Default to '0'
         var currentStyle = (whiteState === '1') ? 'styles-white.css' : 'styles.css';
         document.getElementById('stylesheet').setAttribute('href', currentStyle);
-
-        // Control the canvas visibility based on the initial stylesheet
-        var canvas = document.getElementById('c');
-        canvas.style.opacity = (whiteState === '1') ? "0" : "1";
 
         document.addEventListener('DOMContentLoaded', function() {
             var link = document.getElementById('change-style-link');
@@ -334,29 +376,23 @@
                 e.preventDefault();
 
                 // Toggle the style state
-                if (whiteState === '0') {
-                    whiteState = '1'; // Switch to white stylesheet
-                    currentStyle = 'styles-white.css';
-                    canvas.style.opacity = "0"; // Hide the canvas
-                    link.textContent = "Matrix";
-                } else {
-                    whiteState = '0'; // Switch back to default stylesheet
-                    currentStyle = 'styles.css';
-                    canvas.style.opacity = "1"; // Show the canvas
-                    link.textContent = "White";
-                }
+                whiteState = (whiteState === '0') ? '1' : '0'; // Toggle state
+                currentStyle = (whiteState === '1') ? 'styles-white.css' : 'styles.css';
+                link.textContent = (whiteState === '1') ? "Matrix" : "White"; 
 
                 // Update the stylesheet and local storage
                 stylesheet.setAttribute('href', currentStyle);
                 localStorage.setItem('white', whiteState); // Save the current state
+
+                // Change the background script source
+                var bgScript = document.getElementById('backgroundScript');
+                bgScript.src = (whiteState === '1') ? 'background-white.js' : 'background.js';
+
+                // Refresh the page to load the new background script
+                location.reload();
             });
         });
     </script>
-
-
-
-
-  
     
 </body>
 </html>

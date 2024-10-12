@@ -5,7 +5,7 @@ body{
     font-size:18px;
     min-width: 500px;
     color: #1D1D1F; /* #C9C5C2 - Silver Dust */
-    background-color: #F5F5F7;
+    /* background-color: #F5F5F7; */
 }
 
 a{
@@ -417,4 +417,83 @@ form input[type="submit"]:hover {
 
 .copy-button{
   cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  table-layout: fixed; /* Ensure that the table columns are evenly distributed within the available space */
+}
+th, td {
+  border: 2px solid #a4a4a4;
+  padding: 8px;
+  text-align: left;
+  word-wrap: break-word; /* Break words that are too long to fit in the cell */
+}
+th {
+  background-color: transparent;
+}
+caption {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* Optional: To ensure the container doesn't overflow the viewport */
+.table-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto; /* This is a fallback in case content does overflow */
+}
+
+
+/* Button styles */
+.button-container {
+  z-index: 34;
+  display: flex;            /* Enables Flexbox layout */
+  margin: 20px auto;
+  justify-content: center;  /* Centers the buttons horizontally */
+  margin-bottom: 0;
+
+}
+
+.response-button {
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-right: 10px;
+}
+
+/* Button colors and hover effects */
+.response-button[data-color="green"] {
+  color: #fff;
+  border-color: #4caf50;
+  background-color: #4caf50;
+  opacity: 0.4;
+}
+
+.response-button[data-color="red"] {
+  color: #fff;
+  border-color: #f44336;
+  background-color: #f44336;
+  opacity: 0.4;
+}
+
+.response-button:hover {
+  opacity: 0.9;
+}
+
+.response-button.active {
+  opacity: 0.99;
+  border-color: #000;
+  transform: scale(1.05);
+}
+
+/* Feedback message styles */
+.feedback-message {
+  font-size: 0.9 rem;
+  margin:  0 ;
 }

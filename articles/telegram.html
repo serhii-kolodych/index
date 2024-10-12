@@ -69,51 +69,17 @@
     <!-- END Twitter Card Tags -->
 
     <!-- Cookies Load or NOT -->
-    <!-- Load the tracking.js file -->
-    <script src="../tracking.js"></script>
     <script>
-    function cookies_manager() {
-        var savedColor = localStorage.getItem('buttonColor');
-
-        if (savedColor) {
-            // Load scripts if the user has agreed
-            if (savedColor === 'green') {
-                loadTrackingScripts();
+        // Load tracking.js if user has agreed
+        window.onload = function() {
+            if (localStorage.getItem('buttonColor') === 'green') {
+                var script = document.createElement('script');
+                script.src = "../tracking.js"; // Path to your tracking.js file
+                document.head.appendChild(script);
             }
-        }
-    }
-
-    // Ensure the cookies_manager function is called when the window loads
-    window.onload = cookies_manager;
+        };
     </script>
 
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            table-layout: fixed; /* Ensure that the table columns are evenly distributed within the available space */
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-            word-wrap: break-word; /* Break words that are too long to fit in the cell */
-        }
-        th {
-            background-color: transparent;
-        }
-        caption {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        /* Optional: To ensure the container doesn't overflow the viewport */
-        .table-container {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: auto; /* This is a fallback in case content does overflow */
-        }
-    </style>
 
     <title>Creating Your First Telegram Bot: Step-by-Step Instructions</title>
     <meta name="keywords" content="Python Telegram bot, creating a Telegram bot, making a Telegram bot, how to use bot in telegram, python telegram, Aiogram, best telegram bots, telegram bot list, scrape Amazon, amazon web scraper, scraping amazon">
@@ -127,7 +93,6 @@
 <body>
     <!-- Background Canvas -->
     <canvas id="c" style="z-index: 0; opacity: 1;"></canvas>
-
 
     <div id="back-to-home">Back to Home</div>
 
@@ -297,8 +262,8 @@
 
     </div> <!-- article-container END -->
 
-    
-    
+
+
     <!-- Background script -->
     <script src="../background.js"></script>
 
@@ -342,7 +307,6 @@
             });
         });
     </script>
-    
 
 </body>
 </html>
