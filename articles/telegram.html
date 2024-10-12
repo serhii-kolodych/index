@@ -26,8 +26,8 @@
     <meta property="og:logo" content="../favicon/favicon-32x32.png" >
     <meta property="og:title" content="Creating Your First Telegram Bot: Step-by-Step Instructions">
     <meta property="og:description" content="Explore the world of Telegram bots! ☆ From creation to best practices, we cover it all. → Join the revolution! ✓">
-    <meta property="og:url" content="https://kolodych.com/bot/telegram.html">
-    <meta property="og:image" content="https://kolodych.com/bot/creating_a_telegram_bot_token_api.webp"> <!-- Replace with a relevant image URL -->
+    <meta property="og:url" content="https://kolodych.com/articles/telegram.html">
+    <meta property="og:image" content="https://kolodych.com/articles/creating_a_telegram_bot_token_api.webp"> <!-- Replace with a relevant image URL -->
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Serhii Kolodych's Web Development Projects">
     <!-- END Open Graph Tags -->
@@ -39,8 +39,8 @@
         "@type": "Article",
         "headline": "Creating Your First Telegram Bot: Step-by-Step Instructions",
         "description": "Explore the world of Telegram bots! ☆ From creation to best practices, we cover it all. → Join the revolution! ✓",
-        "url": "https://kolodych.com/bot/telegram.html",
-        "image": "https://kolodych.com/bot/creating_a_telegram_bot_token_api.webp", 
+        "url": "https://kolodych.com/articles/telegram.html",
+        "image": "https://kolodych.com/articles/creating_a_telegram_bot_token_api.webp", 
         "author": {
             "@type": "Person",
             "name": "Serhii Kolodych",
@@ -64,7 +64,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Creating Your First Telegram Bot: Step-by-Step Instructions">
     <meta name="twitter:description" content="Explore the world of Telegram bots! ☆ From creation to best practices, we cover it all. → Join the revolution! ✓">
-    <meta name="twitter:image" content="https://kolodych.com/bot/creating_a_telegram_bot_token_api.webp"> 
+    <meta name="twitter:image" content="https://kolodych.com/articles/creating_a_telegram_bot_token_api.webp"> 
     <meta name="twitter:site" content="@serhiikolodych"> 
     <!-- END Twitter Card Tags -->
 
@@ -85,7 +85,7 @@
     <meta name="keywords" content="Python Telegram bot, creating a Telegram bot, making a Telegram bot, how to use bot in telegram, python telegram, Aiogram, best telegram bots, telegram bot list, scrape Amazon, amazon web scraper, scraping amazon">
     <meta name="description" content="Explore the world of Telegram bots! ☆ From creation to best practices, we cover it all. → Join the revolution! ✓">
     <link rel="stylesheet" id="stylesheet" href="../styles.css">
-    <link rel="canonical" href="https://kolodych.com/bot/telegram.html">
+    <link rel="canonical" href="https://kolodych.com/articles/telegram.html">
 
 </head>
 
@@ -120,13 +120,9 @@
         </ol>
         <p>To keep your bot running, you’ll need to deploy the script on a server and include the BotFather token for authentication with Telegram’s servers.</p>
         <p>For a complete guide, check out my 1-hour video tutorial:</p>
-        <div style="position: relative; width: 98%; padding-bottom: 55.71%; height: 0;">
-            <iframe src="https://www.youtube.com/embed/Dni-ZKLqA0U" 
-                title="1-Hour YouTube Tutorial on making a Telegram bot with Python" 
-                loading="lazy"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen></iframe>
+        <div class="youtube-placeholder nineSixth" data-video-id="Dni-ZKLqA0U">
+            <img src="https://img.youtube.com/vi/Dni-ZKLqA0U/maxresdefault.jpg" alt="YouTube Video Thumbnail" class="youtube-thumbnail">
+            <span class="play-button">▶ Play Video</span>
         </div>
         <p><em>Video provides step-by-step instructions on getting a bot token, setting up Python on your PC, and uploading the bot to a server. Whether you're new to Telegram bots or looking for a refresher, this tutorial has you covered.</em></p>
 
@@ -195,14 +191,11 @@
         </table>
     
         <h2 id="Amazon-bot">How did I Scrape Amazon Using Python Telegram Bot?</h2>
-        <div style="position: relative; width: 98%; padding-top: 100%; height: 0;">
-            <iframe src="https://www.youtube.com/embed/__l4pE849Tc" 
-                title="Amazon Web Scraping with Python: Build a Telegram Bot Using Aiogram" 
-                loading="lazy"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen></iframe>
+        <div class="youtube-placeholder squareY" data-video-id="__l4pE849Tc">
+            <img src="https://img.youtube.com/vi/__l4pE849Tc/maxresdefault.jpg" alt="YouTube Video Thumbnail" class="youtube-thumbnail">
+            <span class="play-button">▶ Play Video</span>
         </div>
+        
         
         <p>
             One of my recent projects was with a client who found <a target="_blank" rel="noopener" href="https://www.freelancer.com/u/kolodych">me on Freelancer.com</a>. They needed help scraping Amazon Books author profiles to collect contact details like <strong>emails, websites, and social profiles for future outreach</strong>. To do Amazon web scraping I created a Python Telegram bot that was used to automate the process: <a target="_blank" rel="noopener" href="https://github.com/serhii-kolodych/Amazon-books">GitHub link</a>.
@@ -307,6 +300,29 @@
             });
         });
     </script>
+
+    <script>
+        document.querySelectorAll('.youtube-placeholder').forEach(function(element) {
+            element.addEventListener('click', function() {
+                const videoId = element.getAttribute('data-video-id');
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                iframe.title = "YouTube Video";
+                iframe.style.position = 'absolute';
+                iframe.style.top = '0';
+                iframe.style.left = '0';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.frameBorder = '0';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                
+                element.innerHTML = ''; // Clear placeholder
+                element.appendChild(iframe); // Add iframe to the placeholder
+            });
+        });
+    </script>
+    
 
 </body>
 </html>
