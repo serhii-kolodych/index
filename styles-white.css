@@ -500,7 +500,7 @@ caption {
 
 .nineSixth {
   width: 98%;
-  height: 55.71%; /* Adjust as needed for aspect ratio */
+  padding-top: 55.71%; /* Adjust as needed for aspect ratio */
 }
 
 .youtube-placeholder {
