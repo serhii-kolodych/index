@@ -273,7 +273,10 @@
             var savedColor = localStorage.getItem('buttonColor');
             // Load scripts if the user has agreed
             if (savedColor && (savedColor === 'green')) {
-                loadTrackingScripts();
+                const script = document.createElement('script');
+                script.src = 'tracking.js';
+                script.async = true;
+                document.head.appendChild(script);
             }
         }
     </script>
@@ -309,8 +312,11 @@
                 
                 // Load scripts if the user has agreed
                 if (savedColor === 'green') {
-                    loadTrackingScripts();
-                }
+                    const script = document.createElement('script');
+                    script.src = 'tracking.js';
+                    script.async = true;
+                    document.head.appendChild(script);
+                    }
             }
         }
 
@@ -343,7 +349,10 @@
 
             // If the user agrees (green), load tracking scripts immediately
             if (color === 'green') {
-                loadTrackingScripts();
+                const script = document.createElement('script');
+                script.src = 'tracking.js';
+                script.async = true;
+                document.head.appendChild(script);
             }
         }
 
