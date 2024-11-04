@@ -4,26 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" id="stylesheet" href="../styles.css">
     
     <!-- Favicon start here -->
-    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
     <!-- Favicon ends here -->
 
     <!-- Open Graph Tags -->
-    <meta property="og:logo" content="../favicon/favicon-32x32.png" >
+    <meta property="og:logo" content="/favicon/favicon-32x32.png" >
     <meta property="og:title" content="Creating Your First Telegram Bot: Step-by-Step Instructions">
     <meta property="og:description" content="Learn the steps to make a Python Telegram bot for automating tasks, scraping data from Amazon, or building chatbots using frameworks like Aiogram.">
     <meta property="og:url" content="https://kolodych.com/articles/first-telegram-bot.html">
@@ -84,7 +85,6 @@
     <title>Creating Your First Telegram Bot: Step-by-Step Instructions</title>
     <meta name="keywords" content="Python Telegram bot, creating a Telegram bot, making a Telegram bot, how to use bot in telegram, python telegram, Aiogram, best telegram bots, telegram bot list, scrape Amazon, amazon web scraper, scraping amazon">
     <meta name="description" content="Learn the steps to make a Python Telegram bot for automating tasks, scraping data from Amazon, or building chatbots using frameworks like Aiogram.">
-    <link rel="stylesheet" id="stylesheet" href="../styles.css">
     <link rel="canonical" href="https://kolodych.com/articles/first-telegram-bot.html">
 
 </head>
@@ -92,7 +92,7 @@
 
 <body>
     <!-- Background Canvas -->
-    <canvas id="c" style="z-index: 0; opacity: 1;"></canvas>
+    <canvas id="c" class="cZero" ></canvas>
 
     <div id="back-to-home">Back to Home</div>
 
@@ -212,10 +212,9 @@
         <p>
             Additionally, before sending data to the client, I normalized parsed data, so in every cell there would be some useful link or mail, and not some gibberish text. 
         </p>
-        <img loading="lazy" src="Amazon-books-authors-emails-social-profiles-sites-contacts.webp" 
+        <img loading="lazy" class="imageHundred" src="Amazon-books-authors-emails-social-profiles-sites-contacts.webp" 
             title="Raw data extracted by Amazon scraper" 
-            alt="Spreadsheet containing useful links alongside gibberish text" 
-            style="width: 100%; height: auto;">
+            alt="Spreadsheet containing useful links alongside gibberish text" >
         <p><em>
             The most frequent issues I encountered were misspelled "https://" or finding nicknames like "@god_of_war" instead of actual emails. Sometimes, the email column would contain links to YouTube or TikTok profiles, as both platforms use "@" in their URLs. This improved the overall quality of the final data.
         </em></p>
@@ -255,74 +254,10 @@
 
     </div> <!-- article-container END -->
 
-
-
     <!-- Background script -->
     <script src="../background.js"></script>
-
-  
-    <script>
-        // Set the initial style based on local storage
-        var whiteState = localStorage.getItem('white') || '0'; // Default to '0'
-        var currentStyle = (whiteState === '1') ? '../styles-white.css' : '../styles.css';
-        document.getElementById('stylesheet').setAttribute('href', currentStyle);
-    
-        // Control the canvas visibility based on the initial stylesheet
-        var canvas = document.getElementById('c');
-        canvas.style.opacity = (whiteState === '1') ? "0" : "1";
-    
-        document.addEventListener('DOMContentLoaded', function() {
-            var link = document.getElementById('change-style-link');
-            var stylesheet = document.getElementById('stylesheet');
-    
-            // Set the link text based on the current style
-            link.textContent = (whiteState === '1') ? "Matrix" : "White";
-    
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-    
-                // Toggle the style state
-                if (whiteState === '0') {
-                    whiteState = '1'; // Switch to white stylesheet
-                    currentStyle = '../styles-white.css';
-                    canvas.style.opacity = "0"; // Hide the canvas
-                    link.textContent = "Matrix";
-                } else {
-                    whiteState = '0'; // Switch back to default stylesheet
-                    currentStyle = '../styles.css';
-                    canvas.style.opacity = "1"; // Show the canvas
-                    link.textContent = "White";
-                }
-    
-                // Update the stylesheet and local storage
-                stylesheet.setAttribute('href', currentStyle);
-                localStorage.setItem('white', whiteState); // Save the current state
-            });
-        });
-    </script>
-
-    <script>
-        document.querySelectorAll('.youtube-placeholder').forEach(function(element) {
-            element.addEventListener('click', function() {
-                const videoId = element.getAttribute('data-video-id');
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-                iframe.title = "YouTube Video";
-                iframe.style.position = 'absolute';
-                iframe.style.top = '0';
-                iframe.style.left = '0';
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-                iframe.frameBorder = '0';
-                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-                iframe.allowFullscreen = true;
-                
-                element.innerHTML = ''; // Clear placeholder
-                element.appendChild(iframe); // Add iframe to the placeholder
-            });
-        });
-    </script>
-    
+    <script src="../scripts/style-toggle.js"></script>
+    <script src="../scripts/youtube-placeholder.js"></script>
 
 </body>
 </html>
