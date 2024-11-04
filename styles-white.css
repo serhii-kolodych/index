@@ -13,6 +13,11 @@ a{
   text-decoration: none;
 }
 
+.sendEmail{
+  display: block; 
+  margin: 0 auto;
+}
+
 a:hover {
   cursor: pointer;
   text-decoration: underline;
