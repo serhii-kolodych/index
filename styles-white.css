@@ -83,6 +83,30 @@ canvas {
 }
 
 
+.social-container {
+  display: flex;
+  margin-top: 10px; /* Space above the social links */
+}
+
+.social-container a {
+  text-decoration: none; /* Remove underline from links */
+}
+
+.social-container img {
+  margin-top: 12px;
+  margin-right: 18px;
+  width: 68px; /* Set a size for the icons */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+}
+
+.social-container img:hover {
+  cursor: pointer; /* Change cursor to pointer */
+  transform: scale(1.1); /* Slightly enlarge the image */
+  opacity: 0.8; /* Make the image slightly transparent */
+}
+
+
 
 .box {
 --s:450px;  /*Size of the circle */

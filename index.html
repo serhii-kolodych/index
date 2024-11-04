@@ -247,6 +247,28 @@
             <p>Hourly Rate = 10 Euro</p>
         </div>
 
+        <div class="box social-container" style="--s: 340px;">
+            <i></i> 
+            <a href="mailto:kolodych@hotmail.com">
+                <img src="src/mail-part-3-svgrepo-com.svg" alt="Email">
+            </a>
+            <a href="https://www.facebook.com/serhii.kolodych" target="_blank">
+                <img src="src/social-facebook-svgrepo-com.svg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/serhii_kolodych" target="_blank">
+                <img src="src/social-instagram-svgrepo-com.svg" alt="Instagram">
+            </a>
+            <a href="https://t.me/kolodych" target="_blank">
+                <img src="src/telegram-svgrepo-com.svg" alt="Telegram">
+            </a>
+            <a href="https://wa.me/+37126796193" target="_blank">
+                <img src="src/whatsapp-svgrepo-com.svg" alt="WhatsApp">
+            </a>
+            <a href="https://www.youtube.com/@serhiikolodych" target="_blank">
+                <img src="src/youtube-svgrepo-com.svg" alt="YouTube">
+            </a>
+        </div>
+    
         <!-- Services ITEM -->
         <div class="box" style="--s: 340px;">
             <i></i> 
@@ -268,95 +290,6 @@
     
     </div>
     
-
-
-    <!-- <script>
-        // Function to apply button styles and feedback message based on local storage
-        function applyButtonStyles() {
-            var savedColor = localStorage.getItem('buttonColor');
-            var savedDateTime = localStorage.getItem('dateTime');
-            var feedbackMessage = document.getElementById('feedbackMessage');
-            if (savedDateTime) {
-                feedbackMessage.textContent = savedDateTime;
-                feedbackMessage.style.display = 'block'; // Ensure the message is visible
-            }
-            if (savedColor) {
-                var buttons = document.querySelectorAll('.response-button');
-                buttons.forEach(button => {
-                    if (button.dataset.color === savedColor) {
-                        button.classList.add('active');
-                    } else {
-                        button.classList.remove('active');
-                    }
-                });
-                // Determine the feedback message based on saved color
-                var message = savedColor === 'green'
-                    ? 'You agreed to use cookies on your device. Date and time:'
-                    : 'You blocked this site from saving cookies on your device. Date and time:';
-                
-                // Update the feedback message and make sure it's displayed
-                showFeedback(message);
-                
-                // Load scripts if the user has agreed
-                if (savedColor === 'green') {
-                    const script = document.createElement('script');
-                    script.src = 'tracking.js';
-                    script.async = true;
-                    document.head.appendChild(script);
-                    }
-            }
-        }
-
-        // Function to show feedback message with timestamp
-        function showFeedback(message) {
-            var feedbackMessage = document.getElementById('feedbackMessage');
-            var dateTime = new Date().toLocaleString(); // Get current date and time
-            var fullMessage = `${message} ${dateTime}`;
-
-            // Update local storage with the feedback message and timestamp
-            localStorage.setItem('dateTime', fullMessage);
-            
-            // Display the feedback message
-            feedbackMessage.textContent = fullMessage;
-            feedbackMessage.style.display = 'block'; // Ensure the message is visible
-        }
-        // Function to handle button clicks and store preference
-        function handleButtonClick(color) {
-            var message = color === 'green'
-                ? 'You agreed to use cookies on your device. Date and time:'
-                : 'You blocked this site from saving cookies on your device. Date and time:';
-            // Store the selected color in local storage
-            localStorage.setItem('buttonColor', color);
-
-            // Apply the correct styles for the selected button
-            applyButtonStyles();
-            
-            // Show the feedback message with the corresponding timestamp
-            showFeedback(message);
-
-            // If the user agrees (green), load tracking scripts immediately
-            if (color === 'green') {
-                const script = document.createElement('script');
-                script.src = 'tracking.js';
-                script.async = true;
-                document.head.appendChild(script);
-            }
-        }
-
-        // Set up event listeners for the buttons
-        document.getElementById('yesButton').addEventListener('click', function() {
-            handleButtonClick('green');
-        });
-        document.getElementById('noButton').addEventListener('click', function() {
-            handleButtonClick('red');
-        });
-
-        // Apply saved button styles and possibly load tracking scripts on page load
-        window.onload = applyButtonStyles();
-    </script> -->
-
-    <!-- Load tracking.js if previously agreed -->
-
     <script>
         // Function to manage cookies based on user selection
         function cookiesManager() {
