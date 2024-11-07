@@ -71,7 +71,11 @@ canvas {
     z-index: 3;
   }
 
-
+.container404 {
+    width: 80%;              /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .container {
     display: flex;
