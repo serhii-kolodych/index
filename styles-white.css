@@ -34,12 +34,78 @@ a:visited{
 }
 
 em {
-  color: #515154;
+  /* color: #515154; */
+  color: #FF7043;
   /* color: #f5f5f5; /* Lightest Grey */
   /* color: #bdbdbd;  */
   /* color: #9e9e9e;  */
   /* color: #616161; Darkest Grey */
 }
+
+/* Style for the code block copy code */
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  background-color: #f0f0f0; /* Light grey background */
+  color: #333333; /* Darker text color */
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* First row: flexbox layout for label and button */
+.flex-row {
+  display: flex;
+  justify-content: space-between; /* Space between label and button */
+  align-items: center;
+  width: 100%;
+}
+
+/* Copy button styling */
+.copy-btn {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.copy-btn:hover {
+  opacity: 1;
+}
+
+/* Code block styling in second row */
+.code-row {
+  display: flex;
+  width: 100%; /* Ensure the code block takes full width */
+}
+
+/* Code block styling */
+.code-row code {
+  background-color: #e0e0e0; /* Slightly darker grey for code background */
+  color: #333333; /* Dark text for code */
+  display: block; /* Ensure code block takes full width */
+  padding: 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  width: 100%; /* Make the code block take full width of its container */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  
+  /* Word wrapping properties */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+/* code block end */
+
 
 canvas {
     position: fixed;
@@ -113,7 +179,7 @@ canvas {
 
 
 .box {
---s:450px;  /*Size of the circle */
+--s:452px;  /*Size of the circle */
 --p:8px;   /* padding */
 
 /* z-index: -2; */

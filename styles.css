@@ -41,6 +41,71 @@ em {
   /* color: #616161; Darkest Grey */
 }
 
+/* Style for the code block copy code */
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  background-color: #2e2e2e;
+  color: #f8f8f2;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* First row: flexbox */
+.flex-row {
+  display: flex;
+  justify-content: space-between; /* Space between label and button */
+  align-items: center;
+  width: 100%;
+}
+
+/* Copy button */
+.copy-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.copy-btn:hover {
+  opacity: 1;
+}
+
+/* Second row: code block */
+.code-row {
+  display: flex;
+  width: 100%; /* Make it the same width as flex-row */
+}
+
+/* Code block styling */
+.code-row code {
+  background-color: #1e1e1e;
+  color: #f8f8f2;
+  display: block; /* Ensure code block takes full width */
+  padding: 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  width: 100%; /* Make code take full width of code-row */
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  
+  /* Wrap long words */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+/* code block end */
+
+
 canvas {
     position: fixed;
     top: 0;
@@ -113,7 +178,7 @@ canvas {
 
 
 .box {
---s:450px;  /*Size of the circle */
+--s:452px;  /*Size of the circle */
 --p:8px;   /* padding */
 
 /* z-index: -2; */

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" id="stylesheet" href="../styles.css">
+</head>
+<style>
+    /* Container setup */
+    .grid-container {
+    display: grid;
+    grid-template-rows: auto auto; /* Two rows */
+    gap: 10px;
+    background-color: #2e2e2e;
+    color: #f8f8f2;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    }
+
+    /* First row: flexbox */
+    .flex-row {
+    display: flex;
+    justify-content: space-between; /* Space between label and button */
+    align-items: center;
+    }
+
+    /* Copy button */
+    .copy-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+    }
+
+    .copy-btn:hover {
+    opacity: 1;
+    }
+
+    /* Second row: code styling */
+    .code-row code {
+    background-color: #1e1e1e;
+    color: #f8f8f2;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    }
+
+</style>
+
+
+<body>
+    <div class="grid-container">
+        <div class="flex-row">
+          <label>Code:</label>
+          <button class="copy-btn">Copy Code</button>
+        </div>
+        <div class="code-row">
+          <code>sudo apt update</code>
+        </div>
+    </div>
+      
+
+</body>
+<script>
+    document.querySelector('.copy-btn').addEventListener('click', function() {
+        const copyButton = this;
+        const codeText = document.querySelector('.code-row code').textContent;
+        
+        // Copy the code text to clipboard
+        navigator.clipboard.writeText(codeText).then(() => {
+            // Change the button text to "Copied!"
+            copyButton.textContent = 'Copied!';
+            
+            // Revert the text back to "Copy Code" after 3 seconds
+            setTimeout(() => {
+            copyButton.textContent = 'Copy Code';
+            }, 3000);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    });
+
+</script>
+</html>

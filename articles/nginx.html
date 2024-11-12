@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" id="stylesheet" href="../styles.css">
+
+    <!-- Cookies Load or NOT -->
+    <script>
+        // Load tracking.js if user has agreed
+        window.onload = function() {
+            if (localStorage.getItem('buttonColor') === 'green') {
+                var script = document.createElement('script');
+                script.src = "../tracking.js"; // Path to your tracking.js file
+                document.head.appendChild(script);
+            }
+        };
+    </script>
+    
+    <!-- Favicon start here -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../manifest.json">
+    <!-- Favicon ends here -->
+
+    <!-- Open Graph Tags -->
+    <meta property="og:logo" content="/favicon/favicon-32x32.png" >
+    <meta property="og:title" content="Nginx Configuration: Key Steps for Performance, SEO, and Security">
+    <meta property="og:description" content="Ready to configure Nginx? ✨ From VPS selection to robots.txt setup, learn SEO and security essentials to make your website fast and search-friendly!">
+    <meta property="og:url" content="https://kolodych.com/articles/nginx.html">
+    <meta property="og:image" content="https://kolodych.com/articles/nginx-status.webp"> <!-- Replace with a relevant image URL -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Serhii Kolodych's Web Development Projects">
+    <!-- END Open Graph Tags -->
+
+    <!-- Schema Markup Addition -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Article",
+        "headline": "Nginx Configuration: Key Steps for Performance, SEO, and Security",
+        "description": "Ready to configure Nginx? ✨ From VPS selection to robots.txt setup, learn SEO and security essentials to make your website fast and search-friendly!",
+        "url": "https://kolodych.com/articles/nginx.html",
+        "image": "https://kolodych.com/articles/nginx-status.webp", 
+        "author": {
+            "@type": "Person",
+            "name": "Serhii Kolodych",
+            "url": "https://kolodych.com/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Serhii Kolodych",
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://kolodych.com/favicon/favicon-32x32.png"
+            }
+        },
+        "datePublished": "2024-11-12T23:23:00Z"
+    }
+    </script>
+    <!--         "dateModified": "2024-09-03T10:19:00Z" -->
+    <!-- END Schema Markup Addition -->
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nginx Configuration: Key Steps for Performance, SEO, and Security">
+    <meta name="twitter:description" content="Ready to configure Nginx? ✨ From VPS selection to robots.txt setup, learn SEO and security essentials to make your website fast and search-friendly!">
+    <meta name="twitter:image" content="https://kolodych.com/articles/nginx-status.webp"> 
+    <meta name="twitter:site" content="@serhiikolodych"> 
+    <!-- END Twitter Card Tags -->
+
+
+    <title>Nginx Setup Guide: Best Practices for Performance, Security, and SEO</title>
+    <meta name="keywords" content="Nginx configuration, VPS hosting, XML sitemap, website security, server performance, SEO optimization, domain configuration, gzip compression">
+    <meta name="description" content="Ready to configure Nginx? ✨ From VPS selection to robots.txt setup, learn SEO and security essentials to make your website fast and search-friendly!">
+    <link rel="canonical" href="https://kolodych.com/articles/nginx.html">
+
+</head>
+
+
+<body>
+    <!-- Background Canvas -->
+    <canvas id="c" class="cZero" ></canvas>
+
+    <div id="back-to-home">Back to Home</div>
+
+    <a href="#" id="change-style-link">White</a>
+
+
+    <!-- Article Container -->
+    <div class="article-container">
+        <h1>Configuring Nginx for Speed and Security</h1>
+  
+        <p><em>Published on November 12, 2024</em></p>
+
+        <ol>
+            <li><a href="#vps-server">Step – choosing the best VPS server for your needs.</a></li>
+            <li><a href="#nginx-configuration">Step – setting up Nginx for your website.</a></li>
+            <li><a href="#nginx-domain">Step – adding domain to Nginx server.</a></li>
+            <li><a href="#htaccess-file">Step - configuring htaccess file for your server.</a></li>
+            <li><a href="#robots-txt">Step – creating a robots.txt file for your website.</a></li>
+            <li><a href="#sitemap-xml">Step – adding URLs to your XML sitemap.</a></li>
+        </ol>
+
+        <img loading="lazy" src="nginx-status.webp" alt="Nginx server installation and setup guide" title="Guide to installing and configuring Nginx server">
+        
+        <h2>Nginx: What Is It and Why Use It?        </h2>
+        <p><a href="https://nginx.org/en/">Nginx</a> is a powerful, versatile web server used for high-performance web hosting, reverse proxying, load balancing, and caching. Known for its efficient handling of high traffic and low resource consumption, Nginx is widely used by companies like Netflix and GitHub. The capabilities of <strong>Nginx help boost website seo optimization</strong> while meeting the scalability demands of custom web design services. </p>
+        <p><em><strong>Fun Fact:</strong> Nginx commands an 18.98% market share <a href="https://www.netcraft.com/blog/october-2024-web-server-survey/">(according to NetCraft October 2024 Web Server Survey)</a>, competing with other top web servers like Cloudflare, Apache, and LiteSpeed. Its efficiency and versatility make it an ideal tool for modern web infrastructure.</em></p>
+      
+        <p>Nginx excels at serving static content, acting as a reverse proxy, and load balancing, all while minimizing resource usage. Here’s how it compares to other web servers:</p>
+      
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Nginx</th>
+              <th>Apache</th>
+              <th>Microsoft</th>
+              <th>Google</th>
+              <th>Cloudflare</th>
+              <th>LiteSpeed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Market Share (Oct 2024)</td>
+              <td>18.98%</td>
+              <td>17.86%</td>
+              <td>2.03%</td>
+              <td>10.12%</td>
+              <td>16.28%</td>
+              <td>6.23%</td>
+            </tr>
+            <tr>
+              <td>Performance</td>
+              <td>High concurrency, efficient for static content</td>
+              <td>Slower with high concurrency, better for dynamic content</td>
+              <td>Limited scalability</td>
+              <td>Optimized for Google Cloud</td>
+              <td>High performance, especially with caching</td>
+              <td>Fastest for dynamic and static content</td>
+            </tr>
+            <tr>
+              <td>Resource Efficiency</td>
+              <td>Low resource usage</td>
+              <td>Moderate resource usage</td>
+              <td>Higher resource usage</td>
+              <td>Optimized for minimal resources</td>
+              <td>High efficiency</td>
+              <td>High efficiency, especially for WordPress</td>
+            </tr>
+            <tr>
+              <td>Load Balancing</td>
+              <td>Yes</td>
+              <td>Limited</td>
+              <td>Limited</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Reverse Proxy Support</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Limited</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>SSL/TLS Support</td>
+              <td>Yes (with Certbot integration)</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Caching</td>
+              <td>Basic caching, third-party support</td>
+              <td>Module-based, complex configuration</td>
+              <td>Limited</td>
+              <td>Yes (CDN caching)</td>
+              <td>Advanced, built-in</td>
+              <td>Advanced, integrated</td>
+            </tr>
+            <tr>
+              <td>Platform Compatibility</td>
+              <td>Linux, Windows</td>
+              <td>Linux, Windows</td>
+              <td>Windows only</td>
+              <td>Google Cloud</td>
+              <td>Multi-platform</td>
+              <td>Linux, Windows</td>
+            </tr>
+            <tr>
+              <td>Configuration Complexity</td>
+              <td>Moderate</td>
+              <td>Moderate</td>
+              <td>Simple</td>
+              <td>Complex</td>
+              <td>Simple</td>
+              <td>Simple</td>
+            </tr>
+            <tr>
+              <td>Primary Use Case</td>
+              <td>High-traffic sites, static content</td>
+              <td>Small to large websites, dynamic content</td>
+              <td>Windows-based environments</td>
+              <td>Cloud applications</td>
+              <td>Security and caching</td>
+              <td>WordPress and high-speed hosting</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h2 id="vps-server">Step 1: Choosing Web Server for Your Website</h2>
+        <p>Before setting up Nginx, <strong>ensure you have the right VPS</strong> to handle your business website design needs. Key factors to review before choosing VPS web hosting for your custom website include:</p>
+        <ol>
+          <li><strong>Traffic Needs:</strong> Choose a VPS with sufficient resources for anticipated traffic growth, especially for ecommerce website design companies or small business website design services.</li>
+          <li><strong>Operating System:</strong> For optimal performance, use a Linux-based VPS.</li>
+          <li><strong>Performance & Uptime:</strong> Look for providers with high uptime guarantees and low latency.</li>
+          <li><strong>Scalability & Control:</strong> Ensure the VPS allows easy scaling and root access for Nginx configuration.</li>
+          <li><strong>Budget:</strong> Affordable options include <a href="https://www.hostinger.com/vps-hosting">Hostinger</a>, <a href="https://zomro.com"> Zomro</a>, or <a href="https://www.kamatera.com/pricing/">Kamatera</a>.</li>
+        </ol>
+
+        <h2 id="nginx-configuration">Step 2: Configuring Nginx for optimal performance.</h2>
+      
+        <p>Once you have your VPS set up, install Nginx with the following commands:</p>
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Terminal / Console</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+                sudo apt update <br>
+                sudo apt install nginx
+              </code>
+            </div>
+        </div>
+      
+      
+        <p>Verify that the server is running:</p>
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Terminal / Console</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+                sudo systemctl status nginx
+              </code>
+            </div>
+        </div>
+      
+        <p>To configure Nginx web hosting, the nginx config file needs to be adjusted to point to your site’s directory. Typically, located at <em>/etc/nginx/nginx.conf</em>. Below are the key configurations:
+        </p>
+        <div class="grid-container">
+            <div class="flex-row">
+                <label>nginx.conf</label>
+                <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+                <code>
+events {<br>
+    worker_connections 1024;  <em># Max simultaneous connections per worker process. You can adjust this based on traffic needs.</em><br>
+    }<br>
+    
+    http {<br>
+    sendfile on;  <em># Enables efficient file transfers. Leave enabled for serving static files.</em><br>
+    tcp_nopush on;  <em># Optimizes TCP packets for sending large files. Leave as is unless specific requirements suggest otherwise.</em><br>
+    types_hash_max_size 2048;  <em># Limits the maximum size of the hash table for MIME types. Usually, the default value is sufficient.</em><br>
+    include /etc/nginx/mime.types;  <em># Includes the MIME types configuration file that maps file extensions to MIME types. Leave as is.</em><br>
+    default_type application/octet-stream;  <em># Default MIME type for files that don't have a specific MIME type. Leave as is unless you need to specify something else.</em><br>
+    
+    <em># SSL Settings</em><br>
+    ssl_protocols TLSv1.2 TLSv1.3;  <em># Enforces modern TLS protocols. Keep this for security purposes.</em><br>
+    ssl_prefer_server_ciphers on;  <em># Ensures the server's ciphers are preferred for secure connections. Leave as is.</em><br>
+    ssl_session_cache shared:SSL:10m;  <em># Enables caching of SSL sessions to improve performance on subsequent connections.</em><br>
+    ssl_session_timeout 10m;  <em># Sets the session cache timeout to 10 minutes. This is fine for most use cases.</em><br>
+    ssl_ciphers 'HIGH:!aNULL:!MD5';  <em># Specifies strong ciphers for SSL/TLS. Leave as is unless you need a specific set.</em><br>
+    
+    <em># Security Headers</em><br>
+    add_header X-Content-Type-Options nosniff;  <em># Prevents browsers from interpreting files as a different MIME type. Keep for security.</em><br>
+    add_header X-Frame-Options DENY;  <em># Prevents the site from being displayed in iframes. Keep for security unless needed otherwise.</em><br>
+    add_header X-XSS-Protection "1; mode=block";  <em># Protects against cross-site scripting (XSS) attacks. Keep for security.</em><br>
+    server_tokens off;  <em># Hides Nginx version information. Keep as is to avoid revealing server details.</em><br>
+    
+    <em># Logging Settings</em><br>
+    access_log /var/log/nginx/access.log;  <em># Defines where to log access requests. Keep unless you want to change the log location.</em><br>
+    error_log /var/log/nginx/error.log;  <em># Defines where to log error messages. Keep unless you need to change the log location.</em><br>
+    
+    <em># Gzip Settings</em><br>
+    gzip on;  <em># Enables Gzip compression for better performance. Keep enabled for most sites to reduce data size.</em><br>
+    gzip_vary on;  <em># Informs proxies that the response varies based on the request's Accept-Encoding header.</em><br>
+    gzip_proxied any;  <em># Enables Gzip for all proxied requests. Keep as is unless a specific case requires modification.</em><br>
+    gzip_comp_level 6;  <em># Defines the compression level. Level 6 is a good balance between speed and compression.</em><br>
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;  <em># Specifies file types to compress. These are common types that benefit from compression. Adjust as needed based on your site’s content.</em><br>
+    
+    <em># Include virtual host configurations</em><br>
+    include /etc/nginx/sites-enabled/*;  <em># Includes all the configurations from the sites-enabled directory. Keep enabled unless you have a specific reason to disable it.</em><br>
+    }<br>
+                                                   
+                </code>
+            </div>
+        </div>
+        <p><em>Tip: Simply copy and paste this into the <strong>/etc/nginx/nginx.conf</strong> file (no modifications required).</em></p>
+        
+        <h2 id="nginx-domain">Step 3: Configuring your Domain.com file</h2>
+        <p>To create new domain.com file for your domain in the <em>/etc/nginx/sites-available/</em> directory without opening it directly, you can use the following command (change domain.com --> to your domain name): 
+        </p>
+        <div class="grid-container">
+            <div class="flex-row">
+                <label>Terminal / Console:</label>
+                <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+                <code>
+                    sudo touch /etc/nginx/sites-available/domain.com   
+                </code>
+            </div>
+        </div>
+        <p>
+            This command will create an empty file named domain.com in the sites-available directory. Once the file is created, you can then edit it as needed + create a symlink to sites-enabled using the following command:
+        </p>
+        <div class="grid-container">
+            <div class="flex-row">
+                <label>Terminal / Console:</label>
+                <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+                <code>
+                    sudo ln -s /etc/nginx/sites-available/domain.com /etc/nginx/sites-enabled/
+                </code>
+            </div>
+        </div>
+        <p>
+            Open your just created <em>domain.com</em> file inside <em>/etc/nginx/sites-available/</em> folder and set it like this:
+        </p>
+        <div class="grid-container">
+            <div class="flex-row">
+                <label>domain.com</label>
+                <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+                <code>
+<em># Redirect from IPv4 address to the domain</em><br>
+server {<br>
+    listen 80;<br>
+    server_name 0.0.0.0;  <em># Your IPv4 address</em><br>
+    return 301 https://domain.com$request_uri;  <em># Redirect to your domain</em><br>
+}<br>
+
+<em># Redirect from IPv6 address to the domain</em><br>
+server {<br>
+    listen [1:1:1:1:1:1:1:1]:80;  <em># Your IPv6 address</em><br>
+    return 301 https://domain.com$request_uri;  <em># Redirect to your domain</em><br>
+}<br>
+
+<em># Redirect from www to non-www for HTTP traffic</em><br>
+server {<br>
+    listen 80;<br>
+    server_name www.domain.com;  <em># www domain</em><br>
+    return 301 https://domain.com$request_uri;  <em># Redirect www to non-www</em><br>
+}<br>
+
+<em># Main server block for your domain</em><br>
+server {<br>
+    listen 80;<br>
+    server_name domain.com;  <em># Your domain name</em><br>
+    return 301 https://domain.com$request_uri;  <em># Force HTTPS</em><br>
+}<br>
+
+<em># Server block for handling HTTPS</em><br>
+server {<br>
+    listen 443 ssl;  <em># HTTPS</em><br>
+    server_name domain.com;  <em># Non-www domain</em><br>
+
+    ssl_certificate /etc/ssl/certificate.crt;  <em># Your certificate</em><br>
+    ssl_certificate_key /etc/ssl/private.key;   <em># Your private key</em><br>
+    ssl_trusted_certificate /etc/ssl/ca_bundle.crt;  <em># Your CA bundle</em><br>
+
+    root /var/www/domain.com;  <em># Your document root</em><br>
+    index index.php index.html;  <em># Ensure index.php is included</em><br>
+
+    <em># Error handling</em><br>
+    error_page 404 /404.html;  <em># Custom 404 error page</em><br>
+    location = /404.html {<br>
+        root /var/www/domain.com;  <em># Location of the 404 error page</em><br>
+        internal;  <em># Marks it as internal, so users can't access it directly</em><br>
+    }<br>
+
+    location ~ \.php$ {<br>
+        include snippets/fastcgi-php.conf;  <em># Includes PHP configuration snippets</em><br>
+        fastcgi_pass unix:/var/run/php/php-fpm.sock;  <em># Pass PHP requests to PHP-FPM</em><br>
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;  <em># Required for PHP to work correctly</em><br>
+        include fastcgi_params;  <em># Includes standard fastcgi parameters</em><br>
+    }<br>
+
+    <em># Optional: Adjust client upload size if necessary</em><br>
+    client_max_body_size 10M;  <em># Set maximum upload size to 10MB</em><br>
+}<br>
+
+<em># Server block for handling HTTPS for www</em><br>
+server {<br>
+    listen 443 ssl;  <em># HTTPS</em><br>
+    server_name www.domain.com;  <em># www domain</em><br>
+
+    ssl_certificate /etc/ssl/certificate.crt;  <em># Your certificate</em><br>
+    ssl_certificate_key /etc/ssl/private.key;   <em># Your private key</em><br>
+    ssl_trusted_certificate /etc/ssl/ca_bundle.crt;  <em># Your CA bundle</em><br>
+
+    return 301 https://domain.com$request_uri;  <em># Redirect www to non-www</em><br>
+}<br>     
+                </code>
+            </div>
+        </div>
+
+        <p><em><strong>IMPORTANT! </strong></em>Replace <em>domain.com</em> to your domain name <em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net)</em></p>
+
+        <p>Replace <em>0.0.0.0</em> with your actual IPv4 address. You can find it using the <em>ifconfig</em> or <em>ip a</em> command, or check your server details.</p>
+        
+        <p>Replace or Delete <em>1:1:1:1:1:1:1:1</em> with your actual IPv6 address (if applicable). </p>
+
+        <p>SSL Configuration: Obtain SSL certificates from a provider (e.g., <a href="https://zerossl.com">ZeroSSL</a> or <a href="https://letsencrypt.org">Let's Encrypt</a>). Upload them inside <em>/etc/ssl/</em> folder. Ensure the following paths are correct:</p>
+        <ul>
+            <li>/etc/ssl/certificate.crt (SSL certificate)</li>
+            <li>/etc/ssl/private.key (Private key)</li>
+            <li>/etc/ssl/ca_bundle.crt (CA Bundle)</li>
+        </ul>
+
+        <p>Upload your index.html and other site resources to <em>/var/www/domain.com</em> folder</p>
+          
+        <h3>Test and Reload nginx</h3>
+        <p>Test the Nginx configuration for syntax errors: </p>
+        <div class="grid-container">
+            <div class="flex-row">
+                <label>.htaccess</label>
+                <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+                <code>
+sudo nginx -t
+                </code>
+            </div>
+        </div>
+        <p>If there are no errors, reload Nginx to apply the changes:</p>
+        <div class="grid-container">
+            <div class="flex-row">
+                <label>.htaccess</label>
+                <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+                <code>
+sudo systemctl reload nginx
+                </code>
+            </div>
+        </div>
+        <h2 id="htaccess-file">Step 4: configuring .htaccess file settings:</h2>
+        <p>For enhanced security and performance, configure your .htaccess settings:</p>
+        <div class="grid-container">
+            <div class="flex-row">
+                <label>.htaccess</label>
+                <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+                <code>
+ErrorDocument 404 /404.html <em># Custom error page for 404 errors</em><br>
+
+AddDefaultCharset UTF-8 <em># Sets the default character encoding for your website to UTF-8</em><br>
+
+RewriteEngine On <em># This activates the mod_rewrite engine, enabling the use of URL rewrites</em><br>
+
+<em># Redirect IPv4 address to domain</em><br>
+RewriteCond %{HTTP_HOST} ^0.0.0.0$ [OR] <em># This checks if the request is coming to your IPv4 address</em><br>
+<em># Redirect IPv6 address to domain</em><br>
+RewriteCond %{HTTP_HOST} ^\[1:1:1:1:1:1:1:1]$ <em># This checks if the request is coming to your IPv6 address</em><br>
+RewriteRule ^(.*)$ https://domain.com/$1 [L,R=301] <em># Redirects any requests from the IP addresses to your domain</em><br>
+
+<em># Optional: Redirect from www to non-www</em><br>
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC] <em># This checks if the URL starts with "www." (case-insensitive)</em><br>
+RewriteRule ^(.*)$ https://domain.com/$1 [L,R=301] <em># Redirects any "www" requests to the non-www version of the domain, maintaining the rest of the URL</em><br>
+
+<em># Force HTTPS</em><br>
+RewriteCond %{HTTPS} off <em># This checks if the connection is not using HTTPS</em><br>
+RewriteRule ^(.*)$ https://domain.com/$1 [L,R=301] <em># Redirects HTTP requests to HTTPS for a secure connection</em><br>
+
+<em># Allow sitemap and robots.txt to be directly accessible</em><br>
+RewriteCond %{REQUEST_URI} !^/sitemap\.xml$ [NC] <em># Allows the sitemap.xml file to be accessible without redirection</em><br>
+RewriteCond %{REQUEST_URI} !^/robots\.txt$ [NC] <em># Allows the robots.txt file to be accessible without redirection</em><br>
+
+<em># Gzip Compression</em><br>
+&lt;IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css <em># Compresses HTML, plain text, XML, and CSS files for faster loading</em><br>
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/xml <em># Compresses JavaScript and XML files</em><br>
+    AddOutputFilterByType DEFLATE image/svg+xml <em># Compresses SVG images</em><br>
+    AddOutputFilterByType DEFLATE application/rss+xml application/atom_xml <em># Compresses RSS and Atom feeds</em><br>
+    AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-opentype application/vnd.ms-fontobject <em># Compresses font files</em><br>
+    BrowserMatch ^Mozilla/4 gzip-only-text/html <em># Prevents older browsers from using gzip compression</em><br>
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip <em># Prevents older browsers from using gzip compression</em><br>
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html <em># Prevents older versions of Internet Explorer from being excluded from gzip compression</em><br>
+    Header append Vary User-Agent <em># Makes sure that compressed files are sent according to the user agent</em><br>
+&lt;/IfModule>
+
+<em># Cache Control</em><br>
+&lt;IfModule mod_expires.c>
+    ExpiresActive On <em># Enables caching for static files</em><br>
+
+    <em># Default cache time</em><br>
+    ExpiresDefault "access plus 1 day" <em># Default cache time is 1 day for all files</em><br>
+
+    <em># Cache CSS files for 1 day</em><br>
+    ExpiresByType text/css "access plus 1 day" <em># Cache CSS files for 1 day</em><br>
+
+    <em># Cache images (JPEG, PNG, GIF, WebP) for 1 year</em><br>
+    ExpiresByType image/jpeg "access plus 1 year" <em># Cache JPEG images for 1 year</em><br>
+    ExpiresByType image/png "access plus 1 year" <em># Cache PNG images for 1 year</em><br>
+    ExpiresByType image/gif "access plus 1 year" <em># Cache GIF images for 1 year</em><br>
+    ExpiresByType image/webp "access plus 1 year" <em># Cache WebP images for 1 year</em><br>
+    ExpiresByType image/svg "access plus 1 year" <em># Cache SVG images for 1 year</em><br>
+    
+    <em># Cache video files for 1 year</em><br>
+    ExpiresByType video/mp4 "access plus 1 year" <em># Cache MP4 video files for 1 year</em><br>
+    ExpiresByType video/webm "access plus 1 year" <em># Cache WebM video files for 1 year</em><br>
+    ExpiresByType video/ogg "access plus 1 year" <em># Cache OGG video files for 1 year</em><br>
+    ExpiresByType video/quicktime "access plus 1 year" <em># Cache Quicktime video files for 1 year</em><br>
+
+    <em># Cache JavaScript files for 1 year</em><br>
+    ExpiresByType application/javascript "access plus 1 year" <em># Cache JavaScript files for 1 year</em><br>
+    ExpiresByType application/x-javascript "access plus 1 year" <em># Cache JavaScript files for 1 year</em><br>
+
+    <em># Cache PDFs for 1 year</em><br>
+    ExpiresByType application/pdf "access plus 1 year" <em># Cache PDF files for 1 year</em><br>
+
+    <em># Cache fonts for 1 year</em><br>
+    ExpiresByType font/ttf "access plus 1 year" <em># Cache TTF font files for 1 year</em><br>
+    ExpiresByType font/otf "access plus 1 year" <em># Cache OTF font files for 1 year</em><br>
+    ExpiresByType font/woff "access plus 1 year" <em># Cache WOFF font files for 1 year</em><br>
+    ExpiresByType font/woff2 "access plus 1 year" <em># Cache WOFF2 font files for 1 year</em><br>
+&lt;/IfModule><br>
+
+<em># Cache Control Headers (for browsers and CDNs)</em><br>
+&lt;IfModule mod_headers.c> <br>
+    <em># Cache CSS files for 1 day</em><br>
+    <FilesMatch "\.(css)$">
+        Header set Cache-Control "max-age=86400, public" <em># Sets cache for CSS files to 1 day</em><br>
+    </FilesMatch>
+
+    <em># Cache images for 1 year</em><br>
+    <FilesMatch "\.(jpg|svg|jpeg|png|gif|webp)$">
+        Header set Cache-Control "max-age=31536789, public" <em># Sets cache for image files to 1 year</em><br>
+    </FilesMatch>
+    
+    <em># Cache video files for 1 year</em><br>
+    <FilesMatch "\.(mp4|webm|ogg|mov)$">
+        Header set Cache-Control "max-age=31536789, public" <em># Sets cache for video files to 1 year</em><br>
+    </FilesMatch>
+
+    <em># Cache JavaScript files for 1 year</em><br>
+    <FilesMatch "\.(js)$">
+        Header set Cache-Control "max-age=31536789, public" <em># Sets cache for JavaScript files to 1 year</em><br>
+    </FilesMatch>
+
+    <em># Cache PDFs for 1 year</em><br>
+    <FilesMatch "\.(pdf)$">
+        Header set Cache-Control "max-age=31536789, public" <em># Sets cache for PDF files to 1 year</em><br>
+    </FilesMatch>
+
+    <em># Cache fonts for 1 year</em><br>
+    <FilesMatch "\.(ttf|otf|woff|woff2)$">
+        Header set Cache-Control "max-age=31536789, public" <em># Sets cache for font files to 1 year</em><br>
+    </FilesMatch>
+&lt;/IfModule><br>
+
+<em># The Strict-Transport-Security (HSTS) header is a critical security feature for websites served over HTTPS.</em><br>
+&lt;IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" <em># Ensures HTTPS is enforced for all subdomains for 1 year</em><br>
+&lt;/IfModule><br>
+
+<em># Enable text compression</em><br>
+&lt;IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css <em># Compresses HTML, plain text, XML, and CSS files</em><br>
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/xml <em># Compresses JavaScript and XML files</em><br>
+&lt;/IfModule><br>
+
+<em># Minify CSS</em><br>
+&lt;IfModule mod_filter.c>
+    FilterDeclare "DEFLATE" <em># Declares the filter for minifying content</em><br>
+    FilterProvider DEFLATE png|gif|jpg|jpeg|webp|css|js|xml|html <em># Applies the minify filter to specific file types</em><br>
+    FilterChain DEFLATE <em># Minifies content by default</em><br>
+&lt;/IfModule><br>
+                                        
+                </code>
+            </div>
+        </div>
+
+        <p><em><strong>IMPORTANT!</strong></em> Replace <em>domain.com</em> with your actual domain name <em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net)</em>.</p>
+
+        <p>Replace <em>0.0.0.0</em> with your actual IPv4 address. You can find it using the <em>ifconfig</em> or <em>ip a</em> command, or check your server details.</p>
+
+        <p>Replace or delete <em>[1:1:1:1:1:1:1:1]</em> with your actual IPv6 address (if applicable). If you don’t use IPv6, you can safely remove this line.</p>
+
+        <p>Ensure your DNS settings point to the correct IP address for your domain. You can configure DNS settings via your hosting provider's dashboard.</p>
+
+        <h2 id="robots-txt">Step 5: Robots TXT File Example</h2>
+        <p>Ensure your site is SEO-friendly by configuring your robots.txt file:</p>
+        <div class="grid-container">
+            <div class="flex-row">
+                <label>robots.txt</label>
+                <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+                <code>
+User-agent: *<br>
+Disallow: /private/<br>
+Allow: /public/<br>
+Sitemap: https://domain.com/sitemap.xml
+                </code>
+            </div>
+        </div>
+        <p><em><strong>IMPORTANT!</strong></em> Replace <em>domain.com</em> with your actual domain name <em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net)</em>.</p>
+
+        <h2 id="sitemap-xml">Step 6: XML Sitemap Example</h2>
+        <p>Before requesting indexing for your site, ensure your sitemap file is the last item you create, confirming all settings and pages are complete. Here's an example of how to format your sitemap for optimal search engine indexing:</p>
+        <div class="grid-container">
+        <div class="flex-row">
+            <label>sitemap.xml</label>
+            <button class="copy-btn">Copy Code</button>
+        </div>
+        <div class="code-row">
+            <code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt; <em>&lt;!-- XML declaration --&gt;</em><br>
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"&gt; <em>&lt;!-- URL Set Declaration --&gt;</em><br>
+&lt;!-- Created with Free Online Sitemap Generator www.xml-sitemaps.com --&gt; <em>&lt;!-- Sitemap Generator Comment --&gt;</em><br>
+&lt;url&gt; <em>&lt;!-- Start URL entry --&gt;</em><br>
+&lt;loc&gt;https://domain.com/&lt;/loc&gt; <em>&lt;!-- Homepage URL --&gt;</em><br>
+&lt;lastmod&gt;2024-08-13T12:36:05+00:00&lt;/lastmod&gt; <em>&lt;!-- Last Modified Date --&gt;</em><br>
+&lt;priority&gt;1.00&lt;/priority&gt; <em>&lt;!-- Priority = 1.00 for the main page ONLY --&gt;</em><br>
+&lt;/url&gt; <em>&lt;!-- End URL entry --&gt;</em><br>
+&lt;url&gt; <em>&lt;!-- Start another URL entry --&gt;</em><br>
+&lt;loc&gt;https://domain.com/page1.html&lt;/loc&gt; <em>&lt;!-- Page 1 URL --&gt;</em><br>
+&lt;lastmod&gt;2024-10-24T04:19:18+00:00&lt;/lastmod&gt; <em>&lt;!-- Last Modified Date --&gt;</em><br>
+&lt;priority&gt;0.80&lt;/priority&gt; <em>&lt;!-- Priority = 0.8-0.9 for Important pages like Services, Categories --&gt;</em><br>
+&lt;changefreq&gt;monthly&lt;/changefreq&gt; <em>&lt;!-- Change Frequency from never, yearly, monthly, weekly... --&gt;</em><br>
+&lt;image:image&gt; <em>&lt;!-- Start Image --&gt;</em><br>
+&lt;image:loc&gt;https://domain.com/images/image1.webp&lt;/image:loc&gt; <em>&lt;!-- Image Location --&gt;</em><br>
+&lt;image:caption&gt;image_caption_text_here&lt;/image:caption&gt; <em>&lt;!-- Image Caption --&gt;</em><br>
+&lt;image:title&gt;Image_title_goes_here&lt;/image:title&gt; <em>&lt;!-- Image Title --&gt;</em><br>
+&lt;/image:image&gt; <em>&lt;!-- End Image --&gt;</em><br>
+&lt;/url&gt; <em>&lt;!-- End URL entry --&gt;</em><br>
+&lt;url&gt; <em>&lt;!-- Start another URL entry --&gt;</em><br>
+&lt;loc&gt;https://domain.com/page2.html&lt;/loc&gt; <em>&lt;!-- Page 2 URL --&gt;</em><br>
+&lt;lastmod&gt;2024-08-04&lt;/lastmod&gt; <em>&lt;!-- Last Modified Date --&gt;</em><br>
+&lt;priority&gt;0.6-0.7&lt;/priority&gt; <em>&lt;!-- Priority = 0.6-0.7 for frequently updated pages like blog articles --&gt;</em><br>
+&lt;changefreq&gt;monthly&lt;/changefreq&gt; <em>&lt;!-- Change Frequency ... till daily, hourly, always for live news --&gt;</em><br>
+&lt;/url&gt; <em>&lt;!-- End URL entry --&gt;</em><br>
+&lt;!-- Add more URLs here for other pages --&gt; <em>&lt;!-- Comment for adding more URLs --&gt;</em><br>
+&lt;/urlset&gt; <em>&lt;!-- End URL Set --&gt;</em><br>                
+            </code>
+        </div>
+        </div>
+        <p><em><strong>IMPORTANT! </strong></em>Replace <em>domain.com</em> to your domain name <em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net) as well as check all locations https://, page1, page2, image1, image_caption_text_here and other ...</em></p>
+
+        
+        <h2>Conclusion: Why Nginx is a Game-Changer for Web Hosting</h2>
+        <p>
+            To wrap up, Nginx’s growing popularity in the web hosting world is no surprise, given its impressive performance, low resource consumption, and versatile capabilities. By following this guide to set up, configure, and optimize Nginx, you can leverage its full potential to handle high-traffic websites and complex workloads efficiently. Choosing the right server, configuring Nginx properly, and integrating essential tools like robots.txt and XML sitemaps will greatly enhance your site’s speed and SEO performance.
+        </p>
+    
+        <!-- <div class="item">
+            <h3 class="dancing-text">
+                <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span> 
+                <span>a</span><span>n</span><span>y</span><span>t</span><span>h</span><span>i</span><span>n</span><span>g</span><span>?</span>
+            </h3>
+            <form action="../send_email.php" method="post">
+                <input type="email" id="email" name="email" placeholder="your-email@example.com" autocomplete="email" required><br><br>
+                <textarea id="message" name="message" rows="2" placeholder="Your question..." required></textarea><br><br>
+                <input type="submit" value="Send" class="sendEmail">
+            </form>
+        </div> -->
+
+        <a href="../website/web-dev-tools.html">
+            <div class="item">
+                <h3>My Go-To Web Arsenal</h3>
+                <img src="../website/450-website-development-tools-and-services.jpg" alt="Website Development Tools list" title="Website Development Tools and Services" loading="lazy">
+            </div>
+        </a>        
+
+        <a href="../website/joksglobalsport.com.html"><div class="item">
+            <h3>Football Academy site example</h3>
+            <img src="../website/home-joksglobalsport.com.webp" alt="joksglobalsport.com football academy hero section" title="joksglobalsport landing page, hero section with banner" loading="lazy">
+        </div></a>
+    
+        <a href="../website/japalandia.com.html"><div class="item">
+            <h3>Japalandia work abroad Landing Page</h3>
+            <img src="../website/home-1-screen-japalandia.webp" alt="Japalandia home section with Call To Action Button" title="Japalandia landing page, hero section with banner for work abroad" loading="lazy">
+        </div></a>
+    
+        <a href="../website/virgincourtesans.com.html"><div class="item">
+            <h3>Model Agency site example</h3>
+            <img src="../website/Gallery-preview-using-the-post-grid-plugin-wordpress.webp" alt="VirginCourtesans.com model agency gallery" title="VirginCourtesans.com Models gallery preview" loading="lazy">
+        </div></a>
+
+    </div> <!-- article-container END -->
+
+    <!-- Background script -->
+    <script src="../background.js"></script>
+    <script src="../scripts/style-toggle.js"></script>
+    <script src="../scripts/copy-btn.js"></script>
+    <script src="../scripts/youtube-placeholder.js"></script>
+
+</body>
+</html>

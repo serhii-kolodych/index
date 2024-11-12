@@ -2,10 +2,21 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" id="stylesheet" href="../styles.css">
+
+    <!-- Cookies Load or NOT -->
+    <script>
+        // Load tracking.js if user has agreed
+        window.onload = function() {
+            if (localStorage.getItem('buttonColor') === 'green') {
+                var script = document.createElement('script');
+                script.src = "../tracking.js"; // Path to your tracking.js file
+                document.head.appendChild(script);
+            }
+        };
+    </script>
     <!-- Favicon start here -->
     <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -67,58 +78,21 @@
     <meta name="twitter:site" content="@serhiikolodych"> 
     <!-- END Twitter Card Tags -->
 
-    <!-- Favicon start here -->
-    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-    <link rel="manifest" href="../manifest.json">
-    <!-- Favicon ends here -->
-
-    <!-- Cookies Load or NOT -->
-    <!-- Load the tracking.js file -->
-    <script src="../tracking.js"></script>
-    <script>
-    function cookies_manager() {
-        var savedColor = localStorage.getItem('buttonColor');
-
-        if (savedColor) {
-            // Load scripts if the user has agreed
-            if (savedColor === 'green') {
-                loadTrackingScripts();
-            }
-        }
-    }
-
-    // Ensure the cookies_manager function is called when the window loads
-    window.onload = cookies_manager;
-    </script>
-
     <title>Behind the Scenes: The Development of the Joks Global Sport Website</title>
     <meta name="description" content="Create a winning sports site! ☆ Learn to set up WordPress. ⇒ Pick perfect themes. ✓ Build engaging content with this friendly guide. ❤">
     <meta name="keywords" content="WordPress Developer, Website Development, Custom WordPress Solutions, WordPress SEO Optimization">
-    <link rel="stylesheet" id="stylesheet" href="../styles.css">
     <link rel="canonical" href="https://kolodych.com/website/joksglobalsport.com.html" >
 
 </head>
 
 <body>
     <!-- Background Canvas -->
-    <canvas id="c" style="z-index: 0; opacity: 1;"></canvas>
+    <canvas id="c" class="cZero" ></canvas>
 
     <div id="back-to-home">Back to Home</div>
 
     <a href="#" id="change-style-link">White</a>
-    <div id="copied">Copied.</div>
+
 
     <!-- Article Container -->
     <div class="article-container">
@@ -200,15 +174,31 @@
         <img src="promotion-joksglobalsport.com.webp" alt="Players Promotion Carousel setup" title="Setting up the Players Promotion Carousel" loading="lazy">
 
         <p>If you want to use the same setup, copy and paste the shortcode below into your WordPress site:</p>
-        <div>
-            <code>[bdp_post_carousel design="design-2" show_date="false" show_author="false" ...]</code>
-            <button class="copy-button" onclick="copyToClipboard()">Copy</button>
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Code:</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>[bdp_post_carousel design="design-2" show_date="false" show_author="false" show_tags="false" show_comments="false" show_category="false" show_content="true" content_words_limit="28" media_size="medium" category="players"]</code>
+            </div>
         </div>
         
         <h3>Article Listings (Blog)</h3>
         <p>
-            I also used the Blog Designer Pack shortcode <code>[bdp_post_list show_author="false" show_comments="false" category="articles"]</code>
-            <button class="copy-button" onclick="copyToClipboard2()">Copy</button> to display recent articles. This feature helps improve website ranking on Google by keeping users informed about the latest news in football development and training.
+            I also used the Blog Designer Pack shortcode </p>
+
+        <div class="grid-container">
+            <div class="flex-row">
+                <label>Code:</label>
+                <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+                <code>[bdp_post_list show_author="false" show_comments="false" category="articles"]</code>
+            </div>
+        </div>
+
+        <p> to display recent articles. This feature helps improve website ranking on Google by keeping users informed about the latest news in football development and training.
         </p>
         <img src="articles-joksglobalsport.com.webp" alt="Article Listings setup" title="Displaying recent articles with a post list shortcode" loading="lazy">
 
@@ -237,8 +227,20 @@
         <img src="join-us-joksglobalsport.com.webp" alt="Join Us page on Button click adding popup form to apply" title="Assigning onClick for Button to show the Popup Form" loading="lazy">
 
         <p>
-            As for the <strong>Blog page</strong>, I set it up with a masonry layout using the shortcode: <code>[bdp_masonry show_author="false" show_tags="false" ...]</code>
-            <button class="copy-button" onclick="copyToClipboard3()">Copy</button>, providing insights, updates, and articles that reflect the academy's expertise and commitment to the sport. This setup ensures a visually appealing and organized display of blog posts.
+            As for the <strong>Blog page</strong>, I set it up with a masonry layout using the shortcode: 
+        </p>    
+
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Code:</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>[bdp_masonry show_author="false" show_tags="false" show_comments="false" content_words_limit="30"]</code>
+            </div>
+        </div>
+        
+        <p>providing insights, updates, and articles that reflect the academy's expertise and commitment to the sport. This setup ensures a visually appealing and organized display of blog posts.
         </p>
         
         <img src="blog-contact-us-joksglobalsport.com.webp" alt="Blog page is just Blog Designer Pack shortcode mansory layout and contact page with form and map" title="Blog and Contact Us pages with posts, contact form, and map" loading="lazy">
@@ -315,100 +317,10 @@
 
     </div>
 
-    <!-- JavaScript to Copy the Shortcodes -->
-    <script>
-        function copyToClipboard() {
-            navigator.clipboard.writeText('[bdp_post_carousel design="design-2" show_date="false" show_author="false" show_tags="false" show_comments="false" show_category="false" show_content="true" content_words_limit="28" media_size="medium" category="players"]')
-            .then(function() {
-                var copiedElement = document.getElementById('copied');
-                copiedElement.style.display = 'block';
-
-                // Hide the element after 2 seconds
-                setTimeout(function() {
-                    copiedElement.style.display = 'none';
-                }, 2000); // 2000 milliseconds = 2 seconds
-            })
-            .catch(function(error) {
-                console.error('Copy failed', error);
-            });
-        }
-        function copyToClipboard2() {
-            navigator.clipboard.writeText('[bdp_post_list show_author="false" show_comments="false" category="articles"]')
-            .then(function() {
-                var copiedElement = document.getElementById('copied');
-                copiedElement.style.display = 'block';
-
-                // Hide the element after 2 seconds
-                setTimeout(function() {
-                    copiedElement.style.display = 'none';
-                }, 2000); // 2000 milliseconds = 2 seconds
-            })
-            .catch(function(error) {
-                console.error('Copy failed', error);
-            });
-        }
-        function copyToClipboard3() {
-            navigator.clipboard.writeText('[bdp_masonry show_author="false" show_tags="false" show_comments="false" content_words_limit="30"]')
-            .then(function() {
-                var copiedElement = document.getElementById('copied');
-                copiedElement.style.display = 'block';
-
-                // Hide the element after 2 seconds
-                setTimeout(function() {
-                    copiedElement.style.display = 'none';
-                }, 2000); // 2000 milliseconds = 2 seconds
-            })
-            .catch(function(error) {
-                console.error('Copy failed', error);
-            });
-        }
-    </script>
-
-
     <!-- Background script -->
     <script src="../background.js"></script>
-
-  
-    <script>
-        // Set the initial style based on local storage
-        var whiteState = localStorage.getItem('white') || '0'; // Default to '0'
-        var currentStyle = (whiteState === '1') ? '../styles-white.css' : '../styles.css';
-        document.getElementById('stylesheet').setAttribute('href', currentStyle);
-    
-        // Control the canvas visibility based on the initial stylesheet
-        var canvas = document.getElementById('c');
-        canvas.style.opacity = (whiteState === '1') ? "0" : "1";
-    
-        document.addEventListener('DOMContentLoaded', function() {
-            var link = document.getElementById('change-style-link');
-            var stylesheet = document.getElementById('stylesheet');
-    
-            // Set the link text based on the current style
-            link.textContent = (whiteState === '1') ? "Matrix" : "White";
-    
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-    
-                // Toggle the style state
-                if (whiteState === '0') {
-                    whiteState = '1'; // Switch to white stylesheet
-                    currentStyle = '../styles-white.css';
-                    canvas.style.opacity = "0"; // Hide the canvas
-                    link.textContent = "Matrix";
-                } else {
-                    whiteState = '0'; // Switch back to default stylesheet
-                    currentStyle = '../styles.css';
-                    canvas.style.opacity = "1"; // Show the canvas
-                    link.textContent = "White";
-                }
-    
-                // Update the stylesheet and local storage
-                stylesheet.setAttribute('href', currentStyle);
-                localStorage.setItem('white', whiteState); // Save the current state
-            });
-        });
-    </script>
+    <script src="../scripts/style-toggle.js"></script>
+    <script src="../scripts/copy-btn.js"></script>
 
 </body>
-
 </html>
