@@ -73,20 +73,13 @@
 </head>
 
 <body>
-    <canvas id="c" style="z-index: -5; opacity: 1;"></canvas>
+    <canvas id="c" class="c-5"></canvas>
 
     <!-- <script src="background-white.js"></script> -->
     <!-- <script src="zoom.js"></script> -->
 
     <!-- Load the appropriate background script based on the whiteState -->
-    <script>
-        var whiteState = localStorage.getItem('white') || '0'; // Default to '0'
-        var bgScript = document.createElement('script');
-        bgScript.id = 'backgroundScript'; // Set an ID for the script
-        bgScript.src = (whiteState === '1') ? 'background-white.js' : 'background.js';
-        document.body.appendChild(bgScript); // Append the background script
-    </script>
-    
+    <script src="scripts/index-1.js"></script>
 
     <h1 id="heading">Serhii Kolodych's Web Development and Automation Projects</h1>
     
@@ -108,7 +101,7 @@
                 <button id="noButton" class="response-button" data-color="red">No</button>
             </div>
             <!-- Hidden paragraph for feedback -->
-            <p id="feedbackMessage" class="feedback-message" style="display: none;">Thank you for your feedback!</p>
+            <p id="feedbackMessage" class="feedback-message none-display">Thank you for your feedback!</p>
             <a href="website/this-site-uses-cookies.html">
                 <div class="imgcontainer">
                     <img src="src/450-cookie-image.jpg" width="450" height="240" title="This Site Uses Cookies (kolodych.com)" alt="Image of a desktop setup with a laptop, smartphone, mouse, keyboard, and cookies on a plate">
@@ -218,7 +211,7 @@
         </div>
 
         <!-- Muuvies Telegram Bot ITEM -->
-        <div class="box" style="--s: 424px;">
+        <div class="box s-424">
             <i></i> 
             <p>
                 Explore the Muuvies Telegram Bot, a cutting-edge tool designed to transform your movie-watching journey. This bot provides dynamic movie recommendations, allows you to organize your watchlist, and integrates Google image fetching to get the latest movie posters. It highlights my proficiency in Python and automation for Telegram bots, delivering a seamless and interactive experience for users who love movies.
@@ -230,7 +223,7 @@
         </div>
 
         <!-- ASOS Search Bot ITEM -->
-        <div class="box" style="--s: 424px;">
+        <div class="box s-424">
             <i></i> 
             <p>
                 Unveil the ASOS Search Bot, a cutting-edge Python script designed to monitor and track product discounts on ASOS, providing users with instant notifications. This tool utilizes automated web scraping to keep tabs on price changes and delivers timely updates to help users capitalize on the latest deals. It showcases my skills in Python programming and web scraping, creating an effective solution for real-time product tracking and alerting.
@@ -242,7 +235,7 @@
         </div>
 
         <!-- YouTube Tutorials ITEM -->
-        <div class="box" style="--s: 389px;">
+        <div class="box s-389">
             <i></i> 
             <p>
                 Discover how to build an efficient Python web scraper using JSON. This tutorial covers the essentials of scraping data from websites, parsing JSON responses, and storing the data for further analysis. Learn practical techniques for extracting and processing web data, with real-world examples and best practices.
@@ -254,7 +247,7 @@
         </div>
 
         <!-- Services ITEM -->
-        <div class="box" style="--s: 340px;">
+        <div class="box s-340">
             <i></i> 
             <h2>Service Pricing</h2>
             <p>Landing Page / Home (WordPress) = 80 Euro</p>
@@ -263,7 +256,7 @@
             <p>Hourly Rate = 10 Euro</p>
         </div>
 
-        <div class="box social-container" style="--s: 340px;">
+        <div class="box social-container s-340">
             <i></i> 
             <a href="mailto:kolodych@hotmail.com">
                 <img src="src/mail-part-3-svgrepo-com.svg" width="68" height="68" alt="Email">
@@ -305,136 +298,9 @@
         </div> -->
     
     </div>
-    
-    <script>
-        // Function to manage cookies based on user selection
-        function cookiesManager() {
-            const savedColor = localStorage.getItem('buttonColor');
 
-            // Load tracking scripts if user has previously agreed
-            if (savedColor === 'green') {
-                const script = document.createElement('script');
-                script.src = 'tracking.js';
-                script.async = true; // Optional, to load asynchronously
-                document.head.appendChild(script);
-            }
-        }
-
-        // Function to apply button styles and show feedback message
-        function applyButtonStyles() {
-            const savedColor = localStorage.getItem('buttonColor');
-            const savedDateTime = localStorage.getItem('dateTime');
-            const feedbackMessage = document.getElementById('feedbackMessage');
-
-            // Display saved timestamp if available
-            if (savedDateTime) {
-                feedbackMessage.textContent = savedDateTime;
-                feedbackMessage.style.display = 'block';
-            }
-
-            // Style buttons based on saved color preference
-            if (savedColor) {
-                document.querySelectorAll('.response-button').forEach(button => {
-                    button.classList.toggle('active', button.dataset.color === savedColor);
-                });
-
-                // Update feedback message based on user's choice
-                const message = savedColor === 'green'
-                    ? 'You agreed to use cookies on your device. Date and time:'
-                    : 'You blocked this site from saving cookies on your device. Date and time:';
-                showFeedback(message);
-            }
-        }
-
-        // Function to show feedback message with timestamp
-        function showFeedback(message) {
-            const feedbackMessage = document.getElementById('feedbackMessage');
-            const dateTime = new Date().toLocaleString();
-            const fullMessage = `${message} ${dateTime}`;
-
-            // Save feedback message and timestamp
-            localStorage.setItem('dateTime', fullMessage);
-
-            // Display the feedback message
-            feedbackMessage.textContent = fullMessage;
-            feedbackMessage.style.display = 'block';
-        }
-
-        // Function to handle button clicks and store preference
-        function handleButtonClick(color) {
-            const message = color === 'green'
-                ? 'You agreed to use cookies on your device. Date and time:'
-                : 'You blocked this site from saving cookies on your device. Date and time:';
-
-            // Store selected color in local storage
-            localStorage.setItem('buttonColor', color);
-
-            // Apply button styles
-            applyButtonStyles();
-
-            // Show feedback message with timestamp
-            showFeedback(message);
-
-            // Load tracking scripts if user agrees (green)
-            if (color === 'green') {
-                const script = document.createElement('script');
-                script.src = 'tracking.js';
-                script.async = true; // Optional, to load asynchronously
-                document.head.appendChild(script);
-                console.log("yes tracking.js 🍀 🐸");
-            }
-        }
-
-        // Set up event listeners for the buttons
-        document.getElementById('yesButton').addEventListener('click', function() {
-            handleButtonClick('green');
-        });
-        document.getElementById('noButton').addEventListener('click', function() {
-            handleButtonClick('red');
-        });
-
-        // Apply styles and load tracking scripts on page load if applicable
-        window.onload = function() {
-            applyButtonStyles();
-            cookiesManager();
-        };
-    </script>
-
-
-
-    <script>
-        // Set the initial style based on local storage
-        var currentStyle = (whiteState === '1') ? 'styles-white.css' : 'styles.css';
-        document.getElementById('stylesheet').setAttribute('href', currentStyle);
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var link = document.getElementById('change-style-link');
-            var stylesheet = document.getElementById('stylesheet');
-
-            // Set the link text based on the current style
-            link.textContent = (whiteState === '1') ? "Matrix" : "White";
-
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                // Toggle the style state
-                whiteState = (whiteState === '0') ? '1' : '0'; // Toggle state
-                currentStyle = (whiteState === '1') ? 'styles-white.css' : 'styles.css';
-                link.textContent = (whiteState === '1') ? "Matrix" : "White"; 
-
-                // Update the stylesheet and local storage
-                stylesheet.setAttribute('href', currentStyle);
-                localStorage.setItem('white', whiteState); // Save the current state
-
-                // Change the background script source
-                var bgScript = document.getElementById('backgroundScript');
-                bgScript.src = (whiteState === '1') ? 'background-white.js' : 'background.js';
-
-                // Refresh the page to load the new background script
-                location.reload();
-            });
-        });
-    </script>
+    <script src="scripts/index-2.js"></script>
+    <script src="scripts/index-3.js"></script>
     
 </body>
 </html>

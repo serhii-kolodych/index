@@ -33,6 +33,12 @@ a:visited{
   opacity: 1;
 }
 
+.c-5 {
+  z-index: -5; 
+  opacity: 1;
+
+}
+
 em {
   /* color: #515154; */
   color: #FF7043;
@@ -197,6 +203,27 @@ text-align:justify;
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 
 }
+
+.s-424{
+  --s: 424px;
+}
+
+.s-389{
+  --s: 389px;
+}
+
+.s-340{
+  --s: 340px;
+}
+
+.s-424{
+  --s: 424px;
+}
+
+.none-display{
+  display: none;
+}
+
 
 .box i,
 .box::before {

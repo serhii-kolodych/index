@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+  <url>
+    <loc>https://kolodych.com/</loc>
+    <lastmod>2024-08-13T12:36:05+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://kolodych.com/articles/first-telegram-bot.html</loc>
+    <lastmod>2024-10-24T04:19:18+00:00</lastmod>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://kolodych.com/articles/creating_a_telegram_bot_token_api.webp</image:loc>
+      <image:caption>How to use BotFather's /newbot command for creating a Telegram bot</image:caption>
+      <image:title>BotFather /newbot Command for making a Telegram bot</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/articles/Amazon-books-authors-emails-social-profiles-sites-contacts.webp</image:loc>
+      <image:caption>Spreadsheet containing useful links alongside gibberish text</image:caption>
+      <image:title>Raw data extracted by Amazon scraper</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kolodych.com/website/virgincourtesans.com.html</loc>
+    <lastmod>2024-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://kolodych.com/website/header-builder-astra-wordpress.webp</image:loc>
+      <image:caption>Customizing header in Astra theme</image:caption>
+      <image:title>Header Customization in WordPress</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/footer-builder-astra-wordpress.webp</image:loc>
+      <image:caption>Editing footer layout in WordPress</image:caption>
+      <image:title>Footer Customization in Astra Theme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/the-post-grid-hover-layout-wordpress.webp</image:loc>
+      <image:caption>Virgin Courtesans gallery setup</image:caption>
+      <image:title>Gallery Setup with The Post Grid Plugin</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/Gallery-preview-using-the-post-grid-plugin-wordpress.webp</image:loc>
+      <image:caption>Gallery preview using The Post Grid plugin</image:caption>
+      <image:title>Gallery with The Post Grid plugin</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/Page-editor-wordpress-add-shortcode.webp</image:loc>
+      <image:caption>Embedding gallery with The Post Grid plugin</image:caption>
+      <image:title>Gallery Embedding Process</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/contact-form-7-email-subscription-wordpress.webp</image:loc>
+      <image:caption>Creating contact form with Contact Form 7</image:caption>
+      <image:title>Contact Form Setup in WordPress</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/virgin-courtesans-post.webp</image:loc>
+      <image:caption>Using Duplicate Page and Post plugin for consistency</image:caption>
+      <image:title>Post as a model page in WordPress</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/pagespeed-virgincourtesans.com-august-11-2024.webp</image:loc>
+      <image:caption>Website performance testing with Google PageSpeed Insights</image:caption>
+      <image:title>Testing and optimizing site performance</image:title>
+    </image:image>
+  </url>
+
+  <url>
+      <loc>https://kolodych.com/website/joksglobalsport.com.html</loc>
+      <lastmod>2024-08-15T00:00:00+00:00</lastmod>
+      <priority>0.50</priority>
+      <changefreq>monthly</changefreq>
+      <image:image>
+          <image:loc>https://kolodych.com/website/home-joksglobalsport.com.webp</image:loc>
+          <image:caption>Joks Global Sport homepage design</image:caption>
+          <image:title>Designing the homepage with a football match image</image:title>
+      </image:image>
+      <image:image>
+          <image:loc>https://kolodych.com/website/about-joksglobalsport.com.webp</image:loc>
+          <image:caption>Joks Global Sport About Us section</image:caption>
+          <image:title>Building the About Us section</image:title>
+      </image:image>
+      <image:image>
+          <image:loc>https://kolodych.com/website/promotion-joksglobalsport.com.webp</image:loc>
+          <image:caption>Players Promotion Carousel setup</image:caption>
+          <image:title>Setting up the Players Promotion Carousel</image:title>
+      </image:image>
+      <image:image>
+          <image:loc>https://kolodych.com/website/articles-joksglobalsport.com.webp</image:loc>
+          <image:caption>Article Listings setup</image:caption>
+          <image:title>Displaying recent articles with a post list shortcode</image:title>
+      </image:image>
+      <image:image>
+          <image:loc>https://kolodych.com/website/form-joksglobalsport.com.webp</image:loc>
+          <image:caption>Join Us page adding popup form to apply</image:caption>
+          <image:title>Creating and managing the Popup Form</image:title>
+      </image:image>
+      <image:image>
+          <image:loc>https://kolodych.com/website/join-us-joksglobalsport.com.webp</image:loc>
+          <image:caption>Join Us page on button click adding popup form to apply</image:caption>
+          <image:title>Assigning onClick for Button to show the Popup Form</image:title>
+      </image:image>
+      <image:image>
+          <image:loc>https://kolodych.com/website/blog-contact-us-joksglobalsport.com.webp</image:loc>
+          <image:caption>Blog page with Blog Designer Pack shortcode masonry layout and Contact page with form and map</image:caption>
+          <image:title>Blog and Contact Us pages with posts, contact form, and map</image:title>
+      </image:image>
+      <image:image>
+          <image:loc>https://kolodych.com/website/shop-joksglobalsport.com.webp</image:loc>
+          <image:caption>Shop page setup using WooCommerce plugin</image:caption>
+          <image:title>Adding WooCommerce plugin to create and manage the Shop page</image:title>
+      </image:image>
+      <image:image>
+          <image:loc>https://kolodych.com/website/page-speed-joksglobalsport.com.webp</image:loc>
+          <image:caption>Website performance optimization with Google PageSpeed Insights</image:caption>
+          <image:title>Optimizing site performance with Google PageSpeed Insights</image:title>
+      </image:image>
+  </url>
+
+  <url>
+    <loc>https://kolodych.com/website/japalandia.com.html</loc>
+    <lastmod>2024-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://kolodych.com/website/home-1-screen-japalandia.webp</image:loc>
+      <image:caption>Hero Section with 'Unlock Boundless Opportunities Abroad' headline</image:caption>
+      <image:title>JapaLandia Hero Section</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/home-2-services-japalandia.webp</image:loc>
+      <image:caption>Services Section with Job Placement, Work Permits, and Residence Permits</image:caption>
+      <image:title>JapaLandia Services Section</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/home-3-about-japalandia.webp</image:loc>
+      <image:caption>About Us Section highlighting JapaLandia's mission and values</image:caption>
+      <image:title>JapaLandia About Us Section</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/home-4-CTA-japalandia.webp</image:loc>
+      <image:caption>Call to Action Section with 'Take The First Step Today' CTA</image:caption>
+      <image:title>JapaLandia Call to Action Section</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/home-5-portfolio-japalandia.webp</image:loc>
+      <image:caption>Portfolio and Success Stories showcasing client outcomes</image:caption>
+      <image:title>JapaLandia Portfolio and Success Stories</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/home-6-why-choose-japalandia.webp</image:loc>
+      <image:caption>Why Choose Us Section with unique value propositions</image:caption>
+      <image:title>JapaLandia Why Choose Us Section</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/home-7-comments-japalandia.webp</image:loc>
+      <image:caption>Client Testimonials section with positive feedback</image:caption>
+      <image:title>JapaLandia Testimonials</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/home-8-cta-final-japalandia.webp</image:loc>
+      <image:caption>Final Call to Action Section with 'GET STARTED' button</image:caption>
+      <image:title>JapaLandia Final Call to Action</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kolodych.com/website/this-site-uses-cookies.html</loc>
+    <lastmod>2024-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <image:image>
+      <image:loc>https://kolodych.com/website/cookies-developer-tools-opera.webp</image:loc>
+      <image:caption>Cookies in the browser Opera at the Google website to manage user authentication and sessions</image:caption>
+      <image:title>Website cookies by Google in Opera Developer Tools</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kolodych.com/website/web-dev-tools.html</loc>
+    <lastmod>2024-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://kolodych.com/website/ImageResizer-jpg-custom-size-for-DeadLinkCheker-screenshot.webp</image:loc>
+      <image:caption>Image Resizer custom size for Dead Link Checker</image:caption>
+      <image:title>Image Resizer Tool for Image Optimization</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/DeadLinkChecker-for-kolodych.com-website-2-broken-links-manifest.webp</image:loc>
+      <image:caption>Dead Link Checker results for kolodych.com</image:caption>
+      <image:title>Dead Link Checker Tool for Broken Link Management</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/pagespeed-web-dev-insights-first-screen-kolodych.com.webp</image:loc>
+      <image:caption>First screen of Google PageSpeed Insights</image:caption>
+      <image:title>PageSpeed Insights Performance Overview</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/pagespeed-web-dev-insights-second-screen-kolodych.com.webp</image:loc>
+      <image:caption>Second screen of Google PageSpeed Insights</image:caption>
+      <image:title>Detailed Suggestions from PageSpeed Insights</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/seobility-seo-check-overview-kolodych.com.webp</image:loc>
+      <image:caption>Seobility SEO Check Overview for kolodych.com</image:caption>
+      <image:title>Seobility Tool for SEO Assessment</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/yellow-lab-tools-analysis-dashboard.webp</image:loc>
+      <image:caption>Yellow Lab Tools Analysis Dashboard</image:caption>
+      <image:title>Yellow Lab Tools for Performance Evaluation</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kolodych.com/articles/nginx.html</loc>
+    <lastmod>2024-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+        <image:loc>https://kolodych.com/articles/nginx-status.webp</image:loc>
+        <image:caption>Guide to installing and configuring Nginx server</image:caption>
+        <image:title>Nginx server installation and setup guide</image:title>
+    </image:image>
+  </url>
+
+
+  <url>
+    <loc>https://kolodych.com/robots.txt</loc>
+    <lastmod>2024-10-25</lastmod> 
+    <priority>0.1</priority> 
+  </url>
+
+</urlset>

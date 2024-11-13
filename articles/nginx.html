@@ -7,17 +7,8 @@
     <link rel="stylesheet" id="stylesheet" href="../styles.css">
 
     <!-- Cookies Load or NOT -->
-    <script>
-        // Load tracking.js if user has agreed
-        window.onload = function() {
-            if (localStorage.getItem('buttonColor') === 'green') {
-                var script = document.createElement('script');
-                script.src = "../tracking.js"; // Path to your tracking.js file
-                document.head.appendChild(script);
-            }
-        };
-    </script>
-    
+    <script src="../scripts/load-tracking.js"></script>
+
     <!-- Favicon start here -->
     <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -411,6 +402,12 @@ server {<br>
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;  <em># Required for PHP to work correctly</em><br>
         include fastcgi_params;  <em># Includes standard fastcgi parameters</em><br>
     }<br>
+
+    <em># Cache CSS, JS, images, fonts, and HTML files for 30 days</em><br>
+    location ~* \.(css|js|jpg|jpeg|png|gif|ico|svg|webp|woff|woff2|ttf|eot|html)$ {<br>
+        expires 30d;<br>
+        add_header Cache-Control "public";<br>
+    } <br>
 
     <em># Optional: Adjust client upload size if necessary</em><br>
     client_max_body_size 10M;  <em># Set maximum upload size to 10MB</em><br>
