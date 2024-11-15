@@ -33,6 +33,11 @@ a:visited{
   opacity: 1;
 }
 
+.c-1 {
+  z-index: -1; 
+
+}
+
 .c-5 {
   z-index: -5; 
   opacity: 1;
@@ -556,6 +561,8 @@ form input[type="submit"]:hover {
   cursor: pointer;
 }
 
+/* TABLE 1 */
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -581,6 +588,95 @@ caption {
   max-width: 100%;
   overflow-x: auto; /* This is a fallback in case content does overflow */
 }
+
+
+/* TABLE 2 */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  table-layout: fixed;
+  font-family: Arial, sans-serif;
+  color: #333;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid rgba(200, 200, 200, 0.5);
+}
+
+thead th:nth-child(1) {
+  background-color: rgba(247, 183, 49, 0.3); /* Slightly darker yellow */
+}
+
+thead th:nth-child(2) {
+  background-color: rgba(255, 234, 167, 0.3); /* Slightly darker light yellow */
+}
+
+thead th:nth-child(3) {
+  background-color: rgba(85, 239, 196, 0.3); /* Slightly darker light green */
+}
+
+thead th:nth-child(4) {
+  background-color: rgba(116, 185, 255, 0.3); /* Slightly darker light blue */
+}
+
+thead th:nth-child(5) {
+  background-color: rgba(253, 203, 110, 0.3); /* Slightly darker light orange */
+}
+
+thead th:nth-child(6) {
+  background-color: rgba(162, 155, 254, 0.3); /* Slightly darker lavender */
+}
+
+thead th:nth-child(7) {
+  background-color: rgba(250, 177, 160, 0.3); /* Slightly darker light pink */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(249, 249, 249, 0.5);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+td:nth-child(2) {
+  background-color: rgba(255, 234, 167, 0.2); /* very light yellow */
+}
+
+td:nth-child(3) {
+  background-color: rgba(85, 239, 196, 0.2); /* very light green */
+}
+
+td:nth-child(4) {
+  background-color: rgba(116, 185, 255, 0.2); /* very light blue */
+}
+
+td:nth-child(5) {
+  background-color: rgba(253, 203, 110, 0.2); /* light orange */
+}
+
+td:nth-child(6) {
+  background-color: rgba(162, 155, 254, 0.2); /* lavender */
+}
+
+td:nth-child(7) {
+  background-color: rgba(250, 177, 160, 0.2); /* light pink */
+}
+
+tbody tr:hover {
+  background-color: rgba(241, 242, 246, 0.5); /* very light gray on hover */
+}
+
+
+
+/* TABLE 3 */
 
 
 /* Button styles */

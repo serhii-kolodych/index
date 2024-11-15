@@ -231,7 +231,7 @@
 
         <h2 id="nginx-configuration">Step 2: Configuring Nginx for optimal performance.</h2>
       
-        <p>Once you have your VPS set up, install Nginx with the following commands:</p>
+        <p>Once you have your VPS set up, to install Nginx in Ubuntu, use the following command sequence to update the package list and install the server:</p>
         <div class="grid-container">
             <div class="flex-row">
               <label>Terminal / Console</label>
@@ -239,14 +239,14 @@
             </div>
             <div class="code-row">
               <code>
-                sudo apt update <br>
-                sudo apt install nginx
+sudo apt update <br>
+sudo apt install nginx
               </code>
             </div>
         </div>
       
       
-        <p>Verify that the server is running:</p>
+        <p>Understanding how to use Nginx includes setting up reverse proxies, load balancing, and configuring it as a web server. You can manage Nginx processes with commands like: </p>
         <div class="grid-container">
             <div class="flex-row">
               <label>Terminal / Console</label>
@@ -254,12 +254,12 @@
             </div>
             <div class="code-row">
               <code>
-                sudo systemctl status nginx
+sudo systemctl status nginx <em>#Verify that the server is running:</em>
               </code>
             </div>
         </div>
       
-        <p>To configure Nginx web hosting, the nginx config file needs to be adjusted to point to your site’s directory. Typically, located at <em>/etc/nginx/nginx.conf</em>. Below are the key configurations:
+        <p>To configure Nginx web hosting, the nginx config file needs to be adjusted to point to your site’s directory. The Nginx config file location, which is critical for setup, is typically found at <em>/etc/nginx/nginx.conf</em>, where you can configure settings like worker connections, logging, and SSL protocols for improved speed and security. An example of a basic Nginx config file for a domain setup includes:            
         </p>
         <div class="grid-container">
             <div class="flex-row">
@@ -440,6 +440,10 @@ server {<br>
             <li>/etc/ssl/private.key (Private key)</li>
             <li>/etc/ssl/ca_bundle.crt (CA Bundle)</li>
         </ul>
+
+        <p>
+            By following these steps above, you can <strong>install Nginx and set up SSL</strong>, optimizing your server for performance and security.
+        </p>
 
         <p>Upload your index.html and other site resources to <em>/var/www/domain.com</em> folder</p>
           
