@@ -379,7 +379,7 @@ server {<br>
 
 <em># Server block for handling HTTPS</em><br>
 server {<br>
-    listen 443 ssl;  <em># HTTPS</em><br>
+    listen 443 ssl http2;  <em># HTTPS + Enable HTTP/2 improves performance by multiplexing multiple requests over a single connection, reducing latency, and offering other benefits.</em><br>
     server_name domain.com;  <em># Non-www domain</em><br>
 
     ssl_certificate /etc/ssl/certificate.crt;  <em># Your certificate</em><br>
