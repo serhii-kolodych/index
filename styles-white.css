@@ -6,6 +6,7 @@ body{
     min-width: 500px;
     color: #1D1D1F; /* #C9C5C2 - Silver Dust */
     /* background-color: #F5F5F7; */
+    /* overscroll-behavior: none; */
 }
 
 a{
