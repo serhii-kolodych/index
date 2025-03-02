@@ -13,6 +13,28 @@
   </url>
 
   <url>
+    <loc>https://kolodych.com/website/nocap.html</loc>
+    <lastmod>2025-03-03T14:19:00+00:00</lastmod>
+    <priority>0.60</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://kolodych.com/website/nocap-home.webp</image:loc>
+      <image:caption>Full-stack e-commerce solution with React frontend and FastAPI backend</image:caption>
+      <image:title>NoCap Shop Homepage</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/nocap-cart.webp</image:loc>
+      <image:caption>Shopping cart interface with Stripe payment integration</image:caption>
+      <image:title>NoCap Shopping Cart View</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kolodych.com/website/nocap-product.webp</image:loc>
+      <image:caption>Product display with recommendation algorithm implementation</image:caption>
+      <image:title>NoCap Product Card with Recommendations</image:title>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://kolodych.com/articles/first-telegram-bot.html</loc>
     <lastmod>2024-10-24T04:19:18+00:00</lastmod>
     <priority>0.60</priority>
