@@ -394,26 +394,65 @@
             </a>
         </div>
     
-        <!-- Services ITEM -->
+        <!-- Email Form ITEM -->
         <div class="box" style="--s: 340px;">
-            <i></i> 
+            <i></i>
             <h5 class="dancing-text">
-            <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span> 
-            <span>a</span><span>n</span><span>y</span><span>t</span><span>h</span><span>i</span><span>n</span><span>g</span><span>?</span>
+                <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span>
+                <span>a</span><span>n</span><span>y</span><span>t</span><span>h</span><span>i</span><span>n</span><span>g</span><span>?</span>
             </h5>
-            <form action="send_email.php" method="post">
-                
+            <form id="emailForm">
                 <input type="email" id="email" name="email" placeholder="your-email@example.com" autocomplete="email" required>
                 <div>
                     <textarea id="message" name="message" rows="3" placeholder="Your question..." required></textarea>
                 </div>
                 <div>
-                    <input type="submit" value="Send">
+                    <button type="submit">Send</button>
                 </div>
             </form>
+            <p id="formMessage" style="color: green; display: none;">Your message has been sent successfully!</p>
+            <p id="formError" style="color: red; display: none;">Failed to send your message. Please try again.</p>
         </div>
+
     
     </div>
+
+    <script>
+        document.getElementById("emailForm").addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+    
+            if (!email || !message) {
+                alert("Please fill in all fields.");
+                return;
+            }
+    
+            try {
+                // Simulate sending an email (replace with actual backend logic)
+                const response = await fetch("send_email.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: new URLSearchParams({ email, message }),
+                });
+    
+                if (response.ok) {
+                    document.getElementById("formMessage").style.display = "block";
+                    document.getElementById("formError").style.display = "none";
+                    document.getElementById("emailForm").reset(); // Clear the form
+                } else {
+                    throw new Error("Failed to send email.");
+                }
+            } catch (error) {
+                console.error(error);
+                document.getElementById("formError").style.display = "block";
+                document.getElementById("formMessage").style.display = "none";
+            }
+        });
+    </script>
 
     <script src="scripts/index-2.js"></script>
     <script src="scripts/index-3.js"></script>
