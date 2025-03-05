@@ -1,13 +1,15 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
+    // Get and validate form data
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+    $message = htmlspecialchars(trim($_POST['message']));
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("Invalid email format.");
+    }
 
     // Your email address
-    $to = "<!-- YOUR_EMAIL_GOES_HERE -->";
-
-    // Subject of the email
+    $to = "kolodych@hotmail.com";
     $subject = "Kolodych.com - New Message from Ask me anything?";
 
     // Email content
@@ -15,21 +17,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_content .= "Message:\n$message\n";
 
     // Email headers
-    $headers = "From: $email";
+    $headers = "From: no-reply@kolodych.com\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     // Send the email
     if (mail($to, $subject, $email_content, $headers)) {
-        echo "<html><body>";
-        echo "<h3>Thank you! Your message has been sent.</h3>";
-        echo "<p>You will be redirected shortly...</p>";
-        echo '<meta http-equiv="refresh" content="3;url=https://kolodych.com">';
-        echo "</body></html>";
+        header("Location: https://kolodych.com?success=1");
+        exit;
     } else {
-        echo "<html><body>";
-        echo "<h3>Oops! Something went wrong, and we couldn't send your message.</h3>";
-        echo "<p>You will be redirected shortly...</p>";
-        echo '<meta http-equiv="refresh" content="3;url=https://kolodych.com">';
-        echo "</body></html>";
+        header("Location: https://kolodych.com?error=1");
+        exit;
     }
 }
 ?>
