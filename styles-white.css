@@ -3,7 +3,7 @@ body{
     font-family:  Source Sans Pro;
     /* font-family: Serif, sans-serif; */
     font-size:18px;
-    min-width: 500px;
+    /* min-width: 500px; */
     color: #1D1D1F; /* #C9C5C2 - Silver Dust */
     /* background-color: #F5F5F7; */
     /* overscroll-behavior: none; */
@@ -539,9 +539,9 @@ form input[type="submit"]:hover {
 
 @media (max-width: 716px){
   .container{
-    transform: scale(0.99);
+    transform: scale(0.9);
     transform-origin: top left;
-    width: 100%;
+    width: 111%;
   }
   .item{
     text-align: center;
