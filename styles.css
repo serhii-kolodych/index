@@ -173,14 +173,19 @@ canvas {
 .social-container a {
   text-decoration: none; /* Remove underline from links */
 }
-
+.social-container {
+  text-align: center; /* Centers inline-block elements */
+}
 .social-container img {
-  margin-top: 12px;
-  margin-right: 18px;
-  width: 68px; /* Set a size for the icons */
+  margin-top: 20px;
+  margin-right: 10px;
+  width: 60px; /* Set a size for the icons */
   height: auto; /* Maintain aspect ratio */
   transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  display: inline-block; /* Makes the image an inline block for centering */
 }
+
+
 
 .social-container img:hover {
   cursor: pointer; /* Change cursor to pointer */
@@ -250,9 +255,15 @@ div.box {
     position: relative; /* Establishes a positioning context for absolute positioning */
 }
 
-.box h2, h3 {
+.box h2 {
     font-size: 1.00em;
     text-align: center; /* Centers heading text */
+}
+
+.box h3 {
+  margin: 30px 0 30px 0;
+    font-size: 0.95em;
+    text-align: left; 
 }
 
 h1{

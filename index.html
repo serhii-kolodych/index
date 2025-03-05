@@ -365,15 +365,16 @@
         <!-- Services ITEM -->
         <div class="box s-340">
             <i></i> 
-            <h2>Service Pricing</h2>
-            <p>Landing Page / Home (WordPress) = 80 Euro</p>
-            <p>Additional Page = 50 Euro</p>
-            <p>Telegram Bot Development = 50 Euro</p>
-            <p>Hourly Rate = 10 Euro</p>
+            <h2 style="white-space: nowrap;">Service Pricing</h2>
+            <h3>Landing Page / Home (WordPress) = 80 Euro</h3>
+            <h3>Additional Page = 50 Euro</h3>
+            <h3>Telegram Bot Development = 50 Euro</h3>
+            <h3>Hourly Rate = 10 Euro</h3>
         </div>
 
         <div class="box social-container s-340">
             <i></i> 
+            <h2 style="white-space: nowrap;">Contact Me: </h2>
             <a href="mailto:kolodych@hotmail.com">
                 <img  loading="lazy" src="src/mail-part-3-svgrepo-com.svg" width="68" height="68" alt="Email">
             </a>
@@ -395,7 +396,7 @@
         </div>
     
         <!-- Email Form ITEM -->
-        <div class="box" style="--s: 340px;">
+        <!-- <div class="box" style="--s: 340px;">
             <i></i>
             <h5 class="dancing-text">
                 <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span>
@@ -412,47 +413,10 @@
             </form>
             <p id="formMessage" style="color: green; display: none;">Your message has been sent successfully!</p>
             <p id="formError" style="color: red; display: none;">Failed to send your message. Please try again.</p>
-        </div>
+        </div> -->
 
     
     </div>
-
-    <script>
-        document.getElementById("emailForm").addEventListener("submit", async function (event) {
-            event.preventDefault(); // Prevent default form submission
-    
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
-    
-            if (!email || !message) {
-                alert("Please fill in all fields.");
-                return;
-            }
-    
-            try {
-                // Simulate sending an email (replace with actual backend logic)
-                const response = await fetch("send_email.php", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                    },
-                    body: new URLSearchParams({ email, message }),
-                });
-    
-                if (response.ok) {
-                    document.getElementById("formMessage").style.display = "block";
-                    document.getElementById("formError").style.display = "none";
-                    document.getElementById("emailForm").reset(); // Clear the form
-                } else {
-                    throw new Error("Failed to send email.");
-                }
-            } catch (error) {
-                console.error(error);
-                document.getElementById("formError").style.display = "block";
-                document.getElementById("formMessage").style.display = "none";
-            }
-        });
-    </script>
 
     <script src="scripts/index-2.js"></script>
     <script src="scripts/index-3.js"></script>
