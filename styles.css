@@ -545,6 +545,11 @@ form input[type="submit"]:hover {
 }
 
 @media (max-width: 716px){
+  .container{
+    transform: scale(0.9);
+    transform-origin: top left;
+    width: 111%;
+  }
   .article-container{
     padding: 10px;
   }

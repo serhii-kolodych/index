@@ -538,6 +538,11 @@ form input[type="submit"]:hover {
 }
 
 @media (max-width: 716px){
+  .container{
+    transform: scale(0.99);
+    transform-origin: top left;
+    width: 100%;
+  }
   .item{
     text-align: center;
     display:block;
