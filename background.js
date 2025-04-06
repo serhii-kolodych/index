@@ -1,23 +1,11 @@
 var c = document.getElementById("c");
 var ctx = c.getContext("2d");
 
-// making the canvas full screen
-// Suggestion for sharpness: Adjust canvas dimensions by devicePixelRatio
-// const scale = window.devicePixelRatio;
-// c.width = Math.floor(window.innerWidth * scale);
-// c.height = Math.floor(window.innerHeight * scale);
-// c.style.width = window.innerWidth + "px";
-// c.style.height = window.innerHeight + "px";
-// ctx.scale(scale, scale);
-
 c.height = window.innerHeight;
 c.width = window.innerWidth;
 
-// characters - taken from the unicode charset
-// Suggestion: Try different character sets, like Katakana:
 // var matrix = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
-// Or even binary:
-// var matrix = "01";
+
 var matrix =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
 // converting the string into an array of single characters
@@ -59,21 +47,10 @@ function draw() {
   }
 }
 
-// Suggestion: Use requestAnimationFrame for smoother, potentially more performant animation.
-// let animationFrameId;
-// function animationLoop() {
-//   draw();
-//   animationFrameId = requestAnimationFrame(animationLoop);
-// }
-// requestAnimationFrame(animationLoop);
-// To stop: cancelAnimationFrame(animationFrameId);
 setInterval(draw, 23); // Lower interval (e.g., 20) = faster rain, higher (e.g., 50) = slower.
 
 document.addEventListener("DOMContentLoaded", function () {
   const canvas = document.getElementById("c");
-
-  // Suggestion: Add a resize handler to recalculate columns and drops if window size changes.
-  // window.addEventListener('resize', () => { /* recalculate canvas size, columns, drops */ });
 
   canvas.addEventListener("click", function () {
     window.location.href = "../index.html";
