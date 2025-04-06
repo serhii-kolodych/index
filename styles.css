@@ -1,5 +1,5 @@
 html{
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.66);
 }
 body{
     line-height: 1.2;
@@ -10,7 +10,7 @@ body{
     color: #C9C5C2; /* #C9C5C2 - Silver Dust */
     overscroll-behavior: none;
     /* background-color: #2e2e2e; */
-    background-color: rgba(0, 0, 0, 0.04);
+    /* background-color: rgba(0, 0, 0, 0.04); */
 
 }
 
