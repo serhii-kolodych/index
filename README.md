@@ -72,4 +72,4 @@ Edit or add files as needed. Once you’ve made the changes, stage and commit th
    
 ## Contact
 
-For any questions or inquiries, please contact me at serhii@kolodych.com.
+For any questions or inquiries, please contact me at <a href="https://kolodych.com" target="_blank">Kolodych.com</a>
