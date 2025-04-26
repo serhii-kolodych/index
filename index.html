@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" id="stylesheet" type="text/css" href="styles.css">
 
-    <!-- Cookies Load or NOT -->
-    <script>
-        console.log("🤖 checking cookies 🍪")
-        // Load tracking.js if user has agreed
-        window.onload = function() {
-            if (localStorage.getItem('buttonColor') === 'green') {
-                console.log("🐸 savedColor === green - yes tracking.js 🍀 🐸");
-                var script = document.createElement('script');
-                script.src = "tracking.js"; // Path to your tracking.js file
-                document.head.appendChild(script);
-                console.log("🐸 tracking.js loaded sucessfully! 🍀 🐸");
-            }
-            else{
-                console.log("🚨 savedColor === not Green - NO TRACKING 🔴");
-            }
-        };
-    </script>
-
     <!-- Favicon start here -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -44,7 +26,7 @@
     <!-- Open Graph Tags -->
     <meta property="og:logo" content="favicon/favicon-32x32.png" >
     <meta property="og:title" content="Serhii Kolodych's Web Development and Automation Projects">
-    <meta property="og:description" content="Serhii Kolodych’s latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇">
+    <meta property="og:description" content="Serhii Kolodych's latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇">
     <meta property="og:url" content="https://kolodych.com/">
     <meta property="og:image" content="https://kolodych.com/src/kolodych.com-preview-site.webp"> 
     <meta property="og:type" content="website">
@@ -57,7 +39,7 @@
         "@context": "https://schema.org/",
         "@type": "WebPage",
         "name": "Serhii Kolodych's Web Development and Automation Projects",
-        "description": "Serhii Kolodych’s latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇",
+        "description": "Serhii Kolodych's latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇",
         "url": "https://kolodych.com/",
         "image": {
             "@type": "ImageObject",
@@ -79,14 +61,14 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="kolodych.com">
     <meta name="twitter:title" content="Serhii Kolodych's Web Development and Automation Projects">
-    <meta name="twitter:description" content="Serhii Kolodych’s latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇">
+    <meta name="twitter:description" content="Serhii Kolodych's latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇">
     <meta name="twitter:image" content="https://kolodych.com/src/kolodych.com-preview-site.webp">
     <meta name="twitter:site" content="@serhiikolodych"> 
     <!-- END Twitter Card Tags -->
 
     <title>Serhii Kolodych's website</title>
     <link rel="canonical" href="https://kolodych.com/">
-    <meta name="description" content="Serhii Kolodych’s latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇">
+    <meta name="description" content="Serhii Kolodych's latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇">
     <meta name="keywords" content="Custom WordPress Sites, Python Automation, Telegram Bot Services, SEO Improvements, Web Development Tips, E-commerce Customization, WordPress Tutorials">
     
     <!-- reviews  https://app.finseo.ai/rich-snippet-generator -->
@@ -95,7 +77,6 @@
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "Website Development",
-          "description": "Comprehensive website development services optimized for speed and SEO.",
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5",
@@ -115,32 +96,7 @@
                 "name": "John Doe"
               },
               "datePublished": "2024-02-15",
-              "reviewBody": "Serhii delivered an outstanding website, optimized for speed and SEO.",
-              "positiveNotes": {
-                "@type": "ItemList",
-                "itemListElement": [
-                  {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Outstanding optimization"
-                  },
-                  {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Fast delivery"
-                  }
-                ]
-              },
-              "negativeNotes": {
-                "@type": "ItemList",
-                "itemListElement": [
-                  {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Limited customization options"
-                  }
-                ]
-              }
+              "reviewBody": "Serhii delivered an outstanding website, optimized for speed and SEO."
             },
             {
               "@type": "Review",
@@ -155,29 +111,64 @@
               },
               "datePublished": "2024-02-10",
               "reviewBody": "Professional, fast, and reliable service. Highly recommend!"
+            },
+            {
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "author": {
+                "@type": "Person",
+                "name": "Michael Lee"
+              },
+              "datePublished": "2024-01-28",
+              "reviewBody": "Serhii went above and beyond to ensure everything worked perfectly."
+            },
+            {
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "author": {
+                "@type": "Person",
+                "name": "Emma Brown"
+              },
+              "datePublished": "2024-01-20",
+              "reviewBody": "Excellent full-stack developer. Fast turnaround time!"
+            },
+            {
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "author": {
+                "@type": "Person",
+                "name": "David Johnson"
+              },
+              "datePublished": "2024-01-12",
+              "reviewBody": "Great DevOps skills. The website runs flawlessly!"
             }
-            // Additional reviews can be added here
-          ],
-          "offers": {
-            "@type": "Offer",
-            "priceCurrency": "EUR",
-            "price": "80",
-            "url": "https://kolodych.com/",
-            "availability": "https://schema.org/InStock"
-          }
+          ]
         }
-        </script>
+        </script>        
+        
 
 </head>
 
 <body>
     <canvas id="c" class="c-5"></canvas>
 
-    <!-- <script src="background.js"></script> -->
+    <!-- <script src="background-white.js"></script> -->
     <!-- <script src="zoom.js"></script> -->
 
     <!-- Load the appropriate background script based on the whiteState -->
-    <script src="scripts/index-1.js"></script>
+    <script src="scripts/index-1.js" defer></script>
 
     <h1 id="heading">Serhii Kolodych's Web Development and Automation Projects</h1>
     
@@ -427,8 +418,9 @@
     
     </div>
 
-    <script src="scripts/index-2.js"></script>
-    <script src="scripts/index-3.js"></script>
+    <script src="scripts/index-2.js" defer></script>
+    <script src="scripts/index-3.js" defer></script>
+    <script src="background.js" defer></script> <!-- Ensure Matrix background script is loaded last -->
     
 </body>
 </html>
