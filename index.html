@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" id="stylesheet" type="text/css" href="styles.css">
 
+    <!-- Cookies Load or NOT -->
+    <script>
+        console.log("🤖 checking cookies 🍪")
+        // Load tracking.js if user has agreed
+        window.onload = function() {
+            if (localStorage.getItem('buttonColor') === 'green') {
+                console.log("🐸 savedColor === green - yes tracking.js 🍀 🐸");
+                var script = document.createElement('script');
+                script.src = "tracking.js"; // Path to your tracking.js file
+                document.head.appendChild(script);
+                console.log("🐸 tracking.js loaded sucessfully! 🍀 🐸");
+            }
+            else{
+                console.log("🚨 savedColor === not Green - NO TRACKING 🔴");
+            }
+        };
+    </script>
+
     <!-- Favicon start here -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -418,7 +436,7 @@
     
     </div>
 
-    <script src="scripts/index-2.js" defer></script>
+    <!-- <script src="scripts/index-2.js" defer></script> -->
     <script src="scripts/index-3.js" defer></script>
     <script src="background.js" defer></script> <!-- Ensure Matrix background script is loaded last -->
     
