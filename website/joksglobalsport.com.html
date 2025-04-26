@@ -8,15 +8,22 @@
 
     <!-- Cookies Load or NOT -->
     <script>
+        console.log("🤖 checking cookies 🍪")
         // Load tracking.js if user has agreed
         window.onload = function() {
             if (localStorage.getItem('buttonColor') === 'green') {
+                console.log("🐸 savedColor === green - yes tracking.js 🍀 🐸");
                 var script = document.createElement('script');
                 script.src = "../tracking.js"; // Path to your tracking.js file
                 document.head.appendChild(script);
+                console.log("🐸 tracking.js loaded sucessfully! 🍀 🐸");
+            }
+            else{
+                console.log("🚨 savedColor === not Green - NO TRACKING 🔴");
             }
         };
     </script>
+    
     <!-- Favicon start here -->
     <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
