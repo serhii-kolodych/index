@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" id="stylesheet" href="../styles.css">
+
+
+    <!-- Cookies Load or NOT -->
+    <script>
+        console.log("🤖 checking cookies 🍪")
+        // Load tracking.js if user has agreed
+        window.onload = function() {
+            if (localStorage.getItem('buttonColor') === 'green') {
+                console.log("🐸 savedColor === green - yes tracking.js 🍀 🐸");
+                var script = document.createElement('script');
+                script.src = "../tracking.js"; // Path to your tracking.js file
+                document.head.appendChild(script);
+                console.log("🐸 tracking.js loaded sucessfully! 🍀 🐸");
+            }
+            else{
+                console.log("🚨 savedColor === not Green - NO TRACKING 🔴");
+            }
+        };
+    </script>
+    
+    <!-- Favicon start here -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../manifest.json">
+    <!-- Favicon ends here -->
+
+    <!-- Open Graph Tags -->
+    <meta property="og:logo" content="../favicon/favicon-32x32.png" >
+    <meta property="og:title" content="Crafting the NoCap Online Store: A Development Journey">
+    <meta property="og:description" content="A technical deep dive into building an e-commerce platform with React and FastAPI, featuring dynamic product cards, PostgreSQL integration, and Stripe payment functionality.">
+    <meta property="og:url" content="https://kolodych.com/website/nocap.html">
+    <meta property="og:image" content="https://kolodych.com/website/nocap-ecommerce-preview.webp">
+    <meta property="og:type" content="article">
+    <!-- END Open Graph Tags -->
+
+    <!-- Schema Markup Addition -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Article",
+        "headline": "NoCap Internet Shop: From Frontend to Backend Development",
+        "description": "An in-depth case study of how I built a complete e-commerce solution with React and FastAPI, featuring product recommendations, performance optimizations, and secure payment processing.",
+        "image": "https://kolodych.com/website/nocap-ecommerce-preview.webp",
+        "author": {
+        "@type": "Person",
+        "name": "Serhii Kolodych",
+        "url": "https://kolodych.com/"
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "kolodych.com",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://kolodych.com/favicon/favicon-32x32.png"
+        }
+        },
+        "datePublished": "2025-03-02T14:03:00Z",
+        "dateModified": "2025-03-03T14:19:00Z"
+    }
+    </script>       
+    <!-- END Schema Markup Addition -->
+ 
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NoCap Shop: React & FastAPI E-Commerce Development">
+    <meta name="twitter:description" content="A technical deep dive into creating a modern online store with product recommendations, performance optimizations, and Stripe payment integration.">
+    <meta name="twitter:image" content="https://kolodych.com/website/nocap-ecommerce-preview.webp">
+    <meta name="twitter:site" content="@serhiikolodych">
+    <!-- END Twitter Card Tags -->
+
+    <!-- Cookies Load or NOT -->
+    <!-- Load the tracking.js file -->
+    <!-- <script src="../tracking.js"></script>
+    <script>
+    function cookies_manager() {
+        var savedColor = localStorage.getItem('buttonColor');
+
+        if (savedColor) {
+            // Load scripts if the user has agreed
+            if (savedColor === 'green') {
+                loadTrackingScripts();
+            }
+        }
+    } -->
+
+    <!-- // Ensure the cookies_manager function is called when the window loads
+    window.onload = cookies_manager;
+    </script> -->
+
+    <title>Building NoCap: A Full-Stack React & FastAPI E-Commerce Solution</title>
+    <meta name="description" content="Explore the NoCap Internet Shop built with React & FastAPI! ✓ Full-stack e-commerce solution. ⚡ Performance optimizations. 💳 Stripe payment integration. Learn how this portfolio project delivers seamless shopping experiences! 🛒">
+    <meta name="keywords" content="React Developer, Internet Shop Design, Website Development, Internet Shop SEO Optimization">
+    <link rel="canonical" href="https://kolodych.com/website/nocap.html">
+</head>
+    
+<body>
+    <!-- Accessibility Enhancements (if there are interactive elements) -->
+    <div id="copied" aria-live="polite">Copied.</div>
+    <!-- END Accessibility Enhancements (if there are interactive elements) -->
+
+    <!-- Background Canvas -->
+    <canvas id="c" style="z-index: 0; opacity: 1;"></canvas>
+
+    <div id="back-to-home">Back to Home</div>
+
+    <a href="#" id="change-style-link">White</a>
+    
+    <!-- Article Container -->
+    <div class="article-container">
+        <h1>NoCap Internet Shop – React & FastAPI</h1>
+        <p><em>Published on March 2, 2025</em></p>
+
+        <!-- Introduction Section -->
+        <p>
+            Developing the <a rel="nofollow" target="_blank" href="http://109.107.157.15:5173">NoCap shop</a> was an exciting challenge. This was my first time building a full-fledged React-based online store from scratch, integrating backend logic with FastAPI, and ensuring a seamless shopping experience.
+        </p>
+        <img src="nocap-home.webp" alt="NoCap Shop Homepage" title="NoCap Shop Homepage" loading="lazy" style="max-width: 100%; height: auto;">
+
+        <!-- Step 1: Technologies and Frameworks -->
+        <h2>Technologies and Frameworks</h2>
+        <table border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <th>Component</th>
+                <th>Technology Used</th>
+            </tr>
+            <tr>
+                <td>Frontend</td>
+                <td>React + Vite</td>
+            </tr>
+            <tr>
+                <td>Backend</td>
+                <td>FastAPI (Python)</td>
+            </tr>
+            <tr>
+                <td>Database</td>
+                <td>PostgreSQL</td>
+            </tr>
+            <tr>
+                <td>Payments</td>
+                <td>Stripe</td>
+            </tr>
+            <tr>
+                <td>Reverse Proxy</td>
+                <td>Nginx</td>
+            </tr>
+        </table>
+
+        <!-- Step 2: UI/UX Design Decisions -->
+        <h2>UI/UX Design Decisions</h2>
+
+        <h3>Product Card Design</h3>
+        <p>
+            The product cards are simple and user-friendly, showing the product image, title, price, and an “Add to Cart” button for a smooth purchasing experience.
+        </p>
+        <img src="nocap-product.webp" alt="NoCap Product Card" title="NoCap Product Card Design" loading="lazy" style="max-width: 100%; height: auto;">
+
+        <h3>Filtering and Sorting</h3>
+        <p>
+            React manages state-based filtering, allowing users to sort products by category, price, or name dynamically.
+        </p>
+
+        <h3>Product Recommendation Algorithm</h3>
+        <p>
+            Using collaborative filtering, the platform suggests products based on past user interactions, helping customers discover relevant items.
+        </p>
+
+        <h3>Stripe Payment Integration</h3>
+        <p>
+            The backend creates a checkout session via the Stripe API. The frontend then redirects users to a secure Stripe-hosted page. After payment, users are redirected back to the site.
+        </p>
+
+        <h3>Performance Optimization</h3>
+        <ul>
+            <li><strong>Lazy loading:</strong> Product images load only when needed, reducing initial load time.</li>
+            <li><strong>Code splitting:</strong> Minimizes JavaScript bundle sizes for faster rendering.</li>
+        </ul>
+
+        <!-- Step 3: Backend Setup -->
+        <h2>Backend Setup</h2>
+
+        <h3>Install Dependencies</h3>
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Terminal / Console</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+                pip install -r backend/requirements.txt              
+              </code>
+            </div>
+        </div>
+
+        <h3>Run the Application</h3>
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Terminal / Console</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+                uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
+              </code>
+            </div>
+        </div>
+
+        <h2>API Endpoints</h2>
+        <table>
+            <tr>
+                <th>Endpoint</th>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>/caps</td>
+                <td>GET</td>
+                <td>Get all caps</td>
+            </tr>
+            <tr>
+                <td>/cap/{cap_id}</td>
+                <td>GET</td>
+                <td>Get cap by ID</td>
+            </tr>
+            <tr>
+                <td>/add_cap</td>
+                <td>POST</td>
+                <td>Add a new cap</td>
+            </tr>
+            <tr>
+                <td>/create-checkout-session</td>
+                <td>POST</td>
+                <td>Create a Stripe checkout session</td>
+            </tr>
+        </table>
+
+        <!-- Step 4: Frontend Setup -->
+        <h2>Frontend Setup</h2>
+
+        <h3>Install Dependencies</h3>
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Terminal / Console</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+                npm install
+              </code>
+            </div>
+        </div>
+
+        <h3>Run Development Server</h3>
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Terminal / Console</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+                npm run dev --host --port 5173
+              </code>
+            </div>
+        </div>
+
+        <h3>Build for Production</h3>
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Terminal / Console</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+                npm run build
+              </code>
+            </div>
+        </div>
+
+        <img src="nocap-cart.webp" alt="NoCap Shopping Cart" title="NoCap Shopping Cart View" loading="lazy" style="max-width: 100%; height: auto;">
+
+        <!-- Recommendations -->
+        <h2>My Recommendations</h2>
+        <ul>
+            <li><strong>Improve SEO:</strong> Implement proper meta tags and structured data to enhance search visibility.</li>
+            <li><strong>Enhance Security:</strong> Use HTTPS, implement rate-limiting, and regularly update dependencies.</li>
+            <li><strong>Optimize Performance:</strong> Implement server-side caching for frequently accessed pages.</li>
+            <li><strong>Improve UX:</strong> Add animations and a progress indicator for checkout to enhance the user experience.</li>
+            <li><strong>Expand Payment Methods:</strong> Support more payment options like PayPal, Apple Pay, and Google Pay.</li>
+        </ul>
+
+        <!-- Step 5: Final Thoughts -->
+        <h2>Conclusion</h2>
+        <p>
+            The NoCap shop was a great learning experience, from setting up a full-stack e-commerce platform to handling payments and optimizing performance. The combination of React, FastAPI, and PostgreSQL provides a scalable and efficient solution. If you’re interested in building a similar platform, let’s connect!
+        </p>
+
+
+        <!-- <div class="item">
+            <h3 class="dancing-text">
+                <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span> 
+                <span>a</span><span>n</span><span>y</span><span>t</span><span>h</span><span>i</span><span>n</span><span>g</span><span>?</span>
+            </h3>
+            <form action="../send_email.php" method="post">
+                <input type="email" id="email" name="email" placeholder="your-email@example.com" autocomplete="email" required><br><br>
+                <textarea id="message" name="message" rows="2" placeholder="Your question..." required></textarea><br><br>
+                <input type="submit" value="Send" style="display: block; margin: 0 auto;">
+            </form>
+        </div> -->
+
+        <a href="japalandia.com.html"><div class="item">
+            <h3>Japalandia work abroad Landing Page</h3>
+            <img src="../website/home-1-screen-japalandia.webp" alt="Japalandia home section with Call To Action Button" title="Japalandia landing page, hero section with banner for work abroad" loading="lazy">
+        </div></a>
+
+        <a href="joksglobalsport.com.html"><div class="item">
+            <h3>Football Academy site example</h3>
+            <img src="home-joksglobalsport.com.webp" alt="joksglobalsport.com football academy hero section" title="joksglobalsport landing page, hero section with banner" loading="lazy">
+        </div></a>
+
+        <a href="virgincourtesans.com.html"><div class="item">
+            <h3>Model Agency site example</h3>
+            <img src="Gallery-preview-using-the-post-grid-plugin-wordpress.webp" alt="VirginCourtesans.com model agency gallery" title="VirginCourtesans.com Models gallery preview" loading="lazy">
+        </div></a>
+    </div>
+    
+
+    <!-- Background script -->
+    <script src="../background.js"></script>
+
+  
+    <script>
+        // Set the initial style based on local storage
+        var whiteState = localStorage.getItem('white') || '0'; // Default to '0'
+        var currentStyle = (whiteState === '1') ? '../styles-white.css' : '../styles.css';
+        document.getElementById('stylesheet').setAttribute('href', currentStyle);
+    
+        // Control the canvas visibility based on the initial stylesheet
+        var canvas = document.getElementById('c');
+        canvas.style.opacity = (whiteState === '1') ? "0" : "1";
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            var link = document.getElementById('change-style-link');
+            var stylesheet = document.getElementById('stylesheet');
+    
+            // Set the link text based on the current style
+            link.textContent = (whiteState === '1') ? "Matrix" : "White";
+    
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+    
+                // Toggle the style state
+                if (whiteState === '0') {
+                    whiteState = '1'; // Switch to white stylesheet
+                    currentStyle = '../styles-white.css';
+                    canvas.style.opacity = "0"; // Hide the canvas
+                    link.textContent = "Matrix";
+                } else {
+                    whiteState = '0'; // Switch back to default stylesheet
+                    currentStyle = '../styles.css';
+                    canvas.style.opacity = "1"; // Show the canvas
+                    link.textContent = "White";
+                }
+    
+                // Update the stylesheet and local storage
+                stylesheet.setAttribute('href', currentStyle);
+                localStorage.setItem('white', whiteState); // Save the current state
+            });
+        });
+    </script>
+
+
+        <!-- Load the header dynamically
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('../header.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                    console.log("Header included successfully");
+                })
+                .catch(error => {
+                    document.getElementById('header-container').innerHTML = "<p>Header could not be loaded.</p>";
+                    console.error("There was a problem with the fetch operation:", error);
+                });
+        });
+    </script> -->
+    <script src="../scripts/copy-btn.js"></script>
+</body>
+</html>
