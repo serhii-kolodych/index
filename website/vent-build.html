@@ -6,16 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" id="stylesheet" href="../styles.css">
 
-    <title>Vent-Fasad Website Setup with WordPress</title>
-    <meta name="description" content="Step-by-step guide on setting up the Vent-Fasad website with WordPress. Covers plugins, Elementor customization, breakpoints, content widths, and responsive design decisions.">
-    <meta name="keywords" content="WordPress, Elementor, Website Development, Responsive Design, Vent-Fasad">
-    <link rel="canonical" href="https://kolodych.com/website/vent-fasad.html">
 
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Vent-Fasad WordPress Website Setup">
-    <meta property="og:description" content="Detailed steps on setting up Vent-Fasad site with Elementor, plugins, breakpoints, and responsive design adjustments.">
-    <meta property="og:url" content="https://kolodych.com/website/vent-fasad.html">
-    <meta property="og:image" content="https://kolodych.com/website/vent-fasad-preview.webp">
+    <!-- Cookies Load or NOT -->
+    <script>
+        console.log("🤖 checking cookies 🍪")
+        // Load tracking.js if user has agreed
+        window.onload = function() {
+            if (localStorage.getItem('buttonColor') === 'green') {
+                console.log("🐸 savedColor === green - yes tracking.js 🍀 🐸");
+                var script = document.createElement('script');
+                script.src = "../tracking.js"; // Path to your tracking.js file
+                document.head.appendChild(script);
+                console.log("🐸 tracking.js loaded sucessfully! 🍀 🐸");
+            }
+            else{
+                console.log("🚨 savedColor === not Green - NO TRACKING 🔴");
+            }
+        };
+    </script>
+    
+    <!-- Favicon start here -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../manifest.json">
+    <!-- Favicon ends here -->
+
+        <!-- Open Graph Tags -->
+    <meta property="og:title" content="Vent-Build WordPress Website Setup">
+    <meta property="og:description" content="Detailed steps on setting up Vent-Build site with Elementor, plugins, breakpoints, and responsive design adjustments.">
+    <meta property="og:url" content="https://kolodych.com/website/vent-build.html">
+    <meta property="og:image" content="https://kolodych.com/website/vent-build-preview.webp">
     <meta property="og:type" content="article">
 
     <!-- Schema Markup Addition -->
@@ -43,6 +74,13 @@
         "dateModified": "2025-08-20T14:19:00Z"
     }
     </script>
+
+
+    <title>Vent-Fasad Website Setup with WordPress</title>
+    <meta name="description" content="Step-by-step guide on setting up the Vent-Fasad website with WordPress. Covers plugins, Elementor customization, breakpoints, content widths, and responsive design decisions.">
+    <meta name="keywords" content="WordPress, Elementor, Website Development, Responsive Design, Vent-Fasad">
+    <link rel="canonical" href="https://kolodych.com/website/vent-fasad.html">
+
 </head>
     
 <body>
