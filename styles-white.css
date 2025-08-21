@@ -212,7 +212,18 @@ margin:10px 20px;
 /* font-size:20px; */
 text-align:justify;
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
 
+.pad14{
+  padding-top: 14px;
+}
+
+.s-437{
+  --s: 437px;
+}
+
+.s-435{
+  --s: 435px;
 }
 
 .s-424{
@@ -778,4 +789,21 @@ tbody tr:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.mar10{
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+.mart10{
+  margin-top: 10px;
+}
+
+.marb{
+  margin-block-end: 4px;
+}
+
+.mart{
+  margin-block-start: 10px;
 }

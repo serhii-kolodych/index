@@ -220,6 +220,18 @@ margin:10px 20px;
 text-align:justify;
 }
 
+.pad14{
+  padding-top: 14px;
+}
+
+.s-437{
+  --s: 437px;
+}
+
+.s-435{
+  --s: 435px;
+}
+
 .s-424{
   --s: 424px;
 }
@@ -796,4 +808,26 @@ tbody tr:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.mar10{
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+.mart10{
+  margin-top: 10px;
+}
+
+.marb{
+  margin-block-end: 4px;
+}
+
+.mart{
+  margin-block-start: 10px;
+}
+
+.box h2{
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
