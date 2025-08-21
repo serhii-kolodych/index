@@ -3,7 +3,8 @@ html{
 }
 body{
     line-height: 1.2;
-    font-family: Montserrat, serif;
+    font-family: 'Share Tech Mono', monospace;
+    /* font-family: 'Work Sans', 'Montserrat', serif; */
     /* font-family: Serif, sans-serif; */
     font-size:18px;
     /* min-width: 500px; */
@@ -621,7 +622,9 @@ caption {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
+  font-family: 'Share Tech Mono', monospace;
+
+  /* font-family: Arial, sans-serif; */
   color: inherit; /* Keeps the existing font color */
   text-align: center;
   border-radius: 8px;
