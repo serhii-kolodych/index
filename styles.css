@@ -831,3 +831,17 @@ tbody tr:hover {
   margin-top: 12px;
   margin-bottom: 12px;
 }
+
+@media (max-width: 474px){
+  /* .container { flex-shrink: 0; !important } */
+  
+  /* .container { width: 474px; } */
+
+  .container {
+    width: 474px;
+    zoom: 0.85; /* adjust zoom level */
+    -moz-transform: scale(0.85); /* Firefox fallback */
+    -moz-transform-origin: top left;
+  }
+
+}
