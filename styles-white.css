@@ -536,35 +536,6 @@ form input[type="submit"]:hover {
 }
 
 
-/* Mobile-specific optimizations */
-@media (max-width: 1200px) {
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    flex-wrap: wrap; 
-  }
-
-  .item {
-    width: calc(48% - 20px);
-    margin: 10px auto;
-    font-size: 16px;
-    display: inline-block;
-  }
-}
-
-@media (max-width: 716px){
-  .container{
-    transform: scale(0.9);
-    transform-origin: top left;
-    width: 111%;
-  }
-  .item{
-    text-align: center;
-    display:block;
-  }
-}
-
 #change-style-link {
   position: absolute;
   top: 10px;
@@ -808,16 +779,32 @@ tbody tr:hover {
   margin-block-start: 10px;
 }
 
-@media (max-width: 474px){
-  /* .container { flex-shrink: 0; !important } */
-  
-  /* .container { width: 474px; } */
 
+@media (max-width: 1000px) {
+  .container {
+    zoom: 0.9;
+    min-width: 1000px;
+  }
+  .box {
+    zoom: 0.9;
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    zoom: 1;
+    min-width: auto;
+  }
+  .box {
+    zoom: 1;
+  }
+}
+
+@media (max-width: 474px){
   .container {
     width: 474px;
     zoom: 0.85; /* adjust zoom level */
     -moz-transform: scale(0.85); /* Firefox fallback */
     -moz-transform-origin: top left;
   }
-
 }
