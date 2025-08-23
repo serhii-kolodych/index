@@ -790,21 +790,30 @@ tbody tr:hover {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 650px) {
   .container {
-    zoom: 1;
+    zoom: 0.85;
     min-width: auto;
   }
   .box {
-    zoom: 1;
+    zoom: 0.85;
   }
 }
 
 @media (max-width: 474px){
   .container {
     width: 474px;
-    zoom: 0.85; /* adjust zoom level */
-    -moz-transform: scale(0.85); /* Firefox fallback */
+    zoom: 0.9; /* adjust zoom level */
+    -moz-transform: scale(0.9); /* Firefox fallback */
     -moz-transform-origin: top left;
   }
+}
+
+.box {
+  transition: transform 0.3s ease; /* smooth effect */
+  margin-bottom: 22px;
+}
+
+.box:hover {
+  transform: scale(1.1);
 }
