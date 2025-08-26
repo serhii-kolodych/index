@@ -3,11 +3,11 @@ html{
   /* background-color: rgba(255, 112, 67, 0.56); */
 }
 body{
-    line-height: 1.2;
+    line-height: 20px;
     font-family: 'Share Tech Mono', monospace;
     /* font-family:  Source Sans Pro; */
     /* font-family: Serif, sans-serif; */
-    font-size:clamp(15px, 4vw, 16px);
+    font-size: 16px;
     /* min-width: 500px; */
     color: #1D1D1F; /* #C9C5C2 - Silver Dust */
     /* background-color: #F5F5F7; */
@@ -272,11 +272,12 @@ div.box {
 }
 
 .box h2, h3 {
-  font-size: clamp(17px, 4vw, 18px);
+  font-size: 18px;
   text-align: center; /* Centers heading text */
 }
 
 h1{
+  line-height: 34px;
     text-align: center;
 }
 
