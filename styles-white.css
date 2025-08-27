@@ -819,3 +819,9 @@ tbody tr:hover {
 .box:hover {
   transform: scale(1.1);
 }
+
+.fit-one-line {
+  display: block;
+  white-space: nowrap;       /* Keep text on one line */
+  font-size: clamp(16px, 5vw, 18px); /* Adjust size between min and max */
+}
