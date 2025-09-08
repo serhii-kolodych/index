@@ -19,6 +19,17 @@ a{
   text-decoration: none;
 }
 
+.aLink{
+  pointer-events: auto;
+  color: #0066CC; /* #D78A2A - Warm Honey */
+  text-decoration: none;
+  cursor: pointer;
+}
+.aLink:hover{
+  text-decoration: underline;
+}
+
+
 .sendEmail{
   display: block; 
   margin: 0 auto;
