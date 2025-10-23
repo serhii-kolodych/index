@@ -35,8 +35,8 @@ function applyButtonStyles() {
     // Update feedback message based on user's choice
     const message =
       savedColor === "green"
-        ? "You agreed to use cookies on your device. Date and time:"
-        : "You blocked this site from saving cookies on your device. Date and time:";
+        ? "You agreed to use cookies on this device. Date and time:"
+        : "You blocked this site from saving cookies on this device. Date and time:";
     showFeedback(message);
   }
 }
