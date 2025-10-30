@@ -4,7 +4,7 @@ window.onload = function () {
   if (localStorage.getItem("buttonColor") === "green") {
     console.log("🐸 savedColor === green - yes tracking.js 🍀 🐸");
     const script = document.createElement("script");
-    script.src = "tracking.js";
+    script.src = "/scripts/tracking.js";
     document.head.appendChild(script);
     script.onload = () =>
       console.log("🐸 tracking.js loaded successfully! 🍀 🐸");
