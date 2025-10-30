@@ -77,7 +77,16 @@ function handleButtonClick(color) {
     script.src = "tracking.js";
     script.async = true; // Optional, to load asynchronously
     document.head.appendChild(script);
+
+    // ✅ Tell Clarity that consent is given
+    setTimeout(() => {
+      if (typeof clarity === "function") clarity("consent");
+    }, 1000);
+
     console.log("yes tracking.js 🍀 🐸");
+  } else {
+    // 🚫 Tell Clarity that consent is denied
+    if (typeof clarity === "function") clarity("consent", false);
   }
 }
 
