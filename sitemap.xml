@@ -13,6 +13,44 @@
   </url>
 
   <url>
+  <loc>https://kolodych.com/website/vent-build.html</loc>
+  <lastmod>2025-08-20T14:19:00+00:00</lastmod>
+  <priority>0.60</priority>
+  <changefreq>monthly</changefreq>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/vent-build-preview-9.webp</image:loc>
+    <image:caption>Vent-Build homepage built with WordPress and Elementor customization</image:caption>
+    <image:title>Vent-Build Website Overview</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/vent-build-1-hero-desktop-view-margins.webp</image:loc>
+    <image:caption>Hero section setup with responsive margins and typography in Elementor</image:caption>
+    <image:title>Vent-Build Hero Section</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/vent-build-0-layout-mobile-content-width-420.webp</image:loc>
+    <image:caption>Mobile layout optimization for 420px content width and adaptive breakpoints</image:caption>
+    <image:title>Vent-Build Mobile Layout</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/vent-build-0-global-colors.webp</image:loc>
+    <image:caption>Elementor global color setup used across the Vent-Build website</image:caption>
+    <image:title>Vent-Build Elementor Global Colors</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/vent-build-0-breakpoints.webp</image:loc>
+    <image:caption>Responsive breakpoints for mobile, tablet, and desktop views in Elementor</image:caption>
+    <image:title>Vent-Build Breakpoints Settings</image:title>
+  </image:image>
+</url>
+
+
+  <url>
     <loc>https://kolodych.com/website/nocap.html</loc>
     <lastmod>2025-03-03T14:19:00+00:00</lastmod>
     <priority>0.60</priority>
