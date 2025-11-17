@@ -883,6 +883,130 @@ tbody tr:hover {
 
 
 
-.container { display: flex; flex-wrap: nowrap; }
-.box { width: 450px; flex: 0 0 auto; }
-.container { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-behavior: smooth; }
+
+
+
+
+
+
+/* this ones after last passed half - starts showing others */
+.carousel {
+overflow: hidden;
+height: 520px;
+}
+
+.inner {
+display: flex;
+flex-wrap: nowrap;
+width: max-content;
+animation: loop 25s linear infinite;
+}
+
+.box {
+width: 450px;
+flex: 0 0 auto;
+}
+
+@keyframes loop {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); }
+}
+
+
+
+
+
+/* 
+.carousel {
+overflow: hidden;
+height: 520px;
+}
+
+.track {
+display: flex;
+flex-wrap: nowrap;
+width: max-content;
+animation: slide 20s linear infinite;
+}
+
+.box {
+width: 450px;
+flex: 0 0 auto;
+}
+
+@keyframes slide {
+0% { transform: translateX(0); }
+100% { transform: translateX(calc(-450px * 5)); }
+}  */
+
+
+
+
+
+
+
+/* .container { display: flex; flex-wrap: nowrap;}
+.box { width: 450px; flex: 0 0 auto; overflow: visible;}
+.container { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-behavior: smooth; height: 520px;}
+
+
+.inner {
+display: flex;
+flex-wrap: nowrap;
+animation: autorun 5s linear infinite;
+}
+
+@keyframes autorun {
+0% { transform: translateX(0); }
+/* to { transform: translateX(-50%); } */
+/* 100% { transform: translateX(calc(-450px * 5)); } */
+
+/* }   */
+
+
+/* .carousel {
+overflow: hidden;
+height: 520px;
+}
+
+.inner {
+display: flex;
+flex-wrap: nowrap;
+width: max-content;
+animation: loop 25s linear infinite;
+}
+
+.box {
+width: 450px;
+flex: 0 0 auto;
+}
+
+@keyframes loop {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); }
+} */
+
+
+
+
+/* .carousel {
+width: 100%;
+overflow: hidden;
+height: 520px;
+}
+
+.inner {
+display: flex;
+flex-wrap: nowrap;
+animation: autorun 25s linear infinite;
+}
+
+.box {
+width: 450px;
+flex: 0 0 auto;
+}
+
+@keyframes autorun {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); }
+} */
