@@ -287,9 +287,19 @@ div.box {
   text-align: center; /* Centers heading text */
 }
 
-h1{
+
+.main-heading, .subtitle{
   line-height: 34px;
     text-align: center;
+    width: fit-content;
+}
+.main-heading{
+  font-size: 3em;
+    margin: 20px auto 18px auto;
+}
+.subtitle{
+  font-size: 2.1em;
+    margin: 0 auto 20px auto;
 }
 
 
