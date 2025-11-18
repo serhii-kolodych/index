@@ -1077,7 +1077,7 @@ to { transform: translateX(-50%); }
 
 .flickity-viewport{
       height: 500px !important;
-    padding-top: 15px !important;
+    padding-top: 25px !important;
 }
 
 .flickity-page-dots{
