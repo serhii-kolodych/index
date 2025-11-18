@@ -890,101 +890,143 @@ tbody tr:hover {
 
 
 /* this ones after last passed half - starts showing others */
-.carousel {
+
+/* .carousel {
 overflow: hidden;
 height: 520px;
+overflow-x: scroll;
+scroll-snap-type: x mandatory;
+scroll-behavior: smooth;
 }
-
 .inner {
 display: flex;
 flex-wrap: nowrap;
 width: max-content;
-animation: loop 25s linear infinite;
+animation: loop 4s linear infinite;
 }
-
 .box {
 width: 450px;
 flex: 0 0 auto;
+scroll-snap-align: start; 
 }
-
 @keyframes loop {
 from { transform: translateX(0); }
 to { transform: translateX(-50%); }
 }
 
+.container{
+ overflow-x: scroll;
+} */
 
 
 
 
-/* 
+
+
+
+
+
+
+
+
+/* this ones after last passed half - starts showing others */
+
 .carousel {
 overflow: hidden;
 height: 520px;
+overflow-x: scroll;
+scroll-snap-type: x mandatory;
+scroll-behavior: smooth;
+}
+.inner {
+display: flex;
+flex-wrap: nowrap;
+width: max-content;
+animation: loop 4s linear infinite;
+}
+.box {
+width: 450px;
+flex: 0 0 auto;
+scroll-snap-align: start; 
+}
+@keyframes loop {
+from { transform: translateX(0); }
+to { transform: translateX(-90%); }
 }
 
+.container{
+ overflow-x: scroll;
+}
+
+/* .inner { width: max-content; }
+@keyframes loop { from {transform:translateX(0);} to {transform:translateX(-50%);} } */
+
+.inner { animation: none; }
+
+
+
+
+
+
+
+/* .spinner {
+transform-style: preserve-3d;
+background: #fff3;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+transform: rotateY(calc(var(--ang) * 1deg)) translateY(-12px);
+transition: all .5s ease-in-out;
+animation: spin 10s linear infinite;
+transform: rotateX(10deg) rotateY(-98deg);
+} */
+
+
+
+/* don't work at all */
+
+/* .carousel {
+overflow: hidden;
+height: 520px;
+}
 .track {
 display: flex;
 flex-wrap: nowrap;
 width: max-content;
 animation: slide 20s linear infinite;
 }
-
 .box {
 width: 450px;
 flex: 0 0 auto;
 }
-
 @keyframes slide {
 0% { transform: translateX(0); }
 100% { transform: translateX(calc(-450px * 5)); }
+}   */
+
+
+
+
+
+/* not infinite, starts from start when last */
+
+/* .container { display: flex; flex-wrap: nowrap;}
+.box { width: 450px; flex: 0 0 auto; overflow: visible;}
+.container { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-behavior: smooth; height: 520px;}
+.inner {
+display: flex;
+flex-wrap: nowrap;
+animation: autorun 15s linear infinite;
+}
+@keyframes autorun {
+0% { transform: translateX(0); }
+100% { transform: translateX(calc(-450px * 5)); } 
 }  */
 
 
 
 
-
-
-
-/* .container { display: flex; flex-wrap: nowrap;}
-.box { width: 450px; flex: 0 0 auto; overflow: visible;}
-.container { display: flex; flex-wrap: nowrap; overflow-x: auto; scroll-behavior: smooth; height: 520px;}
-
-
-.inner {
-display: flex;
-flex-wrap: nowrap;
-animation: autorun 5s linear infinite;
-}
-
-@keyframes autorun {
-0% { transform: translateX(0); }
-/* to { transform: translateX(-50%); } */
-/* 100% { transform: translateX(calc(-450px * 5)); } */
-
-/* }   */
-
-
-/* .carousel {
-overflow: hidden;
-height: 520px;
-}
-
-.inner {
-display: flex;
-flex-wrap: nowrap;
-width: max-content;
-animation: loop 25s linear infinite;
-}
-
-.box {
-width: 450px;
-flex: 0 0 auto;
-}
-
-@keyframes loop {
-from { transform: translateX(0); }
-to { transform: translateX(-50%); }
-} */
 
 
 
