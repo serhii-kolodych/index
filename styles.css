@@ -1068,7 +1068,6 @@ to { transform: translateX(-50%); }
 
 
 .gallery {
-      padding-top: 15px !important;
   background: transparent;
 }
 .gallery-cell {
@@ -1078,7 +1077,7 @@ to { transform: translateX(-50%); }
 
 .flickity-viewport{
       height: 500px !important;
-    padding-top: 15px !important;
+    /* padding-top: 15px !important; */
 }
 
 .flickity-page-dots{
