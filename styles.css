@@ -1088,7 +1088,7 @@ to { transform: translateX(-50%); }
 fill: #166624 !important;
 }
 
-.flickity-slider{
+.gallery, .flickity-viewport, .flickity-slider{
   overflow: visible;
 }
 
