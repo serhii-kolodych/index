@@ -1099,5 +1099,5 @@ html, body { overflow-x: hidden; width: 100%; }
 
 .flickity-prev-next-button,
 .flickity-page-dots {
-z-index: 11;
+z-index: 999;
 }
