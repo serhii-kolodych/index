@@ -1088,6 +1088,10 @@ to { transform: translateX(-50%); }
 fill: #166624 !important;
 }
 
+.flickity-slider{
+  overflow: visible;
+}
+
 .box { width: 446px; margin-right: 4px; overflow: visible;}
 
 
