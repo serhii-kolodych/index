@@ -863,9 +863,9 @@ tbody tr:hover {
 }
 
 @media (max-width: 474px){
-    body{
+    /* body{
     zoom: 0.8;
-  }
+  } */
   .container {
     width: 474px;
     /* zoom: 0.9; adjust zoom level */
