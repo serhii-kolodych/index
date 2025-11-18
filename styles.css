@@ -844,22 +844,28 @@ tbody tr:hover {
     zoom: 0.9;
     min-width: 1000px;
   }
-  .box {
+  /* .box {
     zoom: 0.9;
-  }
+  } */
 }
 
 @media (max-width: 650px) {
+  body{
+    zoom: 0.9;
+  }
   .container {
     zoom: 0.85;
     min-width: auto;
   }
-  .box {
+  /* .box {
     zoom: 0.85;
-  }
+  } */
 }
 
 @media (max-width: 474px){
+    body{
+    zoom: 0.8;
+  }
   .container {
     width: 474px;
     zoom: 0.9; /* adjust zoom level */
