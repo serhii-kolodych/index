@@ -929,9 +929,9 @@ to { transform: translateX(-50%); }
 
 
 
-/* this ones after last passed half - starts showing others */
+/* no animation -> great on phones, no scroll to 1st one on the desktops */
 
-.carousel {
+/* .carousel {
 overflow: hidden;
 height: 520px;
 overflow-x: scroll;
@@ -956,14 +956,10 @@ to { transform: translateX(-90%); }
 
 .container{
  overflow-x: scroll;
+ height: 530px;
 }
 
-/* .inner { width: max-content; }
-@keyframes loop { from {transform:translateX(0);} to {transform:translateX(-50%);} } */
-
-.inner { animation: none; }
-
-
+.inner { animation: none; } */
 
 
 
@@ -1052,3 +1048,35 @@ flex: 0 0 auto;
 from { transform: translateX(0); }
 to { transform: translateX(-50%); }
 } */
+
+
+
+
+
+
+
+.gallery {
+  background: transparent;
+}
+.gallery-cell {
+  width: 450px;
+  margin-right: 12px;
+}
+.gallery-cell img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.flickity-viewport{
+      height: 500px !important;
+    padding-top: 15px !important;
+}
+
+.flickity-page-dots{
+  scale: 2.0 !important;
+}
+
+.flickity-prev-next-button svg path{
+fill: #166624 !important;
+}
