@@ -1092,7 +1092,7 @@ fill: #166624 !important;
   overflow: visible;
 }
 
-.box { width: 446px; margin-right: 4px; overflow: visible;}
+.box { margin-right: 4px; overflow: visible;}
 
 
 html, body { overflow-x: hidden; width: 100%; }
