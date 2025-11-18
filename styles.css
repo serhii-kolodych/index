@@ -854,7 +854,7 @@ tbody tr:hover {
     zoom: 0.9;
   }
   .container {
-    zoom: 0.85;
+    /* zoom: 0.85; */
     min-width: auto;
   }
   /* .box {
@@ -868,7 +868,7 @@ tbody tr:hover {
   }
   .container {
     width: 474px;
-    zoom: 0.9; /* adjust zoom level */
+    /* zoom: 0.9; adjust zoom level */
     -moz-transform: scale(0.9); /* Firefox fallback */
     -moz-transform-origin: top left;
   }
