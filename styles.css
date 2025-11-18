@@ -1091,4 +1091,4 @@ fill: #166624 !important;
 .box { width: 446px; margin-right: 4px; }
 
 
-html, body { overflow-x: hidden; width: 100%; }
+html, body, .container { overflow-x: hidden; width: 100%; }
