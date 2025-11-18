@@ -1088,7 +1088,7 @@ to { transform: translateX(-50%); }
 fill: #166624 !important;
 }
 
-.gallery-cell { width: 446px; margin-right: 4px; }
+.box { width: 446px; margin-right: 4px; }
 
 
 html, body { overflow-x: hidden; width: 100%; }
