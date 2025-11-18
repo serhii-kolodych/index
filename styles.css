@@ -1077,7 +1077,7 @@ to { transform: translateX(-50%); }
 
 .flickity-viewport{
       height: 500px !important;
-    padding-top: 25px !important;
+    padding-top: 15px !important;
 }
 
 .flickity-page-dots{
@@ -1088,7 +1088,7 @@ to { transform: translateX(-50%); }
 fill: #166624 !important;
 }
 
-.box { width: 446px; margin-right: 4px; }
+.box { width: 446px; margin-right: 4px; overflow: visible;}
 
 
 html, body { overflow-x: hidden; width: 100%; }
