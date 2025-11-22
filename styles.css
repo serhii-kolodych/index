@@ -933,7 +933,7 @@ tbody tr:hover {
 @media (max-width: 1000px) {
   .section-container {
     zoom: 0.8;
-    min-width: 1000px;
+    /* min-width: 1000px; */
   }
   /* .box {
     zoom: 0.9;
