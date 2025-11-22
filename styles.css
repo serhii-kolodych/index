@@ -850,8 +850,8 @@ tbody tr:hover {
 }
 
 @media (max-width: 650px) {
-  body{
-    zoom: 0.9;
+  .box{
+    zoom: 0.9 !important;
   }
   .container {
     /* zoom: 0.85; */
@@ -863,9 +863,9 @@ tbody tr:hover {
 }
 
 @media (max-width: 474px){
-    /* body{
-    zoom: 0.8;
-  } */
+    .box{
+    zoom: 0.7 !important;
+  }
   .container {
     width: 474px;
     /* zoom: 0.9; adjust zoom level */
@@ -1184,7 +1184,7 @@ z-index: 999;
     -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
     
     /* Add padding to the ends of the slider for better visual flow */
-    padding: 0 20px; 
+    /* padding: 0 20px;  */
     
     /* Center the container on the page */
     margin: 0 auto 50px auto; 
