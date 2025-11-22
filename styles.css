@@ -852,10 +852,10 @@ tbody tr:hover {
 
 
 @media (max-width: 1000px) {
-  /* .container {
-    zoom: 0.9;
+  .section-container {
+    zoom: 0.8;
     min-width: 1000px;
-  } */
+  }
   /* .box {
     zoom: 0.9;
   } */
@@ -876,7 +876,7 @@ tbody tr:hover {
 
 @media (max-width: 474px){
     .box{
-    zoom: 0.7 !important;
+    zoom: 0.9 !important;
   }
   .container {
     width: 474px;
