@@ -1120,7 +1120,6 @@ fill: #166624 !important;
   border: 1px solid #00ff41;
 }
 
-html, body { overflow-x: hidden; width: 100%; }
 
 .flickity-prev-next-button,
 .flickity-page-dots {
