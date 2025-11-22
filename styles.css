@@ -1067,84 +1067,6 @@ to { transform: translateX(-50%); }
 
 
 
-.gallery {
-  background: transparent;
-}
-
-.gallery-cell {
-  width: 150px;
-  margin-right: 12px;
-}
-
-.flickity-viewport{
-      height: 520px !important;
-    /* padding-top: 15px !important; */
-}
-
-.flickity-page-dots{
-  scale: 2.0 !important;
-}
-
-.flickity-prev-next-button svg path{
-fill: #166624 !important;
-}
-
-.gallery, .flickity-viewport, .flickity-slider{
-  overflow: visible;
-}
-
-.box { margin-right: 4px; overflow: visible;   border: 1px solid #00ff41; /* Green border to match the Matrix theme */
-}
-
-.imgcontainer {
-  border: 1px solid #00ff41;
-}
-
-html, body { overflow-x: hidden; width: 100%; }
-
-.flickity-prev-next-button,
-.flickity-page-dots {
-z-index: 999;
-}
-
-
-/* Arrow buttons */
-.flickity-prev-next-button {
-  width: 44px;
-  height: 44px;
-  background: transparent;
-}
-.flickity-prev-next-button:hover {
-  background: rgba(0, 255, 65, 0.2); /* Subtle green hover */
-}
-/* Arrow icon color */
-.flickity-prev-next-button .flickity-button-icon {
-  fill: #00ff41; /* Green arrows */
-}
-
-/* Page dots */
-.flickity-page-dots {
-  bottom: -40px;
-}
-
-.flickity-page-dots .dot {
-  width: 10px;
-  height: 10px;
-  opacity: 0.5;
-  background: #00ff41; /* Green dots */
-  border-radius: 50%;
-  margin: 0 4px;
-}
-
-.flickity-page-dots .dot.is-selected {
-  opacity: 1;
-}
-
-
-
-
-
-
 
 
 
@@ -1238,17 +1160,43 @@ z-index: 999;
   opacity: 1;
 }
 
-body{
-  overflow: clip;
+
+.section-container{
+  display: inline-flex;
+  overflow-x: scroll; 
 }
 
 
 
 
+.section-container {
+    /* Enable Flexbox for horizontal alignment (used instead of inline-flex to maintain centering) */
+    display: flex;
+    flex-direction: row;
+    
+    /* CRITICAL: Allows horizontal scrolling */
+    overflow-x: scroll; 
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    
+    /* ⚡ ADDED: Enable mandatory scroll snapping for carousel behavior ⚡ */
+    scroll-snap-type: x mandatory; 
+    
+    /* Note: white-space: nowrap is redundant with display: flex and flex-shrink: 0 on children */
+    -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+    
+    /* Add padding to the ends of the slider for better visual flow */
+    padding: 0 20px; 
+    
+    /* Center the container on the page */
+    margin: 0 auto 50px auto; 
+}
 
+/* 3. Hide the Scrollbar (Optional: for a cleaner look) */
+.section-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+}
 
-
-
-
-
-
+.section-container {
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
