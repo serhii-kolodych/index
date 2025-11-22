@@ -15,6 +15,8 @@ body{
 
 }
 
+
+
 a{
   color: #D78A2A; /* #D78A2A - Warm Honey */
   text-decoration: none;
@@ -212,6 +214,8 @@ body {
 
 
 
+
+
 .social-container img:hover {
   cursor: pointer; /* Change cursor to pointer */
   transform: scale(1.1); /* Slightly enlarge the image */
@@ -241,26 +245,32 @@ text-align:justify;
 }
 
 .s-437{
+  min-width: 437px;
   --s: 437px;
 }
 
 .s-435{
+  min-width: 435px;
   --s: 435px;
 }
 
 .s-424{
+  min-width: 424px;
   --s: 424px;
 }
 
 .s-389{
+  min-width: 389px;
   --s: 389px;
 }
 
 .s-340{
+  min-width: 340px;
   --s: 340px;
 }
 
 .s-424{
+  min-width: 424px;
   --s: 424px;
 }
 
@@ -325,8 +335,8 @@ width: fit-content;
   font-size: 2.1em;
 }
 
-.container { display: inline-flex; overflow: hidden; animation: ticker 18s linear infinite; }
-@keyframes ticker { from { left: 0; } to { left: -100%; } }
+/* .container { display: inline-flex; overflow: hidden; animation: ticker 18s linear infinite; }
+@keyframes ticker { from { left: 0; } to { left: -100%; } } */
 
 
 .imgcontainer {
@@ -815,6 +825,8 @@ tbody tr:hover {
   transform: translate(-50%, -50%);
 }
 
+
+
 .mar10{
   margin-top: 10px;
   margin-bottom: 14px;
@@ -840,10 +852,10 @@ tbody tr:hover {
 
 
 @media (max-width: 1000px) {
-  .container {
+  /* .container {
     zoom: 0.9;
     min-width: 1000px;
-  }
+  } */
   /* .box {
     zoom: 0.9;
   } */
@@ -1078,35 +1090,13 @@ to { transform: translateX(-50%); }
 
 
 
-/* --- Adjust Flickity Cell Spacing --- */
-.gallery-cell {
-  width: 350px;
-  /* REDUCED: Decreased the margin-right for the primary spacing between cells. */
-  margin-right: 6px; /* Was 12px. This is the main gap control. */
-}
-
 /* --- Adjust Box Internal Spacing --- */
 .box { 
   /* REDUCED: Decreased the internal margin on the right of the content box. */
-  margin-right: 2px; /* Was 4px. Combine with gallery-cell margin for total spacing. */
-  overflow: visible;   
+
   border: 1px solid #00ff41; 
 }
 
-/* --- Keep the rest of your original CSS untouched --- */
-
-.gallery {
-  background: transparent;
-}
-
-.flickity-viewport{
-      height: 520px !important;
-    /* padding-top: 15px !important; */
-}
-
-.flickity-page-dots{
-  scale: 2.0 !important;
-}
 
 .flickity-prev-next-button svg path{
 fill: #166624 !important;
@@ -1160,13 +1150,6 @@ z-index: 999;
 }
 
 
-.section-container{
-  display: inline-flex;
-  overflow-x: scroll; 
-}
-
-
-
 
 .section-container {
     /* Enable Flexbox for horizontal alignment (used instead of inline-flex to maintain centering) */
@@ -1190,6 +1173,10 @@ z-index: 999;
     margin: 0 auto 50px auto; 
 }
 
+
+
+
+
 /* 3. Hide the Scrollbar (Optional: for a cleaner look) */
 .section-container::-webkit-scrollbar {
     display: none; /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
@@ -1198,4 +1185,9 @@ z-index: 999;
 .section-container {
     -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
     scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+
+html {
+    overflow-x: hidden;
 }
