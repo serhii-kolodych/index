@@ -1070,8 +1070,9 @@ to { transform: translateX(-50%); }
 .gallery {
   background: transparent;
 }
+
 .gallery-cell {
-  width: 350px;
+  width: 150px;
   margin-right: 12px;
 }
 
@@ -1092,12 +1093,147 @@ fill: #166624 !important;
   overflow: visible;
 }
 
-.box { margin-right: 4px; overflow: visible;}
+.box { margin-right: 4px; overflow: visible;   border: 1px solid #00ff41; /* Green border to match the Matrix theme */
+}
 
+.imgcontainer {
+  border: 1px solid #00ff41;
+}
 
 html, body { overflow-x: hidden; width: 100%; }
 
 .flickity-prev-next-button,
 .flickity-page-dots {
 z-index: 999;
+}
+
+
+/* Arrow buttons */
+.flickity-prev-next-button {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+}
+.flickity-prev-next-button:hover {
+  background: rgba(0, 255, 65, 0.2); /* Subtle green hover */
+}
+/* Arrow icon color */
+.flickity-prev-next-button .flickity-button-icon {
+  fill: #00ff41; /* Green arrows */
+}
+
+/* Page dots */
+.flickity-page-dots {
+  bottom: -40px;
+}
+
+.flickity-page-dots .dot {
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+  background: #00ff41; /* Green dots */
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.flickity-page-dots .dot.is-selected {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Adjust Flickity Cell Spacing --- */
+.gallery-cell {
+  width: 350px;
+  /* REDUCED: Decreased the margin-right for the primary spacing between cells. */
+  margin-right: 6px; /* Was 12px. This is the main gap control. */
+}
+
+/* --- Adjust Box Internal Spacing --- */
+.box { 
+  /* REDUCED: Decreased the internal margin on the right of the content box. */
+  margin-right: 2px; /* Was 4px. Combine with gallery-cell margin for total spacing. */
+  overflow: visible;   
+  border: 1px solid #00ff41; 
+}
+
+/* --- Keep the rest of your original CSS untouched --- */
+
+.gallery {
+  background: transparent;
+}
+
+.flickity-viewport{
+      height: 520px !important;
+    /* padding-top: 15px !important; */
+}
+
+.flickity-page-dots{
+  scale: 2.0 !important;
+}
+
+.flickity-prev-next-button svg path{
+fill: #166624 !important;
+}
+
+.gallery, .flickity-viewport, .flickity-slider{
+  overflow: visible;
+}
+
+.imgcontainer {
+  border: 1px solid #00ff41;
+}
+
+html, body { overflow-x: hidden; width: 100%; }
+
+.flickity-prev-next-button,
+.flickity-page-dots {
+z-index: 999;
+}
+
+
+/* Arrow buttons */
+.flickity-prev-next-button {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+}
+.flickity-prev-next-button:hover {
+  background: rgba(0, 255, 65, 0.2); /* Subtle green hover */
+}
+/* Arrow icon color */
+.flickity-prev-next-button .flickity-button-icon {
+  fill: #00ff41; /* Green arrows */
+}
+
+/* Page dots */
+.flickity-page-dots {
+  bottom: -40px;
+}
+
+.flickity-page-dots .dot {
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+  background: #00ff41; /* Green dots */
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.flickity-page-dots .dot.is-selected {
+  opacity: 1;
 }
