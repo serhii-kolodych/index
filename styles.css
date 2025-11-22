@@ -1237,3 +1237,18 @@ z-index: 999;
 .flickity-page-dots .dot.is-selected {
   opacity: 1;
 }
+
+body{
+  overflow: clip;
+}
+
+
+
+
+
+
+
+
+
+
+
