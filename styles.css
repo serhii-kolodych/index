@@ -931,10 +931,9 @@ tbody tr:hover {
 
 
 @media (max-width: 1000px) {
-  .section-container {
+  /* .section-container {
     zoom: 0.8;
-    /* min-width: 1000px; */
-  }
+  } */
   /* .box {
     zoom: 0.9;
   } */
@@ -947,6 +946,12 @@ tbody tr:hover {
 }
 
 @media (max-width: 650px) {
+  .sections{
+    font-size: 1.8em;
+  }
+  .section-container{
+    zoom: 0.8 !important;
+  }
   .box{
     zoom: 0.9 !important;
   }
@@ -968,8 +973,8 @@ tbody tr:hover {
   font-size: 1.7em;
   margin: 0 auto 20px auto;
 }
-    .box{
-    zoom: 0.9 !important;
+    .section-container{
+    zoom: 0.6 !important;
   }
   .container {
     /* zoom: 0.9; adjust zoom level */
