@@ -1299,16 +1299,15 @@ body {
 
 
 
-.section-container ol { 
+/* .section-container ol { 
   gap: 10px; 
-  animation: slide 15s linear ; 
-    /* animation: slide 15s linear infinite alternate;  */
+  animation: slide 15s linear infinite; 
 
 } 
 
 @keyframes slide { 
   0% { transform: translateX(0); } 
-  100% { transform: translateX(-50%); } }
+  100% { transform: translateX(-50%); } } */
 
 .section-container {
   overflow-x: auto;
@@ -1317,12 +1316,40 @@ body {
 
 
 
+.section-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  cursor: grab; /* show it’s draggable */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* smooth on iOS */
+}
+
+.section-container:active {
+  cursor: grabbing;
+}
 
 
 
 
 
 
+
+.section-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  cursor: grab;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.section-container:active {
+  cursor: grabbing;
+}
+
+.section-container ol {
+  display: flex;
+  gap: 10px;
+}
 
 
 

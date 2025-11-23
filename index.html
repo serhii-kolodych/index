@@ -86,7 +86,7 @@
     
     <a href="#" id="change-style-link">White</a>
 
-    <h2 class="sections" id="websites-heading">Websites:</h2>
+    <h2 class="sections" id="websites-heading">Websites</h2>
 
     <div class="section-container">
         <ol>
@@ -177,7 +177,7 @@
 
     
 
-    <h2 class="sections" id="bots-heading">Telegram Bots:</h2>
+    <h2 class="sections" id="bots-heading">Telegram Bots</h2>
     <div class="section-container">
          <ol>
             <li>
@@ -395,6 +395,36 @@
             updateSectionCount('bots-heading', 'Telegram Bots'); // Should display (3)
             updateSectionCount('articles-heading', 'Articles'); // Should display (5)
         });
+    </script>
+
+    <script>
+        const container = document.querySelector('.section-container');
+
+        // Drag to scroll
+        let isDown = false, startX, scrollLeft;
+
+        container.addEventListener('mousedown', e => {
+        isDown = true;
+        container.classList.add('active');
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+        });
+        container.addEventListener('mouseleave', () => isDown = false);
+        container.addEventListener('mouseup', () => isDown = false);
+        container.addEventListener('mousemove', e => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 1; // scroll-fast factor
+        container.scrollLeft = scrollLeft - walk;
+        });
+
+        // Wheel to scroll horizontally
+        container.addEventListener('wheel', e => {
+        e.preventDefault();
+        container.scrollLeft += e.deltaY;
+        });
+
     </script>
     
     
