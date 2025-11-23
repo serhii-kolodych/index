@@ -325,8 +325,8 @@ width: fit-content;
 } */
 
 .main-heading, .subtitle {
-  background-color: #050505;
-  background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 255, 65, 0.08) 50%, transparent 51%);
+background-color: rgba(0, 1, 1, 0.6); 
+ background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 255, 65, 0.08) 50%, transparent 51%);
   background-size: 100% 3px; 
   border-left: 3px solid #00ff41;
   border-right: 3px solid #00ff41;
