@@ -244,6 +244,11 @@ text-align:justify;
   padding-top: 14px;
 }
 
+.s-455{
+  min-width: 455px;
+  --s: 455px;
+}
+
 .s-437{
   min-width: 437px;
   --s: 437px;
@@ -269,10 +274,7 @@ text-align:justify;
   --s: 340px;
 }
 
-.s-424{
-  min-width: 424px;
-  --s: 424px;
-}
+
 
 .none-display{
   display: none;
@@ -1292,3 +1294,39 @@ z-index: 999;
 body {
     overflow-x: hidden;
 } */
+
+
+
+
+
+.section-container ol { 
+  gap: 10px; 
+  animation: slide 15s linear ; 
+    /* animation: slide 15s linear infinite alternate;  */
+
+} 
+
+@keyframes slide { 
+  0% { transform: translateX(0); } 
+  100% { transform: translateX(-50%); } }
+
+.section-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
