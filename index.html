@@ -398,34 +398,44 @@
     </script>
 
     <script>
-        const container = document.querySelector('.section-container');
+const containers = document.querySelectorAll('.section-container');
 
-        // Drag to scroll
-        let isDown = false, startX, scrollLeft;
+containers.forEach(container => {
+    let isDown = false, startX, scrollLeft;
 
-        container.addEventListener('mousedown', e => {
+    container.addEventListener('mousedown', e => {
         isDown = true;
         container.classList.add('active');
         startX = e.pageX - container.offsetLeft;
         scrollLeft = container.scrollLeft;
-        });
-        container.addEventListener('mouseleave', () => isDown = false);
-        container.addEventListener('mouseup', () => isDown = false);
-        container.addEventListener('mousemove', e => {
+    });
+
+    container.addEventListener('mouseleave', () => isDown = false);
+    container.addEventListener('mouseup', () => isDown = false);
+
+    container.addEventListener('mousemove', e => {
         if(!isDown) return;
         e.preventDefault();
         const x = e.pageX - container.offsetLeft;
-        const walk = (x - startX) * 1; // scroll-fast factor
+        const walk = (x - startX) * 1; // scroll speed
         container.scrollLeft = scrollLeft - walk;
-        });
+    });
 
-        // Wheel to scroll horizontally
-        container.addEventListener('wheel', e => {
+    container.addEventListener('wheel', e => {
+        const atStart = container.scrollLeft === 0;
+        const atEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth;
+
+        if ((e.deltaY < 0 && atStart) || (e.deltaY > 0 && atEnd)) {
+            // let page scroll
+            return;
+        }
         e.preventDefault();
         container.scrollLeft += e.deltaY;
-        });
+    });
+});
+</script>
 
-    </script>
+
     
     
     

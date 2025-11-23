@@ -349,7 +349,8 @@ width: fit-content;
   display: block;
   margin-left: 45px;
   font-size: 2.1em;
-}
+  margin-bottom: 4px;
+ margin-block-end: 0 !important;}
 
 .section-container ol{
   display: flex;
