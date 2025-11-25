@@ -135,13 +135,10 @@ em {
 /* code block end */
 
 
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+
+
+canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform: translateZ(-1px) scale(2); z-index: -1; } 
+
 
   ul {
     list-style-type: none;
@@ -189,13 +186,16 @@ canvas {
 .social-container a {
   text-decoration: none; /* Remove underline from links */
 }
-
+.social-container {
+  text-align: center; /* Centers inline-block elements */
+}
 .social-container img {
-  margin-top: 12px;
-  margin-right: 18px;
-  width: 68px; /* Set a size for the icons */
+  margin-top: 20px;
+  margin-right: 10px;
+  width: 60px; /* Set a size for the icons */
   height: auto; /* Maintain aspect ratio */
   transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  display: inline-block; /* Makes the image an inline block for centering */
 }
 
 .social-container img:hover {
@@ -289,7 +289,7 @@ div.box {
 
 
 .main-heading, .subtitle{
-  line-height: 34px;
+  /* line-height: 34px; */
     text-align: center;
     width: fit-content;
 }
@@ -301,6 +301,62 @@ div.box {
   font-size: 2.1em;
     margin: 0 auto 20px auto;
 }
+
+.sections{
+  display: block;
+  margin-left: 45px;
+  font-size: 2.1em;
+  margin-bottom: 4px;
+ margin-block-end: 0 !important;}
+
+ .section-container ol{
+  display: flex;
+}
+
+.section-container ol li {
+  list-style: none; /* Hide native marker */
+  display: flex;
+  align-items: flex-start; /* Aligns the start of the text */
+  margin: 0;
+  padding: 0;
+}
+
+.section-container ol li::before {
+  /* Use ::before as a custom marker column */
+  content: counter(list-item) ".";
+  counter-increment: list-item;
+  /* Fixed width for the number column */
+  width: 1em; 
+  flex-shrink: 0; 
+  margin-left: -2.5em; /* Space between number and text */
+  font-size: 2.1em;
+  /* Aligns the number to the top */
+  align-self: flex-start;
+}
+.section-container ol li::before {
+  /* Use ::before as a custom marker column */
+  content: counter(list-item) ".";
+    position: relative;
+
+  
+  /* Fixed width for the number column */
+  width: 1em; 
+  flex-shrink: 0; 
+  
+  /* ⚡ MODIFIED: PUSH MARKER RIGHT ⚡ */
+  margin-left: 30px; 
+  
+  /* Space between number and actual text content */
+  margin-right: -2.5em; 
+  
+  font-size: 2.1em;
+  align-self: flex-start;
+  /* color: #00ff41;  */
+  font-weight: bold;
+}
+
+
+
 
 
 .imgcontainer {
@@ -523,14 +579,18 @@ form input[type="submit"]:hover {
     padding: 10px 20px;
     border-radius: 8px;
     display: none; /* Initially hidden */
-    z-index: 5;
     border: 3px solid #6C6C6C;
+    z-index: 5;
   }
   
   
   #c:hover + #back-to-home {
     display: block;
+    z-index: 5;
+
   }
+
+
   
   
 .item {
@@ -803,6 +863,7 @@ tbody tr:hover {
 }
 
 
+/* 
 @media (max-width: 1000px) {
   .container {
     zoom: 0.9;
@@ -811,8 +872,8 @@ tbody tr:hover {
   .box {
     zoom: 0.9;
   }
-}
-
+} */
+/* 
 @media (max-width: 650px) {
   .container {
     zoom: 0.85;
@@ -822,15 +883,9 @@ tbody tr:hover {
     zoom: 0.85;
   }
 }
+*/
 
-@media (max-width: 474px){
-  .container {
-    width: 474px;
-    zoom: 0.9; /* adjust zoom level */
-    -moz-transform: scale(0.9); /* Firefox fallback */
-    -moz-transform-origin: top left;
-  }
-}
+
 
 .box {
   transition: transform 0.3s ease; /* smooth effect */
@@ -845,4 +900,368 @@ tbody tr:hover {
   display: block;
   white-space: nowrap;       /* Keep text on one line */
   font-size: clamp(16px, 5vw, 18px); /* Adjust size between min and max */
+}
+
+
+
+html {
+background-color: #fff;
+}
+
+body {
+color: #1d1d1f;
+overscroll-behavior: auto;
+}
+
+a, .aLink {
+color: #0066CC;
+}
+
+a:visited {
+color: #6C6C6C;
+}
+
+em {
+color: #FF7043;
+}
+
+.grid-container {
+background-color: #f0f0f0;
+color: #333;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.code-row code {
+background-color: #e0e0e0;
+color: #333;
+}
+
+.box {
+background: linear-gradient(to right, rgba(242,242,242,1), rgba(230,230,230,1));
+border: 1px solid #d6d6d6;
+box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.box:hover {
+transform: scale(1.04);
+}
+
+.section-container {
+overscroll-behavior-x: contain;
+cursor: grab;
+scroll-behavior: smooth;
+-webkit-overflow-scrolling: touch;
+}
+
+.section-container:active {
+cursor: grabbing;
+}
+
+.main-heading, .subtitle {
+background-color: rgba(255,255,255,0.6);
+background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 102, 204, 0.08) 50%, transparent 51%);
+border-left: 3px solid #0066CC;
+border-right: 3px solid #0066CC;
+color: #1d1d1f;
+}
+
+.article-container {
+background: linear-gradient(to right, rgba(255,255,255,0.99), rgba(245,245,245,0.99));
+color: #1d1d1f;
+box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.item {
+background: linear-gradient(to right, rgba(245,245,245,0.9), rgba(230,230,230,0.9));
+border: 1px solid #ccc;
+box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+
+.flickity-prev-next-button:hover {
+background: rgba(0,102,204,0.2);
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+fill: #0066CC;
+}
+
+.flickity-page-dots .dot {
+background: #0066CC;
+}
+
+.flickity-page-dots .dot.is-selected {
+opacity: 1;
+}
+
+.imgcontainer {
+background-color: #fff;
+border: 1px solid #d6d6d6;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+border: 1px solid #999;
+color: #1d1d1f;
+}
+
+form input[type="submit"] {
+border: 1px solid #0066CC;
+color: #0066CC;
+}
+
+form input[type="submit"]:hover {
+background-color: #0066CC;
+color: #fff;
+}
+
+
+
+
+.fit-one-line {
+  display: block;
+  white-space: nowrap;       /* Keep text on one line */
+  font-size: clamp(16px, 5vw, 18px); /* Adjust size between min and max */
+}
+
+
+
+
+
+
+/* --- Adjust Box Internal Spacing --- */
+.box { 
+  /* REDUCED: Decreased the internal margin on the right of the content box. */
+
+  border: 1px solid #d6d6d6; 
+}
+
+
+.flickity-prev-next-button svg path{
+fill: #166624 !important;
+}
+
+.gallery, .flickity-viewport, .flickity-slider{
+  overflow: visible;
+}
+
+.imgcontainer {
+  border: 1px solid #d6d6d6;
+}
+
+
+.flickity-prev-next-button,
+.flickity-page-dots {
+z-index: 999;
+}
+
+
+/* Arrow buttons */
+.flickity-prev-next-button {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+}
+.flickity-prev-next-button:hover {
+  background: rgba(0, 255, 65, 0.2); /* Subtle green hover */
+}
+/* Arrow icon color */
+.flickity-prev-next-button .flickity-button-icon {
+  fill: #00ff41; /* Green arrows */
+}
+
+/* Page dots */
+.flickity-page-dots {
+  bottom: -40px;
+}
+
+.flickity-page-dots .dot {
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+  background: #00ff41; /* Green dots */
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.flickity-page-dots .dot.is-selected {
+  opacity: 1;
+}
+
+
+
+.section-container {
+    /* Enable Flexbox for horizontal alignment (used instead of inline-flex to maintain centering) */
+    display: flex;
+    flex-direction: row;
+    
+    /* CRITICAL: Allows horizontal scrolling */
+    overflow-x: scroll; 
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    
+    /* ⚡ ADDED: Enable mandatory scroll snapping for carousel behavior ⚡ */
+    scroll-snap-type: x mandatory; 
+    
+    /* Note: white-space: nowrap is redundant with display: flex and flex-shrink: 0 on children */
+    -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+    
+    /* Center the container on the page */
+    margin: 0 auto 50px auto; 
+}
+
+
+
+
+
+/* 3. Hide the Scrollbar (Optional: for a cleaner look) */
+.section-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+}
+
+.section-container {
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+
+
+.section-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+
+
+.section-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  cursor: grab; /* show it’s draggable */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* smooth on iOS */
+}
+
+.section-container:active {
+  cursor: grabbing;
+}
+
+
+
+
+
+
+
+.section-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  cursor: grab;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.section-container:active {
+  cursor: grabbing;
+}
+
+.section-container ol {
+  display: flex;
+  gap: 10px;
+}
+
+
+.main-heading, .subtitle {
+/* background-color: rgba(0, 1, 1, 0.6);  */
+ /* background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 255, 65, 0.08) 50%, transparent 51%); */
+  /* background-size: 100% 3px;  */
+  /* border-left: 3px solid #00ff41; */
+  /* border-right: 3px solid #00ff41; */
+  text-align: center;
+}
+
+
+.main-heading{
+    max-width: 650px;
+  margin: 20px auto 18px auto;
+  font-size: 3em;
+}
+.subtitle{
+  font-size: 2.1em;
+  margin: 0 auto 20px auto;
+}
+.sections{
+  display: block;
+  margin-left: 45px;
+  font-size: 2.1em;
+  margin-bottom: 4px;
+ margin-block-end: 0 !important;}
+
+.section-container ol{
+  display: flex;
+}
+
+
+
+
+
+
+
+body {
+  overscroll-behavior-y: auto; /* allow pull-to-refresh */
+}
+
+html {
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+
+
+@media (min-width: 1200px){
+.subtitle{
+  max-width: 1150px;
+}
+}
+
+@media (max-width: 1200px) {
+  .subtitle {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 722px) {
+  .main-heading, .subtitle {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 650px) {
+  .sections{
+    font-size: 1.8em;
+  }
+  .section-container{
+    zoom: 0.8 !important;
+  }
+  .box{
+    zoom: 0.9 !important;
+  }
+  .container {
+    /* zoom: 0.85; */
+    min-width: auto;
+  }
+  /* .box {
+    zoom: 0.85;
+  } */
+}
+
+@media (max-width: 474px){
+  .main-heading{
+  margin: 20px auto 18px auto;
+  font-size: 2.5em;
+}
+.subtitle{
+  font-size: 1.7em;
+  margin: 0 auto 20px auto;
+}
+    .section-container{
+    zoom: 0.6 !important;
+  }
 }

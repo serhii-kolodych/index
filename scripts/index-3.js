@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   var whiteState = localStorage.getItem("white") || "0";
-  var currentStyle = whiteState === "1" ? "styles-white.css" : "styles.css";
+  var currentStyle =
+    whiteState === "1" ? "../styles-white.css" : "../styles.css";
   var stylesheet = document.getElementById("stylesheet");
 
   if (stylesheet) {
@@ -14,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", function (e) {
       e.preventDefault();
       whiteState = whiteState === "0" ? "1" : "0";
-      currentStyle = whiteState === "1" ? "styles-white.css" : "styles.css";
+      currentStyle =
+        whiteState === "1" ? " ../styles-white.css" : "../styles.css";
       localStorage.setItem("white", whiteState);
       link.textContent = whiteState === "1" ? "Matrix" : "White";
       if (stylesheet) stylesheet.setAttribute("href", currentStyle);

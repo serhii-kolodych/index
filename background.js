@@ -49,10 +49,9 @@ function draw() {
 
 setInterval(draw, 23); // Lower interval (e.g., 20) = faster rain, higher (e.g., 50) = slower.
 
-document.addEventListener("DOMContentLoaded", function () {
-  const canvas = document.getElementById("c");
-
-  canvas.addEventListener("click", function () {
-    window.location.href = "../index.html";
-  });
+// add this near top of your scripts
+document.addEventListener("click", (e) => {
+  if (e.target && e.target.id === "c") {
+    location.href = "../index.html";
+  }
 });

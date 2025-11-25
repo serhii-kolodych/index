@@ -1,6 +1,9 @@
-// Load the appropriate background script based on the whiteState -->
-var whiteState = localStorage.getItem('white') || '0'; // Default to '0'
-var bgScript = document.createElement('script');
-bgScript.id = 'backgroundScript'; // Set an ID for the script
-bgScript.src = (whiteState === '1') ? 'background-white.js' : 'background.js';
-document.body.appendChild(bgScript); // Append the background script
+document.addEventListener("DOMContentLoaded", () => {
+  const white = localStorage.getItem("white") === "1";
+  const s = document.createElement("script");
+  s.src = white ? "/background-white.js" : "/background.js";
+  document.body.appendChild(s);
+
+  const back = document.getElementById("back-to-home");
+  if (back) back.onclick = () => (location.href = "../index.html");
+});
