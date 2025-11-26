@@ -526,7 +526,7 @@ form input[type="submit"]:hover {
     box-sizing: border-box;
     letter-spacing: -0.01em;
     line-height: 1.8;
-    width: 85%;
+    width: 90%;
     position: relative;
     max-width: 1200px;
     /* min-width: 350px; */
@@ -1089,19 +1089,22 @@ html {
 }
 
 
-@media (max-width: 1000px) {
-  /* .section-container {
-    zoom: 0.8;
-  } */
-  /* .box {
-    zoom: 0.9;
-  } */
+@media (max-width: 850px) {
+.main-heading{
+  margin-left: 20px !important;
+}
 }
 
 @media (max-width: 722px) {
   .main-heading, .subtitle {
     max-width: 90%;
   }
+    .main-heading{
+  font-size: 2.5em;
+}
+.subtitle{
+  font-size: 1.8em;
+}
 }
 
 @media (max-width: 650px) {
@@ -1126,10 +1129,10 @@ html {
 @media (max-width: 474px){
   .main-heading{
   margin: 20px auto 18px auto;
-  font-size: 2.5em;
+  font-size: 1.9em;
 }
 .subtitle{
-  font-size: 1.7em;
+  font-size: 1.5em;
   margin: 0 auto 20px auto;
 }
     .section-container{
@@ -1162,4 +1165,51 @@ html {
 
 .section-container.active {
     cursor: grabbing;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.one-row {
+    display: flex;
+    align-items: center;       /* vertical centering */
+    justify-content: space-between; /* heading and logo spaced */
+    padding: 0 20px;           /* optional horizontal padding */
+    height: 120px;             /* adjust as needed */
+}
+
+.main-heading {
+    text-align: center;
+    flex: 1;                   /* occupy available space */
+}
+
+.theme-logo img {
+    width: 64px;
+    height: 64px;
+    transition: width 0.5s, height 0.5s;
+    margin-left: 20px;
+}
+
+@media (max-width: 1200px) {
+    .theme-logo img {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 650px) {
+    .theme-logo img {
+        width: 44px;
+        height: 44px;
+    }
 }
