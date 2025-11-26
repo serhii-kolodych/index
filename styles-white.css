@@ -496,6 +496,7 @@ form input[type="submit"]:hover {
 
 
 .article-container {
+  box-sizing: border-box !important;
     line-height: 1.8;
     width: 85%;
     position: relative;
@@ -969,6 +970,7 @@ color: #1d1d1f;
 background: linear-gradient(to right, rgba(255,255,255,0.99), rgba(245,245,245,0.99));
 color: #1d1d1f;
 box-shadow: 0 0 20px rgba(0,0,0,0.1);
+box-sizing: border-box;
 }
 
 .item {
@@ -1183,6 +1185,7 @@ z-index: 999;
     max-width: 650px;
   margin: 20px auto 18px auto;
   font-size: 3em;
+  padding: 0 10px;
 }
 .subtitle{
   font-size: 2.1em;
@@ -1265,3 +1268,5 @@ html {
     zoom: 0.6 !important;
   }
 }
+
+

@@ -523,6 +523,7 @@ form input[type="submit"]:hover {
 }
 
 .article-container {
+    box-sizing: border-box;
     letter-spacing: -0.01em;
     line-height: 1.8;
     width: 85%;
@@ -1078,6 +1079,12 @@ html {
 @media (max-width: 1200px) {
   .subtitle {
     max-width: 90%;
+  }
+  .section-container{
+    zoom: 0.9 !important;
+  }
+  .box{
+    zoom: 0.9 !important;
   }
 }
 

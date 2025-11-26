@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   var whiteState = localStorage.getItem("white") || "0";
   var currentStyle =
-    whiteState === "1" ? "../styles-white.css" : "../styles.css";
+    whiteState === "1" ? "../styles-white.css" : "../styles.css?v=15";
   var stylesheet = document.getElementById("stylesheet");
 
   if (stylesheet) {
