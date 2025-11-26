@@ -12,8 +12,8 @@ function drawBackground() {
 
   // Defining the colors with more white and reduced peach
   gradient.addColorStop(0, "#ffffff"); // White at the top
-  gradient.addColorStop(0.7, "#e0f7fa"); // Light cyan stretches to 70% height
-  gradient.addColorStop(0.85, "#ffd180"); // Light orange begins after cyan (less peach)
+  gradient.addColorStop(0.5, "#e0f7fa"); // Light cyan stretches to 70% height
+  gradient.addColorStop(0.75, "#ffd180"); // Light orange begins after cyan (less peach)
   gradient.addColorStop(1, "#ff8a65"); // Sunset orange at the bottom
 
   // Applying the gradient as fill style
