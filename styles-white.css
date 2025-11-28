@@ -1325,3 +1325,8 @@ html {
         height: 44px;
     }
 }
+
+.center-text{
+  text-align: center;
+  margin-left: 0 !important;
+}

@@ -12,9 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (icon) {
       icon.src =
-        whiteState === "1"
-          ? "/shared/logo-matrix.png"
-          : "/shared/logo-light.png";
+        whiteState === "1" ? "shared/logo-matrix.png" : "shared/logo-light.png";
     }
   }
 

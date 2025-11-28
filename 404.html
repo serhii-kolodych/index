@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link id="stylesheet" rel="stylesheet" href="styles.css">
+
     <script>
-        fetch("/shared/head.html")
+        fetch("shared/head.html")
             .then(r => r.text())
             .then(html => document.head.insertAdjacentHTML("beforeend", html))
             .catch(e => console.error("Failed to load shared head:", e));
     </script>
 
-    <script src="/scripts/cookie-check.js" defer></script>
+    <script src="scripts/cookie-check.js" defer></script>
 
     <title>404 - Page Not Found</title>
     <!-- base href -> so styles for kolodych.com/err is the same as kolodych.com/articles/errr -->
@@ -25,6 +27,9 @@
         <p><a href="https://kolodych.com/">Go back to the homepage</a></p>
     </div>
     <script src="background.js"></script>
+
     <!-- <script src="zoom.js"></script> -->
+    <!-- <script src="../scripts/index-1.js"></script> -->
+    <!-- <script src="../scripts/index-3.js"></script> -->
 </body>
 </html>
