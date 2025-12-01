@@ -1,209 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <link id="stylesheet" rel="stylesheet">
+  <head>
+    <link id="stylesheet" rel="stylesheet" />
 
     <script>
-        fetch("/shared/head.html")
-            .then(r => r.text())
-            .then(html => document.head.insertAdjacentHTML("beforeend", html))
-            .catch(e => console.error("Failed to load shared head:", e));
+      fetch("/shared/head.html")
+        .then((r) => r.text())
+        .then((html) => document.head.insertAdjacentHTML("beforeend", html))
+        .catch((e) => console.error("Failed to load shared head:", e));
     </script>
 
     <script src="/scripts/cookie-check.js" defer></script>
 
-        <!-- Open Graph Tags -->
-    <meta property="og:title" content="BubacatCity WordPress Website Setup"> 
-    <meta property="og:description" content="How I created the BubacatCity site with fun artwork, game themed layout, and responsive design.">  
-    <meta property="og:url" content="https://kolodych.com/website/bubacatcity.html"> 
-    <meta property="og:image" content="https://kolodych.com/website/bubacatcity-preview.webp"> 
-    <meta property="og:type" content="article">
-
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="BubacatCity WordPress Website Setup" />
+    <meta
+      property="og:description"
+      content="How I created the BubacatCity site with fun artwork, game themed layout, and responsive design."
+    />
+    <meta
+      property="og:url"
+      content="https://kolodych.com/website/bubacatcity.html"
+    />
+    <meta
+      property="og:image"
+      content="https://kolodych.com/website/bubacatcity-preview.webp"
+    />
+    <meta property="og:type" content="article" />
 
     <!-- Schema Markup Addition -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org/",
         "@type": "Article",
         "headline": "Making the BubacatCity WordPress Site",
         "description": "A simple story of how the BubacatCity website was built, including layout choices and custom sections.",
         "image": "https://kolodych.com/website/bubacatcity-preview.webp",
         "author": {
-            "@type": "Person",
-            "name": "Serhii Kolodych",
-            "url": "https://kolodych.com/"
+          "@type": "Person",
+          "name": "Serhii Kolodych",
+          "url": "https://kolodych.com/"
         },
         "publisher": {
-            "@type": "Organization",
-            "name": "kolodych.com",
-            "image": {
-                "@type": "ImageObject",
-                "url": "https://kolodych.com/favicon/favicon-32x32.png"
-            }
+          "@type": "Organization",
+          "name": "kolodych.com",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://kolodych.com/favicon/favicon-32x32.png"
+          }
         },
         "datePublished": "2025-11-28T04:23:00Z",
         "dateModified": "2025-11-28T14:19:00Z"
-    }
+      }
     </script>
 
-        <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">  
-    <meta name="twitter:title" content="How I Built BubacatCity with WordPress">  
-    <meta name="twitter:description" content="See how the BubacatCity site was created using WordPress with custom sections, artwork, and a game themed layout.">  
-    <meta name="twitter:image" content="https://kolodych.com/website/bubacatcity-preview.webp">  
-    <meta name="twitter:site" content="@serhiikolodych">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="How I Built BubacatCity with WordPress"
+    />
+    <meta
+      name="twitter:description"
+      content="See how the BubacatCity site was created using WordPress with custom sections, artwork, and a game themed layout."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kolodych.com/website/bubacatcity-preview.webp"
+    />
+    <meta name="twitter:site" content="@serhiikolodych" />
 
-
-    <title>BubacatCity Website Setup</title>  
-    <meta name="description" content="Learn how I built the BubacatCity site, including layout rules, custom blocks, and responsive settings.">  
-    <meta name="keywords" content="WordPress, Elementor, BubacatCity, Game Site, Responsive Design">  
-    <link rel="canonical" href="https://kolodych.com/website/bubacatcity.html">
+    <title>BubacatCity Website Setup</title>
+    <meta
+      name="description"
+      content="Learn how I built the BubacatCity site, including layout rules, custom blocks, and responsive settings."
+    />
+    <meta
+      name="keywords"
+      content="WordPress, Elementor, BubacatCity, Game Site, Responsive Design"
+    />
+    <link
+      rel="canonical"
+      href="https://kolodych.com/website/bubacatcity.html"
+    />
 
     <meta name="theme-color" content="#0b6a30" />
 
     <!-- Android Chrome (light mode + dark mode) -->
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6a30">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b6a30">
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#0b6a30"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0b6a30"
+    />
 
     <!-- Windows / Edge tiles -->
-    <meta name="msapplication-TileColor" content="#0b6a30">
+    <meta name="msapplication-TileColor" content="#0b6a30" />
 
     <!-- iOS Safari (status bar) -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Website">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Website" />
+  </head>
 
-
-</head>
-    
-<body>
+  <body>
     <!-- Accessibility Enhancements (if there are interactive elements) -->
     <div id="copied" aria-live="polite">Copied.</div>
     <!-- END Accessibility Enhancements (if there are interactive elements) -->
 
     <!-- Background Canvas -->
-    <canvas id="c" style="z-index: 0; opacity: 1;"></canvas>
+    <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
 
     <div id="back-to-home">Back to Home</div>
 
     <a href="#" id="change-style-link">White</a>
 
     <div class="article-container">
-        <h1>BubacatCity WordPress Site Build</h1>
-        <p><em>Published on November 28, 2025</em></p>
+      <h1>BubacatCity WordPress Site Build</h1>
+      <p><em>Published on November 28, 2025</em></p>
+      <p>
+        Imagine this: ancient Egyptian cats riding bicycles, stealing artifacts,
+        and racing to become the supreme ruler of Bubastis. That’s
+        <a target="_blank" href="https://bubacatcity.com">Bubacat</a> – a super
+        fun, family-friendly adventure card game that needed website redesign as
+        vibrant and engaging as their game. Here’s how I brought their digital
+        world to life.
+      </p>
+      <img
+        src="Bubacat-heroes.webp"
+        alt="Bubacat Heroes: cats Franklin, Jean Gray, Zuko"
+        title="Bubacat Heroes: Franklin, Jean Gray, Zuko"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
+      <h2>The Goal</h2>
+      <ul>
+        <li>Capture the game’s cheeky Egyptian-cat vibe</li>
+        <li>Make it instantly understandable in <10 seconds</li>
+        <li>Load blazingly fast (card game buyers are impatient!)</li>
+        <li>
+          Prepare clean WooCommerce foundation for the deck + T-shirts, hats,
+          etc.
+        </li>
+        <li>
+          Mobile‑first layouts, because most visitors come from social links on
+          phones.
+        </li>
+        <li>
+          Space for blog posts, character profiles, a gallery, and a future
+          shop.
+        </li>
+      </ul>
 
-        <p>
-            Building the <a target="_blank" href="https://bubacatcity.com">BubacatCity website</a> required a clean structure and visual logic. The project mixed game themed design with a simple WordPress workflow.
-        </p>
+      <h2>Design Setup</h2>
+      <ul>
+        <li>Selected light theme with custom colors from the game palette</li>
+        <li>Defined typography using one main font and one accent font</li>
+        <li>Set global colors in Elementor to keep every page consistent</li>
+      </ul>
+      <img
+        src="bubacat-0-global-colors.webp"
+        alt="BubacatCity Elementor Settings"
+        title="BubacatCity Elementor Settings"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
 
-        <h2>Design Setup</h2>
-        <ul>
-            <li>Selected light theme with custom colors from the game palette</li>
-            <li>Defined typography using one main font and one accent font</li>
-            <li>Set global colors in Elementor to keep every page consistent</li>
-        </ul>
-        <img src="bubacat-0-global-colors.webp" alt="BubacatCity Elementor Settings" title="BubacatCity Elementor Settings" loading="lazy" style="max-width: 100%; height: auto;">
+      <ul>
+        <li>
+          Breakpoints used: 767px for mobile, 1230px for tablet and desktop
+        </li>
+      </ul>
+      <img
+        src="bubacat-0-breakpoints.webp"
+        alt="BubacatCity Breakpoints"
+        title="BubacatCity Breakpoints"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
 
-        <ul>
-            <li>Breakpoints used: 767px for mobile, 1230px for tablet and desktop</li>
-        </ul>
-        <img src="bubacat-0-breakpoints.webp" alt="BubacatCity Breakpoints" title="BubacatCity Breakpoints" loading="lazy" style="max-width: 100%; height: auto;">
+      <ul>
+        <li>Content widths: 420px for mobile, 800px for tablets</li>
+      </ul>
+      <img
+        src="bubacat-0-layout-mobile-content-width.webp"
+        alt="BubacatCity Content Width"
+        title="BubacatCity Content Width"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
 
-        <ul>
-            <li>Content widths: 420px for mobile, 800px for tablets</li>
-        </ul>
-        <img src="bubacat-0-layout-mobile-content-width.webp" alt="BubacatCity Content Width" title="BubacatCity Content Width" loading="lazy" style="max-width: 100%; height: auto;">
+      <h2>Hero Section</h2>
+      <p>
+        Added game themed hero art, title, intro text, and a simple button.
+        Adjusted margins, paddings, and font size per device to keep the section
+        readable on small screens.
+      </p>
+      <img
+        src="bubacat-1-hero-desktop.webp"
+        alt="BubacatCity Hero Section"
+        title="BubacatCity Hero Section"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
 
-        <h2>Hero Section</h2>
-        <p>
-            Added game themed hero art, title, intro text, and a simple button. Adjusted margins, paddings, and font size per device to keep the section readable on small screens.
-        </p>
-        <img src="bubacat-1-hero-desktop.webp" alt="BubacatCity Hero Section" title="BubacatCity Hero Section" loading="lazy" style="max-width: 100%; height: auto;">
+      <h2>About and Characters</h2>
+      <p>
+        Built two sections with clear structure. About block shows story text.
+        Characters use card layout with equal spacing and images optimized for
+        speed.
+      </p>
 
-        <h2>About and Characters</h2>
-        <p>
-            Built two sections with clear structure. About block shows story text. Characters use card layout with equal spacing and images optimized for speed.
-        </p>
+      <h2>Gameplay Section</h2>
+      <p>
+        Added a short explanation block with icons. Used consistent padding
+        across devices to match the game style.
+      </p>
 
-        <h2>Gameplay Section</h2>
-        <p>
-            Added a short explanation block with icons. Used consistent padding across devices to match the game style.
-        </p>
+      <h2>Blog and Gallery</h2>
+      <p>
+        Blog uses standard WordPress posts with custom template. Gallery grid
+        built in Elementor and tested for mobile readability.
+      </p>
 
-        <h2>Blog and Gallery</h2>
-        <p>
-            Blog uses standard WordPress posts with custom template. Gallery grid built in Elementor and tested for mobile readability.
-        </p>
+      <h2>Shop Structure</h2>
+      <p>
+        Prepared space for future WooCommerce items. Set up clean product card
+        style based on the site colors and icon set.
+      </p>
 
-        <h2>Shop Structure</h2>
-        <p>
-            Prepared space for future WooCommerce items. Set up clean product card style based on the site colors and icon set.
-        </p>
+      <h2>WordPress Setup</h2>
+      <ul>
+        <li>Used lightweight parent theme</li>
+        <li>Installed Elementor, SEO plugin, cache plugin</li>
+        <li>Created custom post types for characters and gallery</li>
+      </ul>
 
-        <h2>WordPress Setup</h2>
-        <ul>
-            <li>Used lightweight parent theme</li>
-            <li>Installed Elementor, SEO plugin, cache plugin</li>
-            <li>Created custom post types for characters and gallery</li>
-        </ul>
+      <h2>Performance</h2>
+      <ul>
+        <li>Compressed images to WebP format</li>
+        <li>Enabled lazy loading</li>
+        <li>Reduced DOM size by splitting long layouts into sections</li>
+      </ul>
 
-        <h2>Performance</h2>
-        <ul>
-            <li>Compressed images to WebP format</li>
-            <li>Enabled lazy loading</li>
-            <li>Reduced DOM size by splitting long layouts into sections</li>
-        </ul>
+      <h2>SEO Setup</h2>
+      <ul>
+        <li>Added clean alt tags and titles</li>
+        <li>Created internal links between story, characters, and gameplay</li>
+        <li>Generated sitemap and connected site to Search Console</li>
+      </ul>
 
-        <h2>SEO Setup</h2>
-        <ul>
-            <li>Added clean alt tags and titles</li>
-            <li>Created internal links between story, characters, and gameplay</li>
-            <li>Generated sitemap and connected site to Search Console</li>
-        </ul>
+      <h2>Final Result</h2>
+      <img
+        src="bubacat-preview.webp"
+        alt="BubacatCity Preview"
+        title="BubacatCity Preview"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
+      <p>
+        BubacatCity uses fast layouts, compressed images, and simple Elementor
+        sections. The design stays consistent across all devices and supports
+        the game look of the project.
+      </p>
 
-        <h2>Final Result</h2>
-        <img src="bubacat-preview.webp" alt="BubacatCity Preview" title="BubacatCity Preview" loading="lazy" style="max-width: 100%; height: auto;">
-        <p>
-            BubacatCity uses fast layouts, compressed images, and simple Elementor sections. The design stays consistent across all devices and supports the game look of the project.
-        </p>
+      <a href="nocap.html"
+        ><div class="item">
+          <h3>NoCap E-Commerce Project</h3>
+          <img
+            src="../website/NoCap-home.webp"
+            alt="NoCap Shop Homepage"
+            title="NoCap Shop Homepage"
+            loading="lazy"
+          /></div
+      ></a>
 
+      <a href="joksglobalsport.com.html"
+        ><div class="item">
+          <h3>Football Academy site example</h3>
+          <img
+            src="../website/home-joksglobalsport.com.webp"
+            alt="joksglobalsport.com football academy hero section"
+            title="joksglobalsport landing page, hero section with banner"
+            loading="lazy"
+          /></div
+      ></a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <a href="nocap.html"><div class="item">
-            <h3>NoCap E-Commerce Project</h3>
-            <img src="../website/NoCap-home.webp" alt="NoCap Shop Homepage" title="NoCap Shop Homepage" loading="lazy">
-        </div></a>
-
-        <a href="joksglobalsport.com.html"><div class="item">
-            <h3>Football Academy site example</h3>
-            <img src="../website/home-joksglobalsport.com.webp" alt="joksglobalsport.com football academy hero section" title="joksglobalsport landing page, hero section with banner" loading="lazy">
-        </div></a>
-
-        <a href="japalandia.com.html"><div class="item">
-            <h3>Japalandia work abroad Landing Page</h3>
-            <img src="../website/home-1-screen-japalandia.webp" alt="Japalandia home section with Call To Action Button" title="Japalandia landing page, hero section with banner for work abroad" loading="lazy">
-        </div></a>
-
+      <a href="japalandia.com.html"
+        ><div class="item">
+          <h3>Japalandia work abroad Landing Page</h3>
+          <img
+            src="../website/home-1-screen-japalandia.webp"
+            alt="Japalandia home section with Call To Action Button"
+            title="Japalandia landing page, hero section with banner for work abroad"
+            loading="lazy"
+          /></div
+      ></a>
     </div>
 
     <script src="../scripts/index-1.js"></script>
     <script src="../scripts/index-3.js"></script>
 
-
     <script src="../scripts/copy-btn.js"></script>
-</body>
+  </body>
 </html>
