@@ -49,8 +49,8 @@
             "url": "https://kolodych.com/favicon/favicon-32x32.png"
           }
         },
-        "datePublished": "2025-11-28T04:23:00Z",
-        "dateModified": "2025-11-28T14:19:00Z"
+        "datePublished": "2025-12-03T04:23:00Z",
+        "dateModified": "2025-12-03T07:19:00Z"
       }
     </script>
 
@@ -159,57 +159,75 @@
         </li>
       </ul>
 
-      <h2>Design Setup</h2>
+      <h2>Theme Customization & Global Styles</h2>
+      <p>
+        On every new website, the first step I do is always the same: configure
+        the design system within Elementor and Astra. I define global colors,
+        typography scales, and responsive breakpoints before building any
+        sections. This method not only speeds up development but also guarantees
+        visual consistency across all devices — from a 5-inch mobile in Mumbai
+        to a 27-inch Retina display in Berlin.
+      </p>
       <ul>
-        <li>Selected light theme with custom colors from the game palette</li>
-        <li>Defined typography using one main font and one accent font</li>
-        <li>Set global colors in Elementor to keep every page consistent</li>
+        <li>Elementor > Site Settings > Global Colors</li>
+        <li>Elementor > Site Settings > Global Fonts</li>
+        <li>Elementor > Site Settings > Layout > Breakpoints</li>
       </ul>
       <img
-        src="bubacat-0-global-colors.webp"
+        src="bubacat-elementor-site-settings.webp"
         alt="BubacatCity Elementor Settings"
         title="BubacatCity Elementor Settings"
         loading="lazy"
         style="max-width: 100%; height: auto"
       />
-
       <ul>
         <li>
-          Breakpoints used: 767px for mobile, 1230px for tablet and desktop
+          (Optional) Appearance / Astra > Customize > Global > Colors
+          (Typography / Container) -- Elementor styles take priority over Astra
+          settings. However, theme-controlled areas like blog archives, headers,
+          and footers use Astra's configuration. If you notice inconsistencies
+          in these areas, double-check your Astra customizer settings.
         </li>
       </ul>
+
+      <h2>Header (Logo, Menu, Button)</h2>
       <img
-        src="bubacat-0-breakpoints.webp"
-        alt="BubacatCity Breakpoints"
-        title="BubacatCity Breakpoints"
+        src="bubacat-customize-header.webp"
+        alt="BubacatCity Header"
+        title="BubacatCity Header"
         loading="lazy"
         style="max-width: 100%; height: auto"
       />
-
-      <ul>
-        <li>Content widths: 420px for mobile, 800px for tablets</li>
-      </ul>
-      <img
-        src="bubacat-0-layout-mobile-content-width.webp"
-        alt="BubacatCity Content Width"
-        title="BubacatCity Content Width"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
-
-      <h2>Hero Section</h2>
       <p>
-        Added game themed hero art, title, intro text, and a simple button.
-        Adjusted margins, paddings, and font size per device to keep the section
-        readable on small screens.
+        For this project, I used Astra’s flexible header builder and extended it
+        with a custom child theme. I generated the child theme using a
+        <a href="https://wpastra.com/child-theme-generator/"
+          >Astra’s official Child Theme Generator</a
+        >, which allowed me to safely add custom CSS without touching the parent
+        files. The goal was to create a transparent header that sticks to the
+        top when scrolling. I achieved it with:
       </p>
-      <img
-        src="bubacat-1-hero-desktop.webp"
-        alt="BubacatCity Hero Section"
-        title="BubacatCity Hero Section"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
+
+      <div class="grid-container">
+        <div class="flex-row">
+          <label>Code:</label>
+          <button class="copy-btn">Copy Code</button>
+        </div>
+        <div class="code-row">
+          <code>
+            .site-header { <br />position: sticky; <br />top: 0; <br />z-index:
+            999; <br />} <br />#content { margin-top: -92px;
+            <em>#Your header height</em> }</code
+          >
+        </div>
+      </div>
+
+      <p>
+        This simple configuration ensures the header stays visible at all times
+        while blending smoothly with the page background. The setup is fully
+        compatible with Astra’s updates and follows best practices for theme
+        customization.
+      </p>
 
       <h2>About and Characters</h2>
       <p>
@@ -258,13 +276,7 @@
       </ul>
 
       <h2>Final Result</h2>
-      <img
-        src="bubacat-preview.webp"
-        alt="BubacatCity Preview"
-        title="BubacatCity Preview"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
+
       <p>
         BubacatCity uses fast layouts, compressed images, and simple Elementor
         sections. The design stays consistent across all devices and supports

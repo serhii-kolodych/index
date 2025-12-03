@@ -469,54 +469,6 @@ form input[type="submit"]:hover {
   }
 
 
-/* h3 Ask me anything */
-.dancing-text {
-    margin: 0 0 16px 0;
-    font-size: 1.6rem;
-    display: inline-block;
-    font-weight: bold;
-    letter-spacing: 0.1em; /* Adds space between letters */
-    text-align: center;
-  }
-  
-  .dancing-text span {
-    display: inline-block;
-    animation: bounce 2s ease-in-out infinite;
-  }
-  
-  /* Define bounce animation */
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(15px); }
-  }
-  
-  /* Apply staggered delays using a more compact approach */
-  .dancing-text span {
-    animation-delay: calc(0.1s * var(--i));
-  }
-  
-
-/* Add custom property for each letter's delay */
-.dancing-text span:nth-child(1) { --i: 0; }
-.dancing-text span:nth-child(2) { --i: 1; }
-.dancing-text span:nth-child(3) { --i: 2; }
-.dancing-text span:nth-child(4) { --i: 3; }
-.dancing-text span:nth-child(5) { --i: 4; }
-.dancing-text span:nth-child(6) { --i: 5; }
-.dancing-text span:nth-child(7) { --i: 6; }
-.dancing-text span:nth-child(8) { --i: 7; }
-.dancing-text span:nth-child(9) { --i: 8; }
-.dancing-text span:nth-child(10) { --i: 9; }
-.dancing-text span:nth-child(11) { --i: 10; }
-.dancing-text span:nth-child(12) { --i: 11; }
-.dancing-text span:nth-child(13) { --i: 12; }
-.dancing-text span:nth-child(14) { --i: 13; }
-.dancing-text span:nth-child(15) { --i: 14; }
-.dancing-text span:nth-child(16) { --i: 15; }
-.dancing-text span:nth-child(17) { --i: 16; }
-.dancing-text span:nth-child(18) { --i: 17; }
-
-
 
 
 .article-container p{
@@ -1059,6 +1011,132 @@ z-index: 999;
   gap: 10px;
 }
 
+.section-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* allow horizontal scroll */
+    scroll-snap-type: none; /* disable snapping if needed */
+    -webkit-overflow-scrolling: touch;
+    margin: 0 auto 50px auto;
+    cursor: grab;
+}
+
+.section-container::-webkit-scrollbar {
+    display: block; /* show scrollbar if desired */
+}
+
+.section-container.active {
+    cursor: grabbing;
+}
+
+
+
+.one-row {
+    display: flex;
+    align-items: center;       /* vertical centering */
+    justify-content: space-between; /* heading and logo spaced */
+    padding: 0 20px;           /* optional horizontal padding */
+    height: 120px;             /* adjust as needed */
+}
+
+.main-heading {
+    text-align: center;
+    flex: 1;                   /* occupy available space */
+}
+
+.theme-logo img {
+    width: 64px;
+    height: 64px;
+    transition: width 0.5s, height 0.5s;
+    margin-left: 20px;
+}
+
+
+
+/* Grok wiggle left to right */
+
+/* @keyframes tailWag {
+  0%, 100% { transform: rotate(0deg); }
+  20%      { transform: rotate(12deg); }
+  40%      { transform: rotate(-8deg); }
+  60%      { transform: rotate(10deg); }
+}
+.social-container a img {
+  animation: tailWag 1.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.social-container a:hover img {
+  animation: none;
+  transform: scale(1.3) rotate(360deg);
+  transition: transform .5s ease;
+}  */
+
+
+
+/* Grok levitate and glow yellow */
+
+/* @keyframes levitate {
+  0%, 100% { transform: translateY(0)   rotate(0deg);   filter: brightness(1); }
+  50%      { transform: translateY(-12px) rotate(5deg); filter: brightness(1.4) drop-shadow(0 0 12px #FF9A3C); }
+}
+.social-container a img {
+  animation: levitate 4s ease-in-out infinite;
+}
+.social-container a:hover img {
+  animation-play-state: paused;
+  transform: translateY(-20px) scale(1.7);
+  filter: brightness(1.6) drop-shadow(0 0 20px #FF9A3C);
+  transition: all .4s ease;
+}  */
+
+
+
+/* Claude glitch and shake plus color change */
+
+
+
+
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0, 0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    transform: translate(-1px, -1px);
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    transform: translate(1px, 1px);
+    filter: hue-rotate(360deg);
+  }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0) scale(1); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-3px) scale(1.2); }
+  20%, 40%, 60%, 80% { transform: translateX(3px) scale(1.2); }
+}
+.social-container a img {
+  animation: glitch 5s steps(4) infinite;
+  transition: all 0.3s ease;
+}
+.social-container a:hover img {
+  animation: shake 0.5s ease-in-out;
+  filter: brightness(1.4) contrast(1.3) drop-shadow(0 0 10px rgba(244, 169, 65, 1));
+  transform: scale(1.3);
+}
+
+
+
+
 
 
 
@@ -1144,61 +1222,6 @@ html {
     -moz-transform: scale(0.9); /* Firefox fallback */
     -moz-transform-origin: top left;
   }
-}
-
-
-
-
-
-.section-container {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto; /* allow horizontal scroll */
-    scroll-snap-type: none; /* disable snapping if needed */
-    -webkit-overflow-scrolling: touch;
-    margin: 0 auto 50px auto;
-    cursor: grab;
-}
-
-.section-container::-webkit-scrollbar {
-    display: block; /* show scrollbar if desired */
-}
-
-.section-container.active {
-    cursor: grabbing;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.one-row {
-    display: flex;
-    align-items: center;       /* vertical centering */
-    justify-content: space-between; /* heading and logo spaced */
-    padding: 0 20px;           /* optional horizontal padding */
-    height: 120px;             /* adjust as needed */
-}
-
-.main-heading {
-    text-align: center;
-    flex: 1;                   /* occupy available space */
-}
-
-.theme-logo img {
-    width: 64px;
-    height: 64px;
-    transition: width 0.5s, height 0.5s;
-    margin-left: 20px;
 }
 
 @media (max-width: 1200px) {

@@ -1205,7 +1205,21 @@ z-index: 999;
 
 
 
+/* Grok levitate and glow yellow */
 
+@keyframes levitate {
+  0%, 100% { transform: translateY(0)   rotate(0deg);   filter: brightness(1); }
+  50%      { transform: translateY(-12px) rotate(5deg); filter: brightness(1.4) drop-shadow(0 0 12px #FF9A3C); }
+}
+.social-container a img {
+  animation: levitate 4s ease-in-out infinite;
+}
+.social-container a:hover img {
+  animation-play-state: paused;
+  transform: translateY(-20px) scale(1.7);
+  filter: brightness(1.6) drop-shadow(0 0 20px #FF9A3C);
+  transition: all .4s ease;
+} 
 
 
 
