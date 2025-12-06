@@ -407,42 +407,28 @@
     </script>
 
     <script>
-const containers = document.querySelectorAll('.section-container');
+        document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('.section-container').forEach(box=>{
+            box.addEventListener('wheel', function(e){
+            // normalize vertical wheel to pixels
+            const delta = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
+            const atStart = box.scrollLeft <= 0;
+            const atEnd = Math.ceil(box.scrollLeft + box.clientWidth) >= box.scrollWidth;
+            const right = delta > 0;
+            const left = delta < 0;
+            if ((right && atEnd) || (left && atStart)) {
+                // let page scroll when at edge
+                return;
+            }
+            e.preventDefault();
+            box.scrollLeft += delta;
+            }, {passive:false});
+        });
+        });
 
-containers.forEach(container => {
-    let isDown = false, startX, scrollLeft;
+    </script>
 
-    container.addEventListener('mousedown', e => {
-        isDown = true;
-        container.classList.add('active');
-        startX = e.pageX - container.offsetLeft;
-        scrollLeft = container.scrollLeft;
-    });
 
-    container.addEventListener('mouseleave', () => isDown = false);
-    container.addEventListener('mouseup', () => isDown = false);
-
-    container.addEventListener('mousemove', e => {
-        if(!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - container.offsetLeft;
-        const walk = (x - startX) * 1; // scroll speed
-        container.scrollLeft = scrollLeft - walk;
-    });
-
-    container.addEventListener('wheel', e => {
-        const atStart = container.scrollLeft === 0;
-        const atEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth;
-
-        if ((e.deltaY < 0 && atStart) || (e.deltaY > 0 && atEnd)) {
-            // let page scroll
-            return;
-        }
-        e.preventDefault();
-        container.scrollLeft += e.deltaY;
-    });
-});
-</script>
 
 
 
