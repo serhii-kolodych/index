@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (stylesheet) {
       stylesheet.setAttribute(
         "href",
-        whiteState === "1" ? "../styles-white.css" : "../styles.css?v=15"
+        whiteState === "1" ? "../styles-white.css?v=14" : "../styles.css?v=15"
       );
     }
     if (icon) {
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   var whiteState = localStorage.getItem("white") || "0";
   var currentStyle =
-    whiteState === "1" ? "../styles-white.css" : "../styles.css?v=15";
+    whiteState === "1" ? "../styles-white.css?v=14" : "../styles.css?v=15";
   var stylesheet = document.getElementById("stylesheet");
 
   if (stylesheet) {

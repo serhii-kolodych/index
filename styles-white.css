@@ -301,8 +301,6 @@ div.box {
 .subtitle{
   font-size: 2.1em;
     margin: 0 auto 20px auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .sections{
@@ -311,6 +309,54 @@ div.box {
   font-size: 2.1em;
   margin-bottom: 4px;
  margin-block-end: 0 !important;}
+
+ .section-container ol{
+  display: flex;
+}
+
+.section-container ol li {
+  list-style: none; /* Hide native marker */
+  display: flex;
+  align-items: flex-start; /* Aligns the start of the text */
+  margin: 0;
+  padding: 0;
+}
+
+.section-container ol li::before {
+  /* Use ::before as a custom marker column */
+  content: counter(list-item) ".";
+  counter-increment: list-item;
+  /* Fixed width for the number column */
+  width: 1em; 
+  flex-shrink: 0; 
+  margin-left: -2.5em; /* Space between number and text */
+  font-size: 2.1em;
+  /* Aligns the number to the top */
+  align-self: flex-start;
+}
+.section-container ol li::before {
+  /* Use ::before as a custom marker column */
+  content: counter(list-item) ".";
+    position: relative;
+
+  
+  /* Fixed width for the number column */
+  width: 1em; 
+  flex-shrink: 0; 
+  
+  /* ⚡ MODIFIED: PUSH MARKER RIGHT ⚡ */
+  margin-left: 30px; 
+  
+  /* Space between number and actual text content */
+  margin-right: -2.5em; 
+  
+  font-size: 2.1em;
+  align-self: flex-start;
+  /* color: #00ff41;  */
+  font-weight: bold;
+}
+
+
 
 
 
@@ -866,7 +912,7 @@ background-color: #fff;
 
 body {
 color: #1d1d1f;
-/* overscroll-behavior: auto; */
+overscroll-behavior: auto;
 }
 
 a, .aLink {
@@ -902,115 +948,16 @@ box-shadow: 0 0 20px rgba(0,0,0,0.1);
 transform: scale(1.04);
 }
 
-
-
-
-
- .section-container ol{
-  display: flex;
-}
-
-.section-container ol li {
-  list-style: none; /* Hide native marker */
-  display: flex;
-  align-items: flex-start; /* Aligns the start of the text */
-  margin: 0;
-  padding: 0;
-}
-
-.section-container ol li::before {
-  /* Use ::before as a custom marker column */
-  content: counter(list-item) ".";
-  counter-increment: list-item;
-  /* Fixed width for the number column */
-  width: 1em; 
-  flex-shrink: 0; 
-  margin-left: -2.5em; /* Space between number and text */
-  font-size: 2.1em;
-  /* Aligns the number to the top */
-  align-self: flex-start;
-}
-.section-container ol li::before {
-  /* Use ::before as a custom marker column */
-  content: counter(list-item) ".";
-    position: relative;
-
-  
-  /* Fixed width for the number column */
-  width: 1em; 
-  flex-shrink: 0; 
-  
-  /* ⚡ MODIFIED: PUSH MARKER RIGHT ⚡ */
-  margin-left: 30px; 
-  
-  /* Space between number and actual text content */
-  margin-right: -2.5em; 
-  
-  font-size: 2.1em;
-  align-self: flex-start;
-  /* color: #00ff41;  */
-  font-weight: bold;
-}
-
-
 .section-container {
-    /* Enable Flexbox for horizontal alignment (used instead of inline-flex to maintain centering) */
-    display: flex;
-    flex-direction: row;
-    
-    /* CRITICAL: Allows horizontal scrolling */
-    overflow-x: scroll; 
-    overflow-y: hidden; /* Prevent vertical scrolling */
-    
-    /* ⚡ ADDED: Enable mandatory scroll snapping for carousel behavior ⚡ */
-    scroll-snap-type: x mandatory; 
-    
-    /* Note: white-space: nowrap is redundant with display: flex and flex-shrink: 0 on children */
-    -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
-    
-    /* Center the container on the page */
-    margin: 0 auto 50px auto; 
-      overflow-x: auto;
-  overscroll-behavior-x: contain;
-      -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-    scrollbar-width: none;  /* Hide scrollbar for Firefox */
-      overflow-x: auto;
-  overscroll-behavior-x: contain;
-  cursor: grab; /* show it’s draggable */
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* smooth on iOS */
-      display: flex;
-    flex-direction: row;
-    overflow-x: auto; /* allow horizontal scroll */
-    scroll-snap-type: none; /* disable snapping if needed */
-    -webkit-overflow-scrolling: touch;
-    margin: 0 auto 50px auto;
-    cursor: grab;
-}
-
-/* 3. Hide the Scrollbar (Optional: for a cleaner look) */
-.section-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+overscroll-behavior-x: contain;
+cursor: grab;
+scroll-behavior: smooth;
+-webkit-overflow-scrolling: touch;
 }
 
 .section-container:active {
-  cursor: grabbing;
+cursor: grabbing;
 }
-
-.section-container ol {
-  display: flex;
-  gap: 10px;
-}
-
-
-
-
-
-
-
-
-
-
 
 .main-heading, .subtitle {
 background-color: rgba(255,255,255,0.6);
@@ -1034,21 +981,6 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
 
-.flickity-prev-next-button:hover {
-background: rgba(0,102,204,0.2);
-}
-
-.flickity-prev-next-button .flickity-button-icon {
-fill: #0066CC;
-}
-
-.flickity-page-dots .dot {
-background: #0066CC;
-}
-
-.flickity-page-dots .dot.is-selected {
-opacity: 1;
-}
 
 .imgcontainer {
 background-color: #fff;
@@ -1084,6 +1016,24 @@ color: #fff;
 
 
 
+/* Grok wiggle left to right */
+
+@keyframes tailWag {
+  0%, 100% { transform: rotate(0deg); }
+  20%      { transform: rotate(12deg); }
+  40%      { transform: rotate(-8deg); }
+  60%      { transform: rotate(10deg); }
+}
+.social-container a img {
+  animation: tailWag 1.8s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.social-container a:hover img {
+  animation: none;
+  transform: scale(1.3) rotate(360deg);
+  transition: transform .5s ease;
+} 
+
 
 
 /* --- Adjust Box Internal Spacing --- */
@@ -1094,14 +1044,135 @@ color: #fff;
 }
 
 
+.flickity-prev-next-button svg path{
+fill: #166624 !important;
+}
+
+.gallery, .flickity-viewport, .flickity-slider{
+  overflow: visible;
+}
+
 .imgcontainer {
   border: 1px solid #d6d6d6;
+}
+
+
+.flickity-prev-next-button,
+.flickity-page-dots {
+z-index: 999;
+}
+
+
+/* Arrow buttons */
+.flickity-prev-next-button {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+}
+.flickity-prev-next-button:hover {
+  background: rgba(0, 255, 65, 0.2); /* Subtle green hover */
+}
+/* Arrow icon color */
+.flickity-prev-next-button .flickity-button-icon {
+  fill: #00ff41; /* Green arrows */
+}
+
+/* Page dots */
+.flickity-page-dots {
+  bottom: -40px;
+}
+
+.flickity-page-dots .dot {
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+  background: #00ff41; /* Green dots */
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.flickity-page-dots .dot.is-selected {
+  opacity: 1;
+}
+
+
+
+.section-container {
+    /* Enable Flexbox for horizontal alignment (used instead of inline-flex to maintain centering) */
+    display: flex;
+    flex-direction: row;
+    
+    /* CRITICAL: Allows horizontal scrolling */
+    overflow-x: scroll; 
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    
+    /* ⚡ ADDED: Enable mandatory scroll snapping for carousel behavior ⚡ */
+    scroll-snap-type: x mandatory; 
+    
+    /* Note: white-space: nowrap is redundant with display: flex and flex-shrink: 0 on children */
+    -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+    
+    /* Center the container on the page */
+    margin: 0 auto 50px auto; 
 }
 
 
 
 
 
+/* 3. Hide the Scrollbar (Optional: for a cleaner look) */
+.section-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+}
+
+.section-container {
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+
+
+.section-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+
+
+.section-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  cursor: grab; /* show it’s draggable */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* smooth on iOS */
+}
+
+.section-container:active {
+  cursor: grabbing;
+}
+
+
+
+
+
+
+
+.section-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  cursor: grab;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.section-container:active {
+  cursor: grabbing;
+}
+
+.section-container ol {
+  display: flex;
+  gap: 10px;
+}
 
 
 .main-heading, .subtitle {
@@ -1131,25 +1202,13 @@ color: #fff;
   margin-bottom: 4px;
  margin-block-end: 0 !important;}
 
-
-
-
-
-/* Grok levitate and glow yellow */
-
-@keyframes levitate {
-  0%, 100% { transform: translateY(0)   rotate(0deg);   filter: brightness(1); }
-  50%      { transform: translateY(-12px) rotate(5deg); filter: brightness(1.4) drop-shadow(0 0 12px #FF9A3C); }
+.section-container ol{
+  display: flex;
 }
-.social-container a img {
-  animation: levitate 4s ease-in-out infinite;
-}
-.social-container a:hover img {
-  animation-play-state: paused;
-  transform: translateY(-20px) scale(1.7);
-  filter: brightness(1.6) drop-shadow(0 0 20px #FF9A3C);
-  transition: all .4s ease;
-} 
+
+
+
+
 
 
 
@@ -1166,8 +1225,6 @@ html {
 @media (min-width: 1200px){
 .subtitle{
   max-width: 1150px;
-    padding-left: 20px;
-  padding-right: 20px;
 }
 }
 
@@ -1198,7 +1255,6 @@ html {
 }
 .subtitle{
   font-size: 1.8em;
-  padding: 0;
 }
 }
 
@@ -1277,6 +1333,3 @@ html {
   text-align: center;
   margin-left: 0 !important;
 }
-
-
-
