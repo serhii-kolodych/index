@@ -244,7 +244,54 @@
         it look more engaging.
       </p>
 
-      <h2>Blog and Gallery</h2>
+      <h2>Meet the Cats Section</h2>
+      <img
+        src="bubacat-meet-the-cats-cards.webp"
+        alt="BubacatCity Meet the Cats Section"
+        title="BubacatCity Meet the Cats Section"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
+      <p>
+        For the meet the cats section I created 3 cards with 3 cat profiles and
+        3 buttons "Find out More", and on click I want this button to dissapear
+        and show the cat's description. So I created container (div) =
+        .reveal-container class, and inside it put the heading = .hidden-text
+        class, and button = .reveal-text class. To make it work I used
+        javascript code, that on click changes the style of display to none, and
+        heading display to block. I pasted this code inside footer, using
+        <a href="https://wordpress.org/plugins/insert-headers-and-footers/"
+          >Code Snippets Plugin</a
+        >. Here is the code:
+      </p>
+
+      <div class="grid-container">
+        <div class="flex-row">
+          <label>Code:</label>
+          <button class="copy-btn">Copy Code</button>
+        </div>
+        <div class="code-row">
+          <code>
+            <em>#script start</em> <br />
+            document.addEventListener("DOMContentLoaded", function () { <br />
+            document.querySelectorAll(".reveal-container").forEach((container)
+            => { <br />
+            const btn = container.querySelector(".reveal-btn"); <br />
+            const hidden = container.querySelector(".hidden-text"); <br />
+            if (btn && hidden) { <br />
+            btn.addEventListener("click", () => { <br />
+            btn.style.display = "none"; <br />
+            hidden.style.display = "block"; <br />
+            }); <br />
+            } <br />
+            }); <br />
+            });<br />
+            <em>#script end</em></code
+          >
+        </div>
+      </div>
+
+      <h2>Blog Section</h2>
       <img
         src="bubacat-blog-preview.webp"
         alt="BubacatCity Blog Articles Section"
@@ -267,10 +314,53 @@
         style="max-width: 100%; height: auto"
       />
       <p>
+
+      <h2>Gallery Section</h2>
+      <img
+        src="bubacat-gallery-preview.webp"
+        alt="BubacatCity Gallery Section"
+        title="BubacatCity Gallery Section"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
         And as for the Gallery I used
         <a href="https://wordpress.org/plugins/modula-best-grid-gallery/"
           >Modula Image Gallery – Photo Grid</a
-        >.
+        >. I also decided to add option to change images in the gallery by Arrows key press (left arrow - previous image, right arrow - next image). To make it work I used
+        javascript code, that on keydown clicks left or right arrow. I pasted this code inside footer, using
+        <a href="https://wordpress.org/plugins/insert-headers-and-footers/"
+          >Code Snippets Plugin</a
+        >. Here is the code:
+      </p>
+
+      <div class="grid-container">
+        <div class="flex-row">
+          <label>Code:</label>
+          <button class="copy-btn">Copy Code</button>
+        </div>
+        <div class="code-row">
+          <code>
+            <em>#script start</em> <br />
+            document.addEventListener('keydown', function(e) { <br />
+    const container = document.querySelector('.modula-fancybox-container'); <br />
+    if (!container) return; <br />
+
+    <em>// check if container is visible</em> <br />
+    const style = window.getComputedStyle(container); <br />
+    if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') return;  <br />
+
+    const next = container.querySelector('.f-button.is-next');  <br />
+    const prev = container.querySelector('.f-button.is-prev');  <br />
+
+    if (!next || !prev) return; <br />
+
+    if (e.key === 'ArrowRight') next.click(); <br />
+    if (e.key === 'ArrowLeft') prev.click(); <br />
+}); <br />
+            <em>#script end</em></code
+          >
+        </div>
+      </div>
       </p>
 
       <h2>Shop</h2>
