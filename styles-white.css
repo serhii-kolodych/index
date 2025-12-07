@@ -1330,6 +1330,6 @@ html {
 }
 
 .center-text{
-  text-align: center;
   margin-left: 0 !important;
+    text-align: center !important;
 }
