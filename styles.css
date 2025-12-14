@@ -460,7 +460,10 @@ form input[type="submit"]:hover {
   
   .article-container h1,
   .article-container h2,
-  .article-container h3 {
+  .article-container h3,
+  .article-container h4,
+  .article-container h5,
+  .article-container h6 {
     text-align: center;
     margin-top: 12px;
     margin-bottom: 12px;

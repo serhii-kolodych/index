@@ -1,155 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <link id="stylesheet" rel="stylesheet">
+  <head>
+    <link id="stylesheet" rel="stylesheet" />
 
     <script>
-        fetch("/shared/head.html")
-            .then(r => r.text())
-            .then(html => document.head.insertAdjacentHTML("beforeend", html))
-            .catch(e => console.error("Failed to load shared head:", e));
+      fetch("/shared/head.html")
+        .then((r) => r.text())
+        .then((html) => document.head.insertAdjacentHTML("beforeend", html))
+        .catch((e) => console.error("Failed to load shared head:", e));
     </script>
 
     <script src="/scripts/cookie-check.js" defer></script>
 
-        <!-- Open Graph Tags -->
-    <meta property="og:title" content="Vent-Build WordPress Website Setup">
-    <meta property="og:description" content="Detailed steps on setting up Vent-Build site with Elementor, plugins, breakpoints, and responsive design adjustments.">
-    <meta property="og:url" content="https://kolodych.com/website/vent-build.html">
-    <meta property="og:image" content="https://kolodych.com/website/vent-build-preview-9.webp">
-    <meta property="og:type" content="article">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Vent-Build WordPress Website Setup" />
+    <meta
+      property="og:description"
+      content="Detailed steps on setting up Vent-Build site with Elementor, plugins, breakpoints, and responsive design adjustments."
+    />
+    <meta
+      property="og:url"
+      content="https://kolodych.com/website/vent-build.html"
+    />
+    <meta
+      property="og:image"
+      content="https://kolodych.com/website/vent-build-preview-9.webp"
+    />
+    <meta property="og:type" content="article" />
 
     <!-- Schema Markup Addition -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org/",
         "@type": "Article",
         "headline": "Vent-Build WordPress Site Setup",
         "description": "Step-by-step setup of Vent-Build site using WordPress plugins, Elementor customizations, breakpoints, and responsive design decisions.",
         "image": "https://kolodych.com/website/Vent-Build-preview.webp",
         "author": {
-        "@type": "Person",
-        "name": "Serhii Kolodych",
-        "url": "https://kolodych.com/"
+          "@type": "Person",
+          "name": "Serhii Kolodych",
+          "url": "https://kolodych.com/"
         },
         "publisher": {
-        "@type": "Organization",
-        "name": "kolodych.com",
-        "image": {
+          "@type": "Organization",
+          "name": "kolodych.com",
+          "image": {
             "@type": "ImageObject",
             "url": "https://kolodych.com/favicon/favicon-32x32.png"
-        }
+          }
         },
         "datePublished": "2025-08-08T14:03:00Z",
         "dateModified": "2025-08-20T14:19:00Z"
-    }
+      }
     </script>
 
     <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="How I Built Vent-Build with WordPress + Elementor">
-    <meta name="twitter:description" content="Learn how I developed the Vent-Build website from Figma to WordPress using Elementor, custom plugins, and responsive layout breakpoints.">
-    <meta name="twitter:image" content="https://kolodych.com/website/vent-build-preview-9.webp">
-    <meta name="twitter:site" content="@serhiikolodych">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="How I Built Vent-Build with WordPress + Elementor"
+    />
+    <meta
+      name="twitter:description"
+      content="Learn how I developed the Vent-Build website from Figma to WordPress using Elementor, custom plugins, and responsive layout breakpoints."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kolodych.com/website/vent-build-preview-9.webp"
+    />
+    <meta name="twitter:site" content="@serhiikolodych" />
     <!-- END Twitter Card Tags -->
 
     <title>Vent-Build Website Setup with WordPress</title>
-    <meta name="description" content="Discover how I built the Vent-Build site: from Figma to WordPress, including plugins, content width, and responsive breakpoints.">
-    <meta name="keywords" content="WordPress, Elementor, Website Development, Responsive Design, Vent-Build">
-    <link rel="canonical" href="https://kolodych.com/website/vent-build.html">
+    <meta
+      name="description"
+      content="Discover how I built the Vent-Build site: from Figma to WordPress, including plugins, content width, and responsive breakpoints."
+    />
+    <meta
+      name="keywords"
+      content="WordPress, Elementor, Website Development, Responsive Design, Vent-Build"
+    />
+    <link rel="canonical" href="https://kolodych.com/website/vent-build.html" />
 
     <meta name="theme-color" content="#0b6a30" />
 
     <!-- Android Chrome (light mode + dark mode) -->
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6a30">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b6a30">
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#0b6a30"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0b6a30"
+    />
 
     <!-- Windows / Edge tiles -->
-    <meta name="msapplication-TileColor" content="#0b6a30">
+    <meta name="msapplication-TileColor" content="#0b6a30" />
 
     <!-- iOS Safari (status bar) -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Website">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Website" />
+  </head>
 
-
-</head>
-    
-<body>
+  <body>
     <!-- Accessibility Enhancements (if there are interactive elements) -->
     <div id="copied" aria-live="polite">Copied.</div>
     <!-- END Accessibility Enhancements (if there are interactive elements) -->
 
     <!-- Background Canvas -->
-    <canvas id="c" style="z-index: 0; opacity: 1;"></canvas>
+    <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
 
     <div id="back-to-home">Back to Home</div>
 
     <a href="#" id="change-style-link">White</a>
 
     <div class="article-container">
-        <h1>Vent-Build WordPress Site Setup</h1>
-        <p><em>Published on August 8, 2025</em></p>
+      <h1>Vent-Build WordPress Site Setup</h1>
+      <p><em>Published on August 8, 2025</em></p>
 
-        <p>
-            Developing the <a target="_blank" href="https://vent-build.com">Vent-Build company site</a> was an exciting challenge. 
-        </p>
+      <p>
+        Developing the
+        <a target="_blank" href="https://vent-build.com"
+          >Vent-Build company site</a
+        >
+        <a href="https://gray-stork-635160.hostingersite.com/">(backup site)</a>
+        was an exciting challenge.
+      </p>
 
-        <h2>Elementor Site Settings</h2>
-        <ul>
-            <li>Set up <strong>Global Colors</strong></li>
-            <img src="vent-build-0-global-colors.webp" alt="Vent-Build Elementor Settings" title="Vent-Build Elementor Settings" loading="lazy" style="max-width: 100%; height: auto;">
+      <h2>Elementor Site Settings</h2>
+      <ul>
+        <li>Set up <strong>Global Colors</strong></li>
+        <img
+          src="vent-build-0-global-colors.webp"
+          alt="Vent-Build Elementor Settings"
+          title="Vent-Build Elementor Settings"
+          loading="lazy"
+          style="max-width: 100%; height: auto"
+        />
 
-            <li>Defined breakpoints: <strong>767px for mobile</strong> and <strong>1230px for tablet/desktop</strong></li>
-            <img src="vent-build-0-breakpoints.webp" alt="Vent-Build Elementor Settings" title="Vent-Build Elementor Settings" loading="lazy" style="max-width: 100%; height: auto;">
+        <li>
+          Defined breakpoints: <strong>767px for mobile</strong> and
+          <strong>1230px for tablet/desktop</strong>
+        </li>
+        <img
+          src="vent-build-0-breakpoints.webp"
+          alt="Vent-Build Elementor Settings"
+          title="Vent-Build Elementor Settings"
+          loading="lazy"
+          style="max-width: 100%; height: auto"
+        />
 
-            <li>Content widths: <strong>420px</strong> for mobile, <strong>800px</strong> for tablets</li>
-            <img src="vent-build-0-layout-mobile-content-width-420.webp" alt="Vent-Build Elementor Settings" title="Vent-Build Elementor Settings" loading="lazy" style="max-width: 100%; height: auto;">
-        </ul>
+        <li>
+          Content widths: <strong>420px</strong> for mobile,
+          <strong>800px</strong> for tablets
+        </li>
+        <img
+          src="vent-build-0-layout-mobile-content-width-420.webp"
+          alt="Vent-Build Elementor Settings"
+          title="Vent-Build Elementor Settings"
+          loading="lazy"
+          style="max-width: 100%; height: auto"
+        />
+      </ul>
 
-        <h2>Hero Section Setup</h2>
-        <p>
-            Added background image, headings, call-to-action, and button. After arranging the desktop view, adjusted margins, paddings, and font sizes separately for tablet and phone views.
-        </p>
-        <img src="vent-build-1-hero-desktop-view-margins.webp" alt="Vent-Build Elementor Settings" title="Vent-Build Elementor Settings" loading="lazy" style="max-width: 100%; height: auto;">
+      <h2>Hero Section Setup</h2>
+      <p>
+        Added background image, headings, call-to-action, and button. After
+        arranging the desktop view, adjusted margins, paddings, and font sizes
+        separately for tablet and phone views.
+      </p>
+      <img
+        src="vent-build-1-hero-desktop-view-margins.webp"
+        alt="Vent-Build Elementor Settings"
+        title="Vent-Build Elementor Settings"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
 
-        <h2>Services Section</h2>
-        <p>Padding decisions per device:</p>
-        <ul>
-            <li>PC > 1230px: 50px left and right (from designer’s Figma file)</li>
-            <li>Tablet: 32px left and right (own adjustment)</li>
-            <li>Phone: 16px left and right (from designer’s Figma file)</li>
-        </ul>
-        <img src="vent-build-1-hero-mobile-margins.webp" alt="Vent-Build Elementor Settings" title="Vent-Build Elementor Settings" loading="lazy" style="max-width: 100%; height: auto;">
+      <h2>Services Section</h2>
+      <p>Padding decisions per device:</p>
+      <ul>
+        <li>PC > 1230px: 50px left and right (from designer’s Figma file)</li>
+        <li>Tablet: 32px left and right (own adjustment)</li>
+        <li>Phone: 16px left and right (from designer’s Figma file)</li>
+      </ul>
+      <img
+        src="vent-build-1-hero-mobile-margins.webp"
+        alt="Vent-Build Elementor Settings"
+        title="Vent-Build Elementor Settings"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
 
-        <h2>Conclusion</h2>
-        <img src="vent-build-preview.webp" alt="Vent-Build Elementor Settings" title="Vent-Build Elementor Settings" loading="lazy" style="max-width: 100%; height: auto;">
-        <p>
-            The Vent-Build site setup combined proper plugin configuration, responsive Elementor adjustments, and precise design values. With a clear workflow, each device type delivers an optimized browsing experience.
-        </p>
+      <h2>Conclusion</h2>
+      <img
+        src="vent-build-preview.webp"
+        alt="Vent-Build Elementor Settings"
+        title="Vent-Build Elementor Settings"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
+      <p>
+        The Vent-Build site setup combined proper plugin configuration,
+        responsive Elementor adjustments, and precise design values. With a
+        clear workflow, each device type delivers an optimized browsing
+        experience.
+      </p>
 
-        <a href="nocap.html"><div class="item">
-            <h3>NoCap E-Commerce Project</h3>
-            <img src="../website/NoCap-home.webp" alt="NoCap Shop Homepage" title="NoCap Shop Homepage" loading="lazy">
-        </div></a>
+      <a href="nocap.html"
+        ><div class="item">
+          <h3>NoCap E-Commerce Project</h3>
+          <img
+            src="../website/NoCap-home.webp"
+            alt="NoCap Shop Homepage"
+            title="NoCap Shop Homepage"
+            loading="lazy"
+          /></div
+      ></a>
 
-        <a href="joksglobalsport.com.html"><div class="item">
-            <h3>Football Academy site example</h3>
-            <img src="../website/home-joksglobalsport.com.webp" alt="joksglobalsport.com football academy hero section" title="joksglobalsport landing page, hero section with banner" loading="lazy">
-        </div></a>
+      <a href="joksglobalsport.com.html"
+        ><div class="item">
+          <h3>Football Academy site example</h3>
+          <img
+            src="../website/home-joksglobalsport.com.webp"
+            alt="joksglobalsport.com football academy hero section"
+            title="joksglobalsport landing page, hero section with banner"
+            loading="lazy"
+          /></div
+      ></a>
 
-        <a href="japalandia.com.html"><div class="item">
-            <h3>Japalandia work abroad Landing Page</h3>
-            <img src="../website/home-1-screen-japalandia.webp" alt="Japalandia home section with Call To Action Button" title="Japalandia landing page, hero section with banner for work abroad" loading="lazy">
-        </div></a>
-
+      <a href="japalandia.com.html"
+        ><div class="item">
+          <h3>Japalandia work abroad Landing Page</h3>
+          <img
+            src="../website/home-1-screen-japalandia.webp"
+            alt="Japalandia home section with Call To Action Button"
+            title="Japalandia landing page, hero section with banner for work abroad"
+            loading="lazy"
+          /></div
+      ></a>
     </div>
 
     <script src="../scripts/index-1.js"></script>
     <script src="../scripts/index-3.js"></script>
 
-
     <script src="../scripts/copy-btn.js"></script>
-</body>
+  </body>
 </html>
