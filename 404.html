@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link id="stylesheet" rel="stylesheet" href="styles.css">
+  <head>
+    <style>
+      body {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      body.loaded {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.3s ease-in;
+      }
+    </style>
+    <link id="stylesheet" rel="stylesheet" href="styles.css" />
 
     <script>
-        fetch("shared/head.html")
-            .then(r => r.text())
-            .then(html => document.head.insertAdjacentHTML("beforeend", html))
-            .catch(e => console.error("Failed to load shared head:", e));
+      fetch("shared/head.html")
+        .then((r) => r.text())
+        .then((html) => document.head.insertAdjacentHTML("beforeend", html))
+        .catch((e) => console.error("Failed to load shared head:", e));
     </script>
 
     <script src="scripts/cookie-check.js" defer></script>
 
     <title>404 - Page Not Found</title>
     <!-- base href -> so styles for kolodych.com/err is the same as kolodych.com/articles/errr -->
-    <base href="https://kolodych.com/">
+    <base href="https://kolodych.com/" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <canvas id="c" class="c-1"></canvas>
 
     <div class="container404">
-        <h1>404 Page Not Found</h1>
-        <h2>Oops! The page you are looking for does not exist.</h2>
-        <p><a href="https://kolodych.com/">Go back to the homepage</a></p>
+      <h1>404 Page Not Found</h1>
+      <h2>Oops! The page you are looking for does not exist.</h2>
+      <p><a href="https://kolodych.com/">Go back to the homepage</a></p>
     </div>
     <script src="background.js"></script>
 
     <!-- <script src="zoom.js"></script> -->
     <!-- <script src="../scripts/index-1.js"></script> -->
     <!-- <script src="../scripts/index-3.js"></script> -->
-</body>
+    <script>
+      // Show body once page is fully loaded
+      window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
+      });
+    </script>
+  </body>
 </html>

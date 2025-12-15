@@ -1,62 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <style>
+      body {
+        visibility: hidden;
+        opacity: 0;
+      }
 
-<head>
-    <link id="stylesheet" rel="stylesheet">
+      body.loaded {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.3s ease-in;
+      }
+    </style>
+    <link id="stylesheet" rel="stylesheet" />
 
     <script>
-        fetch("/shared/head.html")
-            .then(r => r.text())
-            .then(html => document.head.insertAdjacentHTML("beforeend", html))
-            .catch(e => console.error("Failed to load shared head:", e));
+      fetch("/shared/head.html")
+        .then((r) => r.text())
+        .then((html) => document.head.insertAdjacentHTML("beforeend", html))
+        .catch((e) => console.error("Failed to load shared head:", e));
     </script>
 
     <script src="/scripts/cookie-check.js" defer></script>
 
     <!-- Open Graph Tags -->
-    <meta property="og:logo" content="../favicon/favicon-32x32.png">
-    <meta property="og:title" content="Building Virgin Courtesans: A WordPress Project">
-    <meta property="og:description" content="Model Agency wordpress site example! ☺ Learn about theme customization. ☆ Gallery setup. ✓ Custom Contact Form 7. ☎ Performance optimization tips for a successful site.">
-    <meta property="og:url" content="https://kolodych.com/website/virgincourtesans.com.html">
-    <meta property="og:image" content="https://kolodych.com/website/pagespeed-virgincourtesans.com-august-11-2024.webp"> <!-- Replace with a relevant image URL -->
-    <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Serhii Kolodych's Web Development Projects">
+    <meta property="og:logo" content="../favicon/favicon-32x32.png" />
+    <meta
+      property="og:title"
+      content="Building Virgin Courtesans: A WordPress Project"
+    />
+    <meta
+      property="og:description"
+      content="Model Agency wordpress site example! ☺ Learn about theme customization. ☆ Gallery setup. ✓ Custom Contact Form 7. ☎ Performance optimization tips for a successful site."
+    />
+    <meta
+      property="og:url"
+      content="https://kolodych.com/website/virgincourtesans.com.html"
+    />
+    <meta
+      property="og:image"
+      content="https://kolodych.com/website/pagespeed-virgincourtesans.com-august-11-2024.webp"
+    />
+    <!-- Replace with a relevant image URL -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:site_name"
+      content="Serhii Kolodych's Web Development Projects"
+    />
     <!-- END Open Graph Tags -->
 
     <!-- Schema Markup Addition -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org/",
         "@type": "Article",
         "headline": "Building Virgin Courtesans: A WordPress Project",
         "description": "Model Agency wordpress site example! ☺ Learn about theme customization. ☆ Gallery setup. ✓ Custom Contact Form 7. ☎ Performance optimization tips for a successful site.",
         "url": "https://kolodych.com/website/virgincourtesans.com.html",
-        "image": "https://kolodych.com/website/pagespeed-virgincourtesans.com-august-11-2024.webp", 
+        "image": "https://kolodych.com/website/pagespeed-virgincourtesans.com-august-11-2024.webp",
         "author": {
-            "@type": "Person",
-            "name": "Serhii Kolodych",
-            "url": "https://kolodych.com/"
+          "@type": "Person",
+          "name": "Serhii Kolodych",
+          "url": "https://kolodych.com/"
         },
         "publisher": {
-            "@type": "Organization",
-            "name": "Serhii Kolodych",
-            "image": {
-                "@type": "ImageObject",
-                "url": "https://kolodych.com/favicon/favicon-32x32.png"
-            }
+          "@type": "Organization",
+          "name": "Serhii Kolodych",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://kolodych.com/favicon/favicon-32x32.png"
+          }
         },
         "datePublished": "2024-08-04T12:23:00Z",
         "dateModified": "2024-08-23T22:19:00Z"
-    }
+      }
     </script>
     <!-- END Schema Markup Addition -->
 
     <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Building Virgin Courtesans: A WordPress Project">
-    <meta name="twitter:description" content="Model Agency wordpress site example! ☺ Learn about theme customization. ☆ Gallery setup. ✓ Custom Contact Form 7. ☎ Performance optimization tips for a successful site.">
-    <meta name="twitter:image" content="https://kolodych.com/website/pagespeed-virgincourtesans.com-august-11-2024.webp"> 
-    <meta name="twitter:site" content="@serhiikolodych"> 
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Building Virgin Courtesans: A WordPress Project"
+    />
+    <meta
+      name="twitter:description"
+      content="Model Agency wordpress site example! ☺ Learn about theme customization. ☆ Gallery setup. ✓ Custom Contact Form 7. ☎ Performance optimization tips for a successful site."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kolodych.com/website/pagespeed-virgincourtesans.com-august-11-2024.webp"
+    />
+    <meta name="twitter:site" content="@serhiikolodych" />
     <!-- END Twitter Card Tags -->
 
     <!-- Cookies Load or NOT -->
@@ -79,31 +115,48 @@
     </script> -->
 
     <title>Building a Model Agency Website with WordPress</title>
-    <meta name="description" content="Explore a real WordPress project for a model agency — theme customization, gallery integration, and fast, responsive performance.">
-    <meta name="keywords" content="WordPress Development, Astra Theme, Model Agency Website, Custom WordPress Solutions, Website Customization, WordPress Plugins, WordPress Theme Customization">
-    <link rel="canonical" href="https://kolodych.com/website/virgincourtesans.com.html">
+    <meta
+      name="description"
+      content="Explore a real WordPress project for a model agency — theme customization, gallery integration, and fast, responsive performance."
+    />
+    <meta
+      name="keywords"
+      content="WordPress Development, Astra Theme, Model Agency Website, Custom WordPress Solutions, Website Customization, WordPress Plugins, WordPress Theme Customization"
+    />
+    <link
+      rel="canonical"
+      href="https://kolodych.com/website/virgincourtesans.com.html"
+    />
 
     <meta name="theme-color" content="#0b6a30" />
 
     <!-- Android Chrome (light mode + dark mode) -->
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6a30">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b6a30">
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#0b6a30"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0b6a30"
+    />
 
     <!-- Windows / Edge tiles -->
-    <meta name="msapplication-TileColor" content="#0b6a30">
+    <meta name="msapplication-TileColor" content="#0b6a30" />
 
     <!-- iOS Safari (status bar) -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Website">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Website" />
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <!-- Background Canvas -->
-    <canvas id="c" style="z-index: 0; opacity: 1;"></canvas>
-
+    <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
 
     <div id="back-to-home">Back to Home</div>
 
@@ -111,89 +164,218 @@
 
     <!-- Article Container -->
     <div class="article-container">
-        <h1>Building Virgin Courtesans: A Comprehensive WordPress Development Guide</h1>
-        <p><em>Published on August 4, 2024</em></p>
-        
-        <!-- Introduction Section -->
-        <p>
-            <a href="https://virgincourtesans.com/" target="_blank">Virgin Courtesans</a> <a rel="nofollow" target="_blank" href="https://darkslategray-mouse-222398.hostingersite.com/">(backup mirror)</a>  is a sophisticated WordPress website created for a model agency. This project highlights the importance of a clean, minimalistic design that emphasizes user engagement and visual appeal. In this guide, I'll walk you through the entire process, from selecting the right theme to adding the final touches.
-        </p>
-    
-        <!-- Theme Installation Section -->
-        <h2>Installing and Customizing the Astra Theme</h2>
-        <p>
-            I chose the <a href="https://wpastra.com/" target="_blank">Astra theme</a> due to its lightweight nature and extensive customization options. Once the theme was installed, I designed the homepage with a bold banner image, an attention-grabbing headline, a brief introduction, and a compelling call-to-action button.
-        </p>
-        <p>
-            To remove the default header, navigate to <strong>Appearance &gt; Customize &gt; Header Builder</strong> and delete all the blocks from the three header rows.
-        </p>
-        <img src="header-builder-astra-wordpress.webp" alt="Customizing header in Astra theme" title="Virgin Courtesans header removal process">
-    
-        <!-- Footer Customization Section -->
-        <h2>Editing and Personalizing the Footer</h2>
-        <p>
-            The footer can be customized or removed entirely based on your preferences. Go to <strong>Appearance &gt; Customize &gt; Footer Builder</strong> to either remove all elements or select one of three layout options and add text, links, images, or widgets.
-        </p>
-        <img src="footer-builder-astra-wordpress.webp" alt="Editing footer layout in WordPress" title="Customizing footer in Astra theme" loading="lazy">
-    
-        <!-- Gallery Creation Section -->
-        <h2>Creating a Dynamic Gallery with The Post Grid Plugin</h2>
-        <p>
-            The client required a dynamic gallery where hovering over images reveals the model’s category, tags, and a brief description. To fulfill this, I utilized the <a href="https://wordpress.org/plugins/the-post-grid/" target="_blank">The Post Grid plugin</a>.
-        </p>
-        <p>
-            To create a new grid, go to <strong>The Post Grid &gt; Add New Grid</strong>. In the <strong>Layout Settings</strong>, I selected the ✅ Grid Hover and ✅ Grid Hover 2 options.
-        </p>
-        <img src="the-post-grid-hover-layout-wordpress.webp" alt="Virgin Courtesans gallery setup" title="Gallery with The Post Grid plugin" loading="lazy">
-        <p>
-            Also changed few settings in other tabs, so <strong>Layout Preview</strong> for our Posts now looks like this:
-        </p>
-        <img src="Gallery-preview-using-the-post-grid-plugin-wordpress.webp" alt="Virgin Courtesans gallery preview using The Post Grid plugin" title="Gallery with The Post Grid plugin" loading="lazy">
-        <p>
-            After adjusting the layout to match the client’s vision, I embedded the gallery into the desired page using the provided shortcode.
-        </p>
-        <img src="Page-editor-wordpress-add-shortcode.webp" alt="Virgin Courtesans gallery setup" title="Embedding gallery with The Post Grid plugin" loading="lazy">
-    
-        <!-- Contact Form Setup Section -->
-        <h2>Implementing a Customizable Contact Form</h2>
-        <p>
-            To create a user-friendly contact form, I used the <a href="https://wordpress.org/plugins/contact-form-7/" target="_blank">Contact Form 7 plugin</a>. Simply go to <strong>Contact &gt; Add New</strong> and configure the form according to your requirements. If you encounter any issues, the plugin’s comprehensive documentation and FAQ section are helpful resources.
-        </p>
-        <img src="contact-form-7-email-subscription-wordpress.webp" alt="Virgin Courtesans contact form setup" title="Creating contact form with Contact Form 7" loading="lazy">
-    
-        <!-- Post Creation Section -->
-        <h2>Creating and Duplicating Consistent Posts</h2>
-        <p>
-            For blog posts, I followed a structured format that includes a title, an image gallery, and content sections with headings and paragraphs. To maintain consistency across all posts, I utilized the <a href="https://wordpress.org/plugins/duplicate-wp-page-post/" target="_blank">Duplicate Page and Post plugin</a> to replicate the initial post template.
-        </p>
-        <img src="virgin-courtesans-post.webp" alt="Post as a model page in WordPress" title="Using Duplicate Page and Post plugin for consistency" loading="lazy">
-    
-        <!-- Testing and Optimization Section -->
-        <h2>Testing and Optimizing Site Performance</h2>
-        <p>
-            After building the website, it’s essential to test its performance. I used <a href="https://pagespeed.web.dev/" target="_blank">Google PageSpeed Insights</a> to analyze and optimize the site's speed and overall performance.
-        </p>
-        <img src="pagespeed-virgincourtesans.com-august-11-2024.webp" alt="Website performance testing with Google PageSpeed Insights" title="Testing and optimizing site performance" loading="lazy">
-    
-        <!-- Essential Plugins Section -->
-        <h2 id="must-have-plugins">Must-Have Plugins for Every WordPress Site <a target="_blank" href="joksglobalsport.com.html#more-plugins">+ Additional Plugins</a></h2>
-        <p>
-            To enhance functionality and security, I installed several essential plugins:
-        </p>
-        <ul>
-            <li><a target="_blank" href="https://wordpress.org/plugins/wpvivid-backuprestore/">WPvivid:</a> Comprehensive site backups.</li>
-            <li><a target="_blank" href="https://wordpress.org/plugins/flamingo/">Flamingo:</a> Secure storage of Contact Form 7 submissions.</li>
-            <li><a target="_blank" href="https://wordpress.org/plugins/404-to-301/">404 to 301:</a> SEO-friendly redirects for 404 errors.</li>
-            <li><a target="_blank" href="https://wordpress.org/plugins/google-site-kit/">Google Site Kit:</a> Integrates Google tools like Analytics and Search Console in one place.</li>
-        </ul>
-    
-        <!-- Conclusion Section -->
-        <h2>Conclusion</h2>
-        <p>
-            Building the Virgin Courtesans website was a fulfilling project that showcased the versatility of WordPress. By combining a highly customizable theme, essential plugins, and thoughtful design, the site not only meets the client’s needs but also offers an excellent user experience.
-        </p>
+      <h1>
+        Building Virgin Courtesans: A Comprehensive WordPress Development Guide
+      </h1>
+      <p><em>Published on August 4, 2024</em></p>
 
-        <!-- <div class="item">
+      <!-- Introduction Section -->
+      <p>
+        <a href="https://virgincourtesans.com/" target="_blank"
+          >Virgin Courtesans</a
+        >
+        <a
+          rel="nofollow"
+          target="_blank"
+          href="https://darkslategray-mouse-222398.hostingersite.com/"
+          >(backup mirror)</a
+        >
+        is a sophisticated WordPress website created for a model agency. This
+        project highlights the importance of a clean, minimalistic design that
+        emphasizes user engagement and visual appeal. In this guide, I'll walk
+        you through the entire process, from selecting the right theme to adding
+        the final touches.
+      </p>
+
+      <!-- Theme Installation Section -->
+      <h2>Installing and Customizing the Astra Theme</h2>
+      <p>
+        I chose the
+        <a href="https://wpastra.com/" target="_blank">Astra theme</a> due to
+        its lightweight nature and extensive customization options. Once the
+        theme was installed, I designed the homepage with a bold banner image,
+        an attention-grabbing headline, a brief introduction, and a compelling
+        call-to-action button.
+      </p>
+      <p>
+        To remove the default header, navigate to
+        <strong>Appearance &gt; Customize &gt; Header Builder</strong> and
+        delete all the blocks from the three header rows.
+      </p>
+      <img
+        src="header-builder-astra-wordpress.webp"
+        alt="Customizing header in Astra theme"
+        title="Virgin Courtesans header removal process"
+      />
+
+      <!-- Footer Customization Section -->
+      <h2>Editing and Personalizing the Footer</h2>
+      <p>
+        The footer can be customized or removed entirely based on your
+        preferences. Go to
+        <strong>Appearance &gt; Customize &gt; Footer Builder</strong> to either
+        remove all elements or select one of three layout options and add text,
+        links, images, or widgets.
+      </p>
+      <img
+        src="footer-builder-astra-wordpress.webp"
+        alt="Editing footer layout in WordPress"
+        title="Customizing footer in Astra theme"
+        loading="lazy"
+      />
+
+      <!-- Gallery Creation Section -->
+      <h2>Creating a Dynamic Gallery with The Post Grid Plugin</h2>
+      <p>
+        The client required a dynamic gallery where hovering over images reveals
+        the model’s category, tags, and a brief description. To fulfill this, I
+        utilized the
+        <a href="https://wordpress.org/plugins/the-post-grid/" target="_blank"
+          >The Post Grid plugin</a
+        >.
+      </p>
+      <p>
+        To create a new grid, go to
+        <strong>The Post Grid &gt; Add New Grid</strong>. In the
+        <strong>Layout Settings</strong>, I selected the ✅ Grid Hover and ✅
+        Grid Hover 2 options.
+      </p>
+      <img
+        src="the-post-grid-hover-layout-wordpress.webp"
+        alt="Virgin Courtesans gallery setup"
+        title="Gallery with The Post Grid plugin"
+        loading="lazy"
+      />
+      <p>
+        Also changed few settings in other tabs, so
+        <strong>Layout Preview</strong> for our Posts now looks like this:
+      </p>
+      <img
+        src="Gallery-preview-using-the-post-grid-plugin-wordpress.webp"
+        alt="Virgin Courtesans gallery preview using The Post Grid plugin"
+        title="Gallery with The Post Grid plugin"
+        loading="lazy"
+      />
+      <p>
+        After adjusting the layout to match the client’s vision, I embedded the
+        gallery into the desired page using the provided shortcode.
+      </p>
+      <img
+        src="Page-editor-wordpress-add-shortcode.webp"
+        alt="Virgin Courtesans gallery setup"
+        title="Embedding gallery with The Post Grid plugin"
+        loading="lazy"
+      />
+
+      <!-- Contact Form Setup Section -->
+      <h2>Implementing a Customizable Contact Form</h2>
+      <p>
+        To create a user-friendly contact form, I used the
+        <a href="https://wordpress.org/plugins/contact-form-7/" target="_blank"
+          >Contact Form 7 plugin</a
+        >. Simply go to <strong>Contact &gt; Add New</strong> and configure the
+        form according to your requirements. If you encounter any issues, the
+        plugin’s comprehensive documentation and FAQ section are helpful
+        resources.
+      </p>
+      <img
+        src="contact-form-7-email-subscription-wordpress.webp"
+        alt="Virgin Courtesans contact form setup"
+        title="Creating contact form with Contact Form 7"
+        loading="lazy"
+      />
+
+      <!-- Post Creation Section -->
+      <h2>Creating and Duplicating Consistent Posts</h2>
+      <p>
+        For blog posts, I followed a structured format that includes a title, an
+        image gallery, and content sections with headings and paragraphs. To
+        maintain consistency across all posts, I utilized the
+        <a
+          href="https://wordpress.org/plugins/duplicate-wp-page-post/"
+          target="_blank"
+          >Duplicate Page and Post plugin</a
+        >
+        to replicate the initial post template.
+      </p>
+      <img
+        src="virgin-courtesans-post.webp"
+        alt="Post as a model page in WordPress"
+        title="Using Duplicate Page and Post plugin for consistency"
+        loading="lazy"
+      />
+
+      <!-- Testing and Optimization Section -->
+      <h2>Testing and Optimizing Site Performance</h2>
+      <p>
+        After building the website, it’s essential to test its performance. I
+        used
+        <a href="https://pagespeed.web.dev/" target="_blank"
+          >Google PageSpeed Insights</a
+        >
+        to analyze and optimize the site's speed and overall performance.
+      </p>
+      <img
+        src="pagespeed-virgincourtesans.com-august-11-2024.webp"
+        alt="Website performance testing with Google PageSpeed Insights"
+        title="Testing and optimizing site performance"
+        loading="lazy"
+      />
+
+      <!-- Essential Plugins Section -->
+      <h2 id="must-have-plugins">
+        Must-Have Plugins for Every WordPress Site
+        <a target="_blank" href="joksglobalsport.com.html#more-plugins"
+          >+ Additional Plugins</a
+        >
+      </h2>
+      <p>
+        To enhance functionality and security, I installed several essential
+        plugins:
+      </p>
+      <ul>
+        <li>
+          <a
+            target="_blank"
+            href="https://wordpress.org/plugins/wpvivid-backuprestore/"
+            >WPvivid:</a
+          >
+          Comprehensive site backups.
+        </li>
+        <li>
+          <a target="_blank" href="https://wordpress.org/plugins/flamingo/"
+            >Flamingo:</a
+          >
+          Secure storage of Contact Form 7 submissions.
+        </li>
+        <li>
+          <a target="_blank" href="https://wordpress.org/plugins/404-to-301/"
+            >404 to 301:</a
+          >
+          SEO-friendly redirects for 404 errors.
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href="https://wordpress.org/plugins/google-site-kit/"
+            >Google Site Kit:</a
+          >
+          Integrates Google tools like Analytics and Search Console in one
+          place.
+        </li>
+      </ul>
+
+      <!-- Conclusion Section -->
+      <h2>Conclusion</h2>
+      <p>
+        Building the Virgin Courtesans website was a fulfilling project that
+        showcased the versatility of WordPress. By combining a highly
+        customizable theme, essential plugins, and thoughtful design, the site
+        not only meets the client’s needs but also offers an excellent user
+        experience.
+      </p>
+
+      <!-- <div class="item">
             <h3 class="dancing-text">
                 <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span> 
                 <span>a</span><span>n</span><span>y</span><span>t</span><span>h</span><span>i</span><span>n</span><span>g</span><span>?</span>
@@ -205,20 +387,37 @@
             </form>
         </div> -->
 
-        <a href="joksglobalsport.com.html"><div class="item">
-            <h3>Football Academy site example</h3>
-            <img src="home-joksglobalsport.com.webp" alt="joksglobalsport.com football academy hero section" title="joksglobalsport landing page, hero section with banner" loading="lazy">
-        </div></a>
+      <a href="joksglobalsport.com.html"
+        ><div class="item">
+          <h3>Football Academy site example</h3>
+          <img
+            src="home-joksglobalsport.com.webp"
+            alt="joksglobalsport.com football academy hero section"
+            title="joksglobalsport landing page, hero section with banner"
+            loading="lazy"
+          /></div
+      ></a>
 
-        <a href="japalandia.com.html"><div class="item">
-            <h3>Japalandia work abroad Landing Page</h3>
-            <img src="home-1-screen-japalandia.webp" alt="Japalandia home section with Call To Action Button" title="Japalandia landing page, hero section with banner for work abroad" loading="lazy">
-        </div></a>
-
+      <a href="japalandia.com.html"
+        ><div class="item">
+          <h3>Japalandia work abroad Landing Page</h3>
+          <img
+            src="home-1-screen-japalandia.webp"
+            alt="Japalandia home section with Call To Action Button"
+            title="Japalandia landing page, hero section with banner for work abroad"
+            loading="lazy"
+          /></div
+      ></a>
     </div>
-    
+
     <script src="../scripts/index-1.js"></script>
     <script src="../scripts/index-3.js"></script>
 
-</body>
+    <script>
+      // Show body once page is fully loaded
+      window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
+      });
+    </script>
+  </body>
 </html>

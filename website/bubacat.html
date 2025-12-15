@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      body {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      body.loaded {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.3s ease-in;
+      }
+    </style>
     <link id="stylesheet" rel="stylesheet" />
 
     <script>
@@ -436,5 +448,11 @@
     <script src="../scripts/index-3.js"></script>
 
     <script src="../scripts/copy-btn.js"></script>
+    <script>
+      // Show body once page is fully loaded
+      window.addEventListener("load", function () {
+        document.body.classList.add("loaded");
+      });
+    </script>
   </body>
 </html>
