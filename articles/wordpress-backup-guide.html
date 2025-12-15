@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link id="stylesheet" rel="stylesheet" />
+
+    <script>
+      fetch("/shared/head.html")
+        .then((r) => r.text())
+        .then((html) => document.head.insertAdjacentHTML("beforeend", html))
+        .catch((e) => console.error("Failed to load shared head:", e));
+    </script>
+
+    <script src="/scripts/cookie-check.js" defer></script>
+
+    <meta name="theme-color" content="#0b6a30" />
+    <!-- Android Chrome (light mode + dark mode) -->
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#0b6a30"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0b6a30"
+    />
+    <!-- Windows / Edge tiles -->
+    <meta name="msapplication-TileColor" content="#0b6a30" />
+    <!-- iOS Safari (status bar) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Website" />
+
+    <!-- Primary Meta Tags -->
+    <title>Your WordPress site will fail. Be ready.</title>
+    <meta name="title" content="Your WordPress site will fail. Be ready." />
+    <meta
+      name="description"
+      content="Learn how to protect your WordPress site from disasters with WPvivid backups. Step-by-step guide to setup, test, and automate backups with cloud storage. Never lose your website again."
+    />
+    <meta
+      name="keywords"
+      content="WordPress backup, WPvivid, WordPress disaster recovery, website backup tutorial, WordPress restore, automated backups, Google Drive backup, WordPress security, site backup plugin, WordPress crash protection, backup testing, remote storage backup"
+    />
+    <link
+      rel="canonical"
+      href="https://kolodych.com/articles/wordpress-backup-guide.html"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://kolodych.com/articles/wordpress-backup-guide.html"
+    />
+    <meta
+      property="og:title"
+      content="Your WordPress site will fail. Be ready."
+    />
+    <meta
+      property="og:description"
+      content="Protect your WordPress site from disasters with WPvivid. Learn to setup, test, and automate backups with cloud storage. Step-by-step tutorial with real examples."
+    />
+    <meta
+      property="og:image"
+      content="https://kolodych.com/articles/your-wordpress-will-crash-1080-566.webp"
+    />
+    <meta
+      property="og:image:alt"
+      content="This site can't be reached WPvivid WordPress Backup Plugin"
+    />
+    <meta
+      property="og:site_name"
+      content="Serhii Kolodych's Web Development Projects"
+    />
+    <meta
+      property="og:logo"
+      content="https://kolodych.com/favicon/favicon-32x32.png"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://kolodych.com/articles/wordpress-backup-guide.html"
+    />
+    <meta
+      name="twitter:title"
+      content="Your WordPress site will fail. Be ready."
+    />
+    <meta
+      name="twitter:description"
+      content="Protect your WordPress site from disasters with WPvivid. Step-by-step backup tutorial with cloud storage setup."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kolodych.com/articles/your-wordpress-will-crash-1080-566.webp"
+    />
+    <meta name="twitter:site" content="@serhiikolodych" />
+    <meta name="twitter:creator" content="@serhiikolodych" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Your WordPress site will fail. Be ready.",
+        "description": "Learn how to protect your WordPress site from disasters with WPvivid backups. Step-by-step guide to setup, test, and automate backups with cloud storage.",
+        "image": "https://kolodych.com/articles/your-wordpress-will-crash-1080-566.webp",
+        "datePublished": "2024-12-14T11:23:00Z",
+        "dateModified": "2024-12-15T10:19:00Z",
+        "author": {
+          "@type": "Person",
+          "name": "Serhii Kolodych",
+          "url": "https://kolodych.com/"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Serhii Kolodych",
+          "url": "https://kolodych.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://kolodych.com/favicon/favicon-32x32.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://kolodych.com/articles/wordpress-backup-guide.html"
+        },
+        "keywords": "WordPress backup, WPvivid, disaster recovery, website backup, WordPress security, automated backups",
+        "articleSection": "WordPress Tutorial",
+        "wordCount": 1850,
+        "datePublished": "2025-12-14T11:34:00Z",
+        "dateModified": "2025-12-15T08:20:00Z"
+      }
+    </script>
+
+    <!-- HowTo Schema for Tutorial -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Setup WordPress Backups with WPvivid",
+        "description": "Complete guide to setting up automated WordPress backups with WPvivid plugin, including testing and cloud storage configuration",
+        "image": "https://kolodych.com/articles/your-wordpress-will-crash-1080-566.webp",
+        "totalTime": "PT1H",
+        "estimatedCost": {
+          "@type": "MonetaryAmount",
+          "currency": "USD",
+          "value": "0"
+        },
+        "tool": {
+          "@type": "HowToTool",
+          "name": "WPvivid Backup Plugin"
+        },
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Install WPvivid Plugin",
+            "text": "Install and activate WPvivid plugin from WordPress plugin repository",
+            "url": "https://kolodych.com/articles/wordpress-backup-guide.html#install"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Create First Backup",
+            "text": "Navigate to WPvivid, select Database + Files, and create your first backup",
+            "url": "https://kolodych.com/articles/wordpress-backup-guide.html#first-backup"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Test Restore Process",
+            "text": "Upload backup to test site and verify restore works correctly",
+            "url": "https://kolodych.com/articles/wordpress-backup-guide.html#test-restore"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Setup Remote Storage",
+            "text": "Connect Google Drive or other cloud storage for off-site backups",
+            "url": "https://kolodych.com/articles/wordpress-backup-guide.html#remote-storage"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Configure Automated Schedule",
+            "text": "Enable automatic daily or weekly backups to remote storage",
+            "url": "https://kolodych.com/articles/wordpress-backup-guide.html#schedule"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://kolodych.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Articles",
+            "item": "https://kolodych.com/#articles"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "WordPress Backup Guide",
+            "item": "https://kolodych.com/articles/wordpress-backup-guide.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How often should I backup my WordPress site?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For most websites, daily backups are recommended. E-commerce sites should backup multiple times per day. Blogs with infrequent updates can use weekly backups. The key is backing up before any major changes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why should I test my WordPress backups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Testing backups ensures they actually work when disaster strikes. Many website owners discover their backups are corrupted or incomplete only after they need them. Testing on a staging site verifies your backup and restore process works correctly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is WPvivid free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, WPvivid has a robust free version that includes full site backups, scheduling, cloud storage integration, and one-click restore. The premium version adds incremental backups, staging sites, and advanced features for $79/year."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Background Canvas -->
+    <canvas id="c" class="cZero"></canvas>
+
+    <div id="back-to-home">Back to Home</div>
+
+    <a href="#" id="change-style-link">White</a>
+
+    <!-- Article Container -->
+    <div class="article-container">
+      <h1>Your WordPress site will fail. Be ready.</h1>
+
+      <p><em>Published on December 14, 2025</em></p>
+      <p><em>12 min read</em></p>
+
+      <p>
+        How to stop worrying about your WordPress site failing and start
+        implementing new features.
+      </p>
+      <nav class="toc" aria-label="Table of Contents">
+        <h3>Quick Navigation</h3>
+        <ol>
+          <li><a href="#why-backups">Why Website Crashes Are Normal</a></li>
+          <li>
+            <a href="#choosing-plugin">Choosing the Right Backup Plugin</a>
+          </li>
+          <li><a href="#first-backup">Your First Backup with WPvivid</a></li>
+          <li><a href="#test-restore">Testing the Restore Process</a></li>
+          <li><a href="#remote-storage">Setting Up Remote Storage</a></li>
+          <li><a href="#schedule">Automating Your Backups</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="why-backups">Website crashes are normal</h2>
+
+      <p>
+        Updates fail. Plugins conflict. Servers go down. Themes break layouts.
+        Hackers exploit weak spots. You do not control when this happens. You
+        control how fast you recover. Most site owners panic. They search logs.
+        They contact hosting. They wait. Hours pass. Sometimes days. Without
+        backups, recovery becomes guesswork. A backup removes fear. It turns a
+        crash into a routine task. Restore. Check. Move on.
+      </p>
+
+      <h3 id="choosing-plugin">A WordPress Backup plugin is the solution</h3>
+
+      <p>
+        While there are many backup plugins available, not all are created
+        equal. Some are lightweight and reliable, while others can slow down
+        your site or cause conflicts. Choosing the right plugin is crucial for
+        effective backup management and peace of mind.
+      </p>
+
+      <p>
+        I've tried all of them:
+        <a
+          href="https://wordpress.org/plugins/updraftplus/"
+          rel="nofollow noopener"
+          target="_blank"
+          >UpdraftPlus</a
+        >,
+        <a
+          href="https://wordpress.org/plugins/backuply/"
+          rel="nofollow noopener"
+          target="_blank"
+          >Backuply</a
+        >,
+        <a
+          href="https://wordpress.org/plugins/jetpack/"
+          rel="nofollow noopener"
+          target="_blank"
+          >Jetpack</a
+        >,
+        <a
+          href="https://wordpress.org/plugins/backwpup/"
+          rel="nofollow noopener"
+          target="_blank"
+          >BackWPup</a
+        >,
+        <a
+          href="https://wordpress.org/plugins/wpvivid-backuprestore/"
+          rel="nofollow noopener"
+          target="_blank"
+          >WPvivid</a
+        >,
+        <a
+          href="https://wordpress.org/plugins/duplicator/"
+          rel="nofollow noopener"
+          target="_blank"
+          >Duplicator</a
+        >,
+        <a
+          href="https://wordpress.org/plugins/all-in-one-wp-migration/"
+          rel="nofollow noopener"
+          target="_blank"
+          >All-in-One WP Migration</a
+        >. And after 20+ website restorations, I can confidently say that
+        <strong
+          ><a
+            href="https://wordpress.org/plugins/wpvivid-backuprestore/"
+            rel="nofollow noopener"
+            target="_blank"
+            >WPvivid</a
+          ></strong
+        >
+        is the best option for most users. It strikes the perfect balance
+        between comprehensive protection and ease of use, without the complexity
+        that makes you need a computer science degree to configure it properly.
+      </p>
+
+      <h4>What WPvivid Can Do For You</h4>
+      <ul>
+        <li>Full website backups.</li>
+        <li>Database-only backups.</li>
+        <li>Files-only backups.</li>
+        <li>Manual backups on demand.</li>
+        <li>Automatic scheduled backups.</li>
+        <li>One click restore.</li>
+        <li>Website migration.</li>
+        <li>Staging site creation.</li>
+        <li>
+          Remote storage support (Google Drive, Dropbox, Microsoft OneDrive,
+          Amazon S3, FTP, SFTP).
+        </li>
+        <li>Backup splitting for large sites.</li>
+        <li>Incremental backups in Pro version.</li>
+      </ul>
+
+      <h4 id="first-backup">Your First Backup with WPvivid</h4>
+      <p>
+        Despite all of WPvivid's capabilities, you need to verify that it works
+        correctly for YOUR specific setup. Every website is unique — different
+        themes, plugins, hosting environments and configurations.
+        <strong>Backups mean nothing if restore fails.</strong> Never trust
+        blindly — test once, then relax.
+      </p>
+
+      <ol>
+        <li id="install">Install and activate WPvivid plugin.</li>
+        <li>Open WPvivid Backup in WordPress, tab "Backup & Restore".</li>
+        <img
+          src="wpvivid-backup.webp"
+          alt="WPvivid Backup Interface"
+          style="max-width: 100%; height: auto"
+        />
+        <li>Choose "Database + Files".</li>
+        <li>Choose "Save to Local".</li>
+        <li>Click "Backup Now".</li>
+        <li>Wait for the backup to complete.</li>
+        <li>
+          Reload the page, click the button "Scan uploaded backup or received
+          backup", then click "Download".
+        </li>
+      </ol>
+
+      <p id="test-restore">
+        Congratulations! You have successfully created your first backup. Now
+        it's time to test the restore process.
+      </p>
+
+      <ol>
+        <li>Create a blank test WordPress site.</li>
+        <li>Install and activate WPvivid plugin on a Test site.</li>
+        <li>In the test site, open WPvivid, tab "Backup & Restore".</li>
+        <li>
+          Scroll down below the "Backup Now" button to find the "Upload"
+          section, then click 'Upload'" and select the backup file from your
+          local machine. Wait for the message "The upload has completed." -
+          click "OK".
+        </li>
+        <li>
+          Now click the "Backups" button (located next to the 'Upload' button).
+        </li>
+        <li>
+          There you should see the uploaded backup and click "Restore" and then
+          again "Restore" and click "OK".
+        </li>
+        <img
+          src="wpvivid-restore.webp"
+          alt="WPvivid Restore Process"
+          style="max-width: 100%; height: auto"
+        />
+        <li>
+          Don't close or switch to other tabs during the restore process. When
+          finished you will get message "Restore completed successfully." -
+          click "OK".
+        </li>
+      </ol>
+
+      <p>
+        Perfect! You just successfully completed a full backup and restore test.
+        Reload the page, go to different pages and sections of your website to
+        confirm everything is working as expected. This confirms that your
+        backups are not only created but also restorable.
+      </p>
+
+      <p>
+        This entire test process takes 5-60 minutes (depending on the size of
+        your site) and is worth every second. I test my backups every couple of
+        months, and there have been times, when:
+      </p>
+
+      <ul>
+        <li>File corrupted during transfer.</li>
+        <li>PHP timeout during restore.</li>
+        <li>Incompatible plugin files.</li>
+        <li>Invalid backup file format.</li>
+        <li>and so much more things that can go wrong...</li>
+      </ul>
+
+      <p>
+        That's why for every website I have / make - I create a test website to
+        verify the backup works. For example:
+      </p>
+
+      <ul>
+        <li>
+          <a
+            href="https://bubacatcity.com/"
+            rel="nofollow noopener"
+            target="_blank"
+            >Bubacatcity.com</a
+          >
+          has a copy on a
+          <a
+            href="https://lightsalmon-salamander-914319.hostingersite.com/"
+            rel="nofollow noopener"
+            target="_blank"
+            >test server</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://vent-build.com"
+            rel="nofollow noopener"
+            target="_blank"
+            >Vent Build website</a
+          >
+          has a copy on a
+          <a
+            href="https://gray-stork-635160.hostingersite.com/"
+            rel="nofollow noopener"
+            target="_blank"
+            >test server</a
+          >
+        </li>
+        <li>and you can be sure, that all other websites as well.</li>
+      </ul>
+
+      <p>
+        This practice gives me peace of mind and ensures that my clients'
+        websites are always protected and recoverable.
+      </p>
+      <p>
+        If this backup and restore process using WPvivid worked out well for
+        your website - I can share with you my settings and best practices for
+        even smoother and more reliable backups.
+      </p>
+      <img
+        src="server-has-crashed.webp"
+        alt="Meme: Server has crashed. - Where is backup? - On a server"
+        style="max-width: 100%; height: auto"
+      />
+      <p id="remote-storage">
+        I hope you now understand the importance of having your backups not in
+        the same place as your website. To do this - go to tab "Remote Storage"
+        - click on the Cloud service you like the most and then "Authenticate"
+        (log in to your account). After that give it descriptive name, so later
+        you'll know where to find your backups.
+      </p>
+      <img
+        src="wpvivid-remote-storage.webp"
+        alt="WPvivid Add Remote Storage "
+        style="max-width: 100%; height: auto"
+      />
+
+      <p id="schedule">
+        Then go to tab "Schedule", tick "Enable backup schedule", choose how
+        often to do backups (e.g., daily or weekly), choose "Database + Files"
+        and "Send backups to remote storage" (in my case Google Drive icon is
+        active, since I authenticated it in "Remote Storage" tab before). And
+        most importantly click "Save".
+      </p>
+
+      <img
+        src="wpvivid-schedule.webp"
+        alt="WPvivid Schedule Settings"
+        style="max-width: 100%; height: auto"
+      />
+
+      <p>
+        One last step is to go to tab "Settings" -> "General settings" and
+        choose the maximum allowed amount of backups retained = 7. Then I
+        recommend to tick "Merge all the backup files into single" and click
+        "Save". All the rest settings are not that important.
+      </p>
+      <img
+        src="wpvivid-settings-general-7.webp"
+        alt="WPvivid Settings - General - Maximum backups retained"
+        style="max-width: 100%; height: auto"
+      />
+
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3>How often should I backup my WordPress site?</h3>
+          <p>
+            For most websites, daily backups are recommended. E-commerce sites
+            should backup multiple times per day. Blogs with infrequent updates
+            can use weekly backups. The key is backing up before any major
+            changes.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Why should I test my WordPress backups?</h3>
+          <p>
+            Testing backups ensures they actually work when disaster strikes.
+            Many website owners discover their backups are corrupted or
+            incomplete only after they need them. Testing on a staging site
+            verifies your backup and restore process works correctly.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is WPvivid free?</h3>
+          <p>
+            Yes, WPvivid has a robust free version that includes full site
+            backups, scheduling, cloud storage integration, and one-click
+            restore. The premium version adds incremental backups, staging
+            sites, and advanced features for $79/year.
+          </p>
+        </div>
+      </section>
+      <h2>Summary</h2>
+      <p>
+        Three years ago, I lost two weeks of work because I trusted backups I
+        never tested. The panic, the scrambling, the realization that my "backup
+        solution" was just an empty promise — I wouldn't wish that on anyone.
+      </p>
+      <p>
+        That's why I'm so insistent about testing. That's why I have test
+        websites for every client site I manage. That's why I check my backup
+        logs monthly and run quarterly restore tests.
+      </p>
+      <p>
+        Not because I'm paranoid. Because I learned the hard way that hope is
+        not a backup strategy.
+      </p>
+      <p>
+        You just invested an hour setting this up properly. Testing.
+        Configuring. Connecting remote storage. That hour is worth years of
+        peace of mind.
+      </p>
+      <p>
+        I've had servers crash. Hard drives fail. Hosting accounts suspended due
+        to billing errors. Security breaches that required immediate rollback.
+        Plugin updates that broke entire sites.
+      </p>
+      <p>
+        Every single time, I restored from backup and was back online within 20
+        minutes.
+      </p>
+      <p>
+        My clients never knew there was a problem. My visitors never saw
+        downtime. I never lost sleep or spent hours on emergency support calls.
+      </p>
+      <p>That's what you just set up for yourself.</p>
+      <p>
+        The next time something breaks — and something will break — you'll
+        remember this article. You'll go to WPvivid. You'll click restore. And
+        15 minutes later, you'll be back to work.
+      </p>
+      <p>
+        Welcome to the small group of website owners who actually sleep well at
+        night.
+      </p>
+      <p>
+        <strong
+          >If You Remember Nothing Else From This Article, Remember
+          This:</strong
+        >
+        Every update — every single one — should happen on a test environment
+        first. Not sometimes. Not for "small" updates. Every. Single. Time.
+      </p>
+
+      <a href="../website/web-dev-tools.html">
+        <div class="item">
+          <h3>My Go-To Web Arsenal</h3>
+          <img
+            src="../website/450-website-development-tools-and-services.jpg"
+            alt="Website Development Tools list"
+            title="Website Development Tools and Services"
+            loading="lazy"
+          />
+        </div>
+      </a>
+
+      <a href="../website/bubacat.html"
+        ><div class="item">
+          <h3>Bubacat card game website</h3>
+          <img
+            src="../website/bubacat-preview.webp"
+            alt="Bubacat card game landing page, hero section with transparent header"
+            title="Bubacat card game landing page, hero section with transparent header"
+            loading="lazy"
+          /></div
+      ></a>
+
+      <a href="../website/vent-build.html"
+        ><div class="item">
+          <h3>Vent Build construction company site</h3>
+          <img
+            src="../website/vent-build-preview.webp"
+            alt="Vent Build company site: desktop vs mobile view"
+            title="Vent Build company site: desktop vs mobile view"
+            loading="lazy"
+          /></div
+      ></a>
+
+      <a href="../articles/nginx.html"
+        ><div class="item">
+          <h3>Nginx web server set up</h3>
+          <img
+            src="../articles/nginx-status-900.webp"
+            alt="Nginx running service on Linux server status"
+            title="Nginx running service on Linux server status"
+            loading="lazy"
+          /></div
+      ></a>
+    </div>
+    <!-- article-container END -->
+
+    <!-- Background script -->
+    <!-- <script src="../background.js"></script>
+    <script src="../scripts/style-toggle.js"></script> -->
+    <script src="../scripts/index-1.js"></script>
+    <script src="../scripts/index-3.js"></script>
+    <script src="../scripts/copy-btn.js"></script>
+  </body>
+</html>
