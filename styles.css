@@ -1054,18 +1054,6 @@ tbody tr:hover {
   transform: scale(1.3);
 } 
 
-
-
-
-
-
-
-
-
-
-
-
-
 body {
   overscroll-behavior-y: auto; /* allow pull-to-refresh */
 }
@@ -1074,7 +1062,50 @@ html {
   -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
 }
 
+tick-list {
+list-style: none;
+padding-left: 0;
+}
 
+.tick-list li {
+position: relative;
+padding-left: 18px;
+}
+
+.tick-list li::before {
+content: "✓";
+position: absolute;
+left: 0;
+}
+
+.tick-list li::before {
+color: #2ecc71;
+font-size: 24px;
+margin-top: -8px;
+}
+
+
+.error-list {
+list-style: none;
+padding-left: 0;
+}
+
+.error-list li {
+position: relative;
+padding-left: 22px;
+}
+
+.error-list li::before {
+content: "📛";
+position: absolute;
+left: 0;
+}
+
+.error-list li::before {
+/* color: #2ecc71; */
+font-size: 16px;
+margin-top: 0px;
+}
 
 
 
