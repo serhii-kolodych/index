@@ -64,14 +64,30 @@
       property="og:description"
       content="Protect your WordPress site from disasters with WPvivid. Learn to setup, test, and automate backups with cloud storage. Step-by-step tutorial with real examples."
     />
+    <!-- Landscape image (default for Facebook/LinkedIn) -->
     <meta
       property="og:image"
       content="https://kolodych.com/articles/your-wordpress-will-crash-1080-566.webp"
     />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="566" />
     <meta
       property="og:image:alt"
       content="This site can't be reached WPvivid WordPress Backup Plugin"
     />
+
+    <!-- Square image (for Instagram/Facebook when shared) -->
+    <meta
+      property="og:image"
+      content="https://kolodych.com/articles/your-wordpress-will-crash-1080-1080.webp"
+    />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1080" />
+    <meta
+      property="og:image:alt"
+      content="This site can't be reached WPvivid WordPress Backup Plugin"
+    />
+
     <meta
       property="og:site_name"
       content="Serhii Kolodych's Web Development Projects"
@@ -109,9 +125,22 @@
         "@type": "Article",
         "headline": "Your WordPress site will fail. Be ready.",
         "description": "Learn how to protect your WordPress site from disasters with WPvivid backups. Step-by-step guide to setup, test, and automate backups with cloud storage.",
-        "image": "https://kolodych.com/articles/your-wordpress-will-crash-1080-566.webp",
-        "datePublished": "2024-12-14T11:23:00Z",
-        "dateModified": "2024-12-15T10:19:00Z",
+        "image": [
+          {
+            "@type": "ImageObject",
+            "url": "https://kolodych.com/articles/your-wordpress-will-crash-1080-566.webp",
+            "width": 1080,
+            "height": 566,
+            "caption": "This site can't be reached WPvivid WordPress Backup Plugin is solution"
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://kolodych.com/articles/your-wordpress-will-crash-1080-1080.webp",
+            "width": 1080,
+            "height": 1080,
+            "caption": "This site can't be reached WPvivid WordPress Backup Plugin is solution"
+          }
+        ],
         "author": {
           "@type": "Person",
           "name": "Serhii Kolodych",
@@ -145,7 +174,10 @@
         "@type": "HowTo",
         "name": "How to Setup WordPress Backups with WPvivid",
         "description": "Complete guide to setting up automated WordPress backups with WPvivid plugin, including testing and cloud storage configuration",
-        "image": "https://kolodych.com/articles/your-wordpress-will-crash-1080-566.webp",
+        "image": [
+          "https://kolodych.com/articles/your-wordpress-will-crash-1080-566.webp",
+          "https://kolodych.com/articles/your-wordpress-will-crash-1080-1080.webp"
+        ],
         "totalTime": "PT1H",
         "estimatedCost": {
           "@type": "MonetaryAmount",
