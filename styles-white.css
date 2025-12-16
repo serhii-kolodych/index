@@ -1263,6 +1263,11 @@ font-size: 16px;
 margin-top: 0px;
 }
 
+.relative-mail{
+position: relative;
+bottom: -10px;
+}
+
 
 
 @media (min-width: 1200px){
