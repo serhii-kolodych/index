@@ -1,0 +1,52 @@
+# robots.txt for kolodych.com
+
+# Default rule for all bots
+User-agent: *
+Disallow: /private/
+Disallow: /scripts/
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /test/
+Allow: /articles/
+Allow: /website/
+Allow: /src/
+Allow: /favicon/
+Crawl-delay: 1
+
+# Allow major search engines full access
+User-agent: Googlebot
+Disallow:
+
+User-agent: Bingbot
+Disallow:
+
+User-agent: Yandex
+Disallow:
+
+# Block bad bots
+User-agent: AhrefsBot
+Crawl-delay: 5
+
+User-agent: SemrushBot
+Crawl-delay: 5
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: BadBot
+Disallow: /
+
+User-agent: SiteCheckerBotCrawler
+Disallow: /
+
+# Sitemap location
+Sitemap: https://kolodych.com/sitemap.xml
