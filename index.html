@@ -27,62 +27,198 @@
 
     <script src="scripts/cookie-check.js" defer></script>
 
+    <meta name="theme-color" content="#0b6a30" />
+    <!-- Android Chrome (light mode + dark mode) -->
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#0b6a30"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#0b6a30"
+    />
+    <!-- Windows / Edge tiles -->
+    <meta name="msapplication-TileColor" content="#0b6a30" />
+    <!-- iOS Safari (status bar) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Website" />
 
-    <!-- Open Graph Tags -->
-    <meta property="og:logo" content="favicon/favicon-32x32.png" >
-    <meta property="og:title" content="Serhii Kolodych's Web Development and Automation Projects">
-    <meta property="og:description" content="Serhii Kolodych’s latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇">
-    <meta property="og:url" content="https://kolodych.com/">
-    <meta property="og:image" content="https://kolodych.com/src/kolodych.com-preview-site.webp"> 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Serhii Kolodych's Web Development and Automation Projects">
-    <!-- END Open Graph Tags -->
 
-    <!-- Schema Markup Addition -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org/",
-        "@type": "WebPage",
-        "name": "Serhii Kolodych's Web Development and Automation Projects",
-        "description": "Serhii Kolodych’s latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇",
-        "url": "https://kolodych.com/",
-        "image": {
-            "@type": "ImageObject",
-            "url": "https://kolodych.com/src/kolodych.com-preview-site.webp"
-        },
-        "publisher": {
-            "@type": "Person",
-            "name": "Serhii Kolodych",
-            "image": {
-                "@type": "ImageObject",
-                "url": "https://kolodych.com/favicon/favicon-32x32.png"
-            }
-        }
+
+<!-- Primary Meta Tags -->
+<title>Serhii Kolodych - Web Developer | WordPress & Python Automation Expert</title>
+<meta name="title" content="Serhii Kolodych - Web Developer | WordPress & Python Automation Expert" />
+<meta name="description" content="Full-stack web developer specializing in WordPress sites, Python automation, Telegram bots, and SEO optimization. View my portfolio of real projects and learn from detailed case studies." />
+<meta name="keywords" content="WordPress developer, Python automation, Telegram bot development, SEO optimization, web development portfolio, Elementor expert, WooCommerce development, custom web solutions, full-stack developer, frontend development" />
+<link rel="canonical" href="https://kolodych.com/" />
+<meta name="author" content="Serhii Kolodych" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kolodych.com/" />
+<meta property="og:title" content="Serhii Kolodych - Web Developer | WordPress & Python Automation Expert" />
+<meta property="og:description" content="Full-stack web developer specializing in WordPress sites, Python automation, Telegram bots, and SEO optimization. View my portfolio of real projects." />
+<meta property="og:site_name" content="Serhii Kolodych Portfolio" />
+
+<!-- Landscape image (default for Facebook/LinkedIn) - 1200x630 recommended -->
+<meta property="og:image" content="https://kolodych.com/src/kolodych-portfolio-preview-1200-630.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Serhii Kolodych - Web Developer Portfolio showcasing WordPress sites and automation projects" />
+
+<!-- Square image (for Instagram/Facebook when shared) - 1080x1080 -->
+<meta property="og:image" content="https://kolodych.com/src/kolodych-portfolio-preview-1080-1080.webp" />
+<meta property="og:image:width" content="1080" />
+<meta property="og:image:height" content="1080" />
+<meta property="og:image:alt" content="Serhii Kolodych - WordPress & Python Developer" />
+
+<!-- Logo -->
+<meta property="og:logo" content="https://kolodych.com/favicon/favicon-192x192.png" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter Card Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://kolodych.com/" />
+<meta name="twitter:title" content="Serhii Kolodych - Web Developer | WordPress & Python Expert" />
+<meta name="twitter:description" content="Full-stack web developer specializing in WordPress, Python automation, Telegram bots, and SEO. View my portfolio of real projects and case studies." />
+<meta name="twitter:image" content="https://kolodych.com/src/kolodych-portfolio-preview-1200-630.webp" />
+<meta name="twitter:image:alt" content="Serhii Kolodych Web Developer Portfolio" />
+<meta name="twitter:site" content="@serhiikolodych" />
+<meta name="twitter:creator" content="@serhiikolodych" />
+
+<!-- LinkedIn Specific (uses OG tags but benefits from specific image) -->
+<!-- LinkedIn prefers 1200x627 images -->
+
+<!-- Pinterest Specific -->
+<meta property="og:image" content="https://kolodych.com/src/kolodych-portfolio-preview-1000-1500.webp" />
+<meta property="og:image:width" content="1000" />
+<meta property="og:image:height" content="1500" />
+
+<!-- Schema.org Structured Data - Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Serhii Kolodych",
+  "url": "https://kolodych.com/",
+  "image": "https://kolodych.com/favicon/favicon-192x192.png",
+  "sameAs": [
+    "https://twitter.com/serhiikolodych",
+    "https://github.com/serhiikolodych",
+    "https://www.linkedin.com/in/serhii-kolodych"
+  ],
+  "jobTitle": "Full-Stack Web Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "description": "Full-stack web developer specializing in WordPress sites, Python automation, Telegram bots, and SEO optimization.",
+  "knowsAbout": [
+    "WordPress Development",
+    "Python Programming",
+    "Telegram Bot Development",
+    "SEO Optimization",
+    "Web Development",
+    "Frontend Development",
+    "Elementor",
+    "WooCommerce"
+  ],
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "Your University/Education"
+  }
+}
+</script>
+
+<!-- Schema.org Structured Data - Website -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Serhii Kolodych Portfolio",
+  "url": "https://kolodych.com/",
+  "description": "Portfolio showcasing web development projects, WordPress sites, Python automation, and Telegram bots",
+  "author": {
+    "@type": "Person",
+    "name": "Serhii Kolodych"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Serhii Kolodych",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kolodych.com/favicon/favicon-192x192.png"
     }
-    </script>
-    <!-- END Schema Markup Addition -->
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://kolodych.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="kolodych.com">
-    <meta name="twitter:title" content="Serhii Kolodych's Web Development and Automation Projects">
-    <meta name="twitter:description" content="Serhii Kolodych’s latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇">
-    <meta name="twitter:image" content="https://kolodych.com/src/kolodych.com-preview-site.webp">
-    <meta name="twitter:site" content="@serhiikolodych"> 
-    <!-- END Twitter Card Tags -->
+<!-- Schema.org Structured Data - Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://kolodych.com/"
+    }
+  ]
+}
+</script>
 
-    <title>Serhii Kolodych's website</title>
-    <link rel="canonical" href="https://kolodych.com/">
-    <meta name="description" content="Serhii Kolodych’s latest web development projects! ✓ WordPress sites ⇔ SEO strategies ✉ Custom Telegram bots ☆ Click and Explore! 🥇">
-    <meta name="keywords" content="Custom WordPress Sites, Python Automation, Telegram Bot Services, SEO Improvements, Web Development Tips, E-commerce Customization, WordPress Tutorials">
+<!-- Schema.org Structured Data - Professional Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Serhii Kolodych Web Development",
+  "url": "https://kolodych.com/",
+  "description": "Professional web development services specializing in WordPress, Python automation, and custom web solutions",
+  "founder": {
+    "@type": "Person",
+    "name": "Serhii Kolodych"
+  },
+  "areaServed": "Worldwide",
+  "serviceType": [
+    "WordPress Development",
+    "Python Automation",
+    "Telegram Bot Development",
+    "SEO Optimization",
+    "Web Design",
+    "E-commerce Development"
+  ]
+}
+</script>
 
+<!-- Additional Meta Tags for Better Indexing -->
+<meta name="rating" content="General" />
+<meta name="revisit-after" content="7 days" />
+<meta name="language" content="English" />
+<meta name="geo.region" content="LV-RIX" />
+<meta name="geo.placename" content="Riga, Latvia" />
+<meta name="geo.position" content="56.9496;24.1052" />
+<meta name="ICBM" content="56.9496, 24.1052" />
 
-
-
-
-
-
-
+<!-- Favicon and Apple Touch Icons (ensure these exist) -->
+<link rel="icon" type="image/png" sizes="32x32" href="https://kolodych.com/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://kolodych.com/favicon/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://kolodych.com/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="https://kolodych.com/favicon/site.webmanifest" />
 </head>
 
 <body>
