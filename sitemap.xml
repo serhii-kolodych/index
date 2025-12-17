@@ -12,6 +12,136 @@
     <priority>1.00</priority>
   </url>
 
+
+<url>
+  <loc>https://kolodych.com/articles/wordpress-backup-guide.html</loc>
+  <lastmod>2025-12-15T08:20:00+00:00</lastmod>
+  <priority>0.70</priority>
+  <changefreq>monthly</changefreq>
+
+  <image:image>
+    <image:loc>https://kolodych.com/articles/your-wordpress-will-crash-1080-566.webp</image:loc>
+    <image:caption>This site can't be reached - WPvivid WordPress Backup Plugin is the solution to prevent website disasters</image:caption>
+    <image:title>WordPress Site Crash Prevention with WPvivid</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/articles/your-wordpress-will-crash-1080-1080.webp</image:loc>
+    <image:caption>This site can't be reached - WPvivid WordPress Backup Plugin protects your website from failures</image:caption>
+    <image:title>WordPress Backup Solution with WPvivid Plugin</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/articles/wpvivid-backup.webp</image:loc>
+    <image:caption>WPvivid backup interface showing database and files backup options with save to local storage</image:caption>
+    <image:title>WPvivid Backup Interface</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/articles/wpvivid-restore.webp</image:loc>
+    <image:caption>WPvivid restore process interface showing uploaded backup ready to restore WordPress site</image:caption>
+    <image:title>WPvivid Restore Process</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/articles/server-has-crashed.webp</image:loc>
+    <image:caption>Meme illustrating the importance of storing backups separately from your server - Where is backup? On a server</image:caption>
+    <image:title>Server Crash Backup Meme - Remote Storage Importance</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/articles/wpvivid-remote-storage.webp</image:loc>
+    <image:caption>WPvivid remote storage configuration for Google Drive, Dropbox, and other cloud backup services</image:caption>
+    <image:title>WPvivid Add Remote Storage</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/articles/wpvivid-schedule.webp</image:loc>
+    <image:caption>WPvivid automated backup schedule settings for daily or weekly backups to remote storage</image:caption>
+    <image:title>WPvivid Schedule Settings</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/articles/wpvivid-settings-general-7.webp</image:loc>
+    <image:caption>WPvivid general settings showing maximum 7 backups retained and merge backup files option</image:caption>
+    <image:title>WPvivid Settings - General - Maximum Backups Retained</image:title>
+  </image:image>
+</url>
+
+
+  <url>
+  <loc>https://kolodych.com/website/bubacatcity.html</loc>
+  <lastmod>2025-12-16T08:19:00+00:00</lastmod>
+  <priority>0.60</priority>
+  <changefreq>monthly</changefreq>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/Bubacat-heroes.webp</image:loc>
+    <image:caption>Bubacat Heroes featuring Egyptian cats Franklin, Jean Gray, and Zuko from the card game</image:caption>
+    <image:title>Bubacat Heroes: Franklin, Jean Gray, Zuko</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/bubacat-elementor-site-settings.webp</image:loc>
+    <image:caption>Elementor site settings configuration for BubacatCity including global colors and fonts</image:caption>
+    <image:title>BubacatCity Elementor Settings</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/bubacat-customize-header.webp</image:loc>
+    <image:caption>Sticky header setup with Astra theme builder for BubacatCity WordPress site</image:caption>
+    <image:title>BubacatCity Header</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/bubacat-hero-section.webp</image:loc>
+    <image:caption>Hero section with animated hieroglyphs icons and countdown fade animation</image:caption>
+    <image:title>BubacatCity Hero Section</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/bubacat-meet-the-cats-cards.webp</image:loc>
+    <image:caption>Interactive cat profile cards with reveal buttons using custom JavaScript</image:caption>
+    <image:title>BubacatCity Meet the Cats Section</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/bubacat-blog-preview.webp</image:loc>
+    <image:caption>Blog articles section built with The Post Grid plugin and custom CSS</image:caption>
+    <image:title>BubacatCity Blog Section</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/bubacat-blog-post-grid.webp</image:loc>
+    <image:caption>The Post Grid plugin configuration for BubacatCity blog layout</image:caption>
+    <image:title>BubacatCity The Post Grid Plugin for Blog Section</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/bubacat-gallery-preview.webp</image:loc>
+    <image:caption>Image gallery with keyboard navigation using Modula plugin and custom JavaScript</image:caption>
+    <image:title>BubacatCity Gallery Section</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/bubacat-cards-4-preview.webp</image:loc>
+    <image:caption>BubacatCity playing cards design featuring Egyptian cat characters</image:caption>
+    <image:title>BubacatCity Playing Cards</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/bubacat-print-box.webp</image:loc>
+    <image:caption>BubacatCity card game box design ready for printing</image:caption>
+    <image:title>BubacatCity Box Design</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://kolodych.com/website/bubacatcity-preview.webp</image:loc>
+    <image:caption>How I created the BubacatCity site with fun artwork, game themed layout, and responsive design</image:caption>
+    <image:title>BubacatCity WordPress Website Setup</image:title>
+  </image:image>
+</url>
+
   <url>
   <loc>https://kolodych.com/website/vent-build.html</loc>
   <lastmod>2025-08-20T14:19:00+00:00</lastmod>
