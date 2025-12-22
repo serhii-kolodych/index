@@ -56,7 +56,8 @@ a:visited{
 }
 
 em {
-  color: #BFB1A0;
+  /* color: #BFB1A0; */
+  color: #E8E8E8; /* Changed from #BFB1A0 for better contrast */
 
 }
 
@@ -596,7 +597,9 @@ caption {
   overflow-x: auto; 
 }
 
-
+table em {
+    color: #F5F5F5;
+}
 
 table {
   width: 100%;
