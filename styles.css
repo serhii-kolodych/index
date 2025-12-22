@@ -557,6 +557,20 @@ form input[type="submit"]:hover {
   text-decoration: underline;
 }
 
+#change-style-icon {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #0071E3;
+  text-decoration: none;
+  font-size: 18px;
+  z-index: 10;
+}
+
+#change-style-icon:hover {
+  text-decoration: underline;
+}
+
 .copy-button{
   cursor: pointer;
 }
