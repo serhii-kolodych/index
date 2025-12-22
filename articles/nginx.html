@@ -17,7 +17,7 @@
     <link id="stylesheet" rel="stylesheet">
 
     <script>
-        fetch("/shared/head.html")
+        fetch("../shared/head.html")
             .then(r => r.text())
             .then(html => document.head.insertAdjacentHTML("beforeend", html))
             .catch(e => console.error("Failed to load shared head:", e));
