@@ -25,10 +25,25 @@
 
     <script src="/scripts/cookie-check.js" defer></script>
 
+    
+    <meta name="theme-color" content="#0b6a30" />
+
+    <!-- Android Chrome (light mode + dark mode) -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6a30">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b6a30">
+
+    <!-- Windows / Edge tiles -->
+    <meta name="msapplication-TileColor" content="#0b6a30">
+
+    <!-- iOS Safari (status bar) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Website">
+
     <!-- Open Graph Tags -->
-    <meta property="og:logo" content="/favicon/favicon-32x32.png" >
-    <meta property="og:title" content="Nginx Configuration: Key Steps for Performance, SEO, and Security">
-    <meta property="og:description" content="Ready to configure Nginx? ✨ From VPS selection to robots.txt setup, learn SEO and security essentials to make your website fast and search-friendly!">
+    <meta property="og:logo" content="../favicon/favicon-32x32.png" >
+    <meta property="og:title" content="Nginx Configuration Guide: Performance, Optimization & Best Practices" />
+    <meta property="og:description" content="Complete nginx guide covering installation, configuration, performance optimization, and security best practices. Learn how to optimize nginx for high traffic websites." />
     <meta property="og:url" content="https://kolodych.com/articles/nginx.html">
     <meta property="og:image" content="https://kolodych.com/articles/nginx-status-900.webp"> <!-- Replace with a relevant image URL -->
     <meta property="og:type" content="article">
@@ -40,8 +55,8 @@
     {
         "@context": "https://schema.org/",
         "@type": "Article",
-        "headline": "Nginx Configuration: Key Steps for Performance, SEO, and Security",
-        "description": "Ready to configure Nginx? ✨ From VPS selection to robots.txt setup, learn SEO and security essentials to make your website fast and search-friendly!",
+      "headline": "Nginx Configuration Guide: Performance, Optimization & Best Practices",
+      "description": "Complete nginx guide covering installation, configuration, performance optimization, and security best practices.",
         "url": "https://kolodych.com/articles/nginx.html",
         "image": "https://kolodych.com/articles/nginx-status-900.webp", 
         "author": {
@@ -57,41 +72,26 @@
                 "url": "https://kolodych.com/favicon/favicon-32x32.png"
             }
         },
-        "datePublished": "2024-11-12T23:23:00Z"
+        "datePublished": "2024-11-12T23:23:00Z",
+        "dateModified": "2025-12-22T07:06:00Z"
+
     }
     </script>
-    <!--         "dateModified": "2024-09-03T10:19:00Z" -->
     <!-- END Schema Markup Addition -->
 
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nginx Configuration: Key Steps for Performance, SEO, and Security">
-    <meta name="twitter:description" content="Ready to configure Nginx? ✨ From VPS selection to robots.txt setup, learn SEO and security essentials to make your website fast and search-friendly!">
+    <meta name="twitter:title" content="Nginx Configuration Guide: Performance & Best Practices" />
+    <meta name="twitter:description" content="Learn nginx configuration, optimization techniques, and best practices for high-performance web servers." />
     <meta name="twitter:image" content="https://kolodych.com/articles/nginx-status-900.webp"> 
     <meta name="twitter:site" content="@serhiikolodych"> 
     <!-- END Twitter Card Tags -->
 
 
-    <title>Nginx Setup Guide: Best Practices for Performance, Security, and SEO</title>
-    <meta name="keywords" content="Nginx configuration, VPS hosting, XML sitemap, website security, server performance, SEO optimization, domain configuration, gzip compression">
-    <meta name="description" content="Ready to configure Nginx? ✨ From VPS selection to robots.txt setup, learn SEO and security essentials to make your website fast and search-friendly!">
+    <title>Nginx Configuration Guide: Performance Optimization & Best Practices</title>
+    <meta name="description" content="Complete nginx guide: installation, configuration, performance optimization, and best practices. Learn nginx settings, how to optimize nginx for high traffic, and nginx security." />
+    <meta name="keywords" content="nginx configuration, nginx guide, nginx performance, nginx optimization, nginx best practices, nginx settings, optimize nginx, nginx configuration guide, nginx documentation, optimize nginx for high traffic, nginx config, nginx performance tuning, nginx security best practices" />
     <link rel="canonical" href="https://kolodych.com/articles/nginx.html">
-
-    <meta name="theme-color" content="#0b6a30" />
-
-    <!-- Android Chrome (light mode + dark mode) -->
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6a30">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b6a30">
-
-    <!-- Windows / Edge tiles -->
-    <meta name="msapplication-TileColor" content="#0b6a30">
-
-    <!-- iOS Safari (status bar) -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Website">
-
-
 </head>
 
 
@@ -106,28 +106,34 @@
 
     <!-- Article Container -->
     <div class="article-container">
-        <h1>Configuring Nginx for Speed and Security</h1>
+        <h1>Nginx Configuration Guide: Performance Optimization & Best Practices</h1>
   
-        <p><em>Published on November 12, 2024</em></p>
-
+        <p><em>Published on November 12, 2024 | Updated December 22, 2025</em></p>
+        <!-- Introduction -->
+        <p>
+            Looking for a comprehensive <strong>nginx guide</strong>? This complete <strong>nginx configuration guide</strong> covers everything from installation to advanced <strong>nginx performance</strong> optimization. Whether you're setting up your first server or looking to <strong>optimize nginx for high traffic</strong>, this guide provides practical <strong>nginx best practices</strong> and proven <strong>nginx settings</strong> for maximum efficiency.
+        </p>
         <ol>
-            <li><a href="#vps-server">Step – choosing the best VPS server for your needs.</a></li>
-            <li><a href="#nginx-configuration">Step – setting up Nginx for your website.</a></li>
-            <li><a href="#nginx-domain">Step – adding domain to Nginx server.</a></li>
-            <li><a href="#htaccess-file">Step - configuring htaccess file for your server.</a></li>
-            <li><a href="#robots-txt">Step – creating a robots.txt file for your website.</a></li>
-            <li><a href="#sitemap-xml">Step – adding URLs to your XML sitemap.</a></li>
+            <li><a href="#vps-server">Step 1 – Choosing the best VPS server for your needs.</a></li>
+            <li><a href="#nginx-configuration">Step 2 – Nginx installation and basic configuration.</a></li>
+            <li><a href="#nginx-domain">Step 3 – Adding and configuring domains.</a></li>
+            <!-- later  -->
+            <li><a href="#htaccess-file">Step 4 - Configuring .htaccess file for your server.</a></li>
+            <li><a href="#robots-txt">Step 5 – Creating a robots.txt file for your website.</a></li>
+            <li><a href="#sitemap-xml">Step 6 – Adding URLs to your XML sitemap.</a></li>
+            <li><a href="#faq">FAQ + Conclusion</a></li>
         </ol>
 
         <img loading="lazy" src="nginx-status-900.webp" alt="Nginx server installation and setup guide" title="Guide to installing and configuring Nginx server">
         
-        <h2>Nginx: What Is It and Why Use It?        </h2>
-        <p><a href="https://nginx.org/en/">Nginx</a> is a powerful, versatile web server used for high-performance web hosting, reverse proxying, load balancing, and caching. Known for its efficient handling of high traffic and low resource consumption, Nginx is widely used by companies like Netflix and GitHub. The capabilities of <strong>Nginx help boost website seo optimization</strong> while meeting the scalability demands of custom web design services. </p>
+        <h2>What Is Nginx and Why Use It?</h2>
+        <p><a href="https://nginx.org/en/">Nginx</a> (pronounced "engine-x") is a powerful, versatile web server used for high-performance web hosting, reverse proxying, load balancing, and caching. Known for its efficient handling of high traffic and low resource consumption, Nginx is widely used by companies like Netflix and GitHub. The capabilities of <strong>Nginx help boost website seo optimization</strong> while meeting the scalability demands of custom web design services. </p>
         <p><em><strong>Fun Fact:</strong> Nginx commands an 18.98% market share <a href="https://www.netcraft.com/blog/october-2024-web-server-survey/">(according to NetCraft October 2024 Web Server Survey)</a>, competing with other top web servers like Cloudflare, Apache, and LiteSpeed. Its efficiency and versatility make it an ideal tool for modern web infrastructure.</em></p>
       
         <p>Nginx excels at serving static content, acting as a reverse proxy, and load balancing, all while minimizing resource usage. Here’s how it compares to other web servers:</p>
       
         <table>
+          <caption>Nginx vs Other Web Servers: Performance Comparison</caption>
           <thead>
             <tr>
               <th>Feature</th>
@@ -233,19 +239,41 @@
           </tbody>
         </table>
         
-        <h2 id="vps-server">Step 1: Choosing Web Server for Your Website</h2>
-        <p>Before setting up Nginx, <strong>ensure you have the right VPS</strong> to handle your business website design needs. Key factors to review before choosing VPS web hosting for your custom website include:</p>
+        <h2 id="vps-server">Step 1: Choosing the Best VPS for Nginx</h2>
+        <p>Before diving into <strong>nginx configuration</strong>, ensure you have the right VPS to handle your needs. The <strong>nginx minimum requirements</strong> are modest, but choosing the right VPS impacts overall <strong>nginx performance</strong>.</p>
+        
+        <h3>Key Factors for VPS Selection</h3>
         <ol>
-          <li><strong>Traffic Needs:</strong> Choose a VPS with sufficient resources for anticipated traffic growth, especially for ecommerce website design companies or small business website design services.</li>
-          <li><strong>Operating System:</strong> For optimal performance, use a Linux-based VPS.</li>
-          <li><strong>Performance & Uptime:</strong> Look for providers with high uptime guarantees and low latency.</li>
-          <li><strong>Scalability & Control:</strong> Ensure the VPS allows easy scaling and root access for Nginx configuration.</li>
-          <li><strong>Budget:</strong> Affordable options include <a href="https://www.hostinger.com/vps-hosting">Hostinger</a>, <a href="https://zomro.com"> Zomro</a>, or <a href="https://www.kamatera.com/pricing/">Kamatera</a>.</li>
+          <li>                <b>Traffic Needs:</b> Choose a VPS with sufficient resources for anticipated traffic growth. For high-traffic sites, consider servers with at least 2GB RAM and 2 CPU cores to <strong>optimize nginx</strong> effectively.
+</li>
+          <li>                <b>Operating System:</b> For optimal <strong>nginx performance</strong>, use a Linux-based VPS (Ubuntu 20.04+ or Debian 11+ recommended).
+</li>
+          <li>                <b>Performance & Uptime:</b> Look for providers with 99.9%+ uptime guarantees and low latency to your target audience.
+</li>
+          <li>                <b>Scalability & Control:</b> Ensure the VPS allows easy scaling and root access for complete <strong>nginx configuration</strong> control.
+</li>
+          <li>                <b>Budget-Friendly Options:</b>
+            <ul> 
+                <li><a href="https://hostinger.com?REFERRALCODE=HIPSERGEYPBG">Hostinger</a> - approximately 40 usd per year + 1 free domain included with PROMOCODE = <strong>HIPSERGEYPBG</strong>,</li>
+                <li><a href="https://zomro.com/virtual?from=379593"> Zomro</a> - from 15% till 40% off, using PROMOCODE = <strong>zomro_379593</strong>, </li>
+                <li><a href="https://www.kamatera.com/pricing/">Kamatera</a>.</li>
+                </ul>
         </ol>
+               <h3>Nginx Minimum Requirements</h3>
+        <p>Understanding <strong>nginx sizing</strong> helps you choose the right VPS:</p>
+        <ul>
+            <li><b>RAM:</b> Minimum 512MB (1GB+ recommended for production)</li>
+            <li><b>CPU:</b> 1 core minimum (2+ cores for high traffic)</li>
+            <li><b>Storage:</b> 10GB minimum (SSD recommended for better performance)</li>
+            <li><b>Bandwidth:</b> 1TB+ monthly for medium-traffic sites</li>
+        </ul>
 
-        <h2 id="nginx-configuration">Step 2: Configuring Nginx for optimal performance.</h2>
-      
-        <p>Once you have your VPS set up, to install Nginx in Ubuntu, use the following command sequence to update the package list and install the server:</p>
+        <h2 id="nginx-configuration">Step 2: Nginx Installation and Basic Configuration.</h2>
+              <p>
+            This section covers the complete <strong>nginx configuration</strong> process, from installation to basic setup. Follow these steps to get nginx running on your server.
+        </p>
+                <h3>Installing Nginx on Ubuntu</h3>
+        <p>To install nginx on Ubuntu, use the following commands to update the package list and install the server:</p>
         <div class="grid-container">
             <div class="flex-row">
               <label>Terminal / Console</label>
@@ -259,21 +287,87 @@ sudo apt install nginx
             </div>
         </div>
       
-      
-        <p>Understanding how to use Nginx includes setting up reverse proxies, load balancing, and configuring it as a web server. You can manage Nginx processes with commands like: </p>
-        <div class="grid-container">
+         <p>Understanding how to use nginx includes mastering these essential commands:</p>
+
+         <div class="grid-container">
             <div class="flex-row">
-              <label>Terminal / Console</label>
+              <label>Check nginx status:</label>
               <button class="copy-btn">Copy Code</button>
             </div>
             <div class="code-row">
               <code>
-sudo systemctl status nginx <em>#Verify that the server is running;</em>
+sudo systemctl status nginx
               </code>
             </div>
         </div>
-      
-        <p>To configure Nginx web hosting, the nginx config file needs to be adjusted to point to your site’s directory. The Nginx config file location, which is critical for setup, is typically found at <em>/etc/nginx/nginx.conf</em>, where you can configure settings like worker connections, logging, and SSL protocols for improved speed and security. An example of a basic Nginx config file for a domain setup includes:            
+
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Start nginx :</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+sudo systemctl start nginx
+              </code>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Stop nginx:</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+sudo systemctl stop nginx
+              </code>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Restart nginx:</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+sudo systemctl restart nginx
+              </code>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Reload nginx (without dropping connections):</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+sudo systemctl reload nginx
+              </code>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="flex-row">
+              <label>Enable nginx to start on boot:</label>
+              <button class="copy-btn">Copy Code</button>
+            </div>
+            <div class="code-row">
+              <code>
+sudo systemctl enable nginx              </code>
+            </div>
+        </div>
+        
+      <h3>Understanding Nginx Configuration Files</h3>
+        <p>
+            The <strong>nginx config</strong> file location is typically at <em>/etc/nginx/nginx.conf</em>. This is where you configure global <strong>nginx settings</strong> like worker processes, connections, logging, and SSL protocols.
+        </p>
+        
+        <h3>Main Nginx Configuration File (nginx.conf)</h3>
+        <p>
+            Here's an optimized <strong>nginx config example</strong> with detailed explanations. This configuration follows <strong>nginx best practices</strong> for security and performance:
         </p>
         <div class="grid-container">
             <div class="flex-row">
@@ -324,10 +418,16 @@ events {<br>
                 </code>
             </div>
         </div>
-        <p><em>Tip: Simply copy and paste this into the <strong>/etc/nginx/nginx.conf</strong> file (no modifications required).</em></p>
+        <p><strong class="green-color">Tip:</strong> Simply copy and paste this into <em>/etc/nginx/nginx.conf</em> for an optimized baseline configuration. (no modifications required)</p>
         
         <h2 id="nginx-domain">Step 3: Configuring your Domain.com file</h2>
-        <p>To create new domain.com file for your domain in the <em>/etc/nginx/sites-available/</em> directory without opening it directly, you can use the following command (change domain.com --> to your domain name): 
+              <p>
+            Proper domain configuration is crucial for <strong>nginx performance</strong>. This section shows you how to set up virtual hosts (server blocks) following <strong>nginx configuration best practices</strong>.
+        </p>
+                <h3>Creating a New Domain Configuration</h3>
+
+        <p>To create new domain.com file for your domain in the <em>/etc/nginx/sites-available/</em> directory without opening it directly, you can use the following command (change <span class="red-color">domain.com</span> --> to <span class="green-color">your domain name</span>): <br>
+            <em>For example: <a href="https://kolodych.com">KOLODYCH.com</a> - is my domain name.</em>
         </p>
         <div class="grid-container">
             <div class="flex-row">
@@ -336,12 +436,12 @@ events {<br>
             </div>
             <div class="code-row">
                 <code>
-                    sudo touch /etc/nginx/sites-available/domain.com   
+                    sudo touch /etc/nginx/sites-available/<span class="red-color">domain.com</span>   
                 </code>
             </div>
         </div>
         <p>
-            This command will create an empty file named domain.com in the sites-available directory. Once the file is created, you can then edit it as needed + create a symlink to sites-enabled using the following command:
+            This command will create an empty file named <span class="red-color">domain.com</span> in the sites-available directory. Once the file is created, you can then edit it as needed + create a symlink to sites-enabled using the following command:
         </p>
         <div class="grid-container">
             <div class="flex-row">
@@ -350,12 +450,12 @@ events {<br>
             </div>
             <div class="code-row">
                 <code>
-                    sudo ln -s /etc/nginx/sites-available/domain.com /etc/nginx/sites-enabled/
+                    sudo ln -s /etc/nginx/sites-available/<span class="red-color">domain.com</span> /etc/nginx/sites-enabled/
                 </code>
             </div>
         </div>
         <p>
-            Open your just created <em>domain.com</em> file inside <em>/etc/nginx/sites-available/</em> folder and set it like this:
+            Open your just created <span class="red-color">domain.com</span> file inside <em>/etc/nginx/sites-available/</em> folder and set it like this:
         </p>
         <div class="grid-container">
             <div class="flex-row">
@@ -367,46 +467,46 @@ events {<br>
 <em># Redirect from IPv4 address to the domain</em><br>
 server {<br>
     listen 80;<br>
-    server_name 0.0.0.0;  <em># Your IPv4 address</em><br>
-    return 301 https://domain.com$request_uri;  <em># Redirect to your domain</em><br>
+    server_name <span class="red-color">0.0.0.0</span>;  <em class="red-color"># Your IPv4 address</em><br>
+    return 301 https://<span class="red-color">domain.com</span>$request_uri;  <em class="red-color"># Redirect to your domain.com</em><br>
 }<br>
 
 <em># Redirect from IPv6 address to the domain</em><br>
 server {<br>
-    listen [1:1:1:1:1:1:1:1]:80;  <em># Your IPv6 address</em><br>
-    return 301 https://domain.com$request_uri;  <em># Redirect to your domain</em><br>
+    listen <span class="red-color">[1:1:1:1:1:1:1:1]</span>:80;  <em class="red-color"># Your IPv6 address</em><br>
+    return 301 https://<span class="red-color">domain.com</span>$request_uri;  <em class="red-color"># Redirect to your domain.com</em><br>
 }<br>
 
 <em># Redirect from www to non-www for HTTP traffic</em><br>
 server {<br>
     listen 80;<br>
-    server_name www.domain.com;  <em># www domain</em><br>
-    return 301 https://domain.com$request_uri;  <em># Redirect www to non-www</em><br>
+    server_name <span class="red-color">www.domain.com</span>;  <em class="red-color"># www domain</em><br>
+    return 301 https://<span class="red-color">domain.com</span>$request_uri;  <em class="red-color"># Redirect www to non-www</em><br>
 }<br>
 
 <em># Main server block for your domain</em><br>
 server {<br>
     listen 80;<br>
-    server_name domain.com;  <em># Your domain name</em><br>
+    server_name <span class="red-color">domain.com</span>;  <em class="red-color"># Your domain name</em><br>
     return 301 https://domain.com$request_uri;  <em># Force HTTPS</em><br>
 }<br>
 
 <em># Server block for handling HTTPS</em><br>
 server {<br>
     listen 443 ssl http2;  <em># HTTPS + Enable HTTP/2 improves performance by multiplexing multiple requests over a single connection, reducing latency, and offering other benefits.</em><br>
-    server_name domain.com;  <em># Non-www domain</em><br>
+    server_name <span class="red-color">domain.com</span>;  <em class="red-color"># Non-www domain</em><br>
 
-    ssl_certificate /etc/ssl/certificate.crt;  <em># Your certificate</em><br>
-    ssl_certificate_key /etc/ssl/private.key;   <em># Your private key</em><br>
-    ssl_trusted_certificate /etc/ssl/ca_bundle.crt;  <em># Your CA bundle</em><br>
+    ssl_certificate /etc/ssl/certificate.crt;  <em class="red-color"># Your certificate</em><br>
+    ssl_certificate_key /etc/ssl/private.key;   <em class="red-color"># Your private key</em><br>
+    ssl_trusted_certificate /etc/ssl/ca_bundle.crt;  <em class="red-color"># Your CA bundle</em><br>
 
-    root /var/www/domain.com;  <em># Your document root</em><br>
-    index index.php index.html;  <em># Ensure index.php is included</em><br>
+    root /var/www/<span class="red-color">domain.com</span>;  <em class="red-color"># Your document root</em><br>
+    index index.php index.html;  <em class="red-color"># Ensure index.php is included</em><br>
 
     <em># Error handling</em><br>
-    error_page 404 /404.html;  <em># Custom 404 error page</em><br>
-    location = /404.html {<br>
-        root /var/www/domain.com;  <em># Location of the 404 error page</em><br>
+    error_page 404 <span class="red-color">/404.html</span>;  <em class="red-color"># Custom 404 error page</em><br>
+    location = <span class="red-color">/404.html</span> {<br>
+        root /var/www/<span class="red-color">domain.com</span>;  <em class="red-color"># Location of the 404 error page</em><br>
         internal;  <em># Marks it as internal, so users can't access it directly</em><br>
     }<br>
 
@@ -430,26 +530,28 @@ server {<br>
 <em># Server block for handling HTTPS for www</em><br>
 server {<br>
     listen 443 ssl;  <em># HTTPS</em><br>
-    server_name www.domain.com;  <em># www domain</em><br>
+    server_name <span class="red-color">www.domain.com</span>;  <em class="red-color"># www domain</em><br>
 
-    ssl_certificate /etc/ssl/certificate.crt;  <em># Your certificate</em><br>
-    ssl_certificate_key /etc/ssl/private.key;   <em># Your private key</em><br>
-    ssl_trusted_certificate /etc/ssl/ca_bundle.crt;  <em># Your CA bundle</em><br>
+    ssl_certificate /etc/ssl/certificate.crt;  <em class="red-color"># Your certificate</em><br>
+    ssl_certificate_key /etc/ssl/private.key;   <em class="red-color"># Your private key</em><br>
+    ssl_trusted_certificate /etc/ssl/ca_bundle.crt;  <em class="red-color"># Your CA bundle</em><br>
 
-    return 301 https://domain.com$request_uri;  <em># Redirect www to non-www</em><br>
+    return 301 https://<span class="red-color">domain.com</span>$request_uri;  <em class="red-color"># Redirect www to non-www</em><br>
 }<br>     
                 </code>
             </div>
         </div>
 
-        <p><em><strong>IMPORTANT! </strong></em>Replace <em>domain.com</em> to your domain name <em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net)</em></p>
+        <p><em class="red-color"><strong>IMPORTANT! </strong></em>Replace <em class="red-color">domain.com</em> to your domain name <em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net)</em></p>
 
-        <p>Replace <em>0.0.0.0</em> with your actual IPv4 address. You can find it using the <em>ifconfig</em> or <em>ip a</em> command, or check your server details.</p>
+        <p>Replace <em class="red-color">0.0.0.0</em> with your actual IPv4 address. You can find it using the <em>ifconfig</em> or <em>ip a</em> command, or check your server details.</p>
         
-        <p>Replace or Delete <em>1:1:1:1:1:1:1:1</em> with your actual IPv6 address (if applicable). </p>
+        <p>Replace or Delete <em class="red-color">1:1:1:1:1:1:1:1</em> with your actual IPv6 address (if applicable). </p>
 
-        <p>SSL Configuration: Obtain SSL certificates from a provider (e.g., <a href="https://zerossl.com">ZeroSSL</a> or <a href="https://letsencrypt.org">Let's Encrypt</a>). Upload them inside <em>/etc/ssl/</em> folder. Ensure the following paths are correct:</p>
-        <ul>
+        <h3>SSL Certificate Setup</h3>
+
+        <p>Obtain SSL certificates from a provider (e.g., <a href="https://zerossl.com">ZeroSSL</a> or <a href="https://letsencrypt.org">Let's Encrypt</a>). Upload them inside <em class="red-color">/etc/ssl/</em> folder. Ensure the following paths are correct:</p>
+        <ul class="red-color">
             <li>/etc/ssl/certificate.crt (SSL certificate)</li>
             <li>/etc/ssl/private.key (Private key)</li>
             <li>/etc/ssl/ca_bundle.crt (CA Bundle)</li>
@@ -459,7 +561,7 @@ server {<br>
             By following these steps above, you can <strong>install Nginx and set up SSL</strong>, optimizing your server for performance and security.
         </p>
 
-        <p>Upload your index.html and other site resources to <em>/var/www/domain.com</em> folder</p>
+        <p>Upload your index.html and other site resources to <em>/var/www/<span class="red-color">your-domain.com</span></em> folder</p>
           
         <h3>Test and Reload nginx</h3>
         <p>Test the Nginx configuration for syntax errors: </p>
@@ -486,6 +588,7 @@ sudo systemctl reload nginx
                 </code>
             </div>
         </div>
+
         <h2 id="htaccess-file">Step 4: configuring .htaccess file settings:</h2>
         <p>For enhanced security and performance, configure your .htaccess settings:</p>
         <div class="grid-container">
@@ -495,25 +598,25 @@ sudo systemctl reload nginx
             </div>
             <div class="code-row">
                 <code>
-ErrorDocument 404 /404.html <em># Custom error page for 404 errors</em><br>
+ErrorDocument 404 /404.html <em class="red-color"># Custom error page for 404 errors</em><br>
 
 AddDefaultCharset UTF-8 <em># Sets the default character encoding for your website to UTF-8</em><br>
 
 RewriteEngine On <em># This activates the mod_rewrite engine, enabling the use of URL rewrites</em><br>
 
 <em># Redirect IPv4 address to domain</em><br>
-RewriteCond %{HTTP_HOST} ^0.0.0.0$ [OR] <em># This checks if the request is coming to your IPv4 address</em><br>
+RewriteCond %{HTTP_HOST} ^<span class="red-color">0.0.0.0</span>$ [OR] <em># This checks if the request is coming to <span class="red-color">your IPv4 address</span></em><br>
 <em># Redirect IPv6 address to domain</em><br>
-RewriteCond %{HTTP_HOST} ^\[1:1:1:1:1:1:1:1]$ <em># This checks if the request is coming to your IPv6 address</em><br>
-RewriteRule ^(.*)$ https://domain.com/$1 [L,R=301] <em># Redirects any requests from the IP addresses to your domain</em><br>
+RewriteCond %{HTTP_HOST} ^\<span class="red-color">[1:1:1:1:1:1:1:1]</span>$ <em># This checks if the request is coming to <span class="red-color">your IPv6 address</span></em><br>
+RewriteRule ^(.*)$ https://<span class="red-color">domain.com</span>$1 [L,R=301] <em># Redirects any requests from the IP addresses to <span class="red-color">your domain</span></em><br>
 
 <em># Optional: Redirect from www to non-www</em><br>
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC] <em># This checks if the URL starts with "www." (case-insensitive)</em><br>
-RewriteRule ^(.*)$ https://domain.com/$1 [L,R=301] <em># Redirects any "www" requests to the non-www version of the domain, maintaining the rest of the URL</em><br>
+RewriteRule ^(.*)$ https://<span class="red-color">domain.com</span>$1 [L,R=301] <em># Redirects any "www" requests to the non-www version of <span class="red-color">your domain</span>, maintaining the rest of the URL</em><br>
 
 <em># Force HTTPS</em><br>
 RewriteCond %{HTTPS} off <em># This checks if the connection is not using HTTPS</em><br>
-RewriteRule ^(.*)$ https://domain.com/$1 [L,R=301] <em># Redirects HTTP requests to HTTPS for a secure connection</em><br>
+RewriteRule ^(.*)$ https://<span class="red-color">domain.com</span>$1 [L,R=301] <em># Redirects HTTP requests to HTTPS for a secure connection</em><br>
 
 <em># Allow sitemap and robots.txt to be directly accessible</em><br>
 RewriteCond %{REQUEST_URI} !^/sitemap\.xml$ [NC] <em># Allows the sitemap.xml file to be accessible without redirection</em><br>
@@ -539,17 +642,16 @@ RewriteCond %{REQUEST_URI} !^/robots\.txt$ [NC] <em># Allows the robots.txt file
     <em># Default cache time</em><br>
     ExpiresDefault "access plus 1 day" <em># Default cache time is 1 day for all files</em><br>
 
-    <em># Cache CSS files for 1 day</em><br>
     ExpiresByType text/css "access plus 1 day" <em># Cache CSS files for 1 day</em><br>
 
-    <em># Cache images (JPEG, PNG, GIF, WebP) for 1 year</em><br>
+    <em># Cache images (JPEG, PNG, GIF, WebP, SVG) for 1 year</em><br>
     ExpiresByType image/jpeg "access plus 1 year" <em># Cache JPEG images for 1 year</em><br>
     ExpiresByType image/png "access plus 1 year" <em># Cache PNG images for 1 year</em><br>
     ExpiresByType image/gif "access plus 1 year" <em># Cache GIF images for 1 year</em><br>
     ExpiresByType image/webp "access plus 1 year" <em># Cache WebP images for 1 year</em><br>
     ExpiresByType image/svg "access plus 1 year" <em># Cache SVG images for 1 year</em><br>
     
-    <em># Cache video files for 1 year</em><br>
+    <em># Cache video files (MP4, WebM, OGG, Quicktime) for 1 year</em><br>
     ExpiresByType video/mp4 "access plus 1 year" <em># Cache MP4 video files for 1 year</em><br>
     ExpiresByType video/webm "access plus 1 year" <em># Cache WebM video files for 1 year</em><br>
     ExpiresByType video/ogg "access plus 1 year" <em># Cache OGG video files for 1 year</em><br>
@@ -557,9 +659,8 @@ RewriteCond %{REQUEST_URI} !^/robots\.txt$ [NC] <em># Allows the robots.txt file
 
     <em># Cache JavaScript files for 1 year</em><br>
     ExpiresByType application/javascript "access plus 1 year" <em># Cache JavaScript files for 1 year</em><br>
-    ExpiresByType application/x-javascript "access plus 1 year" <em># Cache JavaScript files for 1 year</em><br>
+    ExpiresByType application/x-javascript "access plus 1 year" <em># Cache X-JavaScript files for 1 year</em><br>
 
-    <em># Cache PDFs for 1 year</em><br>
     ExpiresByType application/pdf "access plus 1 year" <em># Cache PDF files for 1 year</em><br>
 
     <em># Cache fonts for 1 year</em><br>
@@ -624,11 +725,11 @@ RewriteCond %{REQUEST_URI} !^/robots\.txt$ [NC] <em># Allows the robots.txt file
             </div>
         </div>
 
-        <p><em><strong>IMPORTANT!</strong></em> Replace <em>domain.com</em> with your actual domain name <em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net)</em>.</p>
+        <p><em class="red-color"><strong>IMPORTANT!</strong></em> Replace <em class="red-color">domain.com</em> with your actual domain name <em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net)</em>.</p>
 
-        <p>Replace <em>0.0.0.0</em> with your actual IPv4 address. You can find it using the <em>ifconfig</em> or <em>ip a</em> command, or check your server details.</p>
+        <p>Replace <em class="red-color">0.0.0.0</em> with your actual IPv4 address. You can find it using the <em>ifconfig</em> or <em>ip a</em> command, or check your server details.</p>
 
-        <p>Replace or delete <em>[1:1:1:1:1:1:1:1]</em> with your actual IPv6 address (if applicable). If you don’t use IPv6, you can safely remove this line.</p>
+        <p>Replace or delete <em class="red-color">[1:1:1:1:1:1:1:1]</em> with your actual IPv6 address (if applicable). If you don’t use IPv6, you can safely remove this line.</p>
 
         <p>Ensure your DNS settings point to the correct IP address for your domain. You can configure DNS settings via your hosting provider's dashboard.</p>
 
@@ -644,11 +745,11 @@ RewriteCond %{REQUEST_URI} !^/robots\.txt$ [NC] <em># Allows the robots.txt file
 User-agent: *<br>
 Disallow: /private/<br>
 Allow: /public/<br>
-Sitemap: https://domain.com/sitemap.xml
+Sitemap: https://<span class="red-color">domain.com</span>/sitemap.xml
                 </code>
             </div>
         </div>
-        <p><em><strong>IMPORTANT!</strong></em> Replace <em>domain.com</em> with your actual domain name <em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net)</em>.</p>
+        <p><em class="red-color"><strong>IMPORTANT!</strong></em> Replace <em class="red-color">domain.com</em> with <span class="red-color">your actual domain name </span><em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net)</em>.</p>
 
         <h2 id="sitemap-xml">Step 6: XML Sitemap Example</h2>
         <p>Before requesting indexing for your site, ensure your sitemap file is the last item you create, confirming all settings and pages are complete. Here's an example of how to format your sitemap for optimal search engine indexing:</p>
@@ -661,60 +762,127 @@ Sitemap: https://domain.com/sitemap.xml
             <code>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt; <em>&lt;!-- XML declaration --&gt;</em><br>
 &lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"&gt; <em>&lt;!-- URL Set Declaration --&gt;</em><br>
-&lt;!-- Created with Free Online Sitemap Generator www.xml-sitemaps.com --&gt; <em>&lt;!-- Sitemap Generator Comment --&gt;</em><br>
+&lt;!-- Created with Free Online Sitemap Generator www.xml-sitemaps.com --&gt; <em>&lt;!-- Sitemap Generator Comment --&gt;</em><br><br>
 &lt;url&gt; <em>&lt;!-- Start URL entry --&gt;</em><br>
-&lt;loc&gt;https://domain.com/&lt;/loc&gt; <em>&lt;!-- Homepage URL --&gt;</em><br>
-&lt;lastmod&gt;2024-08-13T12:36:05+00:00&lt;/lastmod&gt; <em>&lt;!-- Last Modified Date --&gt;</em><br>
+&lt;loc&gt;https://<span class="red-color">domain.com</span>/&lt;/loc&gt; <em>&lt;!-- Homepage URL --&gt;</em><br>
+&lt;lastmod&gt;<span class="red-color">2024-08-13T12:36:05+00:00</span>&lt;/lastmod&gt; <em>&lt;!-- Last Modified Date --&gt;</em><br>
 &lt;priority&gt;1.00&lt;/priority&gt; <em>&lt;!-- Priority = 1.00 for the main page ONLY --&gt;</em><br>
-&lt;/url&gt; <em>&lt;!-- End URL entry --&gt;</em><br>
+&lt;/url&gt; <em>&lt;!-- End URL entry --&gt;</em><br><br>
 &lt;url&gt; <em>&lt;!-- Start another URL entry --&gt;</em><br>
-&lt;loc&gt;https://domain.com/page1.html&lt;/loc&gt; <em>&lt;!-- Page 1 URL --&gt;</em><br>
-&lt;lastmod&gt;2024-10-24T04:19:18+00:00&lt;/lastmod&gt; <em>&lt;!-- Last Modified Date --&gt;</em><br>
+&lt;loc&gt;https://<span class="red-color">domain.com</span>/<span class="red-color">page1.html</span>&lt;/loc&gt; <em>&lt;!-- Page 1 URL --&gt;</em><br>
+&lt;lastmod&gt;<span class="red-color">2024-10-24T04:19:18+00:00</span>&lt;/lastmod&gt; <em>&lt;!-- Last Modified Date --&gt;</em><br>
 &lt;priority&gt;0.80&lt;/priority&gt; <em>&lt;!-- Priority = 0.8-0.9 for Important pages like Services, Categories --&gt;</em><br>
 &lt;changefreq&gt;monthly&lt;/changefreq&gt; <em>&lt;!-- Change Frequency from never, yearly, monthly, weekly... --&gt;</em><br>
 &lt;image:image&gt; <em>&lt;!-- Start Image --&gt;</em><br>
-&lt;image:loc&gt;https://domain.com/images/image1.webp&lt;/image:loc&gt; <em>&lt;!-- Image Location --&gt;</em><br>
-&lt;image:caption&gt;image_caption_text_here&lt;/image:caption&gt; <em>&lt;!-- Image Caption --&gt;</em><br>
-&lt;image:title&gt;Image_title_goes_here&lt;/image:title&gt; <em>&lt;!-- Image Title --&gt;</em><br>
+&lt;image:loc&gt;https://<span class="red-color">domain.com</span>/<span class="red-color">images/image1.webp</span>&lt;/image:loc&gt; <em>&lt;!-- Image Location --&gt;</em><br>
+&lt;image:caption&gt;<span class="red-color">image_caption_text_here</span>&lt;/image:caption&gt; <em>&lt;!-- Image Caption --&gt;</em><br>
+&lt;image:title&gt;<span class="red-color">Image_title_goes_here</span>&lt;/image:title&gt; <em>&lt;!-- Image Title --&gt;</em><br>
 &lt;/image:image&gt; <em>&lt;!-- End Image --&gt;</em><br>
-&lt;/url&gt; <em>&lt;!-- End URL entry --&gt;</em><br>
+&lt;/url&gt; <em>&lt;!-- End URL entry --&gt;</em><br><br>
 &lt;url&gt; <em>&lt;!-- Start another URL entry --&gt;</em><br>
-&lt;loc&gt;https://domain.com/page2.html&lt;/loc&gt; <em>&lt;!-- Page 2 URL --&gt;</em><br>
-&lt;lastmod&gt;2024-08-04&lt;/lastmod&gt; <em>&lt;!-- Last Modified Date --&gt;</em><br>
+&lt;loc&gt;https://<span class="red-color">domain.com</span>/<span class="red-color">page2.html</span>&lt;/loc&gt; <em>&lt;!-- Page 2 URL --&gt;</em><br>
+&lt;lastmod&gt;<span class="red-color">2024-08-04</span>&lt;/lastmod&gt; <em>&lt;!-- Last Modified Date --&gt;</em><br>
 &lt;priority&gt;0.6-0.7&lt;/priority&gt; <em>&lt;!-- Priority = 0.6-0.7 for frequently updated pages like blog articles --&gt;</em><br>
 &lt;changefreq&gt;monthly&lt;/changefreq&gt; <em>&lt;!-- Change Frequency ... till daily, hourly, always for live news --&gt;</em><br>
-&lt;/url&gt; <em>&lt;!-- End URL entry --&gt;</em><br>
+&lt;/url&gt; <em>&lt;!-- End URL entry --&gt;</em><br><br>
 &lt;!-- Add more URLs here for other pages --&gt; <em>&lt;!-- Comment for adding more URLs --&gt;</em><br>
 &lt;/urlset&gt; <em>&lt;!-- End URL Set --&gt;</em><br>                
             </code>
         </div>
         </div>
-        <p><em><strong>IMPORTANT! </strong></em>Replace <em>domain.com</em> to your domain name <em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net) as well as check all locations https://, page1, page2, image1, image_caption_text_here and other ...</em></p>
+        <p><em class="red-color"><strong>IMPORTANT! </strong></em>Replace <em class="red-color">domain.com</em> to your domain name <em>(Example: <a href="https://kolodych.com">kolodych.com</a>, abc.org, petsof.net) as well as check all locations <span class="red-color">https://</span>, <span class="red-color">page1</span>, <span class="red-color">page2</span>, <span class="red-color">image1</span>, <span class="red-color">image_caption_text_here</span> and <span class="red-color">other</span> ...</em></p>
 
+<!-- FAQ Section -->
+        <h2 id="faq">Frequently Asked Questions About Nginx Configuration</h2>
         
-        <h2>Conclusion: Why Nginx is a Game-Changer for Web Hosting</h2>
+        <h3>How do I optimize nginx for high traffic?</h3>
         <p>
-            To wrap up, Nginx’s growing popularity in the web hosting world is no surprise, given its impressive performance, low resource consumption, and versatile capabilities. By following this guide to set up, configure, and optimize Nginx, you can leverage its full potential to handle high-traffic websites and complex workloads efficiently. Choosing the right server, configuring Nginx properly, and integrating essential tools like robots.txt and XML sitemaps will greatly enhance your site’s speed and SEO performance.
+            To <strong>optimize nginx for high traffic</strong>, increase <em>worker_connections (2048+)</em>, enable HTTP/2, implement FastCGI caching, use gzip compression, optimize buffer sizes, and configure proper timeout settings. Monitor your server resources and adjust <strong>nginx settings</strong> based on actual traffic patterns.
+        </p>
+        
+        <h3>What are the nginx minimum requirements?</h3>
+        <p>
+            <strong>Nginx minimum requirements</strong> are modest: 512MB RAM, 1 CPU core, and 10GB storage. However, for production environments, we recommend at least 1GB RAM, 2 CPU cores, and SSD storage for optimal <strong>nginx performance</strong>.
+        </p>
+        
+        <h3>Where is the nginx config file located?</h3>
+        <p>
+            The main <strong>nginx config file location</strong> is <em>/etc/nginx/nginx.conf</em>. Virtual host configurations are typically stored in <em>/etc/nginx/sites-available/</em> and enabled via symlinks in <em>/etc/nginx/sites-enabled/</em>.
+        </p>
+        
+        <h3>How do I enable HTTP/2 in nginx?</h3>
+        <p>
+            To <strong>enable nginx HTTP/2</strong>, add <em>http2</em> to your listen directive: <em>listen 443 ssl http2;</em>. HTTP/2 requires SSL/TLS, so ensure you have valid certificates configured. This significantly improves <strong>nginx performance</strong> for modern browsers.
+        </p>
+        
+        <h3>What are nginx best practices for security?</h3>
+        <p>
+            <strong>Nginx security best practices</strong> include: hiding version numbers (server_tokens off), implementing rate limiting, using modern TLS protocols only (TLSv1.2+), adding security headers (X-Frame-Options, CSP), enabling HSTS, regular updates, and proper log monitoring. Follow this <strong>nginx hardening guide</strong> for comprehensive security.
+        </p>
+        
+        <h3>How do I check my nginx configuration for errors?</h3>
+        <p>
+            Use <em>sudo nginx -t</em> to test your <strong>nginx configuration</strong> for syntax errors before applying changes. This command validates your config files and reports any issues. Always test before reloading with <em>sudo systemctl reload nginx</em>.
+        </p>
+        
+        <h3>How can I improve nginx performance?</h3>
+        <p>
+            Improve <strong>nginx performance</strong> through: worker process optimization, enabling compression, implementing caching (FastCGI, browser), optimizing buffer sizes, using HTTP/2, setting proper timeouts, serving static content efficiently, and implementing a CDN. Regular <strong>nginx performance tuning</strong> based on traffic analysis is essential.
+        </p>
+        
+        <h3>What's the difference between nginx and Apache?</h3>
+        <p>
+            Nginx uses an event-driven architecture with lower resource usage and better <strong>nginx performance</strong> for static content and high concurrency. Apache uses a process-driven model, better for dynamic content and .htaccess support. Nginx requires direct <strong>nginx configuration</strong> file edits, while Apache allows per-directory .htaccess files.
+        </p>
+        
+        <!-- Conclusion -->
+        <h2>Conclusion: Mastering Nginx Configuration for Peak Performance</h2>
+        <p>
+            This comprehensive <strong>nginx guide</strong> has covered everything from basic installation to advanced <strong>nginx optimization</strong> techniques. By following these <strong>nginx best practices</strong> and implementing proper <strong>nginx configuration</strong>, you can build a high-performance, secure web server capable of handling significant traffic.
+        </p>
+        
+        <h3>Key Takeaways</h3>
+        <ul>
+            <li>
+                <strong>Nginx Performance:</strong> Proper configuration of worker processes, buffers, and caching dramatically improves performance.
+            </li>
+            <li>
+                <strong>Security First:</strong> Implement <strong>nginx security best practices</strong> including modern TLS, security headers, and rate limiting.
+            </li>
+            <li>
+                <strong>Regular Maintenance:</strong> Test configurations, monitor logs, and keep nginx updated for optimal operation.
+            </li>
+            <li>
+                <strong>Optimization:</strong> Use HTTP/2, gzip compression, and proper caching to <strong>optimize nginx</strong> for better user experience.
+            </li>
+            <li>
+                <strong>Configuration Management:</strong> Keep your <strong>nginx config</strong> organized, documented, and version-controlled.
+            </li>
+        </ul>
+        
+        <p>
+            Whether you're running a small business site or preparing to <strong>optimize nginx for high traffic</strong> applications, this guide provides the foundation for successful nginx deployment. Remember to continually monitor performance, adjust <strong>nginx settings</strong> based on real-world usage, and stay updated with the latest <strong>nginx documentation</strong> and security advisories.
         </p>
     
-        <!-- <div class="item">
-            <h3 class="dancing-text">
-                <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span> 
-                <span>a</span><span>n</span><span>y</span><span>t</span><span>h</span><span>i</span><span>n</span><span>g</span><span>?</span>
-            </h3>
-            <form action="../send_email.php" method="post">
-                <input type="email" id="email" name="email" placeholder="your-email@example.com" autocomplete="email" required><br><br>
-                <textarea id="message" name="message" rows="2" placeholder="Your question..." required></textarea><br><br>
-                <input type="submit" value="Send" class="sendEmail">
-            </form>
-        </div> -->
+
 
         <a href="../website/web-dev-tools.html">
             <div class="item">
                 <h3>My Go-To Web Arsenal</h3>
                 <img src="../website/450-website-development-tools-and-services.jpg" alt="Website Development Tools list" title="Website Development Tools and Services" loading="lazy">
             </div>
-        </a>        
+        </a> 
+        
+        <a href="bubacat.html"
+        ><div class="item">
+          <h3>Bubacat card game website</h3>
+          <img
+            src="../website/bubacat-preview.webp"
+            alt="Bubacat card game landing page, hero section with transparent header"
+            title="Bubacat card game landing page, hero section with transparent header"
+            loading="lazy"
+          /></div
+      ></a>
 
         <a href="../website/joksglobalsport.com.html"><div class="item">
             <h3>Football Academy site example</h3>
@@ -730,6 +898,17 @@ Sitemap: https://domain.com/sitemap.xml
             <h3>Model Agency site example</h3>
             <img src="../website/Gallery-preview-using-the-post-grid-plugin-wordpress.webp" alt="VirginCourtesans.com model agency gallery" title="VirginCourtesans.com Models gallery preview" loading="lazy">
         </div></a>
+
+        <a href="../website/vent-build.html"
+        ><div class="item">
+          <h3>Vent Build construction company site</h3>
+          <img
+            src="../website/vent-build-preview.webp"
+            alt="Vent Build company site: desktop vs mobile view"
+            title="Vent Build company site: desktop vs mobile view"
+            loading="lazy"
+          /></div
+      ></a>
 
     </div> <!-- article-container END -->
 

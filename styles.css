@@ -73,6 +73,7 @@ em {
   font-size: 16px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: relative;
+  margin-bottom: 10px;
 }
 
 /* First row: flexbox */
@@ -1110,6 +1111,14 @@ margin-top: 0px;
 .relative-mail{
 position: relative;
 bottom: -10px;
+}
+
+.red-color{
+  color: #F08080;
+}
+
+.green-color{
+  color: #90EE90;
 }
 
 
