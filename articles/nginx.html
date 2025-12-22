@@ -23,7 +23,7 @@
             .catch(e => console.error("Failed to load shared head:", e));
     </script>
 
-    <script src="../scripts/cookie-check.js" defer></script>
+    <script src="../scripts/cookie-check.js"></script>
 
     
     <meta name="theme-color" content="#0b6a30" />
@@ -123,7 +123,7 @@
             <li><a href="#faq">FAQ + Conclusion</a></li>
         </ol>
 
-        <img loading="lazy" src="nginx-status-900.webp" alt="Nginx server installation and setup guide" title="Guide to installing and configuring Nginx server">
+        <img src="nginx-status-900.webp" alt="Nginx server installation and setup guide" title="Guide to installing and configuring Nginx server"  fetchpriority="high">
         
         <h2>What Is Nginx and Why Use It?</h2>
         <p><a href="https://nginx.org/en/">Nginx</a> (pronounced "engine-x") is a powerful, versatile web server used for high-performance web hosting, reverse proxying, load balancing, and caching. Known for its efficient handling of high traffic and low resource consumption, Nginx is widely used by companies like Netflix and GitHub. The capabilities of <strong>Nginx help boost website seo optimization</strong> while meeting the scalability demands of custom web design services. </p>
@@ -914,10 +914,10 @@ Sitemap: https://<span class="red-color">domain.com</span>/sitemap.xml
     <!-- Background script -->
     <!-- <script src="../background.js"></script>
     <script src="../scripts/style-toggle.js"></script> -->
-    <script src="../scripts/index-1.js"></script>
-    <script src="../scripts/index-3.js"></script>
-    <script src="../scripts/copy-btn.js"></script>
-    <script src="../scripts/youtube-placeholder.js"></script>
+    <script src="../scripts/index-1.js"  defer></script>
+    <script src="../scripts/index-3.js"  defer></script>
+    <script src="../scripts/copy-btn.js" defer></script>
+    <script src="../scripts/youtube-placeholder.js" defer></script>
     <script>
       // Show body once page is fully loaded
       window.addEventListener("load", function () {
