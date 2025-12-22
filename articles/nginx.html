@@ -27,21 +27,6 @@
 
         <script src="../scripts/cookie-check.js" defer></script>
 
-
-        <meta name="theme-color" content="#0b6a30" />
-
-        <!-- Android Chrome (light mode + dark mode) -->
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6a30">
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b6a30">
-
-        <!-- Windows / Edge tiles -->
-        <meta name="msapplication-TileColor" content="#0b6a30">
-
-        <!-- iOS Safari (status bar) -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="Website">
-
         <!-- Open Graph Tags -->
         <meta property="og:logo" content="../favicon/favicon-32x32.png">
         <meta property="og:title" content="Nginx Configuration Guide: Performance, Optimization & Best Practices" />
@@ -107,7 +92,7 @@
 
     <div id="back-to-home">Back to Home</div>
 
-    <a href="#" id="change-style-link">White</a>
+    <a href="#" id="change-style-icon">White</a>
 
 
     <!-- Article Container -->
@@ -135,7 +120,11 @@
         </ol>
 
         <!-- <img" src="nginx-status-900.webp" alt="Nginx server installation and setup guide" title="Guide to installing and configuring Nginx server"> -->
-        <img src="nginx-status-900.webp" width="900" height="447" alt="Nginx server installation and setup guide"
+        <img src="nginx-status-600.webp" srcset="nginx-status-300.webp 300w,
+                    nginx-status-600.webp 600w,
+                    nginx-status-1813.webp 1813w" sizes="(max-width: 600px) 100vw,
+                    (max-width: 1200px) 90vw,
+                    900px" width="1813" height="900" alt="Nginx server installation and setup guide"
             title="Guide to installing and configuring Nginx server" fetchpriority="high"
             style="max-width: 100%; height: auto; display: block;">
 
@@ -1006,13 +995,13 @@ Sitemap: https://<span class="red-color">domain.com</span>/sitemap.xml
             </div>
         </a>
 
-        <a href="../website/vent-build.html"></a>
-        <div class="item">
-            <h3>Vent Build construction company site</h3>
-            <img src="../website/vent-build-preview.webp" width="450" height="240"
-                alt="Vent Build company site: desktop vs mobile view" loading="lazy"
-                style="max-width: 100%; height: auto;">
-        </div>
+        <a href="../website/vent-build.html">
+            <div class="item">
+                <h3>Vent Build construction company site</h3>
+                <img src="../website/vent-build-preview.webp" width="450" height="240"
+                    alt="Vent Build company site: desktop vs mobile view" loading="lazy"
+                    style="max-width: 100%; height: auto;">
+            </div>
         </a>
 
     </div> <!-- article-container END -->

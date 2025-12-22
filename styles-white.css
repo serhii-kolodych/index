@@ -1,27 +1,27 @@
 html{
   background-color: transparent;
-  /* background-color: rgba(255, 112, 67, 0.56); */
+  
 }
 body{
     line-height: 1.48;
     font-family: 'Share Tech Mono', monospace;
-    /* font-family:  Source Sans Pro; */
-    /* font-family: Serif, sans-serif; */
+    
+    
     font-size: clamp(15px, 4vw, 16px);
-    /* min-width: 500px; */
-    color: #1D1D1F; /* #C9C5C2 - Silver Dust */
-    /* background-color: #F5F5F7; */
-    /* overscroll-behavior: none; */
+    
+    color: #1D1D1F; 
+    
+    
 }
 
 a{
-  color: #0066CC; /* #D78A2A - Warm Honey */
+  color: #0066CC; 
   text-decoration: none;
 }
 
 .aLink{
   pointer-events: auto;
-  color: #0066CC; /* #D78A2A - Warm Honey */
+  color: #0066CC; 
   text-decoration: none;
   cursor: pointer;
 }
@@ -62,23 +62,23 @@ a:visited{
 }
 
 em {
-  /* color: #515154; */
-  /* color: #FF7043; */
-  /* color: #f5f5f5; /* Lightest Grey */
-  /* color: #bdbdbd;  */
-  /* color: #9e9e9e;  */
-  /* color: #3E2723; Darkest Grey */
+  
+  
+  
+  
+  
+  
   color: #7C3F00;
 }
 
-/* Style for the code block copy code */
+
 .grid-container {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 10px;
-  background-color: #f0f0f0; /* Light grey background */
-  color: #0D0D0D; /* Darker text color */
+  background-color: #f0f0f0; 
+  color: #0D0D0D; 
   border-radius: 8px;
   padding: 16px;
   font-size: 16px;
@@ -87,17 +87,17 @@ em {
   margin-bottom: 10px;
 }
 
-/* First row: flexbox layout for label and button */
+
 .flex-row {
   display: flex;
-  justify-content: space-between; /* Space between label and button */
+  justify-content: space-between; 
   align-items: center;
   width: 100%;
 }
 
-/* Copy button styling */
+
 .copy-btn {
-  background-color: #4CAF50; /* Green background */
+  background-color: #4CAF50; 
   color: white;
   border: none;
   padding: 5px 12px;
@@ -113,29 +113,29 @@ em {
   opacity: 1;
 }
 
-/* Code block styling in second row */
+
 .code-row {
   display: flex;
-  width: 100%; /* Ensure the code block takes full width */
+  width: 100%; 
 }
 
-/* Code block styling */
+
 .code-row code {
-  background-color: #E6E6E6; /* Slightly darker grey for code background */
-  color: #0D0D0D; /* Dark text for code */
-  display: block; /* Ensure code block takes full width */
+  background-color: #E6E6E6; 
+  color: #0D0D0D; 
+  display: block; 
   padding: 8px;
   border-radius: 4px;
   font-family: 'Courier New', monospace;
   font-size: 16px;
-  width: 100%; /* Make the code block take full width of its container */
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  width: 100%; 
+  box-sizing: border-box; 
   
-  /* Word wrapping properties */
+  
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
-/* code block end */
+
 
 
 
@@ -166,16 +166,16 @@ canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform:
   }
 
 .container404 {
-    width: 80%;              /* Adjust as needed */
+    width: 80%;              
     margin-left: auto;
     margin-right: auto;
 }
 
 .container {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-wrap: wrap; /* Allow wrapping for different box sizes */
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
     width: 100%;
     margin: 0 auto;
 }
@@ -183,47 +183,47 @@ canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform:
 
 .social-container {
   display: flex;
-  margin-top: 10px; /* Space above the social links */
+  margin-top: 10px; 
 }
 
 .social-container a {
-  text-decoration: none; /* Remove underline from links */
+  text-decoration: none; 
 }
 .social-container {
-  text-align: center; /* Centers inline-block elements */
+  text-align: center; 
 }
 .social-container img {
   margin-top: 20px;
   margin-right: 10px;
-  width: 60px; /* Set a size for the icons */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
-  display: inline-block; /* Makes the image an inline block for centering */
+  width: 60px; 
+  height: auto; 
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+  display: inline-block; 
 }
 
 .social-container img:hover {
-  cursor: pointer; /* Change cursor to pointer */
-  transform: scale(1.1); /* Slightly enlarge the image */
-  opacity: 0.8; /* Make the image slightly transparent */
+  cursor: pointer; 
+  transform: scale(1.1); 
+  opacity: 0.8; 
 }
 
 
 
 .box {
---s:452px;  /*Size of the circle */
---p:8px;   /* padding */
+--s:452px;  
+--p:8px;   
 
-/* z-index: -2; */
+
 display: inline-block;
 height: var(--s);
 width: var(--s);
 border-radius: 50%;
-/* background: #333; */
-background: linear-gradient(to right, rgba(242, 242, 242, 1), rgba(230, 230, 230, 1)); /* Light grey gradient */
-border: 1px solid #d6d6d6; /* Subtle border to match Apple's design */
+
+background: linear-gradient(to right, rgba(242, 242, 242, 1), rgba(230, 230, 230, 1)); 
+border: 1px solid #d6d6d6; 
 
 margin:10px 20px;
-/* font-size:20px; */
+
 text-align:justify;
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
@@ -278,21 +278,21 @@ shape-outside: radial-gradient(farthest-side at left,  transparent calc(100% - v
 
 div.box {
 
-    justify-content: space-between; /* Distributes space between items */
-    align-items: center; /* Centers items horizontally */
-    padding: var(--p); /* Padding inside the circle */
-    box-sizing: border-box; /* Includes padding in the total size */
-    position: relative; /* Establishes a positioning context for absolute positioning */
+    justify-content: space-between; 
+    align-items: center; 
+    padding: var(--p); 
+    box-sizing: border-box; 
+    position: relative; 
 }
 
 .box h2, h3 {
   font-size: clamp(17px, 4vw, 18px);
-  text-align: center; /* Centers heading text */
+  text-align: center; 
 }
 
 
 .main-heading, .subtitle{
-  /* line-height: 34px; */
+  
     text-align: center;
     width: fit-content;
 }
@@ -317,44 +317,44 @@ div.box {
 }
 
 .section-container ol li {
-  list-style: none; /* Hide native marker */
+  list-style: none; 
   display: flex;
-  align-items: flex-start; /* Aligns the start of the text */
+  align-items: flex-start; 
   margin: 0;
   padding: 0;
 }
 
 .section-container ol li::before {
-  /* Use ::before as a custom marker column */
+  
   content: counter(list-item) ".";
   counter-increment: list-item;
-  /* Fixed width for the number column */
+  
   width: 1em; 
   flex-shrink: 0; 
-  margin-left: -2.5em; /* Space between number and text */
+  margin-left: -2.5em; 
   font-size: 2.1em;
-  /* Aligns the number to the top */
+  
   align-self: flex-start;
 }
 .section-container ol li::before {
-  /* Use ::before as a custom marker column */
+  
   content: counter(list-item) ".";
     position: relative;
 
   
-  /* Fixed width for the number column */
+  
   width: 1em; 
   flex-shrink: 0; 
   
-  /* ⚡ MODIFIED: PUSH MARKER RIGHT ⚡ */
+  
   margin-left: 30px; 
   
-  /* Space between number and actual text content */
+  
   margin-right: -2.5em; 
   
   font-size: 2.1em;
   align-self: flex-start;
-  /* color: #00ff41;  */
+  
   font-weight: bold;
 }
 
@@ -363,25 +363,25 @@ div.box {
 
 
 .imgcontainer {
-    /* z-index: -1; */
+    
     position: absolute;
-    bottom: 225px; /* Aligns the container to the bottom of its parent */
+    bottom: 225px; 
     left: -8px;
     width: 100%;
-    height: 50%; /* Ensures the container takes up half the height */
-    border-radius: 0 0 50% 50%; /* Creates a half-circle at the bottom */
-    background: #333; /* Optional: background color for visibility */
+    height: 50%; 
+    border-radius: 0 0 50% 50%; 
+    background: #333; 
     
-    width: 450px; /* Set the width of the container */
-    height: 240px; /* Set the height to half the width */
-    border-radius: 0 0 240px 240px; /* Creates a half-circle at the bottom */
+    width: 450px; 
+    height: 240px; 
+    border-radius: 0 0 240px 240px; 
     display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    overflow: hidden; /* Ensures content stays within the shape */
-    background-color: #fff; /* Background color for the half-circle */
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-    position: relative; /* Establishes a positioning context for child elements */
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; 
+    background-color: #fff; 
+    box-sizing: border-box; 
+    position: relative; 
 }
 
 
@@ -389,15 +389,15 @@ div.box {
 
     left: 0;
     height: 100%;
-    width: 100%; /* Ensure the image fills the width of the container */
-    object-fit: cover; /* Scale the image to fill the container, cropping if necessary */
-    object-position: top left; /* Ensure the top-left corner stays in view */
+    width: 100%; 
+    object-fit: cover; 
+    object-position: top left; 
 
 }
 
-/* Default state, no additional positioning */
+
 .box {
-    position: relative; /* Ensures positioning works */
+    position: relative; 
 }
 form {
     line-height: 1.4;
@@ -420,8 +420,8 @@ form input[type="email"],
 form textarea {
     text-align: center;
     font-size: 18px;
-    /* color:bisque; */
-    color: #333333;  /* green */
+    
+    color: #333333;  
     width: 85%;
     background-color: transparent;
     border: 1px solid white;
@@ -440,19 +440,19 @@ form input[type="submit"] {
 
 
 form input[type="submit"]:hover {
-    /* background-color: #42f460; */
-    /* margin-top: -12px; */
-    background-color: #0071E3; /*rgb(227, 146, 65); /* #D3D3D3; /* Light grey */
+    
+    
+    background-color: #0071E3; 
   }
 
 
-/* h3 Ask me anything */
+
 .dancing-text {
     margin: 0 0 16px 0;
     font-size: 1.6rem;
     display: inline-block;
     font-weight: bold;
-    letter-spacing: 0.1em; /* Adds space between letters */
+    letter-spacing: 0.1em; 
     text-align: center;
   }
   
@@ -461,19 +461,19 @@ form input[type="submit"]:hover {
     animation: bounce 2s ease-in-out infinite;
   }
   
-  /* Define bounce animation */
+  
   @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(15px); }
   }
   
-  /* Apply staggered delays using a more compact approach */
+  
   .dancing-text span {
     animation-delay: calc(0.1s * var(--i));
   }
   
 
-/* Add custom property for each letter's delay */
+
 .dancing-text span:nth-child(1) { --i: 0; }
 .dancing-text span:nth-child(2) { --i: 1; }
 .dancing-text span:nth-child(3) { --i: 2; }
@@ -507,16 +507,16 @@ form input[type="submit"]:hover {
     min-width: 350px;
     margin: 40px auto;
     padding: 20px;
-    /* background-color: rgba(33, 29, 44, 0.75);  */
-    /* background: linear-gradient(to right, rgba(27, 27, 47, 0.9), rgba(45, 45, 68, 0.9)); */
-    /* background: linear-gradient(to right, rgba(15, 15, 35, 0.9), rgba(30, 30, 50, 0.9)); */
+    
+    
+    
     background: #FFFFFF;
-    border: 1px solid #d6d6d6; /* Subtle border to match Apple's design */
+    border: 1px solid #d6d6d6; 
     
     z-index: 4;
     overflow-y: auto;
     overflow-x: auto;
-    /* height: 90%; */
+    
     min-height: 90vh;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     border-radius: 14px;
@@ -548,7 +548,7 @@ form input[type="submit"]:hover {
   
   .article-container p {
     margin-bottom: 8px;
-    letter-spacing: 0.08em; /* Adjust the value to increase/decrease spacing */
+    letter-spacing: 0.08em; 
     
   }
   
@@ -576,16 +576,16 @@ form input[type="submit"]:hover {
   }
   
   #back-to-home, #copied {
-    position: fixed; /* Changed from absolute to fixed */
+    position: fixed; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2rem; 
-    /* background-color: rgba(0, 0, 0, 0.9); */
+    
     background-color: #F5F5F7;
     padding: 10px 20px;
     border-radius: 8px;
-    display: none; /* Initially hidden */
+    display: none; 
     border: 3px solid #6C6C6C;
     z-index: 5;
   }
@@ -602,8 +602,8 @@ form input[type="submit"]:hover {
   
 .item {
   margin: 11px 10px;
-  /* background-color: rgba(33, 29, 44, 0.75);  */
-  background: #E5E5E5;/* linear-gradient(to right, rgba(44, 42, 42, 0.9), rgba(28, 25, 25, 0.9)); */
+  
+  background: #E5E5E5;
   cursor: pointer;
   border: 1px solid black;
   border-radius: 15px;
@@ -643,19 +643,19 @@ form input[type="submit"]:hover {
   cursor: pointer;
 }
 
-/* TABLE 1 */
+
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  table-layout: fixed; /* Ensure that the table columns are evenly distributed within the available space */
+  table-layout: fixed; 
 }
 th, td {
   border: 2px solid #a4a4a4;
   padding: 8px;
   text-align: left;
-  word-wrap: break-word; /* Break words that are too long to fit in the cell */
+  word-wrap: break-word; 
 }
 th {
   background-color: transparent;
@@ -664,15 +664,15 @@ caption {
   font-weight: bold;
   margin-bottom: 10px;
 }
-/* Optional: To ensure the container doesn't overflow the viewport */
+
 .table-container {
   width: 100%;
   max-width: 100%;
-  overflow-x: auto; /* This is a fallback in case content does overflow */
+  overflow-x: auto; 
 }
 
 
-/* TABLE 2 */
+
 
 table {
   width: 100%;
@@ -681,7 +681,7 @@ table {
   table-layout: fixed;
   font-family: 'Share Tech Mono', monospace;
 
-  /* font-family: Arial, sans-serif; */
+  
   color: #333;
   text-align: center;
   border-radius: 8px;
@@ -695,31 +695,31 @@ th, td {
 }
 
 thead th:nth-child(1) {
-  background-color: rgba(247, 183, 49, 0.3); /* Slightly darker yellow */
+  background-color: rgba(247, 183, 49, 0.3); 
 }
 
 thead th:nth-child(2) {
-  background-color: rgba(255, 234, 167, 0.3); /* Slightly darker light yellow */
+  background-color: rgba(255, 234, 167, 0.3); 
 }
 
 thead th:nth-child(3) {
-  background-color: rgba(85, 239, 196, 0.3); /* Slightly darker light green */
+  background-color: rgba(85, 239, 196, 0.3); 
 }
 
 thead th:nth-child(4) {
-  background-color: rgba(116, 185, 255, 0.3); /* Slightly darker light blue */
+  background-color: rgba(116, 185, 255, 0.3); 
 }
 
 thead th:nth-child(5) {
-  background-color: rgba(253, 203, 110, 0.3); /* Slightly darker light orange */
+  background-color: rgba(253, 203, 110, 0.3); 
 }
 
 thead th:nth-child(6) {
-  background-color: rgba(162, 155, 254, 0.3); /* Slightly darker lavender */
+  background-color: rgba(162, 155, 254, 0.3); 
 }
 
 thead th:nth-child(7) {
-  background-color: rgba(250, 177, 160, 0.3); /* Slightly darker light pink */
+  background-color: rgba(250, 177, 160, 0.3); 
 }
 
 tbody tr:nth-child(odd) {
@@ -731,44 +731,44 @@ tbody tr:nth-child(even) {
 }
 
 td:nth-child(2) {
-  background-color: rgba(255, 234, 167, 0.2); /* very light yellow */
+  background-color: rgba(255, 234, 167, 0.2); 
 }
 
 td:nth-child(3) {
-  background-color: rgba(85, 239, 196, 0.2); /* very light green */
+  background-color: rgba(85, 239, 196, 0.2); 
 }
 
 td:nth-child(4) {
-  background-color: rgba(116, 185, 255, 0.2); /* very light blue */
+  background-color: rgba(116, 185, 255, 0.2); 
 }
 
 td:nth-child(5) {
-  background-color: rgba(253, 203, 110, 0.2); /* light orange */
+  background-color: rgba(253, 203, 110, 0.2); 
 }
 
 td:nth-child(6) {
-  background-color: rgba(162, 155, 254, 0.2); /* lavender */
+  background-color: rgba(162, 155, 254, 0.2); 
 }
 
 td:nth-child(7) {
-  background-color: rgba(250, 177, 160, 0.2); /* light pink */
+  background-color: rgba(250, 177, 160, 0.2); 
 }
 
 tbody tr:hover {
-  background-color: rgba(241, 242, 246, 0.5); /* very light gray on hover */
+  background-color: rgba(241, 242, 246, 0.5); 
 }
 
 
 
-/* TABLE 3 */
 
 
-/* Button styles */
+
+
 .button-container {
   z-index: 34;
-  display: flex;            /* Enables Flexbox layout */
+  display: flex;            
   margin: 20px auto;
-  justify-content: center;  /* Centers the buttons horizontally */
+  justify-content: center;  
   margin-bottom: 0;
 
 }
@@ -784,7 +784,7 @@ tbody tr:hover {
   margin-right: 10px;
 }
 
-/* Button colors and hover effects */
+
 .response-button[data-color="green"] {
   color: #fff;
   border-color: #4caf50;
@@ -809,7 +809,7 @@ tbody tr:hover {
   transform: scale(1.05);
 }
 
-/* Feedback message styles */
+
 .feedback-message {
   font-size: 0.9 rem;
   margin:  0 ;
@@ -817,7 +817,7 @@ tbody tr:hover {
 
 .nineSixth {
   width: 98%;
-  padding-top: 55.71%; /* Adjust as needed for aspect ratio */
+  padding-top: 55.71%; 
 }
 
 .youtube-placeholder {
@@ -828,7 +828,7 @@ tbody tr:hover {
 
 .squareY{
   width: 100%;
-  padding-top: 100%; /* Makes it square */
+  padding-top: 100%; 
 }
 
 .youtube-thumbnail {
@@ -875,7 +875,7 @@ tbody tr:hover {
 
 
 .box {
-  transition: transform 0.3s ease; /* smooth effect */
+  transition: transform 0.3s ease; 
   margin-bottom: 22px;
 }
 
@@ -885,8 +885,8 @@ tbody tr:hover {
 
 .fit-one-line {
   display: block;
-  white-space: nowrap;       /* Keep text on one line */
-  font-size: clamp(16px, 5vw, 18px); /* Adjust size between min and max */
+  white-space: nowrap;       
+  font-size: clamp(16px, 5vw, 18px); 
 }
 
 
@@ -989,14 +989,14 @@ color: #fff;
 
 .fit-one-line {
   display: block;
-  white-space: nowrap;       /* Keep text on one line */
-  font-size: clamp(16px, 5vw, 18px); /* Adjust size between min and max */
+  white-space: nowrap;       
+  font-size: clamp(16px, 5vw, 18px); 
 }
 
 
 
 
-/* Grok wiggle left to right */
+
 
 @keyframes tailWag {
   0%, 100% { transform: rotate(0deg); }
@@ -1016,9 +1016,9 @@ color: #fff;
 
 
 
-/* --- Adjust Box Internal Spacing --- */
+
 .box { 
-  /* REDUCED: Decreased the internal margin on the right of the content box. */
+  
 
   border: 1px solid #d6d6d6; 
 }
@@ -1043,21 +1043,21 @@ z-index: 999;
 }
 
 
-/* Arrow buttons */
+
 .flickity-prev-next-button {
   width: 44px;
   height: 44px;
   background: transparent;
 }
 .flickity-prev-next-button:hover {
-  background: rgba(0, 255, 65, 0.2); /* Subtle green hover */
-}
-/* Arrow icon color */
-.flickity-prev-next-button .flickity-button-icon {
-  fill: #00ff41; /* Green arrows */
+  background: rgba(0, 255, 65, 0.2); 
 }
 
-/* Page dots */
+.flickity-prev-next-button .flickity-button-icon {
+  fill: #00ff41; 
+}
+
+
 .flickity-page-dots {
   bottom: -40px;
 }
@@ -1066,7 +1066,7 @@ z-index: 999;
   width: 10px;
   height: 10px;
   opacity: 0.5;
-  background: #00ff41; /* Green dots */
+  background: #00ff41; 
   border-radius: 50%;
   margin: 0 4px;
 }
@@ -1078,21 +1078,21 @@ z-index: 999;
 
 
 .section-container {
-    /* Enable Flexbox for horizontal alignment (used instead of inline-flex to maintain centering) */
+    
     display: flex;
     flex-direction: row;
     
-    /* CRITICAL: Allows horizontal scrolling */
-    overflow-x: scroll; 
-    overflow-y: hidden; /* Prevent vertical scrolling */
     
-    /* ⚡ ADDED: Enable mandatory scroll snapping for carousel behavior ⚡ */
+    overflow-x: scroll; 
+    overflow-y: hidden; 
+    
+    
     scroll-snap-type: x mandatory; 
     
-    /* Note: white-space: nowrap is redundant with display: flex and flex-shrink: 0 on children */
-    -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
     
-    /* Center the container on the page */
+    -webkit-overflow-scrolling: touch; 
+    
+    
     margin: 0 auto 50px auto; 
 }
 
@@ -1100,21 +1100,14 @@ z-index: 999;
 
 
 
-/* 3. Hide the Scrollbar (Optional: for a cleaner look) */
+
 .section-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+    display: none; 
 }
 
 .section-container {
-    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-    scrollbar-width: none;  /* Hide scrollbar for Firefox */
-}
-
-
-
-.section-container {
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
 
 
@@ -1122,9 +1115,16 @@ z-index: 999;
 .section-container {
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  cursor: grab; /* show it’s draggable */
+}
+
+
+
+.section-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  cursor: grab; 
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* smooth on iOS */
+  -webkit-overflow-scrolling: touch; 
 }
 
 .section-container:active {
@@ -1156,11 +1156,11 @@ z-index: 999;
 
 
 .main-heading, .subtitle {
-/* background-color: rgba(0, 1, 1, 0.6);  */
- /* background-image: linear-gradient(to bottom, transparent 49%, rgba(0, 255, 65, 0.08) 50%, transparent 51%); */
-  /* background-size: 100% 3px;  */
-  /* border-left: 3px solid #00ff41; */
-  /* border-right: 3px solid #00ff41; */
+
+ 
+  
+  
+  
   text-align: center;
 }
 
@@ -1169,7 +1169,7 @@ z-index: 999;
     max-width: 650px;
   margin: 20px auto 18px auto;
   font-size: 3em;
-  /* padding: 0 10px; */
+  
 }
 .subtitle{
   font-size: 2.1em;
@@ -1187,11 +1187,11 @@ z-index: 999;
 }
 
 body {
-  overscroll-behavior-y: auto; /* allow pull-to-refresh */
+  overscroll-behavior-y: auto; 
 }
 
 html {
-  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch; 
 }
 
 .tick-list {
@@ -1235,7 +1235,7 @@ left: 0;
 }
 
 .error-list li::before {
-/* color: #2ecc71; */
+
 font-size: 16px;
 margin-top: 0px;
 }
@@ -1301,7 +1301,7 @@ bottom: -10px;
     zoom: 0.9 !important;
   }
   .container {
-    /* zoom: 0.85; */
+    
     min-width: auto;
   }
   /* .box {
@@ -1329,15 +1329,15 @@ bottom: -10px;
 
 .one-row {
     display: flex;
-    align-items: center;       /* vertical centering */
-    justify-content: space-between; /* heading and logo spaced */
-    padding: 0 20px;           /* optional horizontal padding */
-    height: 120px;             /* adjust as needed */
+    align-items: center;       
+    justify-content: space-between; 
+    padding: 0 20px;           
+    height: 120px;             
 }
 
 .main-heading {
     text-align: center;
-    flex: 1;                   /* occupy available space */
+    flex: 1;                   
 }
 
 .theme-logo img {
@@ -1365,6 +1365,3 @@ bottom: -10px;
   margin-left: 0 !important;
     text-align: center !important;
 }
-
-
-
