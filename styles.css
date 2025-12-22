@@ -743,6 +743,7 @@ a[href*="this-site-uses-cookies"] {
 .feedback-message {
   font-size: 0.9 rem;
   margin: 0;
+  line-height: 20px;
 }
 
 .nineSixth {

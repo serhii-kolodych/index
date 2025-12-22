@@ -785,25 +785,33 @@ tbody tr:hover {
   margin: 20px auto;
   justify-content: center;  
   margin-bottom: 0;
+}
 
+a[href*="this-site-uses-cookies"] {
+  display: inline-block;
+  padding: 12px;
+  min-height: 48px;
+  min-width: 48px;
 }
 
 .response-button {
   background-color: #f0f0f0;
   border: 2px solid #ccc;
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 14px 24px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
   margin-right: 10px;
+  min-height: 48px; 
+  min-width: 100px;
 }
 
 
 .response-button[data-color="green"] {
   color: #fff;
-  border-color: #4caf50;
-  background-color: #4caf50;
+  border-color: #2E7D32;
+  background-color: #2E7D32;
   opacity: 0.4;
 }
 
@@ -828,6 +836,7 @@ tbody tr:hover {
 .feedback-message {
   font-size: 0.9 rem;
   margin:  0 ;
+  line-height: 20px;
 }
 
 .nineSixth {
