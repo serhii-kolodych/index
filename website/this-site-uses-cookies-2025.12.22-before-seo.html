@@ -1,111 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      body {
-        visibility: hidden;
-        opacity: 0;
-      }
 
-      body.loaded {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.3s ease-in;
-      }
-    </style>
-    <link id="stylesheet" rel="stylesheet" />
+<head>
+  <style>
+    body {
+      visibility: hidden;
+      opacity: 0;
+    }
 
-    <script>
-      fetch("/shared/head.html")
-        .then((r) => r.text())
-        .then((html) => document.head.insertAdjacentHTML("beforeend", html))
-        .catch((e) => console.error("Failed to load shared head:", e));
-    </script>
+    body.loaded {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease-in;
+    }
+  </style>
+  <link id="stylesheet" rel="stylesheet" />
 
-    <script src="/scripts/cookie-check.js" defer></script>
+  <script>
+    fetch("/shared/head.html")
+      .then((r) => r.text())
+      .then((html) => document.head.insertAdjacentHTML("beforeend", html))
+      .catch((e) => console.error("Failed to load shared head:", e));
+  </script>
 
-    <meta name="theme-color" content="#0b6a30" />
+  <script src="/scripts/cookie-check.js" defer></script>
 
-    <!-- Android Chrome (light mode + dark mode) -->
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: light)"
-      content="#0b6a30"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#0b6a30"
-    />
+  <meta name="theme-color" content="#0b6a30" />
 
-    <!-- Windows / Edge tiles -->
-    <meta name="msapplication-TileColor" content="#0b6a30" />
+  <!-- Android Chrome (light mode + dark mode) -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6a30" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b6a30" />
 
-    <!-- iOS Safari (status bar) -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="Website" />
+  <!-- Windows / Edge tiles -->
+  <meta name="msapplication-TileColor" content="#0b6a30" />
 
-    <style>
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-        table-layout: fixed; /* Ensure that the table columns are evenly distributed within the available space */
-      }
-      th,
-      td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-        word-wrap: break-word; /* Break words that are too long to fit in the cell */
-      }
-      th {
-        background-color: transparent;
-      }
-      caption {
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-      /* Optional: To ensure the container doesn't overflow the viewport */
-      .table-container {
-        width: 100%;
-        max-width: 100%;
-        overflow-x: auto; /* This is a fallback in case content does overflow */
-      }
-    </style>
+  <!-- iOS Safari (status bar) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Website" />
 
-    <!-- Open Graph Tags -->
-    <meta property="og:logo" content="../favicon/favicon-32x32.png" />
-    <meta
-      property="og:title"
-      content="This Site Uses Cookies: Understanding Their Role, Risks, and Compliance"
-    />
-    <meta
-      property="og:description"
-      content="Unlock the secrets of cookies! ✮ What they are? ☆ How they work? ❄ And their impact on your privacy. → Learn more now! ✓"
-    />
-    <meta
-      property="og:url"
-      content="https://kolodych.com/website/this-site-uses-cookies.html"
-    />
-    <meta
-      property="og:image"
-      content="https://kolodych.com/src/cookie-image.webp"
-    />
-    <!-- Replace with a relevant image URL -->
-    <meta property="og:type" content="article" />
-    <meta
-      property="og:site_name"
-      content="Serhii Kolodych's Web Development Projects"
-    />
-    <!-- END Open Graph Tags -->
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      table-layout: fixed;
+      /* Ensure that the table columns are evenly distributed within the available space */
+    }
 
-    <!-- Schema Markup Addition -->
-    <script type="application/ld+json">
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+      word-wrap: break-word;
+      /* Break words that are too long to fit in the cell */
+    }
+
+    th {
+      background-color: transparent;
+    }
+
+    caption {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* Optional: To ensure the container doesn't overflow the viewport */
+    .table-container {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      /* This is a fallback in case content does overflow */
+    }
+  </style>
+
+  <!-- Open Graph Tags -->
+  <meta property="og:logo" content="../favicon/favicon-32x32.png" />
+  <meta property="og:title" content="This Site Uses Cookies: Understanding Their Role, Risks, and Compliance" />
+  <meta property="og:description"
+    content="Unlock the secrets of cookies! ✮ What they are? ☆ How they work? ❄ And their impact on your privacy. → Learn more now! ✓" />
+  <meta property="og:url" content="https://kolodych.com/website/this-site-uses-cookies.html" />
+  <meta property="og:image" content="https://kolodych.com/src/cookie-image.webp" />
+  <!-- Replace with a relevant image URL -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Serhii Kolodych's Web Development Projects" />
+  <!-- END Open Graph Tags -->
+
+  <!-- Schema Markup Addition -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "Article",
@@ -130,483 +113,420 @@
         "dateModified": "2025-04-09T10:19:00Z"
       }
     </script>
-    <!-- END Schema Markup Addition -->
+  <!-- END Schema Markup Addition -->
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Understanding Website Cookies: What They Mean and How They Affect You"
-    />
-    <meta
-      name="twitter:description"
-      content="Ever wondered 'what does it mean when a website uses cookies?' Find out what cookies are, their benefits, risks, and how websites use them."
-    />
-    <meta
-      name="twitter:image"
-      content="https://kolodych.com/src/cookie-image.webp"
-    />
-    <meta name="twitter:site" content="@serhiikolodych" />
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Understanding Website Cookies: What They Mean and How They Affect You" />
+  <meta name="twitter:description"
+    content="Ever wondered 'what does it mean when a website uses cookies?' Find out what cookies are, their benefits, risks, and how websites use them." />
+  <meta name="twitter:image" content="https://kolodych.com/src/cookie-image.webp" />
+  <meta name="twitter:site" content="@serhiikolodych" />
 
-    <title>What Does It Mean When a Website Uses Cookies? Explained</title>
-    <meta
-      name="description"
-      content="Ever wonder what “This site uses cookies” means? Learn how cookies work, their benefits, risks, and how they affect your privacy."
-    />
-    <meta
-      name="keywords"
-      content="what does it mean when a website uses cookies, this site uses cookies, does my website use cookies, how do i know if my website uses cookies, what cookies does my website use, website cookies explained, benefits of cookies, importance of cookies, internet cookies meaning, cookies in the browser, web cookie, privacy and data protection, gdpr compliance, personal ads, web browsing history, cookie consent"
-    />
-    <link
-      rel="canonical"
-      href="https://kolodych.com/website/this-site-uses-cookies.html"
-    />
-  </head>
+  <title>What Does It Mean When a Website Uses Cookies? Explained</title>
+  <meta name="description"
+    content="Ever wonder what “This site uses cookies” means? Learn how cookies work, their benefits, risks, and how they affect your privacy." />
+  <meta name="keywords"
+    content="what does it mean when a website uses cookies, this site uses cookies, does my website use cookies, how do i know if my website uses cookies, what cookies does my website use, website cookies explained, benefits of cookies, importance of cookies, internet cookies meaning, cookies in the browser, web cookie, privacy and data protection, gdpr compliance, personal ads, web browsing history, cookie consent" />
+  <link rel="canonical" href="https://kolodych.com/website/this-site-uses-cookies.html" />
+</head>
 
-  <body>
-    <!-- Background Canvas -->
-    <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
+<body>
+  <!-- Background Canvas -->
+  <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
 
-    <div id="back-to-home">Back to Home</div>
+  <div id="back-to-home">Back to Home</div>
 
-    <a href="#" id="change-style-link">White</a>
+  <a href="#" id="change-style-icon">White</a>
 
-    <!-- Article Container -->
-    <div class="article-container">
-      <h1>
-        What Does It Mean When a Website Uses Cookies? Understanding Their
-        Impact
-      </h1>
-      <p><em>Published on September 2, 2024</em></p>
+  <!-- Article Container -->
+  <div class="article-container">
+    <h1>
+      What Does It Mean When a Website Uses Cookies? Understanding Their
+      Impact
+    </h1>
+    <p><em>Published on September 2, 2024</em></p>
 
-      <!-- Introduction Section -->
-      <p>
-        You've seen the message everywhere: "This site uses cookies." But
-        <strong>what does it mean when a website uses cookies?</strong> Simply
-        put, website cookies are small text files stored on your computer or
-        phone when you visit a site.
-      </p>
-      <p>
-        Understanding the <strong>internet cookies meaning</strong> is crucial.
-        They play a vital role in making your online experience smoother, but
-        they also bring up important questions about privacy and data
-        protection. Let's explore what web cookies are, their benefits and
-        drawbacks, and why website owners need to be mindful of regulations like
-        GDPR.
-      </p>
+    <!-- Introduction Section -->
+    <p>
+      You've seen the message everywhere: "This site uses cookies." But
+      <strong>what does it mean when a website uses cookies?</strong> Simply
+      put, website cookies are small text files stored on your computer or
+      phone when you visit a site.
+    </p>
+    <p>
+      Understanding the <strong>internet cookies meaning</strong> is crucial.
+      They play a vital role in making your online experience smoother, but
+      they also bring up important questions about privacy and data
+      protection. Let's explore what web cookies are, their benefits and
+      drawbacks, and why website owners need to be mindful of regulations like
+      GDPR.
+    </p>
 
-      <!-- What Are Cookies Section -->
-      <h2>What Are Cookies? A Simple Explanation</h2>
-      <p>
-        Think of cookies as little notes a website leaves on your device. These
-        notes help the site remember you and your preferences. They store
-        information about things like:
-      </p>
-      <ul>
-        <li>Your browsing activity on that site.</li>
-        <li>Your preferences (like language or theme settings).</li>
-        <li>Your login status (so you don't have to log in repeatedly).</li>
-      </ul>
-      <img
-        src="cookies-developer-tools-opera.webp"
-        title="Website cookies by Google in Opera Developer Tools"
-        alt="Example of cookies shown in the Opera browser's developer tools on the Google website"
-      />
+    <!-- What Are Cookies Section -->
+    <h2>What Are Cookies? A Simple Explanation</h2>
+    <p>
+      Think of cookies as little notes a website leaves on your device. These
+      notes help the site remember you and your preferences. They store
+      information about things like:
+    </p>
+    <ul>
+      <li>Your browsing activity on that site.</li>
+      <li>Your preferences (like language or theme settings).</li>
+      <li>Your login status (so you don't have to log in repeatedly).</li>
+    </ul>
+    <img src="cookies-developer-tools-opera.webp" title="Website cookies by Google in Opera Developer Tools"
+      alt="Example of cookies shown in the Opera browser's developer tools on the Google website" />
 
-      <p>There are different <strong>types of website cookies</strong>:</p>
-      <ul>
-        <li>
-          <b>Session Cookies:</b> These are temporary. Your device deletes them
-          when you close your web browser. They help websites remember what you
-          did during a single visit (like keeping items in your shopping cart).
-        </li>
-        <li>
-          <b>Persistent Cookies:</b> These stay on your device for a specific
-          time, even after you close your browser. They remember things like
-          your login details or language preferences for future visits.
-        </li>
-        <li>
-          <b>Third-Party Cookies:</b> These are placed by websites different
-          from the one you're currently visiting. They are often used for
-          tracking your browsing across multiple sites and showing targeted
-          advertisements.
-        </li>
-      </ul>
+    <p>There are different <strong>types of website cookies</strong>:</p>
+    <ul>
+      <li>
+        <b>Session Cookies:</b> These are temporary. Your device deletes them
+        when you close your web browser. They help websites remember what you
+        did during a single visit (like keeping items in your shopping cart).
+      </li>
+      <li>
+        <b>Persistent Cookies:</b> These stay on your device for a specific
+        time, even after you close your browser. They remember things like
+        your login details or language preferences for future visits.
+      </li>
+      <li>
+        <b>Third-Party Cookies:</b> These are placed by websites different
+        from the one you're currently visiting. They are often used for
+        tracking your browsing across multiple sites and showing targeted
+        advertisements.
+      </li>
+    </ul>
 
-      <!-- How Cookies Are Used Section -->
-      <h3>How Cookies Improve Your Browsing Experience</h3>
-      <p>
-        The <strong>benefits of cookies</strong> often make browsing more
-        convenient:
-      </p>
-      <table>
-        <caption>
-          Comparison: With and Without Cookies
-        </caption>
-        <colgroup>
-          <col style="width: 20%" />
-          <col style="width: 40%" />
-          <col style="width: 40%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Function</th>
-            <th>Use Cookies</th>
-            <th>Without Cookies</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Personalization</td>
-            <td>
-              Your favorite items are recommended based on past visits.
-              <em
-                >Example: "Because you viewed these shoes, you might like
-                these."
-              </em>
-            </td>
-            <td>
-              All recommendations are random and not based on your preferences.
-              <em>Example: "Here are some random products." </em>
-            </td>
-          </tr>
-          <tr>
-            <td>Authentication</td>
-            <td>
-              Stay logged in while you browse different pages.
-              <em>Example: "You remain signed in to your account." </em>
-            </td>
-            <td>
-              You need to log in again each time you move to a new page.
-              <em>Example: "Please log in again to continue." </em>
-            </td>
-          </tr>
-          <tr>
-            <td>Analytics</td>
-            <td>
-              Track how users interact with the site to improve it.
-              <em>Example: "We noticed you clicked on this feature often." </em>
-            </td>
-            <td>
-              Limited data to understand user behavior.
-              <em>Example: "No data on how users interact with the site." </em>
-            </td>
-          </tr>
-          <tr>
-            <td>Advertising</td>
-            <td>
-              Show ads relevant to your interests based on browsing.
-              <em>Example: "Ads for gadgets you've searched for." </em>
-            </td>
-            <td>
-              Ads are generic and not tailored to your interests.
-              <em
-                >Example: "Random ads for products you haven't searched for."
-              </em>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- Risks of Cookies Section -->
-      <h3>Potential Downsides: How Cookies Might Be Used Against You</h3>
-      <p>
-        While helpful, cookies aren't without risks, especially concerning your
-        privacy:
-      </p>
-      <ul>
-        <li>
-          <b>Privacy Concerns:</b> Third-party cookies can track your online
-          activity across different websites without your explicit consent. This
-          tracking helps build a detailed profile about your habits and
-          interests.
-          <em
-            >Example:
-            <a
-              href="https://privacyinternational.org/basic-page/618/how-we-use-and-protect-your-data"
-              target="_blank"
-              rel="noopener"
-              >Reports suggest</a
-            >
-            some cookies follow you online, collecting data to build profiles
-            that can include personal details like age, family status, location,
-            hobbies, job, financial situation, routines, brand preferences,
-            search history, health concerns, and even political views.</em
-          >
-        </li>
-        <li>
-          <b>Intrusive Targeted Advertising:</b> Based on your browsing history,
-          companies show you <strong>personal ads</strong>. While sometimes
-          relevant, this can feel invasive, like you're constantly being watched
-          online.
-        </li>
-      </ul>
-      <table>
-        <caption>
-          How Your Recent Searches Shape the Personal Ads You See
-        </caption>
-        <colgroup>
-          <col style="width: 20%" />
-          <col style="width: 80%" />
-        </colgroup>
+    <!-- How Cookies Are Used Section -->
+    <h3>How Cookies Improve Your Browsing Experience</h3>
+    <p>
+      The <strong>benefits of cookies</strong> often make browsing more
+      convenient:
+    </p>
+    <table>
+      <caption>
+        Comparison: With and Without Cookies
+      </caption>
+      <colgroup>
+        <col style="width: 20%" />
+        <col style="width: 40%" />
+        <col style="width: 40%" />
+      </colgroup>
+      <thead>
         <tr>
-          <th>Recent Search Activity</th>
-          <th>What Business Ads Will Be Shown to You</th>
+          <th>Function</th>
+          <th>Use Cookies</th>
+          <th>Without Cookies</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
-          <td>Financial Stuff</td>
+          <td>Personalization</td>
           <td>
-            Ads for high-interest loans, debt consolidation services, or credit
-            repair scams.
+            Your favorite items are recommended based on past visits.
+            <em>Example: "Because you viewed these shoes, you might like
+              these."
+            </em>
+          </td>
+          <td>
+            All recommendations are random and not based on your preferences.
+            <em>Example: "Here are some random products." </em>
           </td>
         </tr>
         <tr>
-          <td>Relations</td>
+          <td>Authentication</td>
           <td>
-            Ads for expensive divorce lawyers, dating services with questionable
-            privacy, or misleading relationship advice.
+            Stay logged in while you browse different pages.
+            <em>Example: "You remain signed in to your account." </em>
+          </td>
+          <td>
+            You need to log in again each time you move to a new page.
+            <em>Example: "Please log in again to continue." </em>
           </td>
         </tr>
         <tr>
-          <td>Political</td>
+          <td>Analytics</td>
           <td>
-            Ads for extremist political campaigns, controversial petitions, or
-            manipulative political propaganda.
+            Track how users interact with the site to improve it.
+            <em>Example: "We noticed you clicked on this feature often." </em>
+          </td>
+          <td>
+            Limited data to understand user behavior.
+            <em>Example: "No data on how users interact with the site." </em>
           </td>
         </tr>
         <tr>
-          <td>Health</td>
+          <td>Advertising</td>
           <td>
-            Ads for unproven health supplements, aggressive treatment
-            promotions, or online pharmacies with dubious practices.
+            Show ads relevant to your interests based on browsing.
+            <em>Example: "Ads for gadgets you've searched for." </em>
+          </td>
+          <td>
+            Ads are generic and not tailored to your interests.
+            <em>Example: "Random ads for products you haven't searched for."
+            </em>
           </td>
         </tr>
-        <tr>
-          <td>Travel</td>
-          <td>
-            Ads for timeshare schemes, overpriced travel packages, or deceptive
-            travel insurance offers.
-          </td>
-        </tr>
-      </table>
-      <ul>
-        <li>
-          <b>Security Threats:</b> If not secured properly,
-          <strong>cookies in the browser</strong> can be vulnerable. Attackers
-          might steal these cookies (cookie hijacking) to access your online
-          accounts without your password.
-          <em
-            >Example: A hacker could potentially steal a cookie from your
-            computer, use it on their own device, and gain access to your
-            accounts logged in on that website, viewing or stealing personal
-            information.</em
-          >
-        </li>
-      </ul>
+      </tbody>
+    </table>
 
-      <!-- Legal Obligations Section -->
-      <h2>Legal Rules for Website Owners Using Cookies</h2>
+    <!-- Risks of Cookies Section -->
+    <h3>Potential Downsides: How Cookies Might Be Used Against You</h3>
+    <p>
+      While helpful, cookies aren't without risks, especially concerning your
+      privacy:
+    </p>
+    <ul>
+      <li>
+        <b>Privacy Concerns:</b> Third-party cookies can track your online
+        activity across different websites without your explicit consent. This
+        tracking helps build a detailed profile about your habits and
+        interests.
+        <em>Example:
+          <a href="https://privacyinternational.org/basic-page/618/how-we-use-and-protect-your-data" target="_blank"
+            rel="noopener">Reports suggest</a>
+          some cookies follow you online, collecting data to build profiles
+          that can include personal details like age, family status, location,
+          hobbies, job, financial situation, routines, brand preferences,
+          search history, health concerns, and even political views.</em>
+      </li>
+      <li>
+        <b>Intrusive Targeted Advertising:</b> Based on your browsing history,
+        companies show you <strong>personal ads</strong>. While sometimes
+        relevant, this can feel invasive, like you're constantly being watched
+        online.
+      </li>
+    </ul>
+    <table>
+      <caption>
+        How Your Recent Searches Shape the Personal Ads You See
+      </caption>
+      <colgroup>
+        <col style="width: 20%" />
+        <col style="width: 80%" />
+      </colgroup>
+      <tr>
+        <th>Recent Search Activity</th>
+        <th>What Business Ads Will Be Shown to You</th>
+      </tr>
+      <tr>
+        <td>Financial Stuff</td>
+        <td>
+          Ads for high-interest loans, debt consolidation services, or credit
+          repair scams.
+        </td>
+      </tr>
+      <tr>
+        <td>Relations</td>
+        <td>
+          Ads for expensive divorce lawyers, dating services with questionable
+          privacy, or misleading relationship advice.
+        </td>
+      </tr>
+      <tr>
+        <td>Political</td>
+        <td>
+          Ads for extremist political campaigns, controversial petitions, or
+          manipulative political propaganda.
+        </td>
+      </tr>
+      <tr>
+        <td>Health</td>
+        <td>
+          Ads for unproven health supplements, aggressive treatment
+          promotions, or online pharmacies with dubious practices.
+        </td>
+      </tr>
+      <tr>
+        <td>Travel</td>
+        <td>
+          Ads for timeshare schemes, overpriced travel packages, or deceptive
+          travel insurance offers.
+        </td>
+      </tr>
+    </table>
+    <ul>
+      <li>
+        <b>Security Threats:</b> If not secured properly,
+        <strong>cookies in the browser</strong> can be vulnerable. Attackers
+        might steal these cookies (cookie hijacking) to access your online
+        accounts without your password.
+        <em>Example: A hacker could potentially steal a cookie from your
+          computer, use it on their own device, and gain access to your
+          accounts logged in on that website, viewing or stealing personal
+          information.</em>
+      </li>
+    </ul>
+
+    <!-- Legal Obligations Section -->
+    <h2>Legal Rules for Website Owners Using Cookies</h2>
+    <p>
+      Laws like the
+      <a href="https://gdpr.eu/cookies/" target="_blank" rel="noopener">General Data Protection Regulation (GDPR) in
+        Europe</a>
+      and the
+      <a href="https://oag.ca.gov/privacy/ccpa" target="_blank" rel="noopener">California Consumer Privacy Act (CCPA) in
+        the USA</a>
+      require website owners to be transparent about cookie usage. To comply,
+      websites generally need to:
+    </p>
+    <ul>
+      <li>
+        <b>Inform Users:</b> Clearly tell visitors that the site uses cookies,
+        often through a cookie banner or notice.
+      </li>
+      <li>
+        <b>Get Consent:</b> Obtain the user's permission *before* placing
+        non-essential cookies on their device.
+      </li>
+      <li>
+        <b>Provide Information:</b> Have an updated privacy policy explaining
+        what types of cookies are used, what data they collect, why they
+        collect it, and how long the cookies last.
+      </li>
+      <li>
+        <b>Offer Control:</b> Allow users to easily manage their cookie
+        preferences – letting them accept, reject, or customize the types of
+        cookies they allow – and change their mind later. Ensuring
+        <strong>GDPR compliance</strong> is essential for building trust.
+      </li>
+    </ul>
+
+    <!-- Cookies on Kolodych.com Section -->
+    <h3>How Kolodych.com Uses Cookies</h3>
+
+    <p>
+      On <a href="https://kolodych.com/">this website</a>, tools like
+      <a href="https://developers.google.com/tag-platform/tag-manager">Google Tag Manager</a>
+      (for managing tracking scripts) and
+      <a href="https://clarity.microsoft.com/google-analytics">Microsoft Clarity</a>
+      (for understanding user behavior) are used. These tools help improve the
+      site but also set cookies.
+    </p>
+    <ul>
+      <li>
+        <strong>Google Tag Manager:</strong> Helps organize and deploy
+        analytics and marketing scripts, which may use cookies to track how
+        users interact with the site.
+      </li>
+      <li>
+        <strong>Microsoft Clarity:</strong> Sets cookies to gather anonymous
+        data on user sessions (like clicks and scrolls) to provide insights
+        into how people use the website. This helps identify areas for
+        improvement.
+        <em>Below is an example showing how Clarity can record sessions to
+          understand user interaction:</em>
+      </li>
+    </ul>
+
+    <div style="text-align: center; width: 90%; margin: 0 auto">
+      <!-- Video element with captions and muted by default -->
+      <video src="clarity-session-recording.mov" autoplay controls muted style="max-width: 100%; height: auto">
+        <!-- Silent caption track indicating no significant audio -->
+        <track src="silent_caption.vtt" kind="captions" srclang="en" label="No Audio" />
+      </video>
+      <!-- Descriptive text below the video -->
       <p>
-        Laws like the
-        <a href="https://gdpr.eu/cookies/" target="_blank" rel="noopener"
-          >General Data Protection Regulation (GDPR) in Europe</a
-        >
-        and the
-        <a href="https://oag.ca.gov/privacy/ccpa" target="_blank" rel="noopener"
-          >California Consumer Privacy Act (CCPA) in the USA</a
-        >
-        require website owners to be transparent about cookie usage. To comply,
-        websites generally need to:
+        <em>This video shows a session recording where the user interacts with
+          various posts, moving the mouse around and clicking a few times on
+          the background. Please note: This video contains no spoken content
+          or important audio elements.</em>
       </p>
-      <ul>
-        <li>
-          <b>Inform Users:</b> Clearly tell visitors that the site uses cookies,
-          often through a cookie banner or notice.
-        </li>
-        <li>
-          <b>Get Consent:</b> Obtain the user's permission *before* placing
-          non-essential cookies on their device.
-        </li>
-        <li>
-          <b>Provide Information:</b> Have an updated privacy policy explaining
-          what types of cookies are used, what data they collect, why they
-          collect it, and how long the cookies last.
-        </li>
-        <li>
-          <b>Offer Control:</b> Allow users to easily manage their cookie
-          preferences – letting them accept, reject, or customize the types of
-          cookies they allow – and change their mind later. Ensuring
-          <strong>GDPR compliance</strong> is essential for building trust.
-        </li>
-      </ul>
-
-      <!-- Cookies on Kolodych.com Section -->
-      <h3>How Kolodych.com Uses Cookies</h3>
-
-      <p>
-        On <a href="https://kolodych.com/">this website</a>, tools like
-        <a href="https://developers.google.com/tag-platform/tag-manager"
-          >Google Tag Manager</a
-        >
-        (for managing tracking scripts) and
-        <a href="https://clarity.microsoft.com/google-analytics"
-          >Microsoft Clarity</a
-        >
-        (for understanding user behavior) are used. These tools help improve the
-        site but also set cookies.
-      </p>
-      <ul>
-        <li>
-          <strong>Google Tag Manager:</strong> Helps organize and deploy
-          analytics and marketing scripts, which may use cookies to track how
-          users interact with the site.
-        </li>
-        <li>
-          <strong>Microsoft Clarity:</strong> Sets cookies to gather anonymous
-          data on user sessions (like clicks and scrolls) to provide insights
-          into how people use the website. This helps identify areas for
-          improvement.
-          <em
-            >Below is an example showing how Clarity can record sessions to
-            understand user interaction:</em
-          >
-        </li>
-      </ul>
-
-      <div style="text-align: center; width: 90%; margin: 0 auto">
-        <!-- Video element with captions and muted by default -->
-        <video
-          src="clarity-session-recording.mov"
-          autoplay
-          controls
-          muted
-          style="max-width: 100%; height: auto"
-        >
-          <!-- Silent caption track indicating no significant audio -->
-          <track
-            src="silent_caption.vtt"
-            kind="captions"
-            srclang="en"
-            label="No Audio"
-          />
-        </video>
-        <!-- Descriptive text below the video -->
-        <p>
-          <em
-            >This video shows a session recording where the user interacts with
-            various posts, moving the mouse around and clicking a few times on
-            the background. Please note: This video contains no spoken content
-            or important audio elements.</em
-          >
-        </p>
-      </div>
-
-      <!-- Conclusion Section -->
-      <h2>Conclusion: Understanding and Managing Cookies</h2>
-
-      <p>
-        So, <strong>what does it mean when a site uses cookies?</strong> It
-        means the website is using small files stored on your device to remember
-        information about you and your visit.
-      </p>
-      <p>Here's a quick summary:</p>
-      <ul>
-        <li>
-          <strong>What they are:</strong> Small text files websites store on
-          your device.
-        </li>
-        <li>
-          <strong>Benefits:</strong> Cookies enhance user experience by
-          remembering logins, preferences, and shopping carts, and help website
-          owners understand site usage.
-        </li>
-        <li>
-          <strong>Risks:</strong> They can pose privacy risks through tracking
-          (especially third-party cookies) and potential security
-          vulnerabilities. Targeted advertising can also feel intrusive.
-        </li>
-        <li>
-          <strong>Your Control:</strong> You have the right to know how cookies
-          are used and control which ones are placed on your device, thanks to
-          privacy regulations like GDPR and CCPA.
-        </li>
-        <li>
-          <strong>Website Owner Responsibility:</strong> Owners must be
-          transparent, obtain consent for non-essential cookies, and provide
-          clear information and control options to users.
-        </li>
-      </ul>
-      <p>
-        Being aware of how cookies work helps you navigate the web more safely
-        and make informed decisions about your privacy.
-      </p>
-
-      <a href="joksglobalsport.com.html"
-        ><div class="item">
-          <h3>Football Academy site example</h3>
-          <img
-            src="home-joksglobalsport.com.webp"
-            alt="joksglobalsport.com football academy hero section"
-            title="joksglobalsport landing page, hero section with banner"
-            loading="lazy"
-          /></div
-      ></a>
-
-      <a href="japalandia.com.html"
-        ><div class="item">
-          <h3>Japalandia work abroad Landing Page</h3>
-          <img
-            src="home-1-screen-japalandia.webp"
-            alt="Japalandia home section with Call To Action Button"
-            title="Japalandia landing page, hero section with banner for work abroad"
-            loading="lazy"
-          /></div
-      ></a>
-
-      <a href="virgincourtesans.com.html"
-        ><div class="item">
-          <h3>Model Agency site example</h3>
-          <img
-            src="Gallery-preview-using-the-post-grid-plugin-wordpress.webp"
-            alt="VirginCourtesans.com model agency gallery"
-            title="VirginCourtesans.com Models gallery preview"
-            loading="lazy"
-          /></div
-      ></a>
-
-      <a href="../articles/first-telegram-bot.html"
-        ><div class="item">
-          <h3>Creating Telegram Bots</h3>
-          <img
-            src="../articles/creating_a_telegram_bot_token_api.webp"
-            alt="Creating Telegram bots using Python"
-            title="BotFather chat, creating new bot"
-            loading="lazy"
-          /></div
-      ></a>
-      <a href="../website/joksglobalsport.com.html"
-        ><div class="item">
-          <h3>joksglobalsport Football Academy</h3>
-          <img
-            src="../website/450-articles-joksglobalsport.com.jpg"
-            alt="JoksGlobalSport blog section with articles"
-            title="JoksGlobalSport blog section with articles"
-            loading="lazy"
-          />
-        </div>
-      </a>
     </div>
-    <!-- article-container END -->
 
-    <!-- Background script -->
+    <!-- Conclusion Section -->
+    <h2>Conclusion: Understanding and Managing Cookies</h2>
 
-    <script src="../scripts/index-1.js"></script>
-    <script src="../scripts/index-3.js"></script>
-    <script>
-      // Show body once page is fully loaded
-      window.addEventListener("load", function () {
-        document.body.classList.add("loaded");
-      });
-    </script>
-  </body>
+    <p>
+      So, <strong>what does it mean when a site uses cookies?</strong> It
+      means the website is using small files stored on your device to remember
+      information about you and your visit.
+    </p>
+    <p>Here's a quick summary:</p>
+    <ul>
+      <li>
+        <strong>What they are:</strong> Small text files websites store on
+        your device.
+      </li>
+      <li>
+        <strong>Benefits:</strong> Cookies enhance user experience by
+        remembering logins, preferences, and shopping carts, and help website
+        owners understand site usage.
+      </li>
+      <li>
+        <strong>Risks:</strong> They can pose privacy risks through tracking
+        (especially third-party cookies) and potential security
+        vulnerabilities. Targeted advertising can also feel intrusive.
+      </li>
+      <li>
+        <strong>Your Control:</strong> You have the right to know how cookies
+        are used and control which ones are placed on your device, thanks to
+        privacy regulations like GDPR and CCPA.
+      </li>
+      <li>
+        <strong>Website Owner Responsibility:</strong> Owners must be
+        transparent, obtain consent for non-essential cookies, and provide
+        clear information and control options to users.
+      </li>
+    </ul>
+    <p>
+      Being aware of how cookies work helps you navigate the web more safely
+      and make informed decisions about your privacy.
+    </p>
+
+    <a href="joksglobalsport.com.html">
+      <div class="item">
+        <h3>Football Academy site example</h3>
+        <img src="home-joksglobalsport.com.webp" alt="joksglobalsport.com football academy hero section"
+          title="joksglobalsport landing page, hero section with banner" loading="lazy" />
+      </div>
+    </a>
+
+    <a href="japalandia.com.html">
+      <div class="item">
+        <h3>Japalandia work abroad Landing Page</h3>
+        <img src="home-1-screen-japalandia.webp" alt="Japalandia home section with Call To Action Button"
+          title="Japalandia landing page, hero section with banner for work abroad" loading="lazy" />
+      </div>
+    </a>
+
+    <a href="virgincourtesans.com.html">
+      <div class="item">
+        <h3>Model Agency site example</h3>
+        <img src="Gallery-preview-using-the-post-grid-plugin-wordpress.webp"
+          alt="VirginCourtesans.com model agency gallery" title="VirginCourtesans.com Models gallery preview"
+          loading="lazy" />
+      </div>
+    </a>
+
+    <a href="../articles/first-telegram-bot.html">
+      <div class="item">
+        <h3>Creating Telegram Bots</h3>
+        <img src="../articles/creating_a_telegram_bot_token_api.webp" alt="Creating Telegram bots using Python"
+          title="BotFather chat, creating new bot" loading="lazy" />
+      </div>
+    </a>
+    <a href="../website/joksglobalsport.com.html">
+      <div class="item">
+        <h3>joksglobalsport Football Academy</h3>
+        <img src="../website/450-articles-joksglobalsport.com.jpg" alt="JoksGlobalSport blog section with articles"
+          title="JoksGlobalSport blog section with articles" loading="lazy" />
+      </div>
+    </a>
+  </div>
+  <!-- article-container END -->
+
+  <!-- Background script -->
+
+  <script src="../scripts/index-1.js"></script>
+  <script src="../scripts/index-3.js"></script>
+  <script>
+    // Show body once page is fully loaded
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
+
 </html>

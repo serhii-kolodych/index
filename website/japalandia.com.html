@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      body {
-        visibility: hidden;
-        opacity: 0;
-      }
 
-      body.loaded {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.3s ease-in;
-      }
-    </style>
-    <link id="stylesheet" rel="stylesheet" />
+<head>
+  <style>
+    body {
+      visibility: hidden;
+      opacity: 0;
+    }
 
-    <script>
-      fetch("/shared/head.html")
-        .then((r) => r.text())
-        .then((html) => document.head.insertAdjacentHTML("beforeend", html))
-        .catch((e) => console.error("Failed to load shared head:", e));
-    </script>
+    body.loaded {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease-in;
+    }
+  </style>
+  <link id="stylesheet" rel="stylesheet" />
 
-    <script src="/scripts/cookie-check.js" defer></script>
+  <script>
+    fetch("/shared/head.html")
+      .then((r) => r.text())
+      .then((html) => document.head.insertAdjacentHTML("beforeend", html))
+      .catch((e) => console.error("Failed to load shared head:", e));
+  </script>
 
-    <!-- Open Graph Tags -->
-    <meta property="og:logo" content="../favicon/favicon-32x32.png" />
-    <meta
-      property="og:title"
-      content="How I Developed the JapaLandia Website: A Complete Guide"
-    />
-    <meta
-      property="og:description"
-      content="A detailed guide on developing the JapaLandia website using WordPress and Astra theme for optimal performance and user engagement."
-    />
-    <meta
-      property="og:url"
-      content="https://kolodych.com/website/japalandia.com.html"
-    />
-    <meta
-      property="og:image"
-      content="https://kolodych.com/website/home-1-screen-japalandia.webp"
-    />
-    <meta property="og:type" content="article" />
-    <!-- END Open Graph Tags -->
+  <script src="/scripts/cookie-check.js" defer></script>
 
-    <!-- Schema Markup Addition -->
-    <script type="application/ld+json">
+  <!-- Open Graph Tags -->
+  <meta property="og:logo" content="../favicon/favicon-32x32.png" />
+  <meta property="og:title" content="How I Developed the JapaLandia Website: A Complete Guide" />
+  <meta property="og:description"
+    content="A detailed guide on developing the JapaLandia website using WordPress and Astra theme for optimal performance and user engagement." />
+  <meta property="og:url" content="https://kolodych.com/website/japalandia.com.html" />
+  <meta property="og:image" content="https://kolodych.com/website/home-1-screen-japalandia.webp" />
+  <meta property="og:type" content="article" />
+  <!-- END Open Graph Tags -->
+
+  <!-- Schema Markup Addition -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "Article",
@@ -70,28 +60,20 @@
         "dateModified": "2024-08-23T22:19:00Z"
       }
     </script>
-    <!-- END Schema Markup Addition -->
+  <!-- END Schema Markup Addition -->
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="How I Developed the JapaLandia Website: A Complete Guide"
-    />
-    <meta
-      name="twitter:description"
-      content="A detailed guide on developing the JapaLandia website using WordPress and Astra theme for optimal performance and user engagement."
-    />
-    <meta
-      name="twitter:image"
-      content="https://kolodych.com/website/home-1-screen-japalandia.webp"
-    />
-    <meta name="twitter:site" content="@serhiikolodych" />
-    <!-- END Twitter Card Tags -->
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How I Developed the JapaLandia Website: A Complete Guide" />
+  <meta name="twitter:description"
+    content="A detailed guide on developing the JapaLandia website using WordPress and Astra theme for optimal performance and user engagement." />
+  <meta name="twitter:image" content="https://kolodych.com/website/home-1-screen-japalandia.webp" />
+  <meta name="twitter:site" content="@serhiikolodych" />
+  <!-- END Twitter Card Tags -->
 
-    <!-- Cookies Load or NOT -->
-    <!-- Load the tracking.js file -->
-    <!-- <script src="../tracking.js"></script>
+  <!-- Cookies Load or NOT -->
+  <!-- Load the tracking.js file -->
+  <!-- <script src="../tracking.js"></script>
     <script>
     function cookies_manager() {
         var savedColor = localStorage.getItem('buttonColor');
@@ -108,298 +90,227 @@
     window.onload = cookies_manager;
     </script> -->
 
-    <title>
-      The Art of Creating a Landing Page for JapaLandia: A Detailed Guide
-    </title>
-    <meta
-      name="description"
-      content="Discover JapaLandia’s web design! ☆ Landing page example. ☎ Call-To-Action strategies. Performance optimizations. ✓ See how to build a standout page! 🥇"
-    />
-    <meta
-      name="keywords"
-      content="WordPress Developer, Landing Page Design, Website Development, WordPress SEO Optimization"
-    />
-    <link
-      rel="canonical"
-      href="https://kolodych.com/website/japalandia.com.html"
-    />
+  <title>
+    The Art of Creating a Landing Page for JapaLandia: A Detailed Guide
+  </title>
+  <meta name="description"
+    content="Discover JapaLandia’s web design! ☆ Landing page example. ☎ Call-To-Action strategies. Performance optimizations. ✓ See how to build a standout page! 🥇" />
+  <meta name="keywords"
+    content="WordPress Developer, Landing Page Design, Website Development, WordPress SEO Optimization" />
+  <link rel="canonical" href="https://kolodych.com/website/japalandia.com.html" />
 
-    <meta name="theme-color" content="#0b6a30" />
+  <meta name="theme-color" content="#0b6a30" />
 
-    <!-- Android Chrome (light mode + dark mode) -->
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: light)"
-      content="#0b6a30"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#0b6a30"
-    />
+  <!-- Android Chrome (light mode + dark mode) -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6a30" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b6a30" />
 
-    <!-- Windows / Edge tiles -->
-    <meta name="msapplication-TileColor" content="#0b6a30" />
+  <!-- Windows / Edge tiles -->
+  <meta name="msapplication-TileColor" content="#0b6a30" />
 
-    <!-- iOS Safari (status bar) -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="Website" />
-  </head>
+  <!-- iOS Safari (status bar) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Website" />
+</head>
 
-  <body>
-    <!-- Accessibility Enhancements (if there are interactive elements) -->
-    <div id="copied" aria-live="polite">Copied.</div>
-    <!-- END Accessibility Enhancements (if there are interactive elements) -->
+<body>
+  <!-- Accessibility Enhancements (if there are interactive elements) -->
+  <div id="copied" aria-live="polite">Copied.</div>
+  <!-- END Accessibility Enhancements (if there are interactive elements) -->
 
-    <!-- Background Canvas -->
-    <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
+  <!-- Background Canvas -->
+  <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
 
-    <div id="back-to-home">Back to Home</div>
+  <div id="back-to-home">Back to Home</div>
 
-    <a href="#" id="change-style-link">White</a>
+  <a href="#" id="change-style-icon">White</a>
 
-    <!-- Article Container -->
-    <div class="article-container">
-      <h1>How I Developed the JapaLandia Website: A Complete Guide</h1>
-      <p><em>Published on August 22, 2024</em></p>
+  <!-- Article Container -->
+  <div class="article-container">
+    <h1>How I Developed the JapaLandia Website: A Complete Guide</h1>
+    <p><em>Published on August 22, 2024</em></p>
 
-      <!-- Introduction Section -->
-      <p>
-        Designing
-        <a rel="nofollow" target="_blank" href="https://japalandia.com"
-          >the JapaLandia landing page</a
-        >
-        <span
-          class="aLink"
-          onclick="window.open('https://magenta-chinchilla-775318.hostingersite.com/', '_blank')"
-          >(backup mirror)</span
-        >
-        was a key project as it served as the first point of interaction for
-        potential clients. My goal as a freelance programmer specializing in
-        WordPress development and landing page design was to create a visually
-        appealing and user-friendly layout that effectively communicates the
-        services offered by JapaLandia. In this guide, I'll walk you through the
-        design and development process, from the initial layout to optimizing
-        for performance and SEO.
-      </p>
+    <!-- Introduction Section -->
+    <p>
+      Designing
+      <a rel="nofollow" target="_blank" href="https://japalandia.com">the JapaLandia landing page</a>
+      <span class="aLink"
+        onclick="window.open('https://magenta-chinchilla-775318.hostingersite.com/', '_blank')">(backup mirror)</span>
+      was a key project as it served as the first point of interaction for
+      potential clients. My goal as a freelance programmer specializing in
+      WordPress development and landing page design was to create a visually
+      appealing and user-friendly layout that effectively communicates the
+      services offered by JapaLandia. In this guide, I'll walk you through the
+      design and development process, from the initial layout to optimizing
+      for performance and SEO.
+    </p>
 
-      <!-- Step 1: Designing the Landing Page -->
-      <h2>Designing the Landing Page</h2>
+    <!-- Step 1: Designing the Landing Page -->
+    <h2>Designing the Landing Page</h2>
 
-      <!-- Hero Section -->
-      <h3>Hero Section</h3>
-      <p>
-        The top of the landing page features a high-quality image that conveys
-        the essence of the services offered by JapaLandia. This image is paired
-        with a bold headline, "Unlock Boundless Opportunities Abroad," which
-        encourages visitors to take immediate action. The Call to Action (CTA)
-        in this section is a prominent "Get Started" button that guides users to
-        initiate the consultation process, making it easy for them to engage
-        with the service. Designed using the Astra theme, this button is crucial
-        for driving conversions right from the start.
-      </p>
-      <img
-        src="home-1-screen-japalandia.webp"
-        alt="JapaLandia Hero Section"
-        title="Hero Section with 'Unlock Boundless Opportunities Abroad' headline"
-        loading="lazy"
-      />
+    <!-- Hero Section -->
+    <h3>Hero Section</h3>
+    <p>
+      The top of the landing page features a high-quality image that conveys
+      the essence of the services offered by JapaLandia. This image is paired
+      with a bold headline, "Unlock Boundless Opportunities Abroad," which
+      encourages visitors to take immediate action. The Call to Action (CTA)
+      in this section is a prominent "Get Started" button that guides users to
+      initiate the consultation process, making it easy for them to engage
+      with the service. Designed using the Astra theme, this button is crucial
+      for driving conversions right from the start.
+    </p>
+    <img src="home-1-screen-japalandia.webp" alt="JapaLandia Hero Section"
+      title="Hero Section with 'Unlock Boundless Opportunities Abroad' headline" loading="lazy" />
 
-      <!-- Services Section -->
-      <h3>Services Section</h3>
-      <p>
-        The landing page highlights the three primary services offered: Job
-        Placement, Work Permits, and Residence Permits. Each service is
-        presented with a concise description and an accompanying CTA button,
-        encouraging visitors to learn more and take the next step. This section
-        was crafted to ensure potential clients immediately understand the value
-        JapaLandia provides.
-      </p>
-      <img
-        src="home-2-services-japalandia.webp"
-        alt="JapaLandia Services Section"
-        title="Services Section with Job Placement, Work Permits, and Residence Permits"
-        loading="lazy"
-      />
+    <!-- Services Section -->
+    <h3>Services Section</h3>
+    <p>
+      The landing page highlights the three primary services offered: Job
+      Placement, Work Permits, and Residence Permits. Each service is
+      presented with a concise description and an accompanying CTA button,
+      encouraging visitors to learn more and take the next step. This section
+      was crafted to ensure potential clients immediately understand the value
+      JapaLandia provides.
+    </p>
+    <img src="home-2-services-japalandia.webp" alt="JapaLandia Services Section"
+      title="Services Section with Job Placement, Work Permits, and Residence Permits" loading="lazy" />
 
-      <!-- About Us Section -->
-      <h2>About Us Section</h2>
-      <p>
-        An "About Us" section provides insights into JapaLandia's mission and
-        values, establishing credibility and fostering trust with potential
-        clients. It's important to do this because studies show that 52% of
-        visitors want to see 'About Us' information when they first visit a
-        company's website (<a
-          href="https://www.huffindustrialmarketing.com/2015-Report.pdf"
-          target="_blank"
-          rel="noopener"
-          >KoMarketing, 2015</a
-        >). A well-crafted introduction can increase the likelihood of
-        conversions by up to 30% (<a
-          href="https://scoop.market.us/cro-statistics/"
-          target="_blank"
-          rel="noopener"
-          >Scoop, 2023</a
-        >). By showcasing JapaLandia's expertise in international job placements
-        and their commitment to client success, this section addresses common
-        customer concerns and builds confidence in the company's services.
-      </p>
-      <img
-        src="home-3-about-japalandia.webp"
-        alt="JapaLandia About Us Section"
-        title="About Us Section highlighting JapaLandia’s mission and values"
-        loading="lazy"
-      />
+    <!-- About Us Section -->
+    <h2>About Us Section</h2>
+    <p>
+      An "About Us" section provides insights into JapaLandia's mission and
+      values, establishing credibility and fostering trust with potential
+      clients. It's important to do this because studies show that 52% of
+      visitors want to see 'About Us' information when they first visit a
+      company's website (<a href="https://www.huffindustrialmarketing.com/2015-Report.pdf" target="_blank"
+        rel="noopener">KoMarketing, 2015</a>). A well-crafted introduction can increase the likelihood of
+      conversions by up to 30% (<a href="https://scoop.market.us/cro-statistics/" target="_blank" rel="noopener">Scoop,
+        2023</a>). By showcasing JapaLandia's expertise in international job placements
+      and their commitment to client success, this section addresses common
+      customer concerns and builds confidence in the company's services.
+    </p>
+    <img src="home-3-about-japalandia.webp" alt="JapaLandia About Us Section"
+      title="About Us Section highlighting JapaLandia’s mission and values" loading="lazy" />
 
-      <!-- Call to Action Section -->
-      <h2>Call to Action Section</h2>
-      <p>
-        Multiple CTAs throughout the page, including a "Take The First Step
-        Today" section, guide visitors towards conversion. These sections,
-        crafted using WordPress and the Astra theme, are crucial for improving
-        conversion rates. For example, a study by HubSpot found that anchor text
-        CTAs increased conversion rates by 121% compared to banner CTAs (<a
-          href="https://www.sixthcitymarketing.com/2023/03/24/statistics-to-know-about-ctas-in-2023/#:~:text=Since%20then%2C%20digital%20marketing%20has,the%20once-popular%20banner%20advertisements."
-          target="_blank"
-          rel="noopener"
-          >Sixth City Marketing, 2023</a
-        >).
-      </p>
+    <!-- Call to Action Section -->
+    <h2>Call to Action Section</h2>
+    <p>
+      Multiple CTAs throughout the page, including a "Take The First Step
+      Today" section, guide visitors towards conversion. These sections,
+      crafted using WordPress and the Astra theme, are crucial for improving
+      conversion rates. For example, a study by HubSpot found that anchor text
+      CTAs increased conversion rates by 121% compared to banner CTAs (<a
+        href="https://www.sixthcitymarketing.com/2023/03/24/statistics-to-know-about-ctas-in-2023/#:~:text=Since%20then%2C%20digital%20marketing%20has,the%20once-popular%20banner%20advertisements."
+        target="_blank" rel="noopener">Sixth City Marketing, 2023</a>).
+    </p>
 
-      <p>
-        As a freelance programmer specializing in landing page design, I crafted
-        this WordPress section to invite visitors to explore new opportunities
-        abroad, emphasizing JapaLandia’s support in this journey. The prominent
-        "Get Started" button, designed using the Astra theme, prompts immediate
-        action, guiding users seamlessly into beginning their consultation
-        process.
-      </p>
-      <img
-        src="home-4-CTA-japalandia.webp"
-        alt="JapaLandia Call to Action Section"
-        title="Call to Action Section with 'Take The First Step Today' CTA"
-        loading="lazy"
-      />
+    <p>
+      As a freelance programmer specializing in landing page design, I crafted
+      this WordPress section to invite visitors to explore new opportunities
+      abroad, emphasizing JapaLandia’s support in this journey. The prominent
+      "Get Started" button, designed using the Astra theme, prompts immediate
+      action, guiding users seamlessly into beginning their consultation
+      process.
+    </p>
+    <img src="home-4-CTA-japalandia.webp" alt="JapaLandia Call to Action Section"
+      title="Call to Action Section with 'Take The First Step Today' CTA" loading="lazy" />
 
-      <!-- Portfolio and Success Stories -->
-      <h3>Portfolio and Success Stories</h3>
-      <p>
-        The website features a gallery of success stories and a portfolio
-        showcasing the outcomes of previous clients. This section is vital for
-        demonstrating the effectiveness of JapaLandia’s services. By
-        highlighting real success stories, the "CLIENT Success Stories" section
-        builds trust and credibility, making it a powerful tool for converting
-        visitors into clients.
-      </p>
-      <img
-        src="home-5-portfolio-japalandia.webp"
-        alt="JapaLandia Portfolio and Success Stories"
-        title="Portfolio and Success Stories showcasing client outcomes"
-        loading="lazy"
-      />
+    <!-- Portfolio and Success Stories -->
+    <h3>Portfolio and Success Stories</h3>
+    <p>
+      The website features a gallery of success stories and a portfolio
+      showcasing the outcomes of previous clients. This section is vital for
+      demonstrating the effectiveness of JapaLandia’s services. By
+      highlighting real success stories, the "CLIENT Success Stories" section
+      builds trust and credibility, making it a powerful tool for converting
+      visitors into clients.
+    </p>
+    <img src="home-5-portfolio-japalandia.webp" alt="JapaLandia Portfolio and Success Stories"
+      title="Portfolio and Success Stories showcasing client outcomes" loading="lazy" />
 
-      <!-- Why Choose Us Section -->
-      <h3>Why Choose Us Section</h3>
-      <p>
-        The "WHY CHOOSE US" section on JapaLandia's website highlights their
-        unique value propositions: personalized support, a broad global network,
-        and a streamlined process. Using the Astra theme, this section
-        emphasizes JapaLandia's dedication to simplifying work and residence
-        permits, enhancing the site's effectiveness in converting visitors.
-      </p>
-      <p>
-        Research shows that clearly communicating unique value propositions can
-        increase conversion rates by up to 80% (<a
-          href="https://www.sciencedirect.com/science/article/pii/S0268401220308082"
-          target="_blank"
-          rel="noopener"
-          >Marketing Experiments, 2019</a
-        >). For JapaLandia, we implemented a three-column layout to present each
-        value proposition with an accompanying icon:
-      </p>
+    <!-- Why Choose Us Section -->
+    <h3>Why Choose Us Section</h3>
+    <p>
+      The "WHY CHOOSE US" section on JapaLandia's website highlights their
+      unique value propositions: personalized support, a broad global network,
+      and a streamlined process. Using the Astra theme, this section
+      emphasizes JapaLandia's dedication to simplifying work and residence
+      permits, enhancing the site's effectiveness in converting visitors.
+    </p>
+    <p>
+      Research shows that clearly communicating unique value propositions can
+      increase conversion rates by up to 80% (<a
+        href="https://www.sciencedirect.com/science/article/pii/S0268401220308082" target="_blank"
+        rel="noopener">Marketing Experiments, 2019</a>). For JapaLandia, we implemented a three-column layout to present
+      each
+      value proposition with an accompanying icon:
+    </p>
 
-      <img
-        src="home-6-why-choose-japalandia.webp"
-        alt="JapaLandia Why Choose Us Section"
-        title="Why Choose Us Section with unique value propositions"
-        loading="lazy"
-      />
+    <img src="home-6-why-choose-japalandia.webp" alt="JapaLandia Why Choose Us Section"
+      title="Why Choose Us Section with unique value propositions" loading="lazy" />
 
-      <!-- Testimonials -->
-      <h3>Testimonials</h3>
-      <p>
-        Client testimonials are included to provide social proof, highlighting
-        positive experiences from previous clients.
-      </p>
-      <img
-        src="home-7-comments-japalandia.webp"
-        alt="JapaLandia Testimonials"
-        title="Client Testimonials section with positive feedback"
-        loading="lazy"
-      />
+    <!-- Testimonials -->
+    <h3>Testimonials</h3>
+    <p>
+      Client testimonials are included to provide social proof, highlighting
+      positive experiences from previous clients.
+    </p>
+    <img src="home-7-comments-japalandia.webp" alt="JapaLandia Testimonials"
+      title="Client Testimonials section with positive feedback" loading="lazy" />
 
-      <!-- Final Call to Action -->
-      <h3>Final Call to Action</h3>
-      <p>
-        At the bottom of the landing page, the "EXPLORE YOUR Opportunities
-        Abroad" section serves as the final Call to Action (CTA), encouraging
-        visitors to take that essential step toward an international career. The
-        bold "GET STARTED" button reinforces the idea that visitors are just one
-        step away from their dream job, making it a critical element for driving
-        conversions and engaging users with JapaLandia’s services.
-      </p>
-      <img
-        src="home-8-cta-final-japalandia.webp"
-        alt="JapaLandia Final Call to Action"
-        title="Final Call to Action Section with 'GET STARTED' button"
-        loading="lazy"
-      />
+    <!-- Final Call to Action -->
+    <h3>Final Call to Action</h3>
+    <p>
+      At the bottom of the landing page, the "EXPLORE YOUR Opportunities
+      Abroad" section serves as the final Call to Action (CTA), encouraging
+      visitors to take that essential step toward an international career. The
+      bold "GET STARTED" button reinforces the idea that visitors are just one
+      step away from their dream job, making it a critical element for driving
+      conversions and engaging users with JapaLandia’s services.
+    </p>
+    <img src="home-8-cta-final-japalandia.webp" alt="JapaLandia Final Call to Action"
+      title="Final Call to Action Section with 'GET STARTED' button" loading="lazy" />
 
-      <!-- Step 2: Optimizing for Performance and SEO -->
-      <h2>Optimizing for Performance and SEO</h2>
-      <p>
-        Given the importance of site speed and SEO for user experience and
-        search engine rankings, I made several optimizations:
-      </p>
-      <ul>
-        <li>
-          <strong>Caching Plugins:</strong> I installed and configured caching
-          plugins to improve site speed, reducing load times for visitors.
-        </li>
-        <li>
-          <strong>SEO Plugins:</strong>
-          <a target="_blank" href="https://wordpress.org/plugins/wordpress-seo/"
-            >Yoast SEO</a
-          >
-          was used to optimize on-page content, meta descriptions, and keyword
-          placement, ensuring the site is search-engine friendly.
-        </li>
-      </ul>
-      <p>
-        Also you might want to check
-        <a target="_blank" href="virgincourtesans.com.html#must-have-plugins"
-          >this list of Must-Have Plugins for Every WordPress Site.</a
-        >
-      </p>
+    <!-- Step 2: Optimizing for Performance and SEO -->
+    <h2>Optimizing for Performance and SEO</h2>
+    <p>
+      Given the importance of site speed and SEO for user experience and
+      search engine rankings, I made several optimizations:
+    </p>
+    <ul>
+      <li>
+        <strong>Caching Plugins:</strong> I installed and configured caching
+        plugins to improve site speed, reducing load times for visitors.
+      </li>
+      <li>
+        <strong>SEO Plugins:</strong>
+        <a target="_blank" href="https://wordpress.org/plugins/wordpress-seo/">Yoast SEO</a>
+        was used to optimize on-page content, meta descriptions, and keyword
+        placement, ensuring the site is search-engine friendly.
+      </li>
+    </ul>
+    <p>
+      Also you might want to check
+      <a target="_blank" href="virgincourtesans.com.html#must-have-plugins">this list of Must-Have Plugins for Every
+        WordPress Site.</a>
+    </p>
 
-      <!-- Conclusion Section -->
-      <h2>Conclusion</h2>
-      <p>
-        Developing the JapaLandia website was a rewarding project that
-        demonstrated the power of WordPress combined with the Astra theme and
-        various essential plugins. The result is a modern, responsive, and
-        engaging landing page that effectively serves JapaLandia's target
-        audience. If you're looking to build a similar site or need help with
-        WordPress development, feel free to reach out. Whether it's a landing
-        page, e-commerce integration with WooCommerce, or custom WordPress
-        solutions, I’m here to help.
-      </p>
+    <!-- Conclusion Section -->
+    <h2>Conclusion</h2>
+    <p>
+      Developing the JapaLandia website was a rewarding project that
+      demonstrated the power of WordPress combined with the Astra theme and
+      various essential plugins. The result is a modern, responsive, and
+      engaging landing page that effectively serves JapaLandia's target
+      audience. If you're looking to build a similar site or need help with
+      WordPress development, feel free to reach out. Whether it's a landing
+      page, e-commerce integration with WooCommerce, or custom WordPress
+      solutions, I’m here to help.
+    </p>
 
-      <!-- <div class="item">
+    <!-- <div class="item">
             <h3 class="dancing-text">
                 <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span> 
                 <span>a</span><span>n</span><span>y</span><span>t</span><span>h</span><span>i</span><span>n</span><span>g</span><span>?</span>
@@ -411,34 +322,29 @@
             </form>
         </div> -->
 
-      <a href="joksglobalsport.com.html"
-        ><div class="item">
-          <h3>Football Academy site example</h3>
-          <img
-            src="home-joksglobalsport.com.webp"
-            alt="joksglobalsport.com football academy hero section"
-            title="joksglobalsport landing page, hero section with banner"
-            loading="lazy"
-          /></div
-      ></a>
+    <a href="joksglobalsport.com.html">
+      <div class="item">
+        <h3>Football Academy site example</h3>
+        <img src="home-joksglobalsport.com.webp" alt="joksglobalsport.com football academy hero section"
+          title="joksglobalsport landing page, hero section with banner" loading="lazy" />
+      </div>
+    </a>
 
-      <a href="virgincourtesans.com.html"
-        ><div class="item">
-          <h3>Model Agency site example</h3>
-          <img
-            src="Gallery-preview-using-the-post-grid-plugin-wordpress.webp"
-            alt="VirginCourtesans.com model agency gallery"
-            title="VirginCourtesans.com Models gallery preview"
-            loading="lazy"
-          /></div
-      ></a>
-    </div>
+    <a href="virgincourtesans.com.html">
+      <div class="item">
+        <h3>Model Agency site example</h3>
+        <img src="Gallery-preview-using-the-post-grid-plugin-wordpress.webp"
+          alt="VirginCourtesans.com model agency gallery" title="VirginCourtesans.com Models gallery preview"
+          loading="lazy" />
+      </div>
+    </a>
+  </div>
 
-    <script src="../scripts/index-1.js"></script>
-    <script src="../scripts/index-3.js"></script>
-    <!-- Background script -->
+  <script src="../scripts/index-1.js"></script>
+  <script src="../scripts/index-3.js"></script>
+  <!-- Background script -->
 
-    <!-- Load the header dynamically
+  <!-- Load the header dynamically
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('../header.html')
@@ -458,11 +364,12 @@
                 });
         });
     </script> -->
-    <script>
-      // Show body once page is fully loaded
-      window.addEventListener("load", function () {
-        document.body.classList.add("loaded");
-      });
-    </script>
-  </body>
+  <script>
+    // Show body once page is fully loaded
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
+
 </html>

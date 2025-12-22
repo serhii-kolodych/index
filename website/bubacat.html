@@ -1,73 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      body {
-        visibility: hidden;
-        opacity: 0;
-      }
 
-      body.loaded {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.3s ease-in;
-      }
-    </style>
-    <link id="stylesheet" rel="stylesheet" />
+<head>
+  <style>
+    body {
+      visibility: hidden;
+      opacity: 0;
+    }
 
-    <script>
-      fetch("/shared/head.html")
-        .then((r) => r.text())
-        .then((html) => document.head.insertAdjacentHTML("beforeend", html))
-        .catch((e) => console.error("Failed to load shared head:", e));
-    </script>
+    body.loaded {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease-in;
+    }
+  </style>
+  <link id="stylesheet" rel="stylesheet" />
 
-    <script src="../scripts/cookie-check.js" defer></script>
+  <script>
+    fetch("/shared/head.html")
+      .then((r) => r.text())
+      .then((html) => document.head.insertAdjacentHTML("beforeend", html))
+      .catch((e) => console.error("Failed to load shared head:", e));
+  </script>
+
+  <script src="../scripts/cookie-check.js" defer></script>
 
 
-    <meta name="theme-color" content="#0b6a30" />
+  <meta name="theme-color" content="#0b6a30" />
 
-    <!-- Android Chrome (light mode + dark mode) -->
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: light)"
-      content="#0b6a30"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#0b6a30"
-    />
+  <!-- Android Chrome (light mode + dark mode) -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6a30" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b6a30" />
 
-    <!-- Windows / Edge tiles -->
-    <meta name="msapplication-TileColor" content="#0b6a30" />
+  <!-- Windows / Edge tiles -->
+  <meta name="msapplication-TileColor" content="#0b6a30" />
 
-    <!-- iOS Safari (status bar) -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="Website" />
+  <!-- iOS Safari (status bar) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Website" />
 
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="BubacatCity WordPress Website Setup" />
-    <meta
-      property="og:description"
-      content="How I created the BubacatCity site with fun artwork, game themed layout, and responsive design."
-    />
-    <meta
-      property="og:url"
-      content="https://kolodych.com/website/bubacat.html"
-    />
-    <meta
-      property="og:image"
-      content="https://kolodych.com/website/bubacatcity-preview.webp"
-    />
-    <meta property="og:type" content="article" />
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="BubacatCity WordPress Website Setup" />
+  <meta property="og:description"
+    content="How I created the BubacatCity site with fun artwork, game themed layout, and responsive design." />
+  <meta property="og:url" content="https://kolodych.com/website/bubacat.html" />
+  <meta property="og:image" content="https://kolodych.com/website/bubacatcity-preview.webp" />
+  <meta property="og:type" content="article" />
 
-    <!-- Schema Markup Addition -->
-    <script type="application/ld+json">
+  <!-- Schema Markup Addition -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "Article",
@@ -92,199 +74,155 @@
       }
     </script>
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="How I Built BubacatCity with WordPress"
-    />
-    <meta
-      name="twitter:description"
-      content="See how the BubacatCity site was created using WordPress with custom sections, artwork, and a game themed layout."
-    />
-    <meta
-      name="twitter:image"
-      content="https://kolodych.com/website/bubacatcity-preview.webp"
-    />
-    <meta name="twitter:site" content="@serhiikolodych" />
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How I Built BubacatCity with WordPress" />
+  <meta name="twitter:description"
+    content="See how the BubacatCity site was created using WordPress with custom sections, artwork, and a game themed layout." />
+  <meta name="twitter:image" content="https://kolodych.com/website/bubacatcity-preview.webp" />
+  <meta name="twitter:site" content="@serhiikolodych" />
 
-    <title>BubacatCity Website Setup</title>
-    <meta
-      name="description"
-      content="Learn how I built the BubacatCity site, including layout rules, custom blocks, and responsive settings."
-    />
-    <meta
-      name="keywords"
-      content="WordPress, Elementor, BubacatCity, Game Site, Responsive Design"
-    />
-    <link
-      rel="canonical"
-      href="https://kolodych.com/website/bubacat.html"
-    />
-  </head>
+  <title>BubacatCity Website Setup</title>
+  <meta name="description"
+    content="Learn how I built the BubacatCity site, including layout rules, custom blocks, and responsive settings." />
+  <meta name="keywords" content="WordPress, Elementor, BubacatCity, Game Site, Responsive Design" />
+  <link rel="canonical" href="https://kolodych.com/website/bubacat.html" />
+</head>
 
-  <body>
-    <!-- Accessibility Enhancements (if there are interactive elements) -->
-    <div id="copied" aria-live="polite">Copied.</div>
-    <!-- END Accessibility Enhancements (if there are interactive elements) -->
+<body>
+  <!-- Accessibility Enhancements (if there are interactive elements) -->
+  <div id="copied" aria-live="polite">Copied.</div>
+  <!-- END Accessibility Enhancements (if there are interactive elements) -->
 
-    <!-- Background Canvas -->
-    <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
+  <!-- Background Canvas -->
+  <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
 
-    <div id="back-to-home">Back to Home</div>
+  <div id="back-to-home">Back to Home</div>
 
-    <a href="#" id="change-style-link">White</a>
+  <a href="#" id="change-style-icon">White</a>
 
-    <div class="article-container">
-      <h1>BubacatCity WordPress Site Build</h1>
-      <p><em>Published on December 6, 2025</em></p>
-      <p>
-        Imagine this: ancient Egyptian cats riding bicycles, stealing artifacts,
-        and racing to become the supreme ruler of Bubastis. That’s
-        <a target="_blank" href="https://bubacatcity.com">Bubacat</a> <a href="https://lightsalmon-salamander-914319.hostingersite.com/">(backup site)</a> – a super
-        fun, family-friendly adventure card game that needed website redesign as
-        vibrant and engaging as their game. Here’s how I brought their digital
-        world to life.
-      </p>
-      <img
-        src="Bubacat-heroes.webp"
-        alt="Bubacat Heroes: cats Franklin, Jean Gray, Zuko"
-        title="Bubacat Heroes: Franklin, Jean Gray, Zuko"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
-      <h2>The Goal</h2>
-      <ul>
-        <li>Capture the game’s cheeky Egyptian-cat vibe</li>
-        <li>Make it instantly understandable in <10 seconds</li>
-        <li>Load blazingly fast (card game buyers are impatient!)</li>
-        <li>
-          Prepare clean WooCommerce foundation for the deck + T-shirts, hats,
-          etc.
-        </li>
-        <li>
-          Mobile‑first layouts, because most visitors come from social links on
-          phones.
-        </li>
-        <li>
-          Space for blog posts, character profiles, a gallery, and a future
-          shop.
-        </li>
-      </ul>
+  <div class="article-container">
+    <h1>BubacatCity WordPress Site Build</h1>
+    <p><em>Published on December 6, 2025</em></p>
+    <p>
+      Imagine this: ancient Egyptian cats riding bicycles, stealing artifacts,
+      and racing to become the supreme ruler of Bubastis. That’s
+      <a target="_blank" href="https://bubacatcity.com">Bubacat</a> <a
+        href="https://lightsalmon-salamander-914319.hostingersite.com/">(backup site)</a> – a super
+      fun, family-friendly adventure card game that needed website redesign as
+      vibrant and engaging as their game. Here’s how I brought their digital
+      world to life.
+    </p>
+    <img src="Bubacat-heroes.webp" alt="Bubacat Heroes: cats Franklin, Jean Gray, Zuko"
+      title="Bubacat Heroes: Franklin, Jean Gray, Zuko" loading="lazy" style="max-width: 100%; height: auto" />
+    <h2>The Goal</h2>
+    <ul>
+      <li>Capture the game’s cheeky Egyptian-cat vibe</li>
+      <li>Make it instantly understandable in <10 seconds</li>
+      <li>Load blazingly fast (card game buyers are impatient!)</li>
+      <li>
+        Prepare clean WooCommerce foundation for the deck + T-shirts, hats,
+        etc.
+      </li>
+      <li>
+        Mobile‑first layouts, because most visitors come from social links on
+        phones.
+      </li>
+      <li>
+        Space for blog posts, character profiles, a gallery, and a future
+        shop.
+      </li>
+    </ul>
 
-      <h2>Theme Customization & Global Styles</h2>
-      <p>
-        On every new website, the first step I do is always the same: configure
-        the design system within Elementor and Astra. I define global colors,
-        typography scales, and responsive breakpoints before building any
-        sections. This method not only speeds up development but also guarantees
-        visual consistency across all devices — from a 5-inch mobile in Mumbai
-        to a 27-inch Retina display in Berlin.
-      </p>
-      <ul>
-        <li>Elementor > Site Settings > Global Colors</li>
-        <li>Elementor > Site Settings > Global Fonts</li>
-        <li>Elementor > Site Settings > Layout > Breakpoints</li>
-      </ul>
-      <img
-        src="bubacat-elementor-site-settings.webp"
-        alt="BubacatCity Elementor Settings"
-        title="BubacatCity Elementor Settings"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
-      <ul>
-        <li>
-          (Optional) Appearance / Astra > Customize > Global > Colors
-          (Typography / Container) -- Elementor styles take priority over Astra
-          settings. However, theme-controlled areas like blog archives, headers,
-          and footers use Astra's configuration. If you notice inconsistencies
-          in these areas, double-check your Astra customizer settings.
-        </li>
-      </ul>
+    <h2>Theme Customization & Global Styles</h2>
+    <p>
+      On every new website, the first step I do is always the same: configure
+      the design system within Elementor and Astra. I define global colors,
+      typography scales, and responsive breakpoints before building any
+      sections. This method not only speeds up development but also guarantees
+      visual consistency across all devices — from a 5-inch mobile in Mumbai
+      to a 27-inch Retina display in Berlin.
+    </p>
+    <ul>
+      <li>Elementor > Site Settings > Global Colors</li>
+      <li>Elementor > Site Settings > Global Fonts</li>
+      <li>Elementor > Site Settings > Layout > Breakpoints</li>
+    </ul>
+    <img src="bubacat-elementor-site-settings.webp" alt="BubacatCity Elementor Settings"
+      title="BubacatCity Elementor Settings" loading="lazy" style="max-width: 100%; height: auto" />
+    <ul>
+      <li>
+        (Optional) Appearance / Astra > Customize > Global > Colors
+        (Typography / Container) -- Elementor styles take priority over Astra
+        settings. However, theme-controlled areas like blog archives, headers,
+        and footers use Astra's configuration. If you notice inconsistencies
+        in these areas, double-check your Astra customizer settings.
+      </li>
+    </ul>
 
-      <h2>Header (Logo, Menu, Button)</h2>
-      <img
-        src="bubacat-customize-header.webp"
-        alt="BubacatCity Header"
-        title="BubacatCity Header"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
-      <p>
-        For this project, I used Astra’s flexible header builder and extended it
-        with a custom child theme. I generated the child theme using a
-        <a href="https://wpastra.com/child-theme-generator/"
-          >Astra’s official Child Theme Generator</a
-        >, which allowed me to safely add custom CSS without touching the parent
-        files. The goal was to create a transparent header that sticks to the
-        top when scrolling. I achieved it with:
-      </p>
+    <h2>Header (Logo, Menu, Button)</h2>
+    <img src="bubacat-customize-header.webp" alt="BubacatCity Header" title="BubacatCity Header" loading="lazy"
+      style="max-width: 100%; height: auto" />
+    <p>
+      For this project, I used Astra’s flexible header builder and extended it
+      with a custom child theme. I generated the child theme using a
+      <a href="https://wpastra.com/child-theme-generator/">Astra’s official Child Theme Generator</a>, which allowed me
+      to safely add custom CSS without touching the parent
+      files. The goal was to create a transparent header that sticks to the
+      top when scrolling. I achieved it with:
+    </p>
 
-      <div class="grid-container">
-        <div class="flex-row">
-          <label>Code:</label>
-          <button class="copy-btn">Copy Code</button>
-        </div>
-        <div class="code-row">
-          <code>
+    <div class="grid-container">
+      <div class="flex-row">
+        <label>Code:</label>
+        <button class="copy-btn">Copy Code</button>
+      </div>
+      <div class="code-row">
+        <code>
             .site-header { <br />position: sticky; <br />top: 0; <br />z-index:
             999; <br />} <br />#content { margin-top: -92px;
-            <em>#Your header height</em> }</code
-          >
-        </div>
+            <em>#Your header height</em> }</code>
       </div>
+    </div>
 
-      <p>
-        This simple configuration ensures the header stays visible at all times
-        while blending smoothly with the page background. The setup is fully
-        compatible with Astra’s updates and follows best practices for theme
-        customization.
-      </p>
+    <p>
+      This simple configuration ensures the header stays visible at all times
+      while blending smoothly with the page background. The setup is fully
+      compatible with Astra’s updates and follows best practices for theme
+      customization.
+    </p>
 
-      <h2>Hero section</h2>
-      <img
-        src="bubacat-hero-section.webp"
-        alt="BubacatCity Hero Section"
-        title="BubacatCity Hero Section"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
-      <p>
-        For the hero section I added 8 ierogliphs icons + a script that slowly
-        shows them one by one randomly on the hero section. Since it's taking
-        2-3 sec to load and display, I added a countdown fade animation to make
-        it look more engaging.
-      </p>
+    <h2>Hero section</h2>
+    <img src="bubacat-hero-section.webp" alt="BubacatCity Hero Section" title="BubacatCity Hero Section" loading="lazy"
+      style="max-width: 100%; height: auto" />
+    <p>
+      For the hero section I added 8 ierogliphs icons + a script that slowly
+      shows them one by one randomly on the hero section. Since it's taking
+      2-3 sec to load and display, I added a countdown fade animation to make
+      it look more engaging.
+    </p>
 
-      <h2>Meet the Cats Section</h2>
-      <img
-        src="bubacat-meet-the-cats-cards.webp"
-        alt="BubacatCity Meet the Cats Section"
-        title="BubacatCity Meet the Cats Section"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
-      <p>
-        For the meet the cats section I created 3 cards with 3 cat profiles and
-        3 buttons "Find out More", and on click I want this button to dissapear
-        and show the cat's description. So I created container (div) =
-        .reveal-container class, and inside it put the heading = .hidden-text
-        class, and button = .reveal-text class. To make it work I used
-        javascript code, that on click changes the style of display to none, and
-        heading display to block. I pasted this code inside footer, using
-        <a href="https://wordpress.org/plugins/insert-headers-and-footers/"
-          >Code Snippets Plugin</a
-        >. Here is the code:
-      </p>
+    <h2>Meet the Cats Section</h2>
+    <img src="bubacat-meet-the-cats-cards.webp" alt="BubacatCity Meet the Cats Section"
+      title="BubacatCity Meet the Cats Section" loading="lazy" style="max-width: 100%; height: auto" />
+    <p>
+      For the meet the cats section I created 3 cards with 3 cat profiles and
+      3 buttons "Find out More", and on click I want this button to dissapear
+      and show the cat's description. So I created container (div) =
+      .reveal-container class, and inside it put the heading = .hidden-text
+      class, and button = .reveal-text class. To make it work I used
+      javascript code, that on click changes the style of display to none, and
+      heading display to block. I pasted this code inside footer, using
+      <a href="https://wordpress.org/plugins/insert-headers-and-footers/">Code Snippets Plugin</a>. Here is the code:
+    </p>
 
-      <div class="grid-container">
-        <div class="flex-row">
-          <label>Code:</label>
-          <button class="copy-btn">Copy Code</button>
-        </div>
-        <div class="code-row">
-          <code>
+    <div class="grid-container">
+      <div class="flex-row">
+        <label>Code:</label>
+        <button class="copy-btn">Copy Code</button>
+      </div>
+      <div class="code-row">
+        <code>
             <em>#script start</em> <br />
             document.addEventListener("DOMContentLoaded", function () { <br />
             document.querySelectorAll(".reveal-container").forEach((container)
@@ -299,60 +237,40 @@
             } <br />
             }); <br />
             });<br />
-            <em>#script end</em></code
-          >
-        </div>
+            <em>#script end</em></code>
       </div>
+    </div>
 
-      <h2>Blog Section</h2>
-      <img
-        src="bubacat-blog-preview.webp"
-        alt="BubacatCity Blog Articles Section"
-        title="BubacatCity Blog Section"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
-      <p>
-        To make the blog section I used
-        <a href="https://wordpress.org/plugins/the-post-grid/"
-          >The Post Grid Plugin</a
-        >
-        for WordPress and customized css to match the site style.
-      </p>
-      <img
-        src="bubacat-blog-post-grid.webp"
-        alt="BubacatCity The Post Grid Plugin for Blog Section"
-        title="BubacatCity The Post Grid Plugin for Blog Section"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
-      <p>
+    <h2>Blog Section</h2>
+    <img src="bubacat-blog-preview.webp" alt="BubacatCity Blog Articles Section" title="BubacatCity Blog Section"
+      loading="lazy" style="max-width: 100%; height: auto" />
+    <p>
+      To make the blog section I used
+      <a href="https://wordpress.org/plugins/the-post-grid/">The Post Grid Plugin</a>
+      for WordPress and customized css to match the site style.
+    </p>
+    <img src="bubacat-blog-post-grid.webp" alt="BubacatCity The Post Grid Plugin for Blog Section"
+      title="BubacatCity The Post Grid Plugin for Blog Section" loading="lazy" style="max-width: 100%; height: auto" />
+    <p>
 
-      <h2>Gallery Section</h2>
-      <img
-        src="bubacat-gallery-preview.webp"
-        alt="BubacatCity Gallery Section"
-        title="BubacatCity Gallery Section"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
-        And as for the Gallery I used
-        <a href="https://wordpress.org/plugins/modula-best-grid-gallery/"
-          >Modula Image Gallery – Photo Grid</a
-        >. I also decided to add option to change images in the gallery by Arrows key press (left arrow - previous image, right arrow - next image). To make it work I used
-        javascript code, that on keydown clicks left or right arrow. I pasted this code inside footer, using
-        <a href="https://wordpress.org/plugins/insert-headers-and-footers/"
-          >Code Snippets Plugin</a
-        >. Here is the code:
-      </p>
+    <h2>Gallery Section</h2>
+    <img src="bubacat-gallery-preview.webp" alt="BubacatCity Gallery Section" title="BubacatCity Gallery Section"
+      loading="lazy" style="max-width: 100%; height: auto" />
+    And as for the Gallery I used
+    <a href="https://wordpress.org/plugins/modula-best-grid-gallery/">Modula Image Gallery – Photo Grid</a>. I also
+    decided to add option to change images in the gallery by Arrows key press (left arrow - previous image, right arrow
+    - next image). To make it work I used
+    javascript code, that on keydown clicks left or right arrow. I pasted this code inside footer, using
+    <a href="https://wordpress.org/plugins/insert-headers-and-footers/">Code Snippets Plugin</a>. Here is the code:
+    </p>
 
-      <div class="grid-container">
-        <div class="flex-row">
-          <label>Code:</label>
-          <button class="copy-btn">Copy Code</button>
-        </div>
-        <div class="code-row">
-          <code>
+    <div class="grid-container">
+      <div class="flex-row">
+        <label>Code:</label>
+        <button class="copy-btn">Copy Code</button>
+      </div>
+      <div class="code-row">
+        <code>
             <em>#script start</em> <br />
             document.addEventListener('keydown', function(e) { <br />
     const container = document.querySelector('.modula-fancybox-container'); <br />
@@ -370,90 +288,70 @@
     if (e.key === 'ArrowRight') next.click(); <br />
     if (e.key === 'ArrowLeft') prev.click(); <br />
 }); <br />
-            <em>#script end</em></code
-          >
-        </div>
+            <em>#script end</em></code>
       </div>
-      </p>
-
-      <h2>Shop</h2>
-      <p>
-        For the shop I used WooCommerce plugin but haven't configured the cart
-        and checkout yet, because currently finishing the cards and box designs
-        so later to print it and be ready to sell. The playing cards will look
-        like this:
-      </p>
-
-      <img
-        src="bubacat-cards-4-preview.webp"
-        alt="BubacatCity Playing Cards"
-        title="BubacatCity Playing Cards"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
-
-      <p>
-        And the Box design is already sent for printing as well, and hopefully will look like this when printed:
-      </p>
-      <img
-        src="bubacat-print-box.webp"
-        alt="BubacatCity Box Design"
-        title="BubacatCity Box Design"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
-
-      <h2>Final Result</h2>
-
-      <p>
-        BubacatCity uses fast layouts, compressed images, and simple Elementor
-        sections. The design stays consistent across all devices and supports
-        the game look of the project.
-      </p>
-
-      <a href="nocap.html"
-        ><div class="item">
-          <h3>NoCap E-Commerce Project</h3>
-          <img
-            src="../website/NoCap-home.webp"
-            alt="NoCap Shop Homepage"
-            title="NoCap Shop Homepage"
-            loading="lazy"
-          /></div
-      ></a>
-
-      <a href="joksglobalsport.com.html"
-        ><div class="item">
-          <h3>Football Academy site example</h3>
-          <img
-            src="../website/home-joksglobalsport.com.webp"
-            alt="joksglobalsport.com football academy hero section"
-            title="joksglobalsport landing page, hero section with banner"
-            loading="lazy"
-          /></div
-      ></a>
-
-      <a href="japalandia.com.html"
-        ><div class="item">
-          <h3>Japalandia work abroad Landing Page</h3>
-          <img
-            src="../website/home-1-screen-japalandia.webp"
-            alt="Japalandia home section with Call To Action Button"
-            title="Japalandia landing page, hero section with banner for work abroad"
-            loading="lazy"
-          /></div
-      ></a>
     </div>
+    </p>
 
-    <script src="../scripts/index-1.js"></script>
-    <script src="../scripts/index-3.js"></script>
+    <h2>Shop</h2>
+    <p>
+      For the shop I used WooCommerce plugin but haven't configured the cart
+      and checkout yet, because currently finishing the cards and box designs
+      so later to print it and be ready to sell. The playing cards will look
+      like this:
+    </p>
 
-    <script src="../scripts/copy-btn.js"></script>
-    <script>
-      // Show body once page is fully loaded
-      window.addEventListener("load", function () {
-        document.body.classList.add("loaded");
-      });
-    </script>
-  </body>
+    <img src="bubacat-cards-4-preview.webp" alt="BubacatCity Playing Cards" title="BubacatCity Playing Cards"
+      loading="lazy" style="max-width: 100%; height: auto" />
+
+    <p>
+      And the Box design is already sent for printing as well, and hopefully will look like this when printed:
+    </p>
+    <img src="bubacat-print-box.webp" alt="BubacatCity Box Design" title="BubacatCity Box Design" loading="lazy"
+      style="max-width: 100%; height: auto" />
+
+    <h2>Final Result</h2>
+
+    <p>
+      BubacatCity uses fast layouts, compressed images, and simple Elementor
+      sections. The design stays consistent across all devices and supports
+      the game look of the project.
+    </p>
+
+    <a href="nocap.html">
+      <div class="item">
+        <h3>NoCap E-Commerce Project</h3>
+        <img src="../website/NoCap-home.webp" alt="NoCap Shop Homepage" title="NoCap Shop Homepage" loading="lazy" />
+      </div>
+    </a>
+
+    <a href="joksglobalsport.com.html">
+      <div class="item">
+        <h3>Football Academy site example</h3>
+        <img src="../website/home-joksglobalsport.com.webp" alt="joksglobalsport.com football academy hero section"
+          title="joksglobalsport landing page, hero section with banner" loading="lazy" />
+      </div>
+    </a>
+
+    <a href="japalandia.com.html">
+      <div class="item">
+        <h3>Japalandia work abroad Landing Page</h3>
+        <img src="../website/home-1-screen-japalandia.webp" alt="Japalandia home section with Call To Action Button"
+          title="Japalandia landing page, hero section with banner for work abroad" loading="lazy" />
+      </div>
+    </a>
+  </div>
+
+  <script src="../scripts/index-1.js"></script>
+  <script src="../scripts/index-3.js"></script>
+
+  <script src="../scripts/copy-btn.js"></script>
+  <script>
+    // Show body once page is fully loaded
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
+
 </html>

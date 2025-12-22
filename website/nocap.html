@@ -1,50 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      body {
-        visibility: hidden;
-        opacity: 0;
-      }
 
-      body.loaded {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.3s ease-in;
-      }
-    </style>
-    <link id="stylesheet" rel="stylesheet" />
-    <!-- <script src="/scripts/index-1.js"></script> -->
+<head>
+  <style>
+    body {
+      visibility: hidden;
+      opacity: 0;
+    }
 
-    <script>
-      fetch("/shared/head.html")
-        .then((r) => r.text())
-        .then((html) => document.head.insertAdjacentHTML("beforeend", html))
-        .catch((e) => console.error("Failed to load shared head:", e));
-    </script>
+    body.loaded {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease-in;
+    }
+  </style>
+  <link id="stylesheet" rel="stylesheet" />
+  <!-- <script src="/scripts/index-1.js"></script> -->
 
-    <script src="/scripts/cookie-check.js"></script>
+  <script>
+    fetch("/shared/head.html")
+      .then((r) => r.text())
+      .then((html) => document.head.insertAdjacentHTML("beforeend", html))
+      .catch((e) => console.error("Failed to load shared head:", e));
+  </script>
 
-    <!-- Open Graph Tags -->
-    <meta property="og:logo" content="../favicon/favicon-32x32.png" />
-    <meta
-      property="og:title"
-      content="Crafting the NoCap Online Store: A Development Journey"
-    />
-    <meta
-      property="og:description"
-      content="A technical deep dive into building an e-commerce platform with React and FastAPI, featuring dynamic product cards, PostgreSQL integration, and Stripe payment functionality."
-    />
-    <meta property="og:url" content="https://kolodych.com/website/nocap.html" />
-    <meta
-      property="og:image"
-      content="https://kolodych.com/website/nocap-ecommerce-preview-1000.webp"
-    />
-    <meta property="og:type" content="article" />
-    <!-- END Open Graph Tags -->
+  <script src="/scripts/cookie-check.js"></script>
 
-    <!-- Schema Markup Addition -->
-    <script type="application/ld+json">
+  <!-- Open Graph Tags -->
+  <meta property="og:logo" content="../favicon/favicon-32x32.png" />
+  <meta property="og:title" content="Crafting the NoCap Online Store: A Development Journey" />
+  <meta property="og:description"
+    content="A technical deep dive into building an e-commerce platform with React and FastAPI, featuring dynamic product cards, PostgreSQL integration, and Stripe payment functionality." />
+  <meta property="og:url" content="https://kolodych.com/website/nocap.html" />
+  <meta property="og:image" content="https://kolodych.com/website/nocap-ecommerce-preview-1000.webp" />
+  <meta property="og:type" content="article" />
+  <!-- END Open Graph Tags -->
+
+  <!-- Schema Markup Addition -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "Article",
@@ -68,28 +61,20 @@
         "dateModified": "2025-03-03T14:19:00Z"
       }
     </script>
-    <!-- END Schema Markup Addition -->
+  <!-- END Schema Markup Addition -->
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="NoCap Shop: React & FastAPI E-Commerce Development"
-    />
-    <meta
-      name="twitter:description"
-      content="A technical deep dive into creating a modern online store with product recommendations, performance optimizations, and Stripe payment integration."
-    />
-    <meta
-      name="twitter:image"
-      content="https://kolodych.com/website/nocap-ecommerce-preview-1000.webp"
-    />
-    <meta name="twitter:site" content="@serhiikolodych" />
-    <!-- END Twitter Card Tags -->
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NoCap Shop: React & FastAPI E-Commerce Development" />
+  <meta name="twitter:description"
+    content="A technical deep dive into creating a modern online store with product recommendations, performance optimizations, and Stripe payment integration." />
+  <meta name="twitter:image" content="https://kolodych.com/website/nocap-ecommerce-preview-1000.webp" />
+  <meta name="twitter:site" content="@serhiikolodych" />
+  <!-- END Twitter Card Tags -->
 
-    <!-- Cookies Load or NOT -->
-    <!-- Load the tracking.js file -->
-    <!-- <script src="../tracking.js"></script>
+  <!-- Cookies Load or NOT -->
+  <!-- Load the tracking.js file -->
+  <!-- <script src="../tracking.js"></script>
     <script>
     function cookies_manager() {
         var savedColor = localStorage.getItem('buttonColor');
@@ -102,297 +87,265 @@
         }
     } -->
 
-    <!-- // Ensure the cookies_manager function is called when the window loads
+  <!-- // Ensure the cookies_manager function is called when the window loads
     window.onload = cookies_manager;
     </script> -->
 
-    <title>
-      Building NoCap: A Full-Stack React & FastAPI E-Commerce Solution
-    </title>
-    <meta
-      name="description"
-      content="Discover the NoCap store 🛒: a React + FastAPI e-commerce project featuring ⚡ fast performance, 💳 secure checkout, and clean design."
-    />
-    <meta
-      name="keywords"
-      content="React Developer, Internet Shop Design, Website Development, Internet Shop SEO Optimization"
-    />
-    <link rel="canonical" href="https://kolodych.com/website/nocap.html" />
+  <title>
+    Building NoCap: A Full-Stack React & FastAPI E-Commerce Solution
+  </title>
+  <meta name="description"
+    content="Discover the NoCap store 🛒: a React + FastAPI e-commerce project featuring ⚡ fast performance, 💳 secure checkout, and clean design." />
+  <meta name="keywords"
+    content="React Developer, Internet Shop Design, Website Development, Internet Shop SEO Optimization" />
+  <link rel="canonical" href="https://kolodych.com/website/nocap.html" />
 
-    <meta name="theme-color" content="#0b6a30" />
+  <meta name="theme-color" content="#0b6a30" />
 
-    <!-- Android Chrome (light mode + dark mode) -->
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: light)"
-      content="#0b6a30"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#0b6a30"
-    />
+  <!-- Android Chrome (light mode + dark mode) -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6a30" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b6a30" />
 
-    <!-- Windows / Edge tiles -->
-    <meta name="msapplication-TileColor" content="#0b6a30" />
+  <!-- Windows / Edge tiles -->
+  <meta name="msapplication-TileColor" content="#0b6a30" />
 
-    <!-- iOS Safari (status bar) -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="Website" />
-  </head>
+  <!-- iOS Safari (status bar) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Website" />
+</head>
 
-  <body>
-    <!-- Accessibility Enhancements (if there are interactive elements) -->
-    <div id="copied" aria-live="polite">Copied.</div>
-    <!-- END Accessibility Enhancements (if there are interactive elements) -->
+<body>
+  <!-- Accessibility Enhancements (if there are interactive elements) -->
+  <div id="copied" aria-live="polite">Copied.</div>
+  <!-- END Accessibility Enhancements (if there are interactive elements) -->
 
-    <!-- Background Canvas -->
-    <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
+  <!-- Background Canvas -->
+  <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
 
-    <div id="back-to-home">Back to Home</div>
+  <div id="back-to-home">Back to Home</div>
 
-    <a href="#" id="change-style-link">White</a>
+  <a href="#" id="change-style-icon">White</a>
 
-    <!-- Article Container -->
-    <div class="article-container">
-      <h1>NoCap Internet Shop – React & FastAPI</h1>
-      <p><em>Published on March 2, 2025</em></p>
+  <!-- Article Container -->
+  <div class="article-container">
+    <h1>NoCap Internet Shop – React & FastAPI</h1>
+    <p><em>Published on March 2, 2025</em></p>
 
-      <!-- Introduction Section -->
-      <p>
-        Developing the
-        <a rel="nofollow" target="_blank" href="http://109.107.157.15:5173"
-          >NoCap shop</a
-        >
-        was an exciting challenge. This was my first time building a
-        full-fledged React-based online store from scratch, integrating backend
-        logic with FastAPI, and ensuring a seamless shopping experience.
-      </p>
-      <img
-        src="nocap-home.webp"
-        alt="NoCap Shop Homepage"
-        title="NoCap Shop Homepage"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
+    <!-- Introduction Section -->
+    <p>
+      Developing the
+      <a rel="nofollow" target="_blank" href="http://109.107.157.15:5173">NoCap shop</a>
+      was an exciting challenge. This was my first time building a
+      full-fledged React-based online store from scratch, integrating backend
+      logic with FastAPI, and ensuring a seamless shopping experience.
+    </p>
+    <img src="nocap-home.webp" alt="NoCap Shop Homepage" title="NoCap Shop Homepage" loading="lazy"
+      style="max-width: 100%; height: auto" />
 
-      <!-- Step 1: Technologies and Frameworks -->
-      <h2>Technologies and Frameworks</h2>
-      <table border="1" cellspacing="0" cellpadding="5">
-        <tr>
-          <th>Component</th>
-          <th>Technology Used</th>
-        </tr>
-        <tr>
-          <td>Frontend</td>
-          <td>React + Vite</td>
-        </tr>
-        <tr>
-          <td>Backend</td>
-          <td>FastAPI (Python)</td>
-        </tr>
-        <tr>
-          <td>Database</td>
-          <td>PostgreSQL</td>
-        </tr>
-        <tr>
-          <td>Payments</td>
-          <td>Stripe</td>
-        </tr>
-        <tr>
-          <td>Reverse Proxy</td>
-          <td>Nginx</td>
-        </tr>
-      </table>
+    <!-- Step 1: Technologies and Frameworks -->
+    <h2>Technologies and Frameworks</h2>
+    <table border="1" cellspacing="0" cellpadding="5">
+      <tr>
+        <th>Component</th>
+        <th>Technology Used</th>
+      </tr>
+      <tr>
+        <td>Frontend</td>
+        <td>React + Vite</td>
+      </tr>
+      <tr>
+        <td>Backend</td>
+        <td>FastAPI (Python)</td>
+      </tr>
+      <tr>
+        <td>Database</td>
+        <td>PostgreSQL</td>
+      </tr>
+      <tr>
+        <td>Payments</td>
+        <td>Stripe</td>
+      </tr>
+      <tr>
+        <td>Reverse Proxy</td>
+        <td>Nginx</td>
+      </tr>
+    </table>
 
-      <!-- Step 2: UI/UX Design Decisions -->
-      <h2>UI/UX Design Decisions</h2>
+    <!-- Step 2: UI/UX Design Decisions -->
+    <h2>UI/UX Design Decisions</h2>
 
-      <h3>Product Card Design</h3>
-      <p>
-        The product cards are simple and user-friendly, showing the product
-        image, title, price, and an “Add to Cart” button for a smooth purchasing
-        experience.
-      </p>
-      <img
-        src="nocap-product.webp"
-        alt="NoCap Product Card"
-        title="NoCap Product Card Design"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
+    <h3>Product Card Design</h3>
+    <p>
+      The product cards are simple and user-friendly, showing the product
+      image, title, price, and an “Add to Cart” button for a smooth purchasing
+      experience.
+    </p>
+    <img src="nocap-product.webp" alt="NoCap Product Card" title="NoCap Product Card Design" loading="lazy"
+      style="max-width: 100%; height: auto" />
 
-      <h3>Filtering and Sorting</h3>
-      <p>
-        React manages state-based filtering, allowing users to sort products by
-        category, price, or name dynamically.
-      </p>
+    <h3>Filtering and Sorting</h3>
+    <p>
+      React manages state-based filtering, allowing users to sort products by
+      category, price, or name dynamically.
+    </p>
 
-      <h3>Product Recommendation Algorithm</h3>
-      <p>
-        Using collaborative filtering, the platform suggests products based on
-        past user interactions, helping customers discover relevant items.
-      </p>
+    <h3>Product Recommendation Algorithm</h3>
+    <p>
+      Using collaborative filtering, the platform suggests products based on
+      past user interactions, helping customers discover relevant items.
+    </p>
 
-      <h3>Stripe Payment Integration</h3>
-      <p>
-        The backend creates a checkout session via the Stripe API. The frontend
-        then redirects users to a secure Stripe-hosted page. After payment,
-        users are redirected back to the site.
-      </p>
+    <h3>Stripe Payment Integration</h3>
+    <p>
+      The backend creates a checkout session via the Stripe API. The frontend
+      then redirects users to a secure Stripe-hosted page. After payment,
+      users are redirected back to the site.
+    </p>
 
-      <h3>Performance Optimization</h3>
-      <ul>
-        <li>
-          <strong>Lazy loading:</strong> Product images load only when needed,
-          reducing initial load time.
-        </li>
-        <li>
-          <strong>Code splitting:</strong> Minimizes JavaScript bundle sizes for
-          faster rendering.
-        </li>
-      </ul>
+    <h3>Performance Optimization</h3>
+    <ul>
+      <li>
+        <strong>Lazy loading:</strong> Product images load only when needed,
+        reducing initial load time.
+      </li>
+      <li>
+        <strong>Code splitting:</strong> Minimizes JavaScript bundle sizes for
+        faster rendering.
+      </li>
+    </ul>
 
-      <!-- Step 3: Backend Setup -->
-      <h2>Backend Setup</h2>
+    <!-- Step 3: Backend Setup -->
+    <h2>Backend Setup</h2>
 
-      <h3>Install Dependencies</h3>
-      <div class="grid-container">
-        <div class="flex-row">
-          <label>Terminal / Console</label>
-          <button class="copy-btn">Copy Code</button>
-        </div>
-        <div class="code-row">
-          <code> pip install -r backend/requirements.txt </code>
-        </div>
+    <h3>Install Dependencies</h3>
+    <div class="grid-container">
+      <div class="flex-row">
+        <label>Terminal / Console</label>
+        <button class="copy-btn">Copy Code</button>
       </div>
+      <div class="code-row">
+        <code> pip install -r backend/requirements.txt </code>
+      </div>
+    </div>
 
-      <h3>Run the Application</h3>
-      <div class="grid-container">
-        <div class="flex-row">
-          <label>Terminal / Console</label>
-          <button class="copy-btn">Copy Code</button>
-        </div>
-        <div class="code-row">
-          <code>
+    <h3>Run the Application</h3>
+    <div class="grid-container">
+      <div class="flex-row">
+        <label>Terminal / Console</label>
+        <button class="copy-btn">Copy Code</button>
+      </div>
+      <div class="code-row">
+        <code>
             uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
           </code>
-        </div>
       </div>
+    </div>
 
-      <h2>API Endpoints</h2>
-      <table>
-        <tr>
-          <th>Endpoint</th>
-          <th>Method</th>
-          <th>Description</th>
-        </tr>
-        <tr>
-          <td>/caps</td>
-          <td>GET</td>
-          <td>Get all caps</td>
-        </tr>
-        <tr>
-          <td>/cap/{cap_id}</td>
-          <td>GET</td>
-          <td>Get cap by ID</td>
-        </tr>
-        <tr>
-          <td>/add_cap</td>
-          <td>POST</td>
-          <td>Add a new cap</td>
-        </tr>
-        <tr>
-          <td>/create-checkout-session</td>
-          <td>POST</td>
-          <td>Create a Stripe checkout session</td>
-        </tr>
-      </table>
+    <h2>API Endpoints</h2>
+    <table>
+      <tr>
+        <th>Endpoint</th>
+        <th>Method</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>/caps</td>
+        <td>GET</td>
+        <td>Get all caps</td>
+      </tr>
+      <tr>
+        <td>/cap/{cap_id}</td>
+        <td>GET</td>
+        <td>Get cap by ID</td>
+      </tr>
+      <tr>
+        <td>/add_cap</td>
+        <td>POST</td>
+        <td>Add a new cap</td>
+      </tr>
+      <tr>
+        <td>/create-checkout-session</td>
+        <td>POST</td>
+        <td>Create a Stripe checkout session</td>
+      </tr>
+    </table>
 
-      <!-- Step 4: Frontend Setup -->
-      <h2>Frontend Setup</h2>
+    <!-- Step 4: Frontend Setup -->
+    <h2>Frontend Setup</h2>
 
-      <h3>Install Dependencies</h3>
-      <div class="grid-container">
-        <div class="flex-row">
-          <label>Terminal / Console</label>
-          <button class="copy-btn">Copy Code</button>
-        </div>
-        <div class="code-row">
-          <code> npm install </code>
-        </div>
+    <h3>Install Dependencies</h3>
+    <div class="grid-container">
+      <div class="flex-row">
+        <label>Terminal / Console</label>
+        <button class="copy-btn">Copy Code</button>
       </div>
-
-      <h3>Run Development Server</h3>
-      <div class="grid-container">
-        <div class="flex-row">
-          <label>Terminal / Console</label>
-          <button class="copy-btn">Copy Code</button>
-        </div>
-        <div class="code-row">
-          <code> npm run dev --host --port 5173 </code>
-        </div>
+      <div class="code-row">
+        <code> npm install </code>
       </div>
+    </div>
 
-      <h3>Build for Production</h3>
-      <div class="grid-container">
-        <div class="flex-row">
-          <label>Terminal / Console</label>
-          <button class="copy-btn">Copy Code</button>
-        </div>
-        <div class="code-row">
-          <code> npm run build </code>
-        </div>
+    <h3>Run Development Server</h3>
+    <div class="grid-container">
+      <div class="flex-row">
+        <label>Terminal / Console</label>
+        <button class="copy-btn">Copy Code</button>
       </div>
+      <div class="code-row">
+        <code> npm run dev --host --port 5173 </code>
+      </div>
+    </div>
 
-      <img
-        src="nocap-cart.webp"
-        alt="NoCap Shopping Cart"
-        title="NoCap Shopping Cart View"
-        loading="lazy"
-        style="max-width: 100%; height: auto"
-      />
+    <h3>Build for Production</h3>
+    <div class="grid-container">
+      <div class="flex-row">
+        <label>Terminal / Console</label>
+        <button class="copy-btn">Copy Code</button>
+      </div>
+      <div class="code-row">
+        <code> npm run build </code>
+      </div>
+    </div>
 
-      <!-- Recommendations -->
-      <h2>My Recommendations</h2>
-      <ul>
-        <li>
-          <strong>Improve SEO:</strong> Implement proper meta tags and
-          structured data to enhance search visibility.
-        </li>
-        <li>
-          <strong>Enhance Security:</strong> Use HTTPS, implement rate-limiting,
-          and regularly update dependencies.
-        </li>
-        <li>
-          <strong>Optimize Performance:</strong> Implement server-side caching
-          for frequently accessed pages.
-        </li>
-        <li>
-          <strong>Improve UX:</strong> Add animations and a progress indicator
-          for checkout to enhance the user experience.
-        </li>
-        <li>
-          <strong>Expand Payment Methods:</strong> Support more payment options
-          like PayPal, Apple Pay, and Google Pay.
-        </li>
-      </ul>
+    <img src="nocap-cart.webp" alt="NoCap Shopping Cart" title="NoCap Shopping Cart View" loading="lazy"
+      style="max-width: 100%; height: auto" />
 
-      <!-- Step 5: Final Thoughts -->
-      <h2>Conclusion</h2>
-      <p>
-        The NoCap shop was a great learning experience, from setting up a
-        full-stack e-commerce platform to handling payments and optimizing
-        performance. The combination of React, FastAPI, and PostgreSQL provides
-        a scalable and efficient solution. If you’re interested in building a
-        similar platform, let’s connect!
-      </p>
+    <!-- Recommendations -->
+    <h2>My Recommendations</h2>
+    <ul>
+      <li>
+        <strong>Improve SEO:</strong> Implement proper meta tags and
+        structured data to enhance search visibility.
+      </li>
+      <li>
+        <strong>Enhance Security:</strong> Use HTTPS, implement rate-limiting,
+        and regularly update dependencies.
+      </li>
+      <li>
+        <strong>Optimize Performance:</strong> Implement server-side caching
+        for frequently accessed pages.
+      </li>
+      <li>
+        <strong>Improve UX:</strong> Add animations and a progress indicator
+        for checkout to enhance the user experience.
+      </li>
+      <li>
+        <strong>Expand Payment Methods:</strong> Support more payment options
+        like PayPal, Apple Pay, and Google Pay.
+      </li>
+    </ul>
 
-      <!-- <div class="item">
+    <!-- Step 5: Final Thoughts -->
+    <h2>Conclusion</h2>
+    <p>
+      The NoCap shop was a great learning experience, from setting up a
+      full-stack e-commerce platform to handling payments and optimizing
+      performance. The combination of React, FastAPI, and PostgreSQL provides
+      a scalable and efficient solution. If you’re interested in building a
+      similar platform, let’s connect!
+    </p>
+
+    <!-- <div class="item">
             <h3 class="dancing-text">
                 <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span> 
                 <span>a</span><span>n</span><span>y</span><span>t</span><span>h</span><span>i</span><span>n</span><span>g</span><span>?</span>
@@ -404,51 +357,44 @@
             </form>
         </div> -->
 
-      <a href="japalandia.com.html"
-        ><div class="item">
-          <h3>Japalandia work abroad Landing Page</h3>
-          <img
-            src="../website/home-1-screen-japalandia.webp"
-            alt="Japalandia home section with Call To Action Button"
-            title="Japalandia landing page, hero section with banner for work abroad"
-            loading="lazy"
-          /></div
-      ></a>
+    <a href="japalandia.com.html">
+      <div class="item">
+        <h3>Japalandia work abroad Landing Page</h3>
+        <img src="../website/home-1-screen-japalandia.webp" alt="Japalandia home section with Call To Action Button"
+          title="Japalandia landing page, hero section with banner for work abroad" loading="lazy" />
+      </div>
+    </a>
 
-      <a href="joksglobalsport.com.html"
-        ><div class="item">
-          <h3>Football Academy site example</h3>
-          <img
-            src="home-joksglobalsport.com.webp"
-            alt="joksglobalsport.com football academy hero section"
-            title="joksglobalsport landing page, hero section with banner"
-            loading="lazy"
-          /></div
-      ></a>
+    <a href="joksglobalsport.com.html">
+      <div class="item">
+        <h3>Football Academy site example</h3>
+        <img src="home-joksglobalsport.com.webp" alt="joksglobalsport.com football academy hero section"
+          title="joksglobalsport landing page, hero section with banner" loading="lazy" />
+      </div>
+    </a>
 
-      <a href="virgincourtesans.com.html"
-        ><div class="item">
-          <h3>Model Agency site example</h3>
-          <img
-            src="Gallery-preview-using-the-post-grid-plugin-wordpress.webp"
-            alt="VirginCourtesans.com model agency gallery"
-            title="VirginCourtesans.com Models gallery preview"
-            loading="lazy"
-          /></div
-      ></a>
-    </div>
+    <a href="virgincourtesans.com.html">
+      <div class="item">
+        <h3>Model Agency site example</h3>
+        <img src="Gallery-preview-using-the-post-grid-plugin-wordpress.webp"
+          alt="VirginCourtesans.com model agency gallery" title="VirginCourtesans.com Models gallery preview"
+          loading="lazy" />
+      </div>
+    </a>
+  </div>
 
-    <link id="stylesheet" rel="stylesheet" />
+  <link id="stylesheet" rel="stylesheet" />
 
-    <script src="../scripts/copy-btn.js"></script>
+  <script src="../scripts/copy-btn.js"></script>
 
-    <script src="../scripts/index-1.js"></script>
-    <script src="../scripts/index-3.js"></script>
-    <script>
-      // Show body once page is fully loaded
-      window.addEventListener("load", function () {
-        document.body.classList.add("loaded");
-      });
-    </script>
-  </body>
+  <script src="../scripts/index-1.js"></script>
+  <script src="../scripts/index-3.js"></script>
+  <script>
+    // Show body once page is fully loaded
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
+
 </html>

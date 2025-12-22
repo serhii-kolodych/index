@@ -1,112 +1,151 @@
-// Load the appropriate background script based on the whiteState
-<script>
-    var whiteState = localStorage.getItem('white') || '0'; // Default to '0'
-    setBackgroundScript();
+// Initialize state
+let whiteState = localStorage.getItem("white") || "0";
 
-    function setBackgroundScript() {
-        var bgScript = document.getElementById('backgroundScript');
-        if (!bgScript) {
-            bgScript = document.createElement('script');
-            bgScript.id = 'backgroundScript';
-            bgScript.src = (whiteState === '1') ? 'background-white.js' : 'background.js';
-            document.body.appendChild(bgScript);
-        } else {
-            bgScript.src = (whiteState === '1') ? 'background-white.js' : 'background.js';
-        }
-    }
+// Set background script on load
+function setBackgroundScript() {
+  const existingScript = document.getElementById("backgroundScript");
+  const scriptSrc =
+    whiteState === "1" ? "background-white.js" : "background.js";
 
-    function cookiesManager() {
-        const savedColor = localStorage.getItem('buttonColor');
-        if (savedColor === 'green') {
-            loadTrackingScript();
-        }
-    }
+  if (existingScript) {
+    existingScript.remove();
+  }
 
-    function loadTrackingScript() {
-        const script = document.createElement('script');
-        script.src = 'tracking.js';
-        script.async = true; // Optional, to load asynchronously
-        script.onerror = function() {
-            console.error("Failed to load tracking.js");
-        };
-        document.head.appendChild(script);
-    }
+  const bgScript = document.createElement("script");
+  bgScript.id = "backgroundScript";
+  bgScript.src = scriptSrc;
+  bgScript.onerror = function () {
+    console.error(`Failed to load ${scriptSrc}`);
+  };
+  document.body.appendChild(bgScript);
+}
 
-    function applyButtonStyles() {
-        const savedColor = localStorage.getItem('buttonColor');
-        const savedDateTime = localStorage.getItem('dateTime');
-        const feedbackMessage = document.getElementById('feedbackMessage');
+// Load tracking script if cookies accepted
+function cookiesManager() {
+  const savedColor = localStorage.getItem("buttonColor");
+  if (savedColor === "green") {
+    loadTrackingScript();
+  }
+}
 
-        if (savedDateTime) {
-            feedbackMessage.textContent = savedDateTime;
-            feedbackMessage.style.display = 'block';
-        }
+function loadTrackingScript() {
+  // Prevent duplicate script loading
+  if (document.querySelector('script[src="tracking.js"]')) {
+    return;
+  }
 
-        if (savedColor) {
-            document.querySelectorAll('.response-button').forEach(button => {
-                button.classList.toggle('active', button.dataset.color === savedColor);
-            });
-            const message = savedColor === 'green'
-                ? 'You agreed to use cookies on your device. Date and time:'
-                : 'You blocked this site from saving cookies on your device. Date and time:';
-            showFeedback(message);
-        }
-    }
+  const script = document.createElement("script");
+  script.src = "tracking.js";
+  script.async = true;
+  script.onerror = function () {
+    console.error("Failed to load tracking.js");
+  };
+  document.head.appendChild(script);
+}
 
-    function showFeedback(message) {
-        const feedbackMessage = document.getElementById('feedbackMessage');
-        const dateTime = new Date().toLocaleString();
-        const fullMessage = `${message} ${dateTime}`;
-        localStorage.setItem('dateTime', fullMessage);
-        feedbackMessage.textContent = fullMessage;
-        feedbackMessage.style.display = 'block';
-    }
+// Apply saved button styles
+function applyButtonStyles() {
+  const savedColor = localStorage.getItem("buttonColor");
+  const savedDateTime = localStorage.getItem("dateTime");
+  const feedbackMessage = document.getElementById("feedbackMessage");
 
-    function handleButtonClick(color) {
-        const message = color === 'green'
-            ? 'You agreed to use cookies on your device. Date and time:'
-            : 'You blocked this site from saving cookies on your device. Date and time:';
+  if (!feedbackMessage) return;
 
-        localStorage.setItem('buttonColor', color);
-        applyButtonStyles();
-        showFeedback(message);
+  if (savedDateTime) {
+    feedbackMessage.textContent = savedDateTime;
+    feedbackMessage.style.display = "block";
+  }
 
-        if (color === 'green') {
-            loadTrackingScript();
-            console.log("yes tracking.js 🍀 🐸");
-        }
-    }
-
-    document.getElementById('yesButton').addEventListener('click', function() {
-        handleButtonClick('green');
+  if (savedColor) {
+    document.querySelectorAll(".response-button").forEach((button) => {
+      button.classList.toggle("active", button.dataset.color === savedColor);
     });
-    document.getElementById('noButton').addEventListener('click', function() {
-        handleButtonClick('red');
-    });
+  }
+}
 
-    window.onload = function() {
-        applyButtonStyles();
-        cookiesManager();
-        setInitialStyle();
-    };
+// Show feedback message
+function showFeedback(message) {
+  const feedbackMessage = document.getElementById("feedbackMessage");
+  if (!feedbackMessage) return;
 
-    function setInitialStyle() {
-        var currentStyle = (whiteState === '1') ? 'styles-white.css' : 'styles.css';
-        document.getElementById('stylesheet').setAttribute('href', currentStyle);
+  const dateTime = new Date().toLocaleString();
+  const fullMessage = `${message} ${dateTime}`;
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var link = document.getElementById('change-style-link');
-            link.textContent = (whiteState === '1') ? "Matrix" : "White";
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                whiteState = (whiteState === '0') ? '1' : '0'; // Toggle state
-                currentStyle = (whiteState === '1') ? 'styles-white.css' : 'styles.css';
-                link.textContent = (whiteState === '1') ? "Matrix" : "White"; 
-                document.getElementById('stylesheet').setAttribute('href', currentStyle);
-                localStorage.setItem('white', whiteState);
-                setBackgroundScript();
-                location.reload();
-            });
-        });
+  localStorage.setItem("dateTime", fullMessage);
+  feedbackMessage.textContent = fullMessage;
+  feedbackMessage.style.display = "block";
+}
+
+// Handle button clicks
+function handleButtonClick(color) {
+  const message =
+    color === "green"
+      ? "You agreed to use cookies on your device. Date and time:"
+      : "You blocked this site from saving cookies on your device. Date and time:";
+
+  localStorage.setItem("buttonColor", color);
+  applyButtonStyles();
+  showFeedback(message);
+
+  if (color === "green") {
+    loadTrackingScript();
+    console.log("yes tracking.js 🍀 🐸");
+  }
+}
+
+// Set initial stylesheet
+function setInitialStyle() {
+  const currentStyle = whiteState === "1" ? "styles-white.css" : "styles.css";
+  const stylesheet = document.getElementById("stylesheet");
+
+  if (stylesheet) {
+    stylesheet.setAttribute("href", currentStyle);
+  }
+}
+
+// Setup theme toggle
+function setupThemeToggle() {
+  const link = document.getElementById("change-style-icon");
+  if (!link) return;
+
+  link.textContent = whiteState === "1" ? "Matrix" : "White";
+
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // Toggle state
+    whiteState = whiteState === "0" ? "1" : "0";
+    localStorage.setItem("white", whiteState);
+
+    // Update stylesheet
+    const newStyle = whiteState === "1" ? "styles-white.css" : "styles.css";
+    const stylesheet = document.getElementById("stylesheet");
+    if (stylesheet) {
+      stylesheet.setAttribute("href", newStyle);
     }
-</script>
+
+    // Reload page to apply new background script
+    location.reload();
+  });
+}
+
+// Initialize on DOM ready
+document.addEventListener("DOMContentLoaded", function () {
+  setBackgroundScript();
+  setInitialStyle();
+  setupThemeToggle();
+  applyButtonStyles();
+  cookiesManager();
+
+  // Setup button event listeners
+  const yesButton = document.getElementById("yesButton");
+  const noButton = document.getElementById("noButton");
+
+  if (yesButton) {
+    yesButton.addEventListener("click", () => handleButtonClick("green"));
+  }
+
+  if (noButton) {
+    noButton.addEventListener("click", () => handleButtonClick("red"));
+  }
+});

@@ -1,49 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      body {
-        visibility: hidden;
-        opacity: 0;
-      }
 
-      body.loaded {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.3s ease-in;
-      }
-    </style>
-    <link id="stylesheet" rel="stylesheet" />
+<head>
+  <style>
+    body {
+      visibility: hidden;
+      opacity: 0;
+    }
 
-    <script>
-      fetch("/shared/head.html")
-        .then((r) => r.text())
-        .then((html) => document.head.insertAdjacentHTML("beforeend", html))
-        .catch((e) => console.error("Failed to load shared head:", e));
-    </script>
+    body.loaded {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease-in;
+    }
+  </style>
+  <link id="stylesheet" rel="stylesheet" />
 
-    <script src="/scripts/cookie-check.js" defer></script>
+  <script>
+    fetch("/shared/head.html")
+      .then((r) => r.text())
+      .then((html) => document.head.insertAdjacentHTML("beforeend", html))
+      .catch((e) => console.error("Failed to load shared head:", e));
+  </script>
 
-    <!-- Open Graph Tags -->
-    <meta property="og:logo" content="../favicon/favicon-32x32.png" />
-    <meta
-      property="og:title"
-      content="How I Built the Joks Global Sport Website: A Step-by-Step Guide"
-    />
-    <meta
-      property="og:description"
-      content="Create a winning sports site! ☆ Learn to set up WordPress. ⇒ Pick perfect themes. ✓ Build engaging content with this friendly guide. ❤"
-    />
-    <meta
-      property="og:url"
-      content="https://kolodych.com/website/joksglobalsport.com.html"
-    />
-    <meta property="og:image" content="page-speed-joksglobalsport.com.webp" />
-    <meta property="og:type" content="article" />
-    <!-- END Open Graph Tags -->
+  <script src="/scripts/cookie-check.js" defer></script>
 
-    <!-- Schema Markup Addition -->
-    <script type="application/ld+json">
+  <!-- Open Graph Tags -->
+  <meta property="og:logo" content="../favicon/favicon-32x32.png" />
+  <meta property="og:title" content="How I Built the Joks Global Sport Website: A Step-by-Step Guide" />
+  <meta property="og:description"
+    content="Create a winning sports site! ☆ Learn to set up WordPress. ⇒ Pick perfect themes. ✓ Build engaging content with this friendly guide. ❤" />
+  <meta property="og:url" content="https://kolodych.com/website/joksglobalsport.com.html" />
+  <meta property="og:image" content="page-speed-joksglobalsport.com.webp" />
+  <meta property="og:type" content="article" />
+  <!-- END Open Graph Tags -->
+
+  <!-- Schema Markup Addition -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
         "@type": "Article",
@@ -67,479 +60,387 @@
         "dateModified": "2024-08-23T22:20:00Z"
       }
     </script>
-    <!-- ENS Schema Markup Addition -->
+  <!-- ENS Schema Markup Addition -->
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="How I Built the Joks Global Sport Website: A Step-by-Step Guide"
-    />
-    <meta
-      name="twitter:description"
-      content="Create a winning sports site! ☆ Learn to set up WordPress. ⇒ Pick perfect themes. ✓ Build engaging content with this friendly guide. ❤"
-    />
-    <meta
-      name="twitter:image"
-      content="https://kolodych.com/website/page-speed-joksglobalsport.com.webp"
-    />
-    <meta name="twitter:site" content="@serhiikolodych" />
-    <!-- END Twitter Card Tags -->
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How I Built the Joks Global Sport Website: A Step-by-Step Guide" />
+  <meta name="twitter:description"
+    content="Create a winning sports site! ☆ Learn to set up WordPress. ⇒ Pick perfect themes. ✓ Build engaging content with this friendly guide. ❤" />
+  <meta name="twitter:image" content="https://kolodych.com/website/page-speed-joksglobalsport.com.webp" />
+  <meta name="twitter:site" content="@serhiikolodych" />
+  <!-- END Twitter Card Tags -->
 
-    <title>
-      Behind the Scenes: The Development of the Joks Global Sport Website
-    </title>
-    <meta
-      name="description"
-      content="Create a winning sports site! ☆ Learn to set up WordPress. ⇒ Pick perfect themes. ✓ Build engaging content with this friendly guide. ❤"
-    />
-    <meta
-      name="keywords"
-      content="WordPress Developer, Website Development, Custom WordPress Solutions, WordPress SEO Optimization"
-    />
-    <link
-      rel="canonical"
-      href="https://kolodych.com/website/joksglobalsport.com.html"
-    />
+  <title>
+    Behind the Scenes: The Development of the Joks Global Sport Website
+  </title>
+  <meta name="description"
+    content="Create a winning sports site! ☆ Learn to set up WordPress. ⇒ Pick perfect themes. ✓ Build engaging content with this friendly guide. ❤" />
+  <meta name="keywords"
+    content="WordPress Developer, Website Development, Custom WordPress Solutions, WordPress SEO Optimization" />
+  <link rel="canonical" href="https://kolodych.com/website/joksglobalsport.com.html" />
 
-    <meta name="theme-color" content="#0b6a30" />
+  <meta name="theme-color" content="#0b6a30" />
 
-    <!-- Android Chrome (light mode + dark mode) -->
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: light)"
-      content="#0b6a30"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#0b6a30"
-    />
+  <!-- Android Chrome (light mode + dark mode) -->
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b6a30" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b6a30" />
 
-    <!-- Windows / Edge tiles -->
-    <meta name="msapplication-TileColor" content="#0b6a30" />
+  <!-- Windows / Edge tiles -->
+  <meta name="msapplication-TileColor" content="#0b6a30" />
 
-    <!-- iOS Safari (status bar) -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="Website" />
-  </head>
+  <!-- iOS Safari (status bar) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Website" />
+</head>
 
-  <body>
-    <!-- Background Canvas -->
-    <canvas id="c" class="cZero"></canvas>
+<body>
+  <!-- Background Canvas -->
+  <canvas id="c" class="cZero"></canvas>
 
-    <div id="back-to-home">Back to Home</div>
+  <div id="back-to-home">Back to Home</div>
 
-    <a href="#" id="change-style-link">White</a>
+  <a href="#" id="change-style-icon">White</a>
 
-    <!-- Article Container -->
-    <div class="article-container">
-      <h1>How I Built the Joks Global Sport Website: A Step-by-Step Guide</h1>
-      <p><em>Published on August 15, 2024</em></p>
+  <!-- Article Container -->
+  <div class="article-container">
+    <h1>How I Built the Joks Global Sport Website: A Step-by-Step Guide</h1>
+    <p><em>Published on August 15, 2024</em></p>
 
-      <!-- Introduction Section -->
-      <p>
-        Creating a professional website design that effectively communicates
-        your brand's message and engages your audience can be a rewarding
-        experience. In this article, I'll share how I developed the
-        <a rel="nofollow" target="_blank" href="https://joksglobalsport.com/"
-          >Joks Global Sport website</a
-        >
-        <a
-          rel="nofollow"
-          target="_blank"
-          href="https://olive-gull-531060.hostingersite.com/"
-          >(backup mirror)</a
-        >
-        from the ground up, highlighting the tools, WordPress plugins, and
-        website design and development principles I used to transform a simple
-        concept into a dynamic online platform. Whether you're a web developer
-        or just starting, this guide will provide valuable insights into
-        building a WordPress website.
-      </p>
+    <!-- Introduction Section -->
+    <p>
+      Creating a professional website design that effectively communicates
+      your brand's message and engages your audience can be a rewarding
+      experience. In this article, I'll share how I developed the
+      <a rel="nofollow" target="_blank" href="https://joksglobalsport.com/">Joks Global Sport website</a>
+      <a rel="nofollow" target="_blank" href="https://olive-gull-531060.hostingersite.com/">(backup mirror)</a>
+      from the ground up, highlighting the tools, WordPress plugins, and
+      website design and development principles I used to transform a simple
+      concept into a dynamic online platform. Whether you're a web developer
+      or just starting, this guide will provide valuable insights into
+      building a WordPress website.
+    </p>
 
-      <!-- Step 1: Setting Up the Foundation -->
-      <h2>Setting Up the Foundation</h2>
-      <p>
-        The first step in creating the Joks Global Sport website was to choose
-        the right platform. For this project, I selected WordPress, a versatile
-        and user-friendly content management system (CMS) that offers a wide
-        range of customization options. WordPress is ideal for both beginners
-        and experienced developers, thanks to its extensive plugin library and
-        active community support, which makes it an excellent choice for
-        WordPress website development services.
-      </p>
+    <!-- Step 1: Setting Up the Foundation -->
+    <h2>Setting Up the Foundation</h2>
+    <p>
+      The first step in creating the Joks Global Sport website was to choose
+      the right platform. For this project, I selected WordPress, a versatile
+      and user-friendly content management system (CMS) that offers a wide
+      range of customization options. WordPress is ideal for both beginners
+      and experienced developers, thanks to its extensive plugin library and
+      active community support, which makes it an excellent choice for
+      WordPress website development services.
+    </p>
 
-      <!-- Step 2: Choosing the Right Theme -->
-      <h2>Choosing the Right Theme</h2>
-      <p>
-        To give the Joks Global Sport website a professional and modern website
-        design, I selected the
-        <a href="https://wordpress.org/themes/twentytwentyfour/" target="_blank"
-          >Twenty Twenty-Four theme</a
-        >. This theme is known for its responsive website design and clean
-        layout, making it an excellent choice for sports websites.
-      </p>
+    <!-- Step 2: Choosing the Right Theme -->
+    <h2>Choosing the Right Theme</h2>
+    <p>
+      To give the Joks Global Sport website a professional and modern website
+      design, I selected the
+      <a href="https://wordpress.org/themes/twentytwentyfour/" target="_blank">Twenty Twenty-Four theme</a>. This theme
+      is known for its responsive website design and clean
+      layout, making it an excellent choice for sports websites.
+    </p>
 
-      <!-- Step 3: Building the Content Structure -->
-      <h2>Building the Content Structure</h2>
-      <p>
-        Next, I focused on building the content structure of the website,
-        ensuring that all important information was easily accessible and
-        organized.
-      </p>
-      <h3>Home Page Design</h3>
-      <p>
-        The homepage was designed to immediately grab the attention of visitors
-        with a strong headline: "Transforming lives through football and
-        education!" I used a high-quality football match image to visually
-        reinforce the message and added a concise introduction about the
-        company.
-      </p>
-      <img
-        src="home-joksglobalsport.com.webp"
-        alt="Joks Global Sport homepage design"
-        title="Designing the homepage with a football match image"
-        loading="lazy"
-      />
+    <!-- Step 3: Building the Content Structure -->
+    <h2>Building the Content Structure</h2>
+    <p>
+      Next, I focused on building the content structure of the website,
+      ensuring that all important information was easily accessible and
+      organized.
+    </p>
+    <h3>Home Page Design</h3>
+    <p>
+      The homepage was designed to immediately grab the attention of visitors
+      with a strong headline: "Transforming lives through football and
+      education!" I used a high-quality football match image to visually
+      reinforce the message and added a concise introduction about the
+      company.
+    </p>
+    <img src="home-joksglobalsport.com.webp" alt="Joks Global Sport homepage design"
+      title="Designing the homepage with a football match image" loading="lazy" />
 
-      <h3>About Us</h3>
-      <p>
-        I created an "About Us" section to communicate Joks Global Sport's
-        mission and core values. This section was designed to build trust and
-        credibility with potential customers by showcasing the organization's
-        commitment to sports development and education.
-      </p>
-      <img
-        src="about-joksglobalsport.com.webp"
-        alt="Joks Global Sport About Us section"
-        title="Building the About Us section"
-        loading="lazy"
-      />
+    <h3>About Us</h3>
+    <p>
+      I created an "About Us" section to communicate Joks Global Sport's
+      mission and core values. This section was designed to build trust and
+      credibility with potential customers by showcasing the organization's
+      commitment to sports development and education.
+    </p>
+    <img src="about-joksglobalsport.com.webp" alt="Joks Global Sport About Us section"
+      title="Building the About Us section" loading="lazy" />
 
-      <p>
-        <strong>Testimonials.</strong> To highlight the success of our athletes,
-        I added a testimonial from a former student, now a FIFA agent.
-        Testimonials are powerful tools for building trust and demonstrating the
-        impact of our custom website design on the careers of young footballers.
-      </p>
+    <p>
+      <strong>Testimonials.</strong> To highlight the success of our athletes,
+      I added a testimonial from a former student, now a FIFA agent.
+      Testimonials are powerful tools for building trust and demonstrating the
+      impact of our custom website design on the careers of young footballers.
+    </p>
 
-      <!-- Step 4: Adding Dynamic Content -->
-      <h2>Adding Dynamic Content</h2>
-      <p>
-        To keep the website engaging and up-to-date, I added dynamic content
-        using WordPress shortcodes, enhancing user experience and website SEO
-        optimization.
-      </p>
-      <h3>Players Promotion Carousel</h3>
-      <p>
-        I used the
-        <a
-          href="https://wordpress.org/plugins/blog-designer-pack/"
-          target="_blank"
-          >Blog Designer Pack plugin</a
-        >
-        with the "Carousel Layout" to showcase featured players and their
-        achievements dynamically, making it a great addition to the web designer
-        portfolio website.
-      </p>
-      <ul>
-        <li>
-          <strong>General Parameters:</strong>
-          <ul>
-            <li>Selected “Design 2”</li>
-            <li>
-              Displayed: Title, Content (word limit = 28), and “Read More”
-              button
-            </li>
-            <li>Hidden: Post date, author, tags, comments, and categories</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Slider Settings:</strong>
-          <ul>
-            <li>Slides per view: 3</li>
-            <li>Scroll per slide: 1</li>
-            <li>Autoplay: Enabled (3000ms interval)</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Query Parameters:</strong>
-          <ul>
-            <li>Total number of posts: 20</li>
-            <li>Order: Post date in descending order</li>
-            <li>Filter: “Players” category</li>
-          </ul>
-        </li>
-      </ul>
+    <!-- Step 4: Adding Dynamic Content -->
+    <h2>Adding Dynamic Content</h2>
+    <p>
+      To keep the website engaging and up-to-date, I added dynamic content
+      using WordPress shortcodes, enhancing user experience and website SEO
+      optimization.
+    </p>
+    <h3>Players Promotion Carousel</h3>
+    <p>
+      I used the
+      <a href="https://wordpress.org/plugins/blog-designer-pack/" target="_blank">Blog Designer Pack plugin</a>
+      with the "Carousel Layout" to showcase featured players and their
+      achievements dynamically, making it a great addition to the web designer
+      portfolio website.
+    </p>
+    <ul>
+      <li>
+        <strong>General Parameters:</strong>
+        <ul>
+          <li>Selected “Design 2”</li>
+          <li>
+            Displayed: Title, Content (word limit = 28), and “Read More”
+            button
+          </li>
+          <li>Hidden: Post date, author, tags, comments, and categories</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Slider Settings:</strong>
+        <ul>
+          <li>Slides per view: 3</li>
+          <li>Scroll per slide: 1</li>
+          <li>Autoplay: Enabled (3000ms interval)</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Query Parameters:</strong>
+        <ul>
+          <li>Total number of posts: 20</li>
+          <li>Order: Post date in descending order</li>
+          <li>Filter: “Players” category</li>
+        </ul>
+      </li>
+    </ul>
 
-      <img
-        src="promotion-joksglobalsport.com.webp"
-        alt="Players Promotion Carousel setup"
-        title="Setting up the Players Promotion Carousel"
-        loading="lazy"
-      />
+    <img src="promotion-joksglobalsport.com.webp" alt="Players Promotion Carousel setup"
+      title="Setting up the Players Promotion Carousel" loading="lazy" />
 
-      <p>
-        If you want to use the same setup, copy and paste the shortcode below
-        into your WordPress site:
-      </p>
-      <div class="grid-container">
-        <div class="flex-row">
-          <label>Code:</label>
-          <button class="copy-btn">Copy Code</button>
-        </div>
-        <div class="code-row">
-          <code
-            >[bdp_post_carousel design="design-2" show_date="false"
+    <p>
+      If you want to use the same setup, copy and paste the shortcode below
+      into your WordPress site:
+    </p>
+    <div class="grid-container">
+      <div class="flex-row">
+        <label>Code:</label>
+        <button class="copy-btn">Copy Code</button>
+      </div>
+      <div class="code-row">
+        <code>[bdp_post_carousel design="design-2" show_date="false"
             show_author="false" show_tags="false" show_comments="false"
             show_category="false" show_content="true" content_words_limit="28"
-            media_size="medium" category="players"]</code
-          >
-        </div>
+            media_size="medium" category="players"]</code>
       </div>
+    </div>
 
-      <h3>Article Listings (Blog)</h3>
-      <p>I also used the Blog Designer Pack shortcode</p>
+    <h3>Article Listings (Blog)</h3>
+    <p>I also used the Blog Designer Pack shortcode</p>
 
-      <div class="grid-container">
-        <div class="flex-row">
-          <label>Code:</label>
-          <button class="copy-btn">Copy Code</button>
-        </div>
-        <div class="code-row">
-          <code
-            >[bdp_post_list show_author="false" show_comments="false"
-            category="articles"]</code
-          >
-        </div>
+    <div class="grid-container">
+      <div class="flex-row">
+        <label>Code:</label>
+        <button class="copy-btn">Copy Code</button>
       </div>
-
-      <p>
-        to display recent articles. This feature helps improve website ranking
-        on Google by keeping users informed about the latest news in football
-        development and training.
-      </p>
-      <img
-        src="articles-joksglobalsport.com.webp"
-        alt="Article Listings setup"
-        title="Displaying recent articles with a post list shortcode"
-        loading="lazy"
-      />
-
-      <p>
-        After completing the homepage, I configured the other pages as requested
-        by the client: About Us, Services, Blog, Join Us, and Shop pages.
-        Navigate to
-        <strong>Appearance &gt; Themes &gt; Customize &gt; Navigation</strong>
-        to add these pages to the menu before saving.
-      </p>
-
-      <p>
-        The About Us page consists of detailed information about the academy's
-        mission, values, and services, including sections on grassroots football
-        development, innovative strategies in player development, and
-        soccer-related business opportunities.
-      </p>
-
-      <p>
-        The Services page outlines the academy's offerings, including grassroots
-        football development, innovative training strategies, soccer promotion,
-        and solutions for soccer-related challenges. Each section provides a
-        deeper look into how the academy nurtures talent and supports the
-        broader football community through good website design.
-      </p>
-
-      <p>
-        The Join Us page invites users to get involved, whether as aspiring
-        footballers, trainers, or agents. It features opportunities for kids'
-        football classes, becoming a football trainer, or applying to be a
-        football agent. This page encourages active participation through simple
-        website design.
-      </p>
-
-      <img
-        src="form-joksglobalsport.com.webp"
-        alt="Join Us page adding popup form to apply"
-        title="Creating and managing the Popup Form"
-        loading="lazy"
-      />
-
-      <p>
-        To display popups, I installed the
-        <a href="https://wordpress.org/plugins/popup-maker/" target="_blank"
-          >Popup Maker plugin</a
-        >. After creating three different popups with contact forms inside
-        (using
-        <a href="virgincourtesans.com.html#contact-form-7" target="_blank"
-          >Contact Form 7</a
-        >), I navigated to the "Join Us" page, clicked on the button, then went
-        to <strong>Settings &gt; Block &gt; Popup Controls</strong>, and
-        selected the appropriate popup from the list.
-      </p>
-
-      <img
-        src="join-us-joksglobalsport.com.webp"
-        alt="Join Us page on Button click adding popup form to apply"
-        title="Assigning onClick for Button to show the Popup Form"
-        loading="lazy"
-      />
-
-      <p>
-        As for the <strong>Blog page</strong>, I set it up with a masonry layout
-        using the shortcode:
-      </p>
-
-      <div class="grid-container">
-        <div class="flex-row">
-          <label>Code:</label>
-          <button class="copy-btn">Copy Code</button>
-        </div>
-        <div class="code-row">
-          <code
-            >[bdp_masonry show_author="false" show_tags="false"
-            show_comments="false" content_words_limit="30"]</code
-          >
-        </div>
+      <div class="code-row">
+        <code>[bdp_post_list show_author="false" show_comments="false"
+            category="articles"]</code>
       </div>
+    </div>
 
-      <p>
-        providing insights, updates, and articles that reflect the academy's
-        expertise and commitment to the sport. This setup ensures a visually
-        appealing and organized display of blog posts.
-      </p>
+    <p>
+      to display recent articles. This feature helps improve website ranking
+      on Google by keeping users informed about the latest news in football
+      development and training.
+    </p>
+    <img src="articles-joksglobalsport.com.webp" alt="Article Listings setup"
+      title="Displaying recent articles with a post list shortcode" loading="lazy" />
 
-      <img
-        src="blog-contact-us-joksglobalsport.com.webp"
-        alt="Blog page is just Blog Designer Pack shortcode mansory layout and contact page with form and map"
-        title="Blog and Contact Us pages with posts, contact form, and map"
-        loading="lazy"
-      />
+    <p>
+      After completing the homepage, I configured the other pages as requested
+      by the client: About Us, Services, Blog, Join Us, and Shop pages.
+      Navigate to
+      <strong>Appearance &gt; Themes &gt; Customize &gt; Navigation</strong>
+      to add these pages to the menu before saving.
+    </p>
 
-      <p>
-        After setting up the essential pages, including Home, About Us,
-        Services, and Blog, it's important to ensure users have an easy way to
-        connect through the Contact Us page. This page provides multiple contact
-        options, including phone numbers, email, and physical office addresses
-        in Osogbo and Kano, Nigeria. It also features a contact form where users
-        can submit their inquiries directly. The layout is designed to be
-        straightforward and user-friendly, ensuring that visitors can quickly
-        find the information they need or reach out for support.
-      </p>
+    <p>
+      The About Us page consists of detailed information about the academy's
+      mission, values, and services, including sections on grassroots football
+      development, innovative strategies in player development, and
+      soccer-related business opportunities.
+    </p>
 
-      <!-- Step 5: Creating Shop using WooCommerce -->
-      <h2>Creating Shop Using WooCommerce</h2>
-      <p>
-        The Shop page is vital for online sales, acting as the main point where
-        customers make purchasing decisions. A clean, easy-to-use design can
-        greatly enhance customer satisfaction and sales. I've designed this Shop
-        page to be intuitive and visually appealing, ensuring a seamless
-        shopping experience. To manage the online store, I installed the
-        WooCommerce plugin, a powerful tool that makes it easy to sell products
-        directly from the website. With WooCommerce, you can add products,
-        manage inventory, process payments, and handle shipping, all within the
-        WordPress platform. I customized the shop layout to align with the
-        overall design of the website, ensuring a consistent and professional
-        look across all pages.
-      </p>
+    <p>
+      The Services page outlines the academy's offerings, including grassroots
+      football development, innovative training strategies, soccer promotion,
+      and solutions for soccer-related challenges. Each section provides a
+      deeper look into how the academy nurtures talent and supports the
+      broader football community through good website design.
+    </p>
 
-      <img
-        src="shop-joksglobalsport.com.webp"
-        alt="Shop page using WooCommerce plugin"
-        title="Adding WooCommerce plugin to create and manage the Shop page"
-        loading="lazy"
-      />
+    <p>
+      The Join Us page invites users to get involved, whether as aspiring
+      footballers, trainers, or agents. It features opportunities for kids'
+      football classes, becoming a football trainer, or applying to be a
+      football agent. This page encourages active participation through simple
+      website design.
+    </p>
 
-      <h2>Creating a Shop</h2>
-      <p>
-        After installing and activating the WooCommerce plugin, I configured it
-        to display the football products available for sale, such as jerseys,
-        boots, and training equipment. I made sure to add product descriptions,
-        images, and pricing for a seamless shopping experience, integrating
-        website landing page design best practices.
-      </p>
+    <img src="form-joksglobalsport.com.webp" alt="Join Us page adding popup form to apply"
+      title="Creating and managing the Popup Form" loading="lazy" />
 
-      <!-- Step 6: Optimizing for Performance -->
-      <h2>Optimizing for Performance</h2>
-      <p>
-        To ensure the Joks Global Sport website delivers an exceptional user
-        experience and performs well in search engine rankings, I implemented
-        key optimization strategies using specific plugins.
-      </p>
-      <img
-        src="page-speed-joksglobalsport.com.webp"
-        alt="Website performance optimization with Google PageSpeed Insights"
-        title="Optimizing site performance with Google PageSpeed Insights"
-        loading="lazy"
-      />
-      <p id="more-plugins">
-        <strong>Accelerating Load Times</strong>: To enhance website
-        performance, I utilized the
-        <a href="https://wordpress.org/plugins/docket-cache/" target="_blank"
-          >Docket Cache plugin.</a
-        >
-        This plugin implements persistent object caching, reducing server load
-        and speeding up page delivery for a faster and more responsive website.
-      </p>
-      <p>
-        <strong>Compressing Photos:</strong> For image optimization, I used
-        <a href="https://imageresizer.com/" target="_blank">Image Resizer.</a>
-        This tool allowed me to efficiently crop, resize, and convert images to
-        WebP format, optimizing them for the web. By compressing images without
-        sacrificing quality, I ensured faster page load times and a better
-        overall user experience.
-      </p>
-      <p>
-        <strong>Bot Protection:</strong> I employed
-        <a
-          href="https://wordpress.org/plugins/cleantalk-spam-protect/"
-          target="_blank"
-          >CleanTalk Anti-Spam plugin</a
-        >
-        to protect the website from spam. This plugin effectively filters out
-        spam comments and registrations, ensuring the site remains free of
-        unwanted and malicious content, and providing a cleaner user experience.
-      </p>
-      <p>
-        <strong>Search Engine Optimization:</strong> I used the
-        <a
-          href="https://wordpress.org/plugins/seo-by-rank-math/"
-          target="_blank"
-          >Rank Math SEO plugin</a
-        >
-        to optimize the website for search engines. This plugin enabled me to
-        manage meta tags, optimize keywords, and enhance readability, ensuring
-        that the Joks Global Sport website ranks well in search results and
-        attracts more organic traffic.
-      </p>
-      <p>
-        <strong>Tracking User Behavior:</strong> To track site traffic and user
-        behavior, I integrated
-        <a href="https://wordpress.org/plugins/google-site-kit/" target="_blank"
-          >Google Analytics via the Site Kit by Google plugin.</a
-        >
-        This provided valuable insights into visitor interactions, helping guide
-        future updates and improvements.
-      </p>
+    <p>
+      To display popups, I installed the
+      <a href="https://wordpress.org/plugins/popup-maker/" target="_blank">Popup Maker plugin</a>. After creating three
+      different popups with contact forms inside
+      (using
+      <a href="virgincourtesans.com.html#contact-form-7" target="_blank">Contact Form 7</a>), I navigated to the "Join
+      Us" page, clicked on the button, then went
+      to <strong>Settings &gt; Block &gt; Popup Controls</strong>, and
+      selected the appropriate popup from the list.
+    </p>
 
-      <!-- Conclusion Section -->
-      <h2>Conclusion</h2>
-      <p>
-        Building the Joks Global Sport website was a fulfilling project that
-        combined technical skills with creative design. By carefully selecting
-        the right tools and plugins, and by focusing on the user experience, I
-        was able to create a professional and engaging website that effectively
-        communicates the brand's message. Whether you're creating a business
-        website design, a sports platform or a different type of site, the
-        principles and techniques I've shared in this guide will help you
-        achieve your goals.
-      </p>
+    <img src="join-us-joksglobalsport.com.webp" alt="Join Us page on Button click adding popup form to apply"
+      title="Assigning onClick for Button to show the Popup Form" loading="lazy" />
 
-      <!-- <div class="item">
+    <p>
+      As for the <strong>Blog page</strong>, I set it up with a masonry layout
+      using the shortcode:
+    </p>
+
+    <div class="grid-container">
+      <div class="flex-row">
+        <label>Code:</label>
+        <button class="copy-btn">Copy Code</button>
+      </div>
+      <div class="code-row">
+        <code>[bdp_masonry show_author="false" show_tags="false"
+            show_comments="false" content_words_limit="30"]</code>
+      </div>
+    </div>
+
+    <p>
+      providing insights, updates, and articles that reflect the academy's
+      expertise and commitment to the sport. This setup ensures a visually
+      appealing and organized display of blog posts.
+    </p>
+
+    <img src="blog-contact-us-joksglobalsport.com.webp"
+      alt="Blog page is just Blog Designer Pack shortcode mansory layout and contact page with form and map"
+      title="Blog and Contact Us pages with posts, contact form, and map" loading="lazy" />
+
+    <p>
+      After setting up the essential pages, including Home, About Us,
+      Services, and Blog, it's important to ensure users have an easy way to
+      connect through the Contact Us page. This page provides multiple contact
+      options, including phone numbers, email, and physical office addresses
+      in Osogbo and Kano, Nigeria. It also features a contact form where users
+      can submit their inquiries directly. The layout is designed to be
+      straightforward and user-friendly, ensuring that visitors can quickly
+      find the information they need or reach out for support.
+    </p>
+
+    <!-- Step 5: Creating Shop using WooCommerce -->
+    <h2>Creating Shop Using WooCommerce</h2>
+    <p>
+      The Shop page is vital for online sales, acting as the main point where
+      customers make purchasing decisions. A clean, easy-to-use design can
+      greatly enhance customer satisfaction and sales. I've designed this Shop
+      page to be intuitive and visually appealing, ensuring a seamless
+      shopping experience. To manage the online store, I installed the
+      WooCommerce plugin, a powerful tool that makes it easy to sell products
+      directly from the website. With WooCommerce, you can add products,
+      manage inventory, process payments, and handle shipping, all within the
+      WordPress platform. I customized the shop layout to align with the
+      overall design of the website, ensuring a consistent and professional
+      look across all pages.
+    </p>
+
+    <img src="shop-joksglobalsport.com.webp" alt="Shop page using WooCommerce plugin"
+      title="Adding WooCommerce plugin to create and manage the Shop page" loading="lazy" />
+
+    <h2>Creating a Shop</h2>
+    <p>
+      After installing and activating the WooCommerce plugin, I configured it
+      to display the football products available for sale, such as jerseys,
+      boots, and training equipment. I made sure to add product descriptions,
+      images, and pricing for a seamless shopping experience, integrating
+      website landing page design best practices.
+    </p>
+
+    <!-- Step 6: Optimizing for Performance -->
+    <h2>Optimizing for Performance</h2>
+    <p>
+      To ensure the Joks Global Sport website delivers an exceptional user
+      experience and performs well in search engine rankings, I implemented
+      key optimization strategies using specific plugins.
+    </p>
+    <img src="page-speed-joksglobalsport.com.webp" alt="Website performance optimization with Google PageSpeed Insights"
+      title="Optimizing site performance with Google PageSpeed Insights" loading="lazy" />
+    <p id="more-plugins">
+      <strong>Accelerating Load Times</strong>: To enhance website
+      performance, I utilized the
+      <a href="https://wordpress.org/plugins/docket-cache/" target="_blank">Docket Cache plugin.</a>
+      This plugin implements persistent object caching, reducing server load
+      and speeding up page delivery for a faster and more responsive website.
+    </p>
+    <p>
+      <strong>Compressing Photos:</strong> For image optimization, I used
+      <a href="https://imageresizer.com/" target="_blank">Image Resizer.</a>
+      This tool allowed me to efficiently crop, resize, and convert images to
+      WebP format, optimizing them for the web. By compressing images without
+      sacrificing quality, I ensured faster page load times and a better
+      overall user experience.
+    </p>
+    <p>
+      <strong>Bot Protection:</strong> I employed
+      <a href="https://wordpress.org/plugins/cleantalk-spam-protect/" target="_blank">CleanTalk Anti-Spam plugin</a>
+      to protect the website from spam. This plugin effectively filters out
+      spam comments and registrations, ensuring the site remains free of
+      unwanted and malicious content, and providing a cleaner user experience.
+    </p>
+    <p>
+      <strong>Search Engine Optimization:</strong> I used the
+      <a href="https://wordpress.org/plugins/seo-by-rank-math/" target="_blank">Rank Math SEO plugin</a>
+      to optimize the website for search engines. This plugin enabled me to
+      manage meta tags, optimize keywords, and enhance readability, ensuring
+      that the Joks Global Sport website ranks well in search results and
+      attracts more organic traffic.
+    </p>
+    <p>
+      <strong>Tracking User Behavior:</strong> To track site traffic and user
+      behavior, I integrated
+      <a href="https://wordpress.org/plugins/google-site-kit/" target="_blank">Google Analytics via the Site Kit by
+        Google plugin.</a>
+      This provided valuable insights into visitor interactions, helping guide
+      future updates and improvements.
+    </p>
+
+    <!-- Conclusion Section -->
+    <h2>Conclusion</h2>
+    <p>
+      Building the Joks Global Sport website was a fulfilling project that
+      combined technical skills with creative design. By carefully selecting
+      the right tools and plugins, and by focusing on the user experience, I
+      was able to create a professional and engaging website that effectively
+      communicates the brand's message. Whether you're creating a business
+      website design, a sports platform or a different type of site, the
+      principles and techniques I've shared in this guide will help you
+      achieve your goals.
+    </p>
+
+    <!-- <div class="item">
             <h3 class="dancing-text">
                 <span>A</span><span>s</span><span>k</span> <span>m</span><span>e</span> 
                 <span>a</span><span>n</span><span>y</span><span>t</span><span>h</span><span>i</span><span>n</span><span>g</span><span>?</span>
@@ -551,51 +452,44 @@
             </form>
         </div> -->
 
-      <a href="japalandia.com.html"
-        ><div class="item">
-          <h3>Japalandia work abroad Landing Page</h3>
-          <img
-            src="home-1-screen-japalandia.webp"
-            alt="Japalandia home section with Call To Action Button"
-            title="Japalandia landing page, hero section with banner for work abroad"
-            loading="lazy"
-          /></div
-      ></a>
+    <a href="japalandia.com.html">
+      <div class="item">
+        <h3>Japalandia work abroad Landing Page</h3>
+        <img src="home-1-screen-japalandia.webp" alt="Japalandia home section with Call To Action Button"
+          title="Japalandia landing page, hero section with banner for work abroad" loading="lazy" />
+      </div>
+    </a>
 
-      <a href="virgincourtesans.com.html"
-        ><div class="item">
-          <h3>Model Agency site example</h3>
-          <img
-            src="Gallery-preview-using-the-post-grid-plugin-wordpress.webp"
-            alt="VirginCourtesans.com model agency gallery"
-            title="VirginCourtesans.com Models gallery preview"
-            loading="lazy"
-          /></div
-      ></a>
-      <a href="bubacat.html"
-        ><div class="item">
-          <h3>Bubacat card game website</h3>
-          <img
-            src="bubacat-preview.webp"
-            alt="Bubacat card game landing page, hero section with transparent header"
-            title="Bubacat card game landing page, hero section with transparent header"
-            loading="lazy"
-          /></div
-      ></a>
-    </div>
+    <a href="virgincourtesans.com.html">
+      <div class="item">
+        <h3>Model Agency site example</h3>
+        <img src="Gallery-preview-using-the-post-grid-plugin-wordpress.webp"
+          alt="VirginCourtesans.com model agency gallery" title="VirginCourtesans.com Models gallery preview"
+          loading="lazy" />
+      </div>
+    </a>
+    <a href="bubacat.html">
+      <div class="item">
+        <h3>Bubacat card game website</h3>
+        <img src="bubacat-preview.webp" alt="Bubacat card game landing page, hero section with transparent header"
+          title="Bubacat card game landing page, hero section with transparent header" loading="lazy" />
+      </div>
+    </a>
+  </div>
 
-    <script src="../scripts/index-1.js"></script>
-    <script src="../scripts/index-3.js"></script>
+  <script src="../scripts/index-1.js"></script>
+  <script src="../scripts/index-3.js"></script>
 
-    <!-- Background script -->
-    <!-- <script src="../background.js"></script>
+  <!-- Background script -->
+  <!-- <script src="../background.js"></script>
     <script src="../scripts/style-toggle.js"></script> -->
-    <script src="../scripts/copy-btn.js"></script>
-    <script>
-      // Show body once page is fully loaded
-      window.addEventListener("load", function () {
-        document.body.classList.add("loaded");
-      });
-    </script>
-  </body>
+  <script src="../scripts/copy-btn.js"></script>
+  <script>
+    // Show body once page is fully loaded
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+</body>
+
 </html>
