@@ -142,6 +142,9 @@ em {
 
 canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform: translateZ(-1px) scale(2); z-index: -1; } 
 
+canvas:hover {
+    cursor: pointer;
+  }
 
   ul {
     list-style-type: none;
@@ -150,9 +153,7 @@ canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; transform:
   
   }
   
-  canvas:hover {
-    cursor: pointer;
-  }
+
   
   body {
     margin: 0;
@@ -1053,56 +1054,11 @@ color: #fff;
 }
 
 
-.flickity-prev-next-button svg path{
-fill: #166624 !important;
-}
-
-.gallery, .flickity-viewport, .flickity-slider{
-  overflow: visible;
-}
 
 .imgcontainer {
   border: 1px solid #d6d6d6;
 }
 
-
-.flickity-prev-next-button,
-.flickity-page-dots {
-z-index: 999;
-}
-
-
-
-.flickity-prev-next-button {
-  width: 44px;
-  height: 44px;
-  background: transparent;
-}
-.flickity-prev-next-button:hover {
-  background: rgba(0, 255, 65, 0.2); 
-}
-
-.flickity-prev-next-button .flickity-button-icon {
-  fill: #00ff41; 
-}
-
-
-.flickity-page-dots {
-  bottom: -40px;
-}
-
-.flickity-page-dots .dot {
-  width: 10px;
-  height: 10px;
-  opacity: 0.5;
-  background: #00ff41; 
-  border-radius: 50%;
-  margin: 0 4px;
-}
-
-.flickity-page-dots .dot.is-selected {
-  opacity: 1;
-}
 
 
 

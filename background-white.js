@@ -33,9 +33,15 @@ window.addEventListener("resize", function () {
   drawBackground();
 });
 
-// add this near top of your scripts
+// In background-white.js - ONLY redirect if NOT on home page
 document.addEventListener("click", (e) => {
   if (e.target && e.target.id === "c") {
-    location.href = "../index.html";
+    // Check if we're NOT on the home page
+    if (
+      !window.location.pathname.includes("index.html") &&
+      window.location.pathname !== "/"
+    ) {
+      location.href = "../index.html";
+    }
   }
 });
