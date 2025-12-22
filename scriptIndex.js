@@ -1,25 +1,6 @@
 // Initialize state
 let whiteState = localStorage.getItem("white") || "0";
 
-// Set background script on load
-function setBackgroundScript() {
-  const existingScript = document.getElementById("backgroundScript");
-  const scriptSrc =
-    whiteState === "1" ? "background-white.js" : "background.js";
-
-  if (existingScript) {
-    existingScript.remove();
-  }
-
-  const bgScript = document.createElement("script");
-  bgScript.id = "backgroundScript";
-  bgScript.src = scriptSrc;
-  bgScript.onerror = function () {
-    console.error(`Failed to load ${scriptSrc}`);
-  };
-  document.body.appendChild(bgScript);
-}
-
 // Load tracking script if cookies accepted
 function cookiesManager() {
   const savedColor = localStorage.getItem("buttonColor");
@@ -93,47 +74,8 @@ function handleButtonClick(color) {
   }
 }
 
-// Set initial stylesheet
-function setInitialStyle() {
-  const currentStyle = whiteState === "1" ? "styles-white.css" : "styles.css";
-  const stylesheet = document.getElementById("stylesheet");
-
-  if (stylesheet) {
-    stylesheet.setAttribute("href", currentStyle);
-  }
-}
-
-// Setup theme toggle
-function setupThemeToggle() {
-  const link = document.getElementById("change-style-icon");
-  if (!link) return;
-
-  link.textContent = whiteState === "1" ? "Matrix" : "White";
-
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    // Toggle state
-    whiteState = whiteState === "0" ? "1" : "0";
-    localStorage.setItem("white", whiteState);
-
-    // Update stylesheet
-    const newStyle = whiteState === "1" ? "styles-white.css" : "styles.css";
-    const stylesheet = document.getElementById("stylesheet");
-    if (stylesheet) {
-      stylesheet.setAttribute("href", newStyle);
-    }
-
-    // Reload page to apply new background script
-    location.reload();
-  });
-}
-
 // Initialize on DOM ready
 document.addEventListener("DOMContentLoaded", function () {
-  setBackgroundScript();
-  setInitialStyle();
-  setupThemeToggle();
   applyButtonStyles();
   cookiesManager();
 
