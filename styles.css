@@ -58,7 +58,10 @@ a:visited{
 em {
   /* color: #BFB1A0; */
   color: #E8E8E8; /* Changed from #BFB1A0 for better contrast */
+}
 
+em a{
+  color: #FFD166;
 }
 
 
