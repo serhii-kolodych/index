@@ -62,7 +62,7 @@ function handleButtonClick(color) {
   const message =
     color === "green"
       ? "You agreed to use cookies on your device. Date and time:"
-      : "You blocked this site from saving cookies on your device. Date and time:";
+      : "You blocked using cookies on your device. Date and time:";
 
   localStorage.setItem("buttonColor", color);
   applyButtonStyles();
