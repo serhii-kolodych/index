@@ -1,0 +1,13 @@
+.line{
+    display: block;
+    text-align: center;
+    height: 100px;
+line-height: 100px;
+/* display: flex;
+justify-content: center;
+align-items: center; */
+}
+
+.line a{
+    display: inline-block;
+}

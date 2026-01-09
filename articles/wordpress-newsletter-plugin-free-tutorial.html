@@ -96,8 +96,8 @@
         "keywords": "wordpress news plugin free, wordpress newsletter plugin, newsletter plugin wordpress, wordpress mailchimp plugin, mailpoet alternative wordpress, wordpress plugin email marketing, wordpress email newsletter plugin, best wordpress newsletter plugin, how to add newsletter to wordpress, wordpress email marketing plugin free, embed newsletter form in wordpress, free wordpress newsletter plugin",
         "articleSection": "WordPress Tutorial",
         "wordCount": 1850,
-        "datePublished": "2026-01-08T11:34:00Z",
-        "dateModified": "2026-01-08T18:20:00Z"
+        "datePublished": "2026-01-09T11:34:00Z",
+        "dateModified": "2026-01-09T18:20:00Z"
       }
     </script>
 
@@ -151,6 +151,7 @@
         ]
       }
     </script>
+  <link id="stylesheet" rel="stylesheet" href="css/article.css" />
 
 </head>
 
@@ -166,12 +167,14 @@
   <div class="article-container">
     <h1>WordPress Newsletter Plugin Tutorial: Complete Setup Guide (Free)</h1>
 
-    <p><em>Published on January 8, 2026</em></p>
+    <p><em>Published on January 9, 2026</em></p>
     <p><em>12 min read</em></p>
 
     <p>
-      Looking for a <b>free WordPress newsletter plugin</b> that doesn't limit your subscribers? The Newsletter plugin
-      by Stefano Lissa is one of the most powerful <b>email marketing solutions for WordPress</b>, with over 400,000
+      Looking for a <b>free WordPress newsletter plugin</b> that doesn't limit your subscribers? <a
+        href="https://wordpress.org/plugins/newsletter/" target="_blank" rel="noopener">The Newsletter plugin by Stefano
+        Lissa</a>
+      is one of the most powerful <b>email marketing solutions for WordPress</b>, with over 400,000
       active installations.
     </p>
 
@@ -202,297 +205,226 @@
     </ul>
     <p>Let's get started.</p>
 
-
-
-
-
-
-
-    <nav class="toc" aria-label="Table of Contents">
-      <h2>Quick Navigation</h2>
+    <div class="table-of-contents">
+      <h2>Quick Navigation:</h2>
       <ol>
-        <li><a href="#why-backups">Why Website Crashes Are Normal</a></li>
-        <li>
-          <a href="#choosing-plugin">Choosing the Right Backup Plugin</a>
-        </li>
-        <li><a href="#first-backup">Your First Backup with WPvivid</a></li>
-        <li><a href="#test-restore">Testing the Restore Process</a></li>
-        <li><a href="#remote-storage">Setting Up Remote Storage</a></li>
-        <li><a href="#schedule">Automating Your Backups</a></li>
+        <li><a href="#what-is">What is Newsletter Plugin?</a></li>
+        <li><a href="#install">Installation & Setup</a></li>
+        <li><a href="#subscription-form">Create Subscription Form</a></li>
+        <li><a href="#elementor">Add Form to Elementor</a></li>
+        <li><a href="#welcome-email">Welcome Email Setup</a></li>
+        <li><a href="#goodbye-email">Unsubscribe & Goodbye Emails</a></li>
+        <li><a href="#resubscribe">Resubscription Workflow</a></li>
+        <li><a href="#send-newsletter">Send Your First Newsletter</a></li>
+        <li><a href="#customize-css">Customize with CSS</a></li>
+        <li><a href="#redirect">Auto-Redirect After Subscribe</a></li>
+        <li><a href="#vs-mailchimp">Newsletter vs MailChimp</a></li>
+        <li><a href="#vs-mailpoet">Newsletter vs MailPoet</a></li>
+        <li><a href="#advanced">Advanced Features</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ol>
-    </nav>
+    </div>
 
-    <h2 id="why-backups">Website crashes are normal</h2>
+    <h2 id="what-is">What is Newsletter Plugin for WordPress?</h2>
 
-    <p>
-      Updates fail. Plugins conflict. Servers go down. Themes break layouts.
-      Hackers exploit weak spots. You do not control when this happens. You
-      control how fast you recover. Most site owners panic. They search logs.
-      They contact hosting. They wait. Hours pass. Sometimes days. Without
-      backups, recovery becomes guesswork. A backup removes fear. It turns a
-      crash into a routine task. Restore. Check. Move on.
+    <p><b>Newsletter</b> is a free WordPress email marketing plugin created by Stefano Lissa. It's one of the most
+      popular
+      <b>WordPress newsletter plugins</b> with 400,000+ active installations and a 4.6-star rating.
     </p>
 
-    <h3 id="choosing-plugin">A WordPress Backup plugin is the solution</h3>
-
-    <p>
-      While there are many backup plugins available, not all are created
-      equal. Some are lightweight and reliable, while others can slow down
-      your site or cause conflicts. Choosing the right plugin is crucial for
-      effective backup management and peace of mind.
-    </p>
-
-    <p>
-      I've tried all of them:
-      <a href="https://wordpress.org/plugins/updraftplus/" rel="nofollow noopener" target="_blank">UpdraftPlus</a>,
-      <a href="https://wordpress.org/plugins/backuply/" rel="nofollow noopener" target="_blank">Backuply</a>,
-      <a href="https://wordpress.org/plugins/jetpack/" rel="nofollow noopener" target="_blank">Jetpack</a>,
-      <a href="https://wordpress.org/plugins/backwpup/" rel="nofollow noopener" target="_blank">BackWPup</a>,
-      <a href="https://wordpress.org/plugins/wpvivid-backuprestore/" rel="nofollow noopener"
-        target="_blank">WPvivid</a>,
-      <a href="https://wordpress.org/plugins/duplicator/" rel="nofollow noopener" target="_blank">Duplicator</a>,
-      <a href="https://wordpress.org/plugins/all-in-one-wp-migration/" rel="nofollow noopener"
-        target="_blank">All-in-One WP Migration</a>. And after 20+ website restorations, I can confidently say that
-      <strong><a href="https://wordpress.org/plugins/wpvivid-backuprestore/" rel="nofollow noopener"
-          target="_blank">WPvivid</a></strong>
-      is the best option for most users. It strikes the perfect balance
-      between comprehensive protection and ease of use, without the complexity
-      that makes you need a computer science degree to configure it properly.
-    </p>
-
-    <h4>What WPvivid Can Do For You</h4>
-    <ul class="tick-list">
-      <li>Full website backups.</li>
-      <li>Database-only backups.</li>
-      <li>Files-only backups.</li>
-      <li>Manual backups on demand.</li>
-      <li>Automatic scheduled backups.</li>
-      <li>One click restore.</li>
-      <li>Website migration.</li>
-      <li>Staging site creation.</li>
-      <li>
-        Remote storage support (Google Drive, Dropbox, Microsoft OneDrive,
-        Amazon S3, FTP, SFTP).
-      </li>
-      <li>Backup splitting for large sites.</li>
-      <li>Incremental backups in Pro version.</li>
-    </ul>
-
-    <h4 id="first-backup">Your First Backup with WPvivid</h4>
-    <p>
-      Despite all of WPvivid's capabilities, you need to verify that it works
-      correctly for YOUR specific setup. Every website is unique — different
-      themes, plugins, hosting environments and configurations.
-      <strong>Backups mean nothing if restore fails.</strong> Never trust
-      blindly — test once, then relax.
-    </p>
-
-    <ol>
-      <li id="install">Install and activate WPvivid plugin.</li>
-      <li>Open WPvivid Backup in WordPress, tab "Backup & Restore".
-        <img src="wpvivid-backup.webp" alt="WPvivid Backup Interface" style="max-width: 100%; height: auto" />
-      </li>
-      <li>Choose "Database + Files".</li>
-      <li>Choose "Save to Local".</li>
-      <li>Click "Backup Now".</li>
-      <li>Wait for the backup to complete.</li>
-      <li>
-        Reload the page, click the button "Scan uploaded backup or received
-        backup", then click "Download".
-      </li>
-    </ol>
-
-    <p id="test-restore">
-      Congratulations! You have successfully created your first backup. Now
-      it's time to test the restore process.
-    </p>
-
-    <ol>
-      <li>Create a blank test WordPress site.</li>
-      <li>Install and activate WPvivid plugin on a Test site.</li>
-      <li>In the test site, open WPvivid, tab "Backup & Restore".</li>
-      <li>
-        Scroll down below the "Backup Now" button to find the "Upload"
-        section, then click 'Upload'" and select the backup file from your
-        local machine. Wait for the message "The upload has completed." -
-        click "OK".
-      </li>
-      <li>
-        Now click the "Backups" button (located next to the 'Upload' button).
-      </li>
-      <li>
-        There you should see the uploaded backup and click "Restore" and then
-        again "Restore" and click "OK".
-        <img src="wpvivid-restore.webp" alt="WPvivid Restore Process" style="max-width: 100%; height: auto" />
-      </li>
-      <li>
-        Don't close or switch to other tabs during the restore process. When
-        finished you will get message "Restore completed successfully." -
-        click "OK".
-      </li>
-    </ol>
-
-    <p>
-      Perfect! You just successfully completed a full backup and restore test.
-      Reload the page, go to different pages and sections of your website to
-      confirm everything is working as expected. This confirms that your
-      backups are not only created but also restorable.
-    </p>
-
-    <p>
-      This entire test process takes 5-60 minutes (depending on the size of
-      your site) and is worth every second. I test my backups every couple of
-      months, and there have been times, when:
-    </p>
-
-    <ul class="error-list">
-      <li>File corrupted during transfer.</li>
-      <li>PHP timeout during restore.</li>
-      <li>Incompatible plugin files.</li>
-      <li>Invalid backup file format.</li>
-      <li>and so much more things that can go wrong...</li>
-    </ul>
-
-    <p>
-      That's why for every website I have / make - I create a test website to
-      verify the backup works. For example:
-    </p>
+    <h3>Key Features:</h3>
 
     <ul>
-      <li>
-        <a href="https://kolodych.com" rel="nofollow noopener" target="_blank">This Website</a>
-        has a copy on a
-        <a href="https://test.kolodych.com/" rel="nofollow noopener" target="_blank">test.KOLODYCH.com</a>
-      </li>
-      <li>
-        <a href="https://bubacatcity.com/" rel="nofollow noopener" target="_blank">Bubacatcity.com</a>
-        has a copy on a
-        <a href="https://lightsalmon-salamander-914319.hostingersite.com/" rel="nofollow noopener" target="_blank">Test
-          Server 1 (Bubacat)</a>
-      </li>
-      <li>
-        <a href="https://vent-build.com" rel="nofollow noopener" target="_blank">Vent Build website</a>
-        has a copy on a
-        <a href="https://test.vent-build.com" rel="nofollow noopener" target="_blank">test.Vent-Build.com</a>
-      </li>
-      <li>and you can be sure, that all other websites as well.</li>
+      <li>✓ <b>Unlimited Subscribers</b> - No limits on list size (unlike MailChimp's 500 free limit)</li>
+      <li>✓ <b>Unlimited Emails</b> - Send as many newsletters as you want</li>
+      <li>✓ <b>Drag & Drop Composer</b> - Visual email builder</li>
+      <li>✓ <b>Automation</b> - Welcome emails, goodbye emails, automated campaigns</li>
+      <li>✓ <b>List Segmentation</b> - Target specific subscriber groups</li>
+      <li>✓ <b>Analytics</b> - Track opens, clicks, and engagement</li>
+      <li>✓ <b>GDPR Compliant</b> - Privacy checkboxes and consent management</li>
+      <li>✓ <b>Responsive Templates</b> - Mobile-friendly email designs</li>
     </ul>
 
-    <p>
-      This practice gives me peace of mind and ensures that my clients'
-      websites are always protected and recoverable.
-    </p>
-    <p>
-      If this backup and restore process using WPvivid worked out well for
-      your website - I can share with you my settings and best practices for
-      even smoother and more reliable backups.
-    </p>
-    <img src="server-has-crashed.webp" alt="Meme: Server has crashed. - Where is backup? - On a server"
-      style="max-width: 100%; height: auto" />
-    <p id="remote-storage">
-      I hope you now understand the importance of having your backups not in
-      the same place as your website. To do this - go to tab "Remote Storage"
-      - click on the Cloud service you like the most and then "Authenticate"
-      (log in to your account). After that give it descriptive name, so later
-      you'll know where to find your backups.
-    </p>
-    <img src="wpvivid-remote-storage.webp" alt="WPvivid Add Remote Storage " style="max-width: 100%; height: auto" />
+    <img src="newsletter-plugin-wordpress-reviews-ratings.webp" loading="lazy"
+      title="Newsletter plugin by Stefano Lissa reviews and ratings"
+      alt="Newsletter plugin for WordPress reviews and ratings">
 
-    <p id="schedule">
-      Then go to tab "Schedule", tick "Enable backup schedule", choose how
-      often to do backups (e.g., daily or weekly), choose "Database + Files"
-      and "Send backups to remote storage" (in my case Google Drive icon is
-      active, since I authenticated it in "Remote Storage" tab before). And
-      most importantly click "Save".
+    <h3>Plugin Stats:</h3>
+    <ul>
+      <li>→ Active Installations: 300,000+</li>
+      <li>→ Languages: 24+</li>
+      <li>→ Rating: 4.6/5 stars</li>
+      <li>→ Last Updated: December 2025</li>
+      <li>→ WordPress Version: 6.1+</li>
+      <li>→ Price: 100% Free</li>
+    </ul>
+
+    <h2 id="vs-mailchimp">Newsletter Plugin vs MailChimp vs MailPoet: Which is Better?</h2>
+    <img src="newsletter-plugin-vs-mailchimp-vs-mailpoet-comparison-trends-chart-for-wordpress.webp" loading="lazy"
+      title="Newsletter plugin vs MailChimp vs MailPoet comparison google trends chart"
+      alt="Newsletter plugin vs MailChimp vs MailPoet comparison google trends chart">
+    <p>
+      Many users search for <b>"wordpress mailchimp plugin"</b> or <b>"mailpoet alternative wordpress"</b> but
+      Newsletter plugin offers significant advantages:
+
+    </p>
+    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Newsletter Plugin</th>
+          <th>MailChimp</th>
+          <th>MailPoet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Price</td>
+          <td>100% Free</td>
+          <td>Free up to 500 subscribers</td>
+          <td>Free up to 1,000 subscribers</td>
+        </tr>
+        <tr>
+          <td>Subscriber Limit</td>
+          <td>Unlimited</td>
+          <td>500 free. Paid for more</td>
+          <td>1,000 free. Paid plans above</td>
+        </tr>
+        <tr>
+          <td>Monthly Emails</td>
+          <td>Unlimited</td>
+          <td>1,000 per month on free plan</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td>Branding</td>
+          <td>None</td>
+          <td>Powered by MailChimp on free plan</td>
+          <td>MailPoet branding on free plan</td>
+        </tr>
+        <tr>
+          <td>Data Ownership</td>
+          <td>You own all subscriber data</td>
+          <td>Stored on MailChimp servers</td>
+          <td>Stored in WordPress database</td>
+        </tr>
+        <tr>
+          <td>Learning Curve</td>
+          <td>Easy. Managed inside WordPress</td>
+          <td>Requires external account setup</td>
+          <td>Easy. Native WordPress integration</td>
+        </tr>
+        <tr>
+          <td>Automation</td>
+          <td>Basic automation included</td>
+          <td>Advanced automation on paid plans</td>
+          <td>Advanced automation. Limited on free plan</td>
+        </tr>
+        <tr>
+          <td>Templates</td>
+          <td>Included</td>
+          <td>Limited on free plan</td>
+          <td>Included. Modern templates</td>
+        </tr>
+        <tr>
+          <td>WooCommerce Integration</td>
+          <td>Basic</td>
+          <td>External integration</td>
+          <td>Strong native integration</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="install">How to Install Newsletter Plugin in WordPress</h2>
+
+    <p>Installing the <strong>WordPress email newsletter plugin</strong> takes less than 2 minutes. Follow these steps:
     </p>
 
-    <img src="wpvivid-schedule.webp" alt="WPvivid Schedule Settings" style="max-width: 100%; height: auto" />
+    <img src="newsletter-installing-wordpress-plugin.webp" loading="lazy"
+      alt="Installing Newsletter plugin in WordPress" title="Installing Newsletter plugin in WordPress">
 
-    <p>
-      One last step is to go to tab "Settings" -> "General settings" and
-      choose the maximum allowed amount of backups retained = 7. Then I
-      recommend to tick "Merge all the backup files into single" and click
-      "Save". All the rest settings are not that important.
-    </p>
-    <img src="wpvivid-settings-general-7.webp" alt="WPvivid Settings - General - Maximum backups retained"
-      style="max-width: 100%; height: auto" />
+    <h3>Step 1: Access Plugin Menu</h3>
 
-    <section id="faq">
-      <h2>Frequently Asked Questions</h2>
+    <ol>
+      <li>Log into your WordPress admin dashboard</li>
+      <li>Navigate to <strong>Plugins → Add New</strong></li>
+    </ol>
 
-      <div class="faq-item">
-        <h3>How often should I backup my WordPress site?</h3>
-        <p>
-          For most websites, daily backups are recommended. E-commerce sites
-          should backup multiple times per day. Blogs with infrequent updates
-          can use weekly backups. The key is backing up before any major
-          changes.
-        </p>
-      </div>
+    <h3>Step 2: Search for Newsletter Plugin</h3>
 
-      <div class="faq-item">
-        <h3>Why should I test my WordPress backups?</h3>
-        <p>
-          Testing backups ensures they actually work when disaster strikes.
-          Many website owners discover their backups are corrupted or
-          incomplete only after they need them. Testing on a staging site
-          verifies your backup and restore process works correctly.
-        </p>
-      </div>
+    <ol>
+      <li>In the search box, type: <strong>"Newsletter by Stefano Lissa"</strong></li>
+      <li>Look for the plugin with 300,000+ active installations</li>
+    </ol>
 
-      <div class="faq-item">
-        <h3>Is WPvivid free?</h3>
-        <p>
-          Yes, WPvivid has a robust free version that includes full site
-          backups, scheduling, cloud storage integration, and one-click
-          restore. The premium version adds incremental backups, staging
-          sites, and advanced features for $79/year.
-        </p>
-      </div>
-    </section>
-    <h2>Summary</h2>
-    <p>
-      Three years ago, I lost two weeks of work because I trusted backups I
-      never tested. The panic, the scrambling, the realization that my "backup
-      solution" was just an empty promise — I wouldn't wish that on anyone.
+    <h3>Step 3: Install & Activate</h3>
+
+    <ol>
+      <li>Click <strong>"Install Now"</strong> button</li>
+      <li>Wait for installation to complete (5-10 seconds)</li>
+      <li>Click <strong>"Activate"</strong> button</li>
+    </ol>
+
+    <h3>Step 4: Initial Setup</h3>
+
+    <p>After activation, you'll see a <b>Newsletter</b> menu item in your WordPress sidebar.
     </p>
     <p>
-      That's why I'm so insistent about testing. That's why I have test
-      websites for every client site I manage. That's why I check my backup
-      logs monthly and run quarterly restore tests.
+      The plugin is now installed and ready to configure!
     </p>
+
+    <h2 id="subscription-form">Creating Your First Subscription Form</h2>
     <p>
-      Not because I'm paranoid. Because I learned the hard way that hope is
-      not a backup strategy.
+      Now let's <b>add newsletter to WordPress</b> by creating a subscription form.
     </p>
-    <p>
-      You just invested an hour setting this up properly. Testing.
-      Configuring. Connecting remote storage. That hour is worth years of
-      peace of mind.
+    <img src="newsletter-plugin-forms-configuration-menu.webp" loading="lazy"
+      alt="Newsletter subscription form Settings menu in WordPress" title="Creating subscription form in WordPress">
+
+    <h3>Step 1: Access Form Settings</h3>
+    <ol>
+      <li>Go to <strong>Newsletter → Forms</strong></li>
+      <li>Click on ⚙️ <b>Gear Icon</b> next to <strong>"Standard Form"</strong></li>
+    </ol>
+
+    <h3>Step 2: Configure Form Fields</h3>
+    <p> Choose which fields to display:
     </p>
-    <p>
-      I've had servers crash. Hard drives fail. Hosting accounts suspended due
-      to billing errors. Security breaches that required immediate rollback.
-      Plugin updates that broke entire sites.
-    </p>
-    <p>
-      Every single time, I restored from backup and was back online within 20
-      minutes.
-    </p>
-    <p>
-      My clients never knew there was a problem. My visitors never saw
-      downtime. I never lost sleep or spent hours on emergency support calls.
-    </p>
-    <p>That's what you just set up for yourself.</p>
-    <p>
-      The next time something breaks — and something will break — you'll
-      remember this article. You'll go to WPvivid. You'll click restore. And
-      15 minutes later, you'll be back to work.
-    </p>
-    <p>
-      Welcome to the small group of website owners who actually sleep well at
-      night.
-    </p>
+    <ul>
+
+      <li>✅ <b>Email</b> (Required - cannot be disabled)</li>
+      <li>✅ <b>First Name</b> (Recommended)</li>
+      <li>☐ Last Name (Optional)</li>
+      <li>☐ Gender (Optional)</li>
+      <li>☐ <b>Privacy Checkbox</b> (Required for GDPR)</li>
+
+    </ul>
+
+
+    **Step 3: Customize Labels**
+
+    Edit the text that appears in your form:
+    - Button text: "Subscribe" (or "Join Our Newsletter")
+    - Placeholder text: "Enter your email"
+    - Success message: "Thank you for subscribing!"
+
+    **Step 4: Copy Shortcode**
+
+    At the top of the settings page, you'll see:
+    ```
+    [newsletter_form]
+    ```
+
+    Copy this shortcode - you'll need it in the next step.
+
+    **Step 5: Save Settings**
+
+    Click **"Save"** at the bottom of the page.
+
+
+
+
+
+
     <p>
       <strong>If You Remember Nothing Else From This Article, Remember
         This:</strong>
@@ -532,7 +464,39 @@
           title="Nginx running service on Linux server status" loading="lazy" />
       </div>
     </a>
+
+    <div class="line">
+      <h2 class="pad14">Contact Me</h2>
+      <a href="mailto:kolodych@hotmail.com">
+        <img class="relative-mail" loading="lazy" decoding="async" fetchpriority="low"
+          src="../src/mail-part-3-svgrepo-com.svg" width="68" height="68" alt="Email">
+      </a>
+      <a href="https://www.linkedin.com/in/serhii-kolodych" rel="nofollow" target="_blank">
+        <img loading="lazy" decoding="async" fetchpriority="low" src="../src/linkedin.svg" width="68" height="68"
+          alt="Linkedin">
+      </a>
+
+      <a href="https://www.facebook.com/serhii.kolodych" rel="nofollow" target="_blank">
+        <img loading="lazy" decoding="async" fetchpriority="low" src="../src/social-facebook-svgrepo-com.svg" width="68"
+          height="68" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/serhii_kolodych" rel="nofollow" target="_blank">
+        <img loading="lazy" decoding="async" fetchpriority="low" src="../src/social-instagram-svgrepo-com.svg"
+          width="68" height="68" alt="Instagram">
+      </a>
+      <a href="https://t.me/kolodych" rel="nofollow" target="_blank">
+        <img loading="lazy" decoding="async" fetchpriority="low" src="../src/telegram-svgrepo-com.svg" width="68"
+          height="68" alt="Telegram">
+      </a>
+      <a href="https://wa.me/+37126796193" rel="nofollow" target="_blank">
+        <img loading="lazy" decoding="async" fetchpriority="low" src="../src/whatsapp-svgrepo-com.svg" width="68"
+          height="68" alt="WhatsApp">
+      </a>
+
+    </div>
   </div>
+
+
   <!-- article-container END -->
 
   <!-- Background script -->
