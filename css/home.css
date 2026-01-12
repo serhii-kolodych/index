@@ -1,0 +1,23 @@
+
+/* <article>    <!-- Self-contained content (blog post, news article) -->
+<section>       <!-- Thematic grouping of content with a heading -->
+<header>        <!-- Introductory content for article/section/page -->
+<footer>        <!-- Footer for article/section/page -->
+<nav>           <!-- Navigation links -->
+<aside>         <!-- Tangentially related content (sidebar) -->
+<main>          <!-- Main content of document (only one per page) --> */
+
+
+/* <h1> to <h6> <!-- Headings (hierarchy matters!) -->
+<p>             <!-- Paragraph -->
+<ul>, <ol>      <!-- Unordered/ordered lists -->
+<dl>            <!-- Definition list (perfect for FAQs) -->
+<figure>        <!-- Self-contained content like images -->
+<figcaption>    <!-- Caption for figure -->
+<blockquote>    <!-- Quotation from another source -->
+<pre>           <!-- Preformatted text (code blocks) -->
+<code>          <!-- Inline code -->
+<time>          <!-- Date/time -->
+<mark>          <!-- Highlighted/marked text -->
+<strong>        <!-- Strong importance -->
+<em>            <!-- Emphasized text --> */

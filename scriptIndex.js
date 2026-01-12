@@ -1,4 +1,6 @@
 // Initialize state
+console.log("👌 - loading scriptIndex.js: did you agree to cookies? 🍀 🐸");
+
 let whiteState = localStorage.getItem("white") || "0";
 
 // Load tracking script if cookies accepted
@@ -17,9 +19,10 @@ function loadTrackingScript() {
 
   const script = document.createElement("script");
   script.src = "tracking.js";
+  script.charset = "utf-8";
   script.async = true;
   script.onerror = function () {
-    console.error("Failed to load tracking.js");
+    console.error("👌 - Failed to load tracking.js");
   };
   document.head.appendChild(script);
 }
@@ -35,6 +38,7 @@ function applyButtonStyles() {
   if (savedDateTime) {
     feedbackMessage.textContent = savedDateTime;
     feedbackMessage.style.display = "block";
+    console.log("👌 - Found savedDateTime:", savedDateTime, "🍀 🐸");
   }
 
   if (savedColor) {
@@ -70,7 +74,7 @@ function handleButtonClick(color) {
 
   if (color === "green") {
     loadTrackingScript();
-    console.log("yes tracking.js 🍀 🐸");
+    console.log("👌 - yes tracking.js 🍀 🐸");
   }
 }
 
@@ -91,3 +95,5 @@ document.addEventListener("DOMContentLoaded", function () {
     noButton.addEventListener("click", () => handleButtonClick("red"));
   }
 });
+
+console.log("👌 - closing scriptIndex.js 🍀 🐸");

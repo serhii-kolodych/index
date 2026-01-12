@@ -9,7 +9,6 @@ function cookiesManager() {
     );
     const script = document.createElement("script");
     script.src = "tracking.js";
-    script.charset = "utf-8";
     script.async = true; // Optional, to load asynchronously
     document.head.appendChild(script);
   }
@@ -76,7 +75,6 @@ function handleButtonClick(color) {
   if (color === "green") {
     const script = document.createElement("script");
     script.src = "tracking.js";
-    script.charset = "utf-8";
     script.async = true; // Optional, to load asynchronously
     document.head.appendChild(script);
 

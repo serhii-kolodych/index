@@ -1,0 +1,302 @@
+<article class="blog-post">                          <!-- Main article container -->
+
+  ├── <header class="post-header">                   <!-- Article header -->
+  │   ├── <h1 class="post-title">                    <!-- Main title Only ONE per page (article title) -->
+  │   └── <div class="post-meta">                    <!-- Metadata container -->
+  │       ├── <time datetime="2026-01-10">           <!-- Publication date or any other date -->
+  │       └── <time datetime="...">                  <!-- Update date -->
+  │   </header>
+  │
+  ├── <div class="post-content">                     <!-- Main content wrapper -->
+  │   │
+  │   ├── <section class="post-section post-intro">  <!-- Introduction section -->
+  │   │   ├── <p class="lead-paragraph">             <!-- Opening/intro paragraph (larger text) -->
+  │   │   └── <p>                                    <!-- Regular paragraph -->
+  │   │   └──── <strong>                     <!-- Important text (bold) -->
+                <em>                         <!-- Emphasized text (italic) -->
+                <mark>                       <!-- Highlighted text -->
+                <code>                       <!-- Inline code -->                                  <!-- More paragraphs -->
+  │   │   </section>
+  │   │
+  │   ├── <section class="post-section" id="what-are-cookies">  <!-- Main content section -->
+  │   │   ├── <h2 class="section-heading">           <!-- Section heading / Major sections -->
+  │   │   ├── <p>                                    <!-- Explanation paragraphs -->
+  │   │   ├── <p>                                    <!-- More paragraphs -->
+  │   │   │
+  │   │   ├── <ul class="feature-list">             <!-- Unordered list for features (bullets) -->
+  │   │   │   ├── <li class="feature-item">          <!-- List item -->
+  │   │   │   └── <li class="feature-item">          <!-- List item -->
+  │   │   │   </ul>
+  │   │   │
+  │   │   ├── <dl class="definition-list">          <!-- Definition list for key-value pairs -->
+  │   │   │   ├── <dt class="definition-term">       <!-- Term -->
+  │   │   │   ├── <dd class="definition-description"> <!-- Description -->
+  │   │   │   ├── <dt class="definition-term">       <!-- Term -->
+  │   │   │   └── <dd class="definition-description"> <!-- Description -->
+  │   │   │   </dl>
+  │   │   │
+  │   │   └── <div class="subsection">               <!-- Subsection wrapper -->
+  │   │       ├── <h3 class="subsection-heading">    <!-- Subsection heading -->
+  │   │       ├── <p>                                <!-- Paragraph -->
+  │   │       │
+  │   │       └── <ul class="feature-list">         <!-- List with term/description -->
+  │   │           ├── <li class="feature-item">      <!-- List item -->
+  │   │           │   ├── <strong class="feature-term">       <!-- Bold term -->
+  │   │           │   └── <span class="feature-description">  <!-- Description text -->
+  │   │           ├── <li class="feature-item">      <!-- List item -->
+  │   │           └── <li class="feature-item">      <!-- List item -->
+  │   │           </ul>
+  │   │       </div>
+  │   │   </section>
+  │   │
+  │   ├── <section class="post-section" id="check-cookies">    <!-- Tutorial section -->
+  │   │   ├── <h2 class="section-heading">           <!-- Section heading -->
+  │   │   ├── <p>                                    <!-- Introduction paragraph -->
+  │   │   │
+  │   │   ├── <div class="tutorial-method">         <!-- Tutorial method 1 wrapper -->
+  │   │   │   ├── <h3 class="method-heading">        <!-- Alternative h3 for tutorial methods -->
+  │   │   │   ├── <p>                                <!-- Explanation paragraph -->
+  │   │   │   │
+  │   │   │   ├── <figure class="tutorial-figure">  <!-- Image container - Image with caption -->
+  │   │   │   │   ├── <img class="tutorial-image"   <!-- Image element -->
+  │   │   │   │   │        src="..."
+  │   │   │   │   │        alt="..."
+  │   │   │   │   │        loading="lazy"
+  │   │   │   │   │        width="800"              <!-- Specify dimensions -->
+  │   │   │   │   │        height="450">
+  │   │   │   │   └── <figcaption class="tutorial-caption">  <!-- Image caption -->
+  │   │   │   │   </figure>
+  │   │   │   │
+  │   │   │   └── <ol class="step-list">            <!-- Ordered list for steps (numbers) -->
+  │   │   │       ├── <li class="step-item">         <!-- Step item -->
+  │   │   │       │   ├── <strong class="step-label"> <!-- Step label (Step 1:) -->
+  │   │   │       │   └── Step description text
+  │   │   │       ├── <li class="step-item">         <!-- Step item -->
+  │   │   │       ├── <li class="step-item">         <!-- Step item -->
+  │   │   │       └── <li class="step-item">         <!-- Step item -->
+  │   │   │       </ol>
+  │   │   │   </div>
+  │   │   │
+  │   │   └── <div class="tutorial-method">         <!-- Tutorial method 2 wrapper -->
+  │   │       ├── <h3 class="method-heading">        <!-- Method heading -->
+  │   │       ├── <p>                                <!-- Explanation paragraph -->
+  │   │       │
+  │   │       └── <ul class="tool-list">            <!-- Unordered list for tools -->
+  │   │           ├── <li class="tool-item">         <!-- Tool item -->
+  │   │           │   ├── <strong class="tool-name">          <!-- Tool name -->
+  │   │           │   └── Tool description text
+  │   │           ├── <li class="tool-item">         <!-- Tool item -->
+  │   │           └── <li class="tool-item">         <!-- Tool item -->
+  │   │           </ul>
+  │   │       </div>
+  │   │   </section>
+  │   │
+  │   ├── <section class="post-section" id="advantages">      <!-- Advantages section -->
+  │   │   ├── <h2 class="section-heading">           <!-- Section heading -->
+  │   │   ├── <p>                                    <!-- Introduction paragraph -->
+  │   │   │
+  │   │   ├── <h3 class="subsection-heading">        <!-- Subsection heading -->
+  │   │   │
+  │   │   ├── <ul class="benefit-list">             <!-- Benefits list -->
+  │   │   │   ├── <li class="benefit-item">          <!-- Benefit item -->
+  │   │   │   │   ├── <strong class="benefit-title">         <!-- Benefit title -->
+  │   │   │   │   └── Benefit description text
+  │   │   │   ├── <li class="benefit-item">          <!-- Benefit item -->
+  │   │   │   └── <li class="benefit-item">          <!-- Benefit item -->
+  │   │   │   </ul>
+  │   │   │
+  │   │   └── <h3 class="subsection-heading">        <!-- Another subsection -->
+  │   │       └── <ul class="benefit-list">         <!-- Benefits list -->
+  │   │       </ul>
+  │   │   </section>
+  │   │
+  │   ├── <section class="post-section" id="comparison">      <!-- Comparison section with table -->
+  │   │   ├── <h2 class="section-heading">           <!-- Section heading -->
+  │   │   ├── <p>                                    <!-- Introduction paragraph -->
+  │   │   │
+  │   │   └── <div class="table-wrapper">           <!-- Table container for overflow (responsive scrolling) -->
+  │   │       └── <table class="comparison-table">  <!-- Table element -->
+  │   │           ├── <caption class="table-caption"> <!-- Table title / caption / description -->
+  │   │           ├── <thead>                        <!-- Table header section -->
+  │   │           │   └── <tr>                       <!-- Header row -->
+  │   │           │       ├── <th scope="col" class="table-header">  <!-- Column header -->
+  │   │           │       ├── <th scope="col" class="table-header">  <!-- Column header -->
+  │   │           │       └── <th scope="col" class="table-header">  <!-- Column header -->
+  │   │           │       </tr>
+  │   │           │   </thead>
+  │   │           │
+  │   │           └── <tbody>                        <!-- Table body -->
+  │   │               ├── <tr>                       <!-- Table row -->
+  │   │               │   ├── <th scope="row" class="table-row-header">  <!-- Row header -->
+  │   │               │   ├── <td class="table-cell">                    <!-- Table cell -->
+  │   │               │   │   └── Cell content text
+  │   │               │   │       └── <em class="table-example">         <!-- Example text -->
+  │   │               │   └── <td class="table-cell">                    <!-- Table cell -->
+  │   │               │   </tr>
+  │   │               ├── <tr>                       <!-- Table row -->
+  │   │               └── <tr>                       <!-- Table row -->
+  │   │               </tbody>
+  │   │           </table>
+  │   │       </div>
+  │   │   </section>
+  │   │
+  │   ├── <section class="post-section" id="risks">           <!-- Risks/disadvantages section -->
+  │   │   ├── <h2 class="section-heading">           <!-- Section heading -->
+  │   │   ├── <p>                                    <!-- Introduction paragraph -->
+  │   │   │
+  │   │   ├── <h3 class="subsection-heading">        <!-- Subsection heading -->
+  │   │   │
+  │   │   ├── <ul class="risk-list">                <!-- Risk list -->
+  │   │   │   ├── <li class="risk-item">             <!-- Risk item -->
+  │   │   │   │   ├── <strong class="risk-title">            <!-- Risk title -->
+  │   │   │   │   └── Risk description text
+  │   │   │   │       └── <em class="risk-example">          <!-- Example in italics -->
+  │   │   │   │           └── Example: ...
+  │   │   │   └── <li class="risk-item">             <!-- Risk item -->
+  │   │   │   </ul>
+  │   │   </section>
+  │   │
+  │   ├── <section class="post-section" id="legal">           <!-- Legal section -->
+  │   │   ├── <h2 class="section-heading">           <!-- Section heading -->
+  │   │   ├── <p>                                    <!-- Paragraph with links -->
+  │   │   │   ├── <a href="..." target="_blank" rel="noopener">  <!-- External link -->
+  │   │   │   └── More text
+  │   │   │
+  │   │   ├── <ul class="requirement-list">         <!-- Requirements list -->
+  │   │   │   ├── <li class="requirement-item">      <!-- Requirement item -->
+  │   │   │   │   ├── <strong class="requirement-title">     <!-- Item title -->
+  │   │   │   │   └── Description text
+  │   │   │   └── <li class="requirement-item">      <!-- Requirement item -->
+  │   │   │   </ul>
+  │   │   │
+  │   │   └── <div class="subsection">              <!-- Subsection for site-specific info -->
+  │   │       ├── <h3 class="subsection-heading">    <!-- Subsection heading -->
+  │   │       ├── <p>                                <!-- Paragraph -->
+  │   │       │   └── <a href="..." class="link">    <!-- Internal link -->
+  │   │       │
+  │   │       ├── <ul class="tool-usage-list">      <!-- Tool usage list -->
+  │   │       │   ├── <li>                           <!-- List item -->
+  │   │       │   │   ├── <strong>                   <!-- Tool name -->
+  │   │       │   │   └── Description
+  │   │       │   └── <li>                           <!-- List item -->
+  │   │       │   </ul>
+  │   │       │
+  │   │       └── <div class="media-container">     <!-- Video/media container -->
+  │   │           ├── <video class="tutorial-video" <!-- Video element -->
+  │   │           │          src="..."
+  │   │           │          autoplay               <!-- Autoplay -->
+  │   │           │          controls               <!-- Controls -->
+  │   │           │          muted                  <!-- Muted -->
+  │   │           │   </video>
+  │   │           │   └── <track src="..."          <!-- Captions track -->
+                                 kind="captions" 
+                                 srclang="en" 
+                                 label="English">
+                            </track>
+                        </video>
+  │   │           └── <p class="media-description">  <!-- Media description of video -->
+  │   │               └── <em>                       <!-- Descriptive text -->
+  │   │           </div>
+  │   │       </div>
+  │   │   </section>
+  │   │
+  │   ├── <section class="post-section" id="code-example">    <!-- Code example section -->
+  │   │   ├── <h2 class="section-heading">           <!-- Section heading -->
+  │   │   ├── <p>                                    <!-- Introduction paragraph -->
+  │   │   │
+  │   │   └── <div class="code-block">              <!-- Code block wrapper -->
+  │   │       ├── <div class="code-block__header">   <!-- Code header -->
+  │   │       │   ├── <span class="code-block__label"> <!-- Language label (JavaScript)-->
+  │   │       │   └── <button class="code-block__copy-btn">  <!-- Copy button -->
+  │   │       │       ├── <span class="copy-btn__icon">      <!-- Button icon -->
+  │   │       │       └── <span class="copy-btn__text">      <!-- Button text -->
+  │   │       │       </button>
+  │   │       │   </div>
+  │   │       │
+  │   │       └── <div class="code-block__content">  <!-- Code content container -->
+  │   │           └── <pre>                          <!-- Preformatted text -->
+  │   │               └── <code class="code-block__code"     <!-- Code element -->
+  │   │                         id="code-1">
+  │   │                   Code content here
+  │   │                   </code>
+  │   │               </pre>
+  │   │           </div>
+  │   │       </div>
+  │   │   </section>
+  │   │
+  │   ├── <section class="post-section" id="blockquote-example"> <!-- Quote section -->
+  │   │   ├── <h2 class="section-heading">           <!-- Section heading -->
+  │   │   ├── <p>                                    <!-- Introduction paragraph -->
+  │   │   │
+  │   │   └── <blockquote class="quote-block"       <!-- Blockquote element -->
+  │   │                   cite="https://...">
+  │   │       ├── <p class="quote-text">             <!-- Quote text -->
+  │   │       │   └── <em>                           <!-- Emphasis -->
+  │   │       │       └── // Quote text here
+  │   │       │   </em>
+  │   │       └── <footer class="quote-footer">      <!-- Quote attribution -->
+                        <cite class="quote-source">    <!-- Source citation -->
+                            // Source name
+                        </cite>
+  │   │           </footer>
+  │   │       </blockquote>
+  │   │   </section>
+  │   │
+  │   ├── <section class="post-section" id="faq">             <!-- FAQ section -->
+  │   │   ├── <h2 class="section-heading">           <!-- Section heading -->
+  │   │   │
+  │   │   └── <dl class="faq-list">                 <!-- Definition list for FAQs -->
+  │   │       ├── <div class="faq-item">             <!-- FAQ item wrapper -->
+  │   │       │   ├── <dt class="faq-question">      <!-- Question (term) -->
+  │   │       │   │   └── <strong>                   <!-- Question text -->
+  │   │       │   └── <dd class="faq-answer">        <!-- Answer (description) -->
+  │   │       │       └── Answer text
+  │   │       │   </div>
+  │   │       │
+  │   │       ├── <div class="faq-item">             <!-- FAQ item wrapper -->
+  │   │       │   ├── <dt class="faq-question">      <!-- Question -->
+  │   │       │   └── <dd class="faq-answer">        <!-- Answer -->
+  │   │       │   </div>
+  │   │       │
+  │   │       └── <div class="faq-item">             <!-- FAQ item wrapper -->
+  │   │           ├── <dt class="faq-question">      <!-- Question -->
+  │   │           └── <dd class="faq-answer">        <!-- Answer -->
+  │   │           </div>
+  │   │       </dl>
+  │   │   </section>
+  │   │
+  │   └── <aside class="post-aside">                 <!-- Sidebar/related content -->
+  │       ├── <h3 class="aside-heading">             <!-- Aside heading -->
+  │       ├── <ul class="related-links">             <!-- Related links list -->
+  │       │   ├── <li>                               <!-- List item -->
+  │       │   │   └── <a href="..." class="related-link">  <!-- Related link -->
+  │       │   └── <li>                               <!-- List item -->
+  │       │   </ul>
+  │       │
+  │       └── <div class="info-box">                <!-- Info/warning box -->
+  │           ├── <h4 class="info-box__title">       <!-- Minor (box) headings (rare) -->
+  │           └── <p class="info-box__content">      <!-- Box content -->
+  │           </div>
+  │       </aside>
+  │   </div> <!-- End .post-content -->
+  │
+  └── <footer class="post-footer">                   <!-- Article footer -->
+      ├── <nav class="post-tags" aria-label="Article tags">  <!-- Tag navigation -->
+      │   ├── <a href="..." class="tag-link">        <!-- Tag link -->
+      │   ├── <a href="..." class="tag-link">        <!-- Tag link -->
+      │   └── <a href="..." class="tag-link">        <!-- Tag link -->
+      │   </nav>
+      │
+      ├── <div class="post-author">                  <!-- Author information -->
+      │   ├── <img src="..." alt="..." class="author-avatar">  <!-- Author image -->
+      │   ├── <p class="author-name">                <!-- Author name -->
+      │   └── <p class="author-bio">                 <!-- Author bio -->
+      │   </div>
+      │
+      └── <div class="post-navigation">              <!-- Previous/next post -->
+          ├── <a href="..." class="nav-link nav-link--prev">   <!-- Previous post -->
+          └── <a href="..." class="nav-link nav-link--next">   <!-- Next post -->
+          </div>
+      </footer>
+
+</article> <!-- End .blog-post -->

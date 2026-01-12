@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link id="stylesheet" rel="stylesheet" href="../css/article.css" />
+  <!-- <style>
+    body {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    body.loaded {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease-in;
+    }
+  </style>
+  <link id="stylesheet" rel="stylesheet" /> -->
+
+  <script>
+    fetch("../shared/head.html")
+      .then((r) => r.text())
+      .then((html) => document.head.insertAdjacentHTML("beforeend", html))
+      .catch((e) => console.error("Failed to load shared head:", e));
+  </script>
+
+  <script src="../scripts/cookie-check.js" defer></script>
+  <script src="../scripts/theme-loader.js" defer></script>
+  <!-- clipboard js 1st of 2 parts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+  <!-- Primary Meta Tags -->
+  <title>WordPress Newsletter Plugin Tutorial: Complete Setup Guide (2026)</title>
+  <meta name="title" content="WordPress Newsletter Plugin: Free Setup Guide (2026)" />
+  <meta name="description"
+    content="Complete tutorial for Newsletter plugin for WordPress. Learn setup, custom forms, welcome emails & automation. Free, unlimited subscribers. Step-by-step guide." />
+  <meta name="keywords"
+    content="wordpress news plugin free, wordpress newsletter plugin, newsletter plugin wordpress, wordpress mailchimp plugin, mailpoet alternative wordpress, wordpress plugin email marketing, wordpress email newsletter plugin, best wordpress newsletter plugin, how to add newsletter to wordpress, wordpress email marketing plugin free, embed newsletter form in wordpress, free wordpress newsletter plugin" />
+  <link rel="canonical" href="https://kolodych.com/articles/newsletter-plugin-for-wordpress.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://kolodych.com/articles/newsletter-plugin-for-wordpress.html" />
+  <meta property="og:title" content="WordPress Newsletter Plugin Tutorial: Complete Setup Guide (Free)" />
+  <meta property="og:description"
+    content="Complete tutorial for Newsletter plugin for WordPress. Learn setup, custom forms, welcome emails & automation. Free, unlimited subscribers. Step-by-step guide." />
+  <!-- Landscape image (default for Facebook/LinkedIn) -->
+  <meta property="og:image" content="https://kolodych.com/articles/the-newsletter-plugin-free.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="628" />
+  <meta property="og:image:alt" content="Newsletter plugin for WordPress - free email marketing solution" />
+
+  <meta property="og:site_name" content="Serhii Kolodych's Web Development Projects" />
+  <meta property="og:logo" content="https://kolodych.com/favicon/favicon-32x32.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://kolodych.com/articles/newsletter-plugin-for-wordpress.html" />
+  <meta name="twitter:title" content="WordPress Newsletter Plugin Tutorial: Complete Setup Guide (2026)" />
+  <meta name="twitter:description"
+    content="Complete tutorial for Newsletter plugin for WordPress. Learn setup, custom forms, welcome emails & automation. Free, unlimited subscribers. Step-by-step guide" />
+  <meta name="twitter:image" content="https://kolodych.com/articles/the-newsletter-plugin-free.webp" />
+  <meta name="twitter:site" content="@serhiikolodych" />
+  <meta name="twitter:creator" content="@serhiikolodych" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "WordPress Newsletter Plugin: Free Setup Guide (2026)",
+        "description": "Complete tutorial for Newsletter plugin for WordPress. Learn setup, custom forms, welcome emails & automation. Free, unlimited subscribers. Step-by-step guide.",
+        "image": [
+          {
+            "@type": "ImageObject",
+            "url": "https://kolodych.com/articles/the-newsletter-plugin-free.webp",
+            "width": 1200,
+            "height": 628,
+            "caption": "Newsletter plugin for WordPress - free email marketing solution"
+          }
+        ],
+        "author": {
+          "@type": "Person",
+          "name": "Serhii Kolodych",
+          "url": "https://kolodych.com/"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Serhii Kolodych",
+          "url": "https://kolodych.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://kolodych.com/favicon/favicon-32x32.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://kolodych.com/articles/newsletter-plugin-for-wordpress.html"
+        },
+        "keywords": "wordpress news plugin free, wordpress newsletter plugin, newsletter plugin wordpress, wordpress mailchimp plugin, mailpoet alternative wordpress, wordpress plugin email marketing, wordpress email newsletter plugin, best wordpress newsletter plugin, how to add newsletter to wordpress, wordpress email marketing plugin free, embed newsletter form in wordpress, free wordpress newsletter plugin",
+        "articleSection": "WordPress Tutorial",
+        "wordCount": 1850,
+        "datePublished": "2026-01-09T11:34:00Z",
+        "dateModified": "2026-01-09T18:20:00Z"
+      }
+    </script>
+
+  <!-- HowTo Schema for Tutorial -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Setup WordPress Newsletter Plugin",
+        "description": "Complete tutorial for Newsletter plugin for WordPress. Learn setup, custom forms, welcome emails & automation. Free, unlimited subscribers. Step-by-step guide.",
+        "image": [
+          "https://kolodych.com/articles/the-newsletter-plugin-free.webp"
+        ],
+        "totalTime": "PT1H",
+        "estimatedCost": {
+          "@type": "MonetaryAmount",
+          "currency": "USD",
+          "value": "0"
+        },
+        "tool": {
+          "@type": "HowToTool",
+          "name": "WordPress Newsletter Plugin"
+        }
+      }
+    </script>
+
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://kolodych.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Articles",
+            "item": "https://kolodych.com/#articles"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "WordPress Newsletter Plugin Guide",
+            "item": "https://kolodych.com/articles/newsletter-plugin-for-wordpress.html"
+          }
+        ]
+      }
+    </script>
+
+
+</head>
+
+<body>
+  <canvas id="background-canvas" class="site-background" aria-hidden="true" data-action="navigate-home"></canvas>
+
+  <!-- Fixed Navigation Header -->
+  <header class="nav-header">
+    <div class="nav-header__container">
+
+      <!-- Home Button -->
+      <a href="/" class="nav-home" aria-label="Back to home" title="Back to home">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>
+      </a>
+
+      <!-- Chapter Navigation -->
+      <nav class="chapter-nav" aria-label="Chapter navigation">
+        <button class="chapter-nav__btn" id="prev-chapter" aria-label="Previous section" title="Previous section"
+          disabled>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        <span class="chapter-nav__indicator" id="chapter-indicator">
+          <span class="chapter-nav__current" id="current-chapter">0</span>
+          <span class="chapter-nav__separator">/</span>
+          <span class="chapter-nav__total" id="total-chapters">5</span>
+        </span>
+
+        <button class="chapter-nav__btn" id="next-chapter" aria-label="Next section" title="Next section">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true" data-theme="dark">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true" data-theme="light">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+        <span class="theme-toggle__label">Dark</span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Article Container -->
+  <article class="blog-post">
+    <header class="post-header">
+      <h1 class="post-title">WordPress Newsletter Plugin Tutorial: Complete Setup Guide (Free)</h1>
+      <div class="post-meta">
+        <time class="post-date" datetime="2026-01-09">Published on January 9, 2026</time>
+        <span class="post-reading-time">12 min read</span>
+      </div>
+    </header>
+    <div class="post-content">
+      <section class="post-section post-intro">
+        <p class="lead-paragraph">
+          Looking for a <strong>free WordPress newsletter plugin</strong> that doesn't limit your subscribers? <a
+            href="https://wordpress.org/plugins/newsletter/" target="_blank" rel="noopener">The Newsletter plugin by
+            Stefano
+            Lissa</a>
+          is one of the most powerful <strong>email marketing solutions for WordPress</strong>, with over 400,000
+          active installations.
+        </p>
+        <figure class="tutorial-figure">
+          <img class="tutorial-image" src="newsletter-plugin-free.webp" alt="Newsletter plugin for WordPress"
+            loading="lazy" width="1200" height="628">
+          <figcaption class="tutorial-caption">
+            The Newsletter plugin for WordPress - free email marketing solution
+          </figcaption>
+        </figure>
+        <p class="lead-paragraph">
+          Unlike MailChimp or MailPoet, this plugin is completely free with unlimited subscribers, unlimited emails,
+          and
+          no
+          hidden fees.
+        </p>
+
+        <!-- What You'll Learn Box -->
+        <div class="info-box info-box--learning">
+          <h2 class="info-box__title">What You'll Learn in This Tutorial:</h2>
+          <ul class="info-box__list">
+            <li>How to install and configure Newsletter plugin (5 minutes)</li>
+            <li>Create custom subscription forms with Elementor and Gutenberg</li>
+            <li>Set up automated welcome and goodbye emails</li>
+            <li>Send your first newsletter to subscribers</li>
+            <li>Customize forms with HTML and CSS</li>
+            <li>Complete subscriber workflow (subscribe → welcome → unsubscribe →
+              resubscribe)</li>
+          </ul>
+        </div>
+
+        <!-- Why Choose Box -->
+        <div class="info-box info-box--features">
+          <h2 class="info-box__title">Why Choose Newsletter Plugin?</h2>
+          <ul class="info-box__list">
+            <li>100% Free (no subscriber limits)</li>
+            <li>Unlimited newsletters</li>
+            <li>Drag-and-drop email composer</li>
+            <li>Works with Elementor, Gutenberg, and other page builders</li>
+            <li>GDPR compliant</li>
+            <li>No monthly fees like MailChimp</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="post-section post-navigation">
+        <nav class="toc" aria-label="Table of Contents">
+          <h2 class="toc__title">Quick Navigation:</h2>
+          <ol class="toc__list">
+            <li><a class="toc__link" href="#what-is">What is Newsletter Plugin?</a></li>
+            <li><a class="toc__link" href="#vs-mailchimp">Newsletter Plugin vs MailChimp vs MailPoet.</a></li>
+            <li><a class="toc__link" href="#install">Installation & Setup</a></li>
+            <li><a class="toc__link" href="#subscription-form">Create Subscription Form</a></li>
+            <li><a class="toc__link" href="#elementor">Add Form to Elementor</a></li>
+            <li><a class="toc__link" href="#welcome-email">Welcome Email Setup</a></li>
+            <li><a class="toc__link" href="#goodbye-email">Unsubscribe & Goodbye Emails</a></li>
+            <li><a class="toc__link" href="#resubscribe">Resubscription Workflow</a></li>
+            <li><a class="toc__link" href="#send-newsletter">Send Your First Newsletter</a></li>
+            <li><a class="toc__link" href="#customize-css">Customize with CSS</a></li>
+            <li><a class="toc__link" href="#redirect">Auto-Redirect After Subscribe</a></li>
+            <li><a class="toc__link" href="#advanced">Advanced Features</a></li>
+            <li><a class="toc__link" href="#troubleshooting">Troubleshooting Common Issues</a></li>
+            <li><a class="toc__link" href="#faq">FAQ</a></li>
+          </ol>
+        </nav>
+      </section>
+      <section class="post-section" id="what-is">
+        <h2 class="section-heading">What is Newsletter Plugin for WordPress?</h2>
+
+        <p>
+          <strong>Newsletter</strong> is a free WordPress email marketing plugin created by Stefano Lissa.
+          It's one of the most popular <strong>WordPress newsletter plugins</strong> with 400,000+ active
+          installations and a 4.6-star rating.
+        </p>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Key Features:</h3>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <strong class="feature-term">Unlimited Subscribers</strong> -
+              <span class="feature-description">No limits on list size (unlike MailChimp's 500 free limit)</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">Unlimited Emails</strong> -
+              <span class="feature-description">Send as many newsletters as you want</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">Drag & Drop Composer</strong> -
+              <span class="feature-description">Visual email builder</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">Automation</strong> -
+              <span class="feature-description">Welcome emails, goodbye emails, automated campaigns</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">List Segmentation</strong> -
+              <span class="feature-description">Target specific subscriber groups</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">Analytics</strong> -
+              <span class="feature-description">Track opens, clicks, and engagement</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">GDPR Compliant</strong> -
+              <span class="feature-description">Privacy checkboxes and consent management</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">Responsive Templates</strong> -
+              <span class="feature-description">Mobile-friendly email designs</span>
+            </li>
+          </ul>
+
+          <figure class="tutorial-figure">
+            <img src="newsletter-plugin-wordpress-reviews-ratings.webp" loading="lazy"
+              alt="Newsletter plugin for WordPress reviews and ratings" class="tutorial-image">
+            <figcaption class="tutorial-caption">Newsletter plugin by Stefano Lissa reviews and ratings</figcaption>
+          </figure>
+
+          <h3 class="subsection-heading">Plugin Stats:</h3>
+          <ul class="stats-list">
+            <li>Active Installations: 300,000+</li>
+            <li>Languages: 24+</li>
+            <li>Rating: 4.6/5 stars</li>
+            <li>Last Updated: December 2025</li>
+            <li>WordPress Version: 6.1+</li>
+            <li>Price: 100% Free</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="post-section" id="vs-mailchimp">
+        <h2 class="section-heading">Newsletter Plugin vs MailChimp vs MailPoet: Which is Better?</h2>
+
+        <figure class="tutorial-figure">
+          <img src="newsletter-plugin-vs-mailchimp-vs-mailpoet-comparison-trends-chart-for-wordpress.webp"
+            loading="lazy" alt="Newsletter plugin vs MailChimp vs MailPoet comparison Google trends chart"
+            class="tutorial-image">
+          <figcaption class="tutorial-caption">Newsletter plugin vs MailChimp vs MailPoet comparison Google trends
+            chart
+          </figcaption>
+        </figure>
+
+        <p>
+          Many users search for <strong>"wordpress mailchimp plugin"</strong> or
+          <strong>"mailpoet alternative wordpress"</strong> but Newsletter plugin offers significant advantages:
+        </p>
+
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <caption class="table-caption">Feature Comparison: Newsletter vs MailChimp vs MailPoet</caption>
+            <thead>
+              <tr>
+                <th scope="col" class="table-header">Feature</th>
+                <th scope="col" class="table-header">Newsletter Plugin</th>
+                <th scope="col" class="table-header">MailChimp</th>
+                <th scope="col" class="table-header">MailPoet</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="table-row-header">Price</th>
+                <td class="table-cell">100% Free</td>
+                <td class="table-cell">Free up to 500 subscribers</td>
+                <td class="table-cell">Free up to 1,000 subscribers</td>
+              </tr>
+              <tr>
+                <th scope="row" class="table-row-header">Subscriber Limit</th>
+                <td class="table-cell">Unlimited</td>
+                <td class="table-cell">500 free. Paid for more</td>
+                <td class="table-cell">1,000 free. Paid plans above</td>
+              </tr>
+              <tr>
+                <th scope="row" class="table-row-header">Monthly Emails</th>
+                <td class="table-cell">Unlimited</td>
+                <td class="table-cell">1,000 per month on free plan</td>
+                <td class="table-cell">Unlimited</td>
+              </tr>
+              <tr>
+                <th scope="row" class="table-row-header">Branding</th>
+                <td class="table-cell">None</td>
+                <td class="table-cell">Powered by MailChimp on free plan</td>
+                <td class="table-cell">MailPoet branding on free plan</td>
+              </tr>
+              <tr>
+                <th scope="row" class="table-row-header">Data Ownership</th>
+                <td class="table-cell">You own all subscriber data</td>
+                <td class="table-cell">Stored on MailChimp servers</td>
+                <td class="table-cell">Stored in WordPress database</td>
+              </tr>
+              <tr>
+                <th scope="row" class="table-row-header">Learning Curve</th>
+                <td class="table-cell">Easy. Managed inside WordPress</td>
+                <td class="table-cell">Requires external account setup</td>
+                <td class="table-cell">Easy. Native WordPress integration</td>
+              </tr>
+              <tr>
+                <th scope="row" class="table-row-header">Automation</th>
+                <td class="table-cell">Basic automation included</td>
+                <td class="table-cell">Advanced automation on paid plans</td>
+                <td class="table-cell">Advanced automation. Limited on free plan</td>
+              </tr>
+              <tr>
+                <th scope="row" class="table-row-header">Templates</th>
+                <td class="table-cell">Included</td>
+                <td class="table-cell">Limited on free plan</td>
+                <td class="table-cell">Included. Modern templates</td>
+              </tr>
+              <tr>
+                <th scope="row" class="table-row-header">WooCommerce Integration</th>
+                <td class="table-cell">Basic</td>
+                <td class="table-cell">External integration</td>
+                <td class="table-cell">Strong native integration</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="post-section" id="install">
+        <h2 class="section-heading">How to Install Newsletter Plugin in WordPress</h2>
+
+        <p>
+          Installing the <strong>WordPress email newsletter plugin</strong> takes less than 2 minutes.
+          Follow these steps:
+        </p>
+
+        <figure class="tutorial-figure">
+          <img src="newsletter-installing-wordpress-plugin.webp" loading="lazy"
+            alt="Installing Newsletter plugin in WordPress" class="tutorial-image">
+          <figcaption class="tutorial-caption">Installing Newsletter plugin in WordPress</figcaption>
+        </figure>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 1: Access Plugin Menu</h3>
+          <ol class="step-list">
+            <li class="step-item">Log into your WordPress admin dashboard</li>
+            <li class="step-item">Navigate to <strong>Plugins → Add Plugin</strong></li>
+          </ol>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 2: Search for Newsletter Plugin</h3>
+          <ol class="step-list">
+            <li class="step-item">In the search box, type: <strong>"Newsletter awesome"</strong></li>
+            <li class="step-item">Look for the plugin with 300,000+ active installations by <strong>Stefano
+                Lissa</strong></li>
+          </ol>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 3: Install & Activate</h3>
+          <ol class="step-list">
+            <li class="step-item">Click <strong>"Install Now"</strong> button</li>
+            <li class="step-item">Wait for installation to complete (5-10 seconds)</li>
+            <li class="step-item">Click <strong>"Activate"</strong> button</li>
+          </ol>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 4: Initial Setup</h3>
+          <p>
+            After activation, you'll see a <strong>Newsletter</strong> menu item in your WordPress sidebar.
+          </p>
+          <p>
+            The plugin is now installed and ready to configure!
+          </p>
+        </div>
+      </section>
+
+
+
+      <section class="post-section" id="subscription-form">
+        <h2 class="section-heading">Creating Your First Subscription Form</h2>
+
+        <p>
+          Now let's <strong>add newsletter to WordPress</strong> by creating a subscription form.
+        </p>
+
+        <figure class="tutorial-figure">
+          <img src="newsletter-plugin-forms-configuration-menu.webp" loading="lazy"
+            alt="Newsletter subscription form Settings menu in WordPress" class="tutorial-image">
+          <figcaption class="tutorial-caption">Creating subscription form in WordPress</figcaption>
+        </figure>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 1: Access Form Settings</h3>
+          <ol class="step-list">
+            <li class="step-item">Go to <strong>Newsletter → Forms</strong></li>
+            <li class="step-item">Click on <strong>Configure</strong> (⚙️ Gear Icon) next to <strong>"Standard
+                Form"</strong></li>
+          </ol>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 2: Configure Form Fields</h3>
+          <figure class="tutorial-figure">
+            <img src="newsletter-configuration-form.webp" loading="lazy"
+              alt="Newsletter subscription form Fields configuration in WordPress" class="tutorial-image">
+            <figcaption class="tutorial-caption">Creating Newsletter subscription form in WordPress</figcaption>
+          </figure>
+          <p>Choose which fields to display:</p>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <strong>Email</strong> (Required - cannot be disabled)
+            </li>
+            <li class="feature-item">
+              <strong>First Name</strong> (Recommended)
+            </li>
+            <li class="optional-item">
+              Last Name (Optional)
+            </li>
+            <li class="optional-item">
+              Gender (Optional)
+            </li>
+            <li class="feature-item">
+              <strong>Privacy Checkbox</strong> (Required for GDPR)
+            </li>
+          </ul>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 3: Customize Labels</h3>
+          <p>Edit the text that appears in your form:</p>
+          <ul class="option-list">
+            <li>Email (First Name) Placeholder text could be: <code>Enter your email</code></li>
+            <li>Button label: "Subscribe" (or "Join Our Newsletter")</li>
+            <li>Privacy Label: "I accept the privacy policy"</li>
+            <li>And basically any field you see in the form</li>
+
+          </ul>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 4: Copy Shortcode</h3>
+          <p>At the top of the settings page, you'll see:</p>
+
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__label">Shortcode</span>
+              <button class="code-block__copy-btn" data-clipboard-target="#newsletter-form-code">
+                <span class="copy-btn__text">Copy Code</span>
+              </button>
+            </div>
+            <div class="code-block__content">
+              <pre><code id="newsletter-form-code" class="code-block__code">[newsletter_form]</code></pre>
+            </div>
+          </div>
+
+          <p>Copy this shortcode - you'll need it in the next step.</p>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 5: Save Settings</h3>
+          <p>Click <strong>"Save"</strong> at the bottom of the page.</p>
+          <p>Congratulations! You've successfully created and Saved your first subscription form.</p>
+
+        </div>
+      </section>
+
+      <section class="post-section" id="elementor">
+        <h2 class="section-heading">How to Embed Newsletter Form in WordPress</h2>
+
+        <p>
+          Learn how to <strong>embed newsletter form in WordPress</strong> using any of this three simple methods.
+        </p>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Method 1: Using Gutenberg (WordPress Block Editor)</h3>
+
+          <div class="tutorial-method">
+            <h4 class="method-heading">Step 1: Edit Your Page</h4>
+            <ol class="step-list">
+              <li class="step-item">Go to <strong>Pages → All Pages</strong></li>
+              <li class="step-item">Choose the page where you want the newsletter form</li>
+              <li class="step-item">Click <strong>Edit</strong></li>
+            </ol>
+          </div>
+
+          <div class="tutorial-method">
+            <h4 class="method-heading">Step 2: Add Shortcode Block</h4>
+            <ol class="step-list">
+              <li class="step-item">Click the <strong>(+)</strong> button to add a new block</li>
+              <li class="step-item">Search for <strong>Shortcode</strong></li>
+              <li class="step-item">Select the Shortcode block</li>
+            </ol>
+          </div>
+
+          <div class="tutorial-method">
+            <h4 class="method-heading">Step 3: Insert Shortcode</h4>
+            <ol class="step-list">
+              <li class="step-item">Paste the shortcode <code>[newsletter_form]</code> into the block</li>
+              <li class="step-item">Click <strong>Update</strong> or <strong>Publish</strong></li>
+            </ol>
+
+            <p>Your newsletter form is now live on the page.</p>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Method 2: Using Elementor</h3>
+
+          <div class="tutorial-method">
+            <h4 class="method-heading">Step 1: Edit with Elementor</h4>
+            <ol class="step-list">
+              <li class="step-item">Go to the page you want to edit</li>
+              <li class="step-item">Click <strong>Edit with Elementor</strong></li>
+            </ol>
+          </div>
+
+          <div class="tutorial-method">
+            <h4 class="method-heading">Step 2: Add Shortcode Widget</h4>
+            <ol class="step-list">
+              <li class="step-item">In the left panel, search for <strong>Shortcode</strong></li>
+              <li class="step-item">Drag the Shortcode widget to the page</li>
+            </ol>
+          </div>
+
+          <div class="tutorial-method">
+            <h4 class="method-heading">Step 3: Insert Newsletter Shortcode</h4>
+            <ol class="step-list">
+              <li class="step-item">Paste the shortcode <code>[newsletter_form]</code> into widget settings</li>
+              <li class="step-item">Click <strong>Update</strong></li>
+            </ol>
+          </div>
+
+          <div class="tutorial-method">
+            <h4 class="method-heading">Step 4: Preview</h4>
+            <ol class="step-list">
+              <li class="step-item">Click the preview icon</li>
+              <li class="step-item">Confirm the form appears correctly</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Method 3: Using Widget (Sidebar or Footer)</h3>
+
+          <div class="tutorial-method">
+            <h4 class="method-heading">Step 1: Access Widgets</h4>
+            <ol class="step-list">
+              <li class="step-item">Go to <strong>Appearance → Widgets</strong></li>
+            </ol>
+          </div>
+
+          <div class="tutorial-method">
+            <h4 class="method-heading">Step 2: Add Shortcode Widget</h4>
+            <ol class="step-list">
+              <li class="step-item">Select a widget area like Sidebar or Footer</li>
+              <li class="step-item">Click <strong>(+)</strong> and search for <strong>Shortcode</strong></li>
+            </ol>
+
+            <ol class="step-list">
+              <li class="step-item">Paste the shortcode <code>[newsletter_form]</code></li>
+              <li class="step-item">Click <strong>Save</strong></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-section" id="welcome-email">
+        <h2 class="section-heading">Setting Up Welcome Email</h2>
+
+        <p>
+          A welcome email is automatically sent when someone subscribes. You can customize it to match your brand.
+        </p>
+
+        <figure class="tutorial-figure">
+          <img src="newsletter-welcome-email-customization.webp" loading="lazy"
+            alt="Newsletter Welcome Email Customization" class="tutorial-image">
+          <figcaption class="tutorial-caption">Newsletter Welcome Email Customization</figcaption>
+        </figure>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 1: Access Welcome Email Settings</h3>
+          <ol class="step-list">
+            <li class="step-item">Go to <strong>Newsletter → Subscription</strong></li>
+            <li>Click on <strong>Welcome</strong> tab</li>
+            <li class="step-item">Open the <strong>Email</strong> tab
+            </li>
+            <li class="step-item">Choose 1 of 3 options:<ul class="sub-step-list">
+                <li><strong>Default</strong> - uses the default email template. Yet you can still slightly Customize it
+                  if click on
+                  "Customize" below <code>Welcome</code> subject.</li>
+                <li><strong>Composer</strong> - allows you to create a custom email. Prefered version.</li>
+                <li><strong>Do not send</strong> - disables the welcome email</li>
+              </ul>
+            </li>
+          </ol>
+          </li>
+          </ol>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 2: Write Email Subject</h3>
+          <ul class="option-list">
+            <li>Welcome to [Your Site Name]</li>
+            <li>Thanks for Subscribing, {name}</li>
+            <li>You are in. Here is what to expect</li>
+          </ul>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 3: Choose Email Editor</h3>
+          <ul class="option-list">
+            <li><strong>Composer</strong> for visual drag and drop editing.</li>
+            <li><strong>Default → Customize → Visual / Code</strong> Tab for HTML templates</li>
+          </ul>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Using HTML Template</h3>
+
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__label">Welcome email HTML</span>
+              <button class="code-block__copy-btn" data-clipboard-target="#welcome-html">
+                <span class="copy-btn__text">Copy Code</span>
+              </button>
+            </div>
+            <div class="code-block__content">
+              <pre><code id="welcome-html" class="code-block__code">&lt;div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;"&gt;
+  &lt;h2&gt;Welcome, {name}!&lt;/h2&gt;
+  &lt;p&gt;Thank you for subscribing to our newsletter.&lt;/p&gt;
+  &lt;p&gt;You will receive updates directly in your inbox.&lt;/p&gt;
+  &lt;a href="{profile_url}"&gt;Manage Subscription&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 5: Use Mail Tags</h3>
+          <ul class="option-list">
+            <li>{name} subscriber name</li>
+            <li>{email} subscriber email</li>
+            <li>{profile_url} manage subscription link</li>
+            <li>{unsubscription_url} unsubscribe link</li>
+          </ul>
+          <p>More tags you can find <a
+              href="https://www.thenewsletterplugin.com/documentation/newsletters/newsletter-tags/"
+              rel="noopener noreferrer" target="_blank">on the Newsletter plugin documentation website</a>.</p>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 6: Save and Test</h3>
+          <ol class="step-list">
+            <li class="step-item">Click <strong>Save</strong>.</li>
+            <li class="step-item">Go to your website page with a <code>[newsletter_form]</code> and Subscribe with a
+              test email.</li>
+            <li class="step-item">Check inbox, check your Welcome mail. Redo if needed.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="post-section" id="goodbye-email">
+        <h2 class="section-heading">Goodbye Email and Unsubscribe Workflow</h2>
+
+        <figure class="tutorial-figure">
+          <img src="newsletter-goodbye-message-page-and-email.webp" loading="lazy"
+            alt="Newsletter Goodbye Message and Email Customization" class="tutorial-image">
+          <figcaption class="tutorial-caption"></figcaption>
+        </figure>
+
+        <p>
+          When users unsubscribe, send a professional goodbye message with an option to return.
+        </p>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 1: Configure Goodbye Message Page</h3>
+          <ol class="step-list">
+            <li class="step-item">Go to <strong>Newsletter → Subscription → Unsubscription</strong></li>
+            <li class="step-item">Click on <strong>"Goodbye"</strong> tab</li>
+            <li class="step-item">Click <strong>"Customize"</strong> near Goodbye message</li>
+            <li class="step-item">Click on Code tab</li>
+          </ol>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 2: Create Goodbye Page Message</h3>
+          <p>Paste this HTML inside Code tab of Goodbye message:</p>
+
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__label">Goodbye page HTML</span>
+              <button class="code-block__copy-btn" data-clipboard-target="#goodbye-page">
+                <span class="copy-btn__text">Copy Code</span>
+              </button>
+            </div>
+            <div class="code-block__content">
+              <pre><code id="goodbye-page" class="code-block__code">&lt;div style="padding-top: 40px; text-align: center;"&gt;
+  &lt;h1&gt;Subscription canceled.&lt;/h1&gt;
+  &lt;h2&gt;One click to undo.&lt;/h2&gt;
+  &lt;div style="margin: 30px 0;"&gt;
+    [newsletter_resubscribe_button label="Undo unsubscribe" /]
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <p>Click <strong>"Save"</strong>. You can test it by unsubscribing from your newsletter. You will see the
+            goodbye page with "Undo unsubscribe" button.</p>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 3: Create Goodbye Email</h3>
+          <ol class="step-list">
+            <li class="step-item">Still in <strong>Newsletter → Subscription → Unsubscription</strong> → Goodbye tab
+            </li>
+            <li class="step-item">Choose Enable / Disable and then click <strong>"Customize"</strong> near Goodbye email
+            </li>
+            <li class="step-item">Write your <strong>Subject</strong> for Goodbye email</li>
+            <li class="step-item">And then <strong> write your message</strong> using Visual editor or click on Code tab
+              to write HTML
+              code</li>
+          </ol>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 4: Design Goodbye Email</h3>
+          <p>Paste this beautiful template:</p>
+
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__label">Goodbye email HTML</span>
+              <button class="code-block__copy-btn" data-clipboard-target="#goodbye-email">
+                <span class="copy-btn__text">Copy Code</span>
+              </button>
+            </div>
+            <div class="code-block__content">
+              <pre><code id="goodbye-email" class="code-block__code">&lt;div style="background: #000; color: #fff; padding: 40px; text-align: center; font-family: 'Segoe UI', sans-serif; border-radius: 12px; max-width: 500px; margin: 0 auto;"&gt;
+  &lt;h2 style="margin: 0 0 12px 0; font-size: 26px;"&gt;
+    Goodbye for Now 👋
+  &lt;/h2&gt;
+  &lt;p style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.6;"&gt;
+    You've been unsubscribed successfully.
+  &lt;/p&gt;
+  &lt;p style="margin: 0 0 25px 0; font-size: 15px; opacity: 0.85;"&gt;
+    Changed your mind? We'd love to have you back!
+  &lt;/p&gt;
+  &lt;div&gt;
+    [newsletter_resubscribe_button label="Rejoin Us" /]
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 5: Save</h3>
+          <p>Click <strong>"Save"</strong> at the bottom.</p>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">How It Works:</h3>
+          <ol class="workflow-list">
+            <li>User clicks "Unsubscribe" in any email</li>
+            <li>They see the goodbye page with "Undo" button</li>
+            <li>They receive the goodbye email</li>
+            <li>Email contains "Rejoin Us" button</li>
+            <li>Clicking button reactivates subscription</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="post-section" id="resubscribe">
+        <h2 class="section-heading">Resubscription Workflow Setup</h2>
+        <p>Let subscribers easily rejoin if they change their mind.</p>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 1: Access Resubscribe Settings</h3>
+          <ol class="step-list">
+            <li class="step-item">Go to <strong>Newsletter → Subscription → Unsubscription</strong></li>
+            <li class="step-item">Click <strong>"Resubscribe"</strong> tab</li>
+            <li class="step-item">Click <strong>"Customize"</strong> near Reactivated message</li>
+            <li class="step-item">And then <strong>write your "Welcome back!" message</strong> using Visual editor or
+              click on Code tab to write HTML
+              code</li>
+          </ol>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 2: Create Reactivation Message</h3>
+          <p>Paste this welcome-back message:</p>
+
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__label">Reactivation message HTML</span>
+              <button class="code-block__copy-btn" data-clipboard-target="#reactivation-message">
+                <span class="copy-btn__text">Copy Code</span>
+              </button>
+            </div>
+            <div class="code-block__content">
+              <pre><code id="reactivation-message" class="code-block__code">&lt;div style="padding-top: 40px; text-align: center;"&gt;
+  &lt;h2&gt;Your subscription has been reactivated.&lt;/h2&gt;
+  &lt;h3&gt;Welcome Back! 🎉&lt;/h3&gt;
+  &lt;p&gt;We're happy to have you back with us!&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 3: Save</h3>
+          <p>Click <strong>"Save"</strong></p>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Complete User Journey:</h3>
+          <ol class="workflow-list">
+            <li>✅ <strong>Subscribe</strong> → Welcome email</li>
+            <li>❌ <strong>Unsubscribe button in email</strong> → Goodbye page + Goodbye email</li>
+            <li>🔄 <strong>Click "Rejoin"</strong> → Reactivation message page</li>
+            <li>✅ <strong>Subscription Active Again</strong></li>
+          </ol>
+
+          <p>This creates a smooth, professional experience that respects user choices while making it easy to return.
+          </p>
+        </div>
+      </section>
+
+      <section class="post-section" id="send-newsletter">
+        <h2 class="section-heading">How to Send Your First Newsletter</h2>
+        <p>Now that your forms and emails are set up, let's send a newsletter! And there are actually two ways to do
+          this:</p>
+
+        <figure class="tutorial-figure">
+          <img src="newsletter-add-new.webp" loading="lazy" alt="Newsletter Add new button or create newsletter"
+            class="tutorial-image">
+          <figcaption class="tutorial-caption">Create new newsletter by following green or blue route.</figcaption>
+        </figure>
+
+
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 1: Create New Newsletter</h3>
+          <ol class="step-list">
+            <li class="step-item">Go to <strong>Newsletter → Newsletters</strong></li>
+            <li class="step-item">Click <strong>"Add new"</strong> button</li>
+          </ol>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 2: Choose Template</h3>
+          <p>You have two options:</p>
+          <ul class="option-list">
+            <li><strong>Use a Template</strong> - Pre-designed layouts (10 of them)</li>
+            <li><strong>Start from Blank</strong> - Empty canvas</li>
+          </ul>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 3: Write Your Newsletter</h3>
+
+          <p><strong>Subject Line:</strong></p>
+          <p>Write a compelling subject (best practices):</p>
+          <ul class="best-practice-list">
+            <li>Keep it under 50 characters</li>
+            <li>Use personalization: "Hi {name}, here's your update"</li>
+            <li>Create curiosity: "You won't believe what happened..."</li>
+            <li>Be clear: "Weekly Newsletter - January 2025"</li>
+          </ul>
+
+          <p><strong>Message Body:</strong></p>
+          <ul class="best-practice-list">
+            <li>Add header with your logo</li>
+            <li>Write your content in text blocks</li>
+            <li>Add images (optimized, under 200KB each)</li>
+            <li>Include call-to-action buttons</li>
+            <li>Add social media links in footer</li>
+          </ul>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 4: Click Next</h3>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 5: Select Recipients</h3>
+
+          <p><strong>Choose Your Lists:</strong></p>
+          <ul class="option-list">
+            <li>Match <strong>all of</strong> them (sends to everyone)</li>
+            <li>Or select specific lists</li>
+          </ul>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 6: Schedule or Send</h3>
+
+          <p><strong>Option A: Send Now</strong></p>
+          <ul class="option-list">
+            <li>Click <strong>"Send Now"</strong> button</li>
+            <li>Start real delivery? - Click "OK"</li>
+          </ul>
+
+          <p><strong>Option B: Schedule for Later</strong></p>
+          <ul class="option-list">
+            <li>Click <strong>"Schedule"</strong></li>
+            <li>Choose date and time</li>
+            <li>Click <strong>"Schedule"</strong> again and then confirm with <strong>"OK"</strong></li>
+          </ul>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 7: Verify</h3>
+          <ol class="step-list">
+            <li class="step-item">Check your own email inbox</li>
+            <li class="step-item">Verify the newsletter arrived</li>
+            <li class="step-item">Check formatting on desktop and mobile</li>
+            <li class="step-item">Click links to ensure they work</li>
+          </ol>
+
+          <p><strong>Congratulations!</strong> You've sent your first newsletter using the <strong>WordPress
+              newsletter
+              plugin</strong>.</p>
+        </div>
+      </section>
+
+      <section class="post-section" id="customize-css">
+        <h2 class="section-heading">Customize Newsletter Forms with CSS</h2>
+
+        <p>Make your subscription form match your brand with custom CSS.</p>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 1: Access Your Theme's Custom CSS</h3>
+
+          <p><strong>Method A: Through Customizer</strong></p>
+          <ol class="step-list">
+            <li class="step-item">Go to <strong>Appearance → Customize</strong></li>
+            <li class="step-item">Click <strong>"Additional CSS"</strong></li>
+          </ol>
+
+          <p><strong>Method B: Through Theme Settings</strong></p>
+          <ol class="step-list">
+            <li class="step-item">Some themes have a "Custom CSS" section</li>
+            <li class="step-item">Check your theme documentation</li>
+          </ol>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 2: Style the Submit Button</h3>
+
+          <p>Paste this CSS to customize the newsletter button:</p>
+
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__label">Submit button CSS</span>
+              <button class="code-block__copy-btn" data-clipboard-target="#submit-button-css">
+                <span class="copy-btn__text">Copy Code</span>
+              </button>
+            </div>
+            <div class="code-block__content">
+              <pre><code id="submit-button-css" class="code-block__code">/* Newsletter Plugin Submit Button */
+.tnp-submit {
+  border: none !important;
+  background: #FFD586 !important;
+  color: #1C1C1C !important;
+  padding: 12px 30px !important;
+  border-radius: 5px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.tnp-submit:hover {
+  background: #FFC556 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 3: Style the Input Fields</h3>
+
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__label">Input fields CSS</span>
+              <button class="code-block__copy-btn" data-clipboard-target="#input-fields-css">
+                <span class="copy-btn__text">Copy Code</span>
+              </button>
+            </div>
+            <div class="code-block__content">
+              <pre><code id="input-fields-css" class="code-block__code">/* Newsletter Input Fields */
+.tnp-field {
+  padding: 12px 15px !important;
+  border: 2px solid #ddd !important;
+  border-radius: 5px !important;
+  font-size: 15px !important;
+  width: 100% !important;
+  margin-bottom: 15px !important;
+}
+
+.tnp-field:focus {
+  border-color: #FFD586 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(255,213,134,0.2) !important;
+}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 4: Style the Form Container</h3>
+
+          <div class="code-block">
+            <div class="code-block__header">
+              <span class="code-block__label">Form container CSS</span>
+              <button class="code-block__copy-btn" data-clipboard-target="#form-container-css">
+                <span class="copy-btn__text">Copy Code</span>
+              </button>
+            </div>
+            <div class="code-block__content">
+              <pre><code id="form-container-css" class="code-block__code">/* Newsletter Form Container */
+.tnp-subscription {
+  max-width: 500px !important;
+  margin: 0 auto !important;
+  padding: 30px !important;
+  background: #f9f9f9 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 5: Save and Test</h3>
+          <ol class="step-list">
+            <li class="step-item">Click <strong>"Publish"</strong></li>
+            <li class="step-item">Visit your subscription form page</li>
+            <li class="step-item">Verify the new styling appears</li>
+            <li class="step-item">Test on mobile devices</li>
+          </ol>
+
+          <p><strong>Pro Tip:</strong> Use your brand colors in the CSS by replacing:</p>
+          <ul class="option-list">
+            <li><code>#FFD586</code> with your primary color</li>
+            <li><code>#1C1C1C</code> with your text color</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <section class="post-section" id="redirect">
+        <h2 id="#redirect" class="section-heading">Auto-Redirect After Subscribe</h2>
+
+        <p>Automatically redirect users back to the main page or to a thank you page or special offer after they
+          subscribe. Here is how to do it:</p>
+
+        <figure class="tutorial-figure">
+          <img src="newsletter-auto-redirect-after-confirmation.webp" loading="lazy"
+            alt="Newsletter Auto-Redirect HTML code inside Newsletter page" class="tutorial-image">
+          <figcaption class="tutorial-caption">Auto-Redirect HTML code inside Newsletter page.</figcaption>
+        </figure>
+
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 1: Configure Redirect</h3>
+          <ol class="step-list">
+            <li class="step-item">Go to <strong>Pages → Newsletter → Edit</strong></li>
+            <li class="step-item">Click ✚ Add icon to add new element to your page.</li>
+            <li class="step-item">Search for <strong>HTML</strong> element and click it.</li>
+            <li class="step-item">Copy and Paste this code inside HTML element:</li>
+            <ul class="nomargin-list">
+              <li>
+                <div class="code-block">
+                  <div class="code-block__header">
+                    <span class="code-block__label">Shortcode</span>
+                    <button class="code-block__copy-btn" data-clipboard-target="#auto-redirect-html-code">
+                      <span class="copy-btn__text">Copy Code</span>
+                    </button>
+                  </div>
+                  <div class="code-block__content">
+                    <pre><code id="auto-redirect-html-code" class="code-block__code">&lt;div class=&quot;thank-you-message&quot;&gt;
+  &lt;h2&gt;Thank you for subscribing!&lt;/h2&gt;
+  &lt;p&gt;Redirecting in &lt;span id=&quot;timer&quot;&gt;5&lt;/span&gt; seconds...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  // Only run redirect if we're on the confirmation page
+  const urlParams = new URLSearchParams(window.location.search);
+  const isConfirmed = urlParams.get('nm') === 'confirmed';
+
+  if (isConfirmed) {
+    let seconds = 5;
+    const timer = document.getElementById('timer');
+    const countdown = setInterval(() => {
+      seconds--;
+      timer.textContent = seconds;
+      if (seconds &lt;= 0) {
+        clearInterval(countdown);
+        location.href = '/';
+      }
+    }, 1000);
+  } else {
+    // Hide the thank you message if we're not on the confirmation page
+    document.querySelector('.thank-you-message').style.display = 'none';
+  }
+&lt;/script&gt;</code></pre>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <li class="step-item">Click <strong>Save</strong>.</li>
+          </ol>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Step 2: Test</h3>
+          <ol class="step-list">
+            <li class="step-item">Visit your subscription form.</li>
+            <li class="step-item">Subscribe with a test email.</li>
+            <li class="step-item">Verify redirect to home page works.</li>
+          </ol>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Thank You Page Ideas:</h3>
+          <ul class="best-practice-list">
+            <li>Offer a free downloadable resource (ebook, checklist, template)</li>
+            <li>Provide exclusive discount code for your products</li>
+            <li>Link to your best content or popular posts</li>
+            <li>Invite them to follow you on social media</li>
+            <li>Share what to expect from your newsletters</li>
+          </ul>
+        </div>
+      </section>
+
+
+      <section class="post-section" id="advanced">
+        <h2 class="section-heading">Advanced Newsletter Plugin Features</h2>
+
+        <p>Unlock more power from your <strong>WordPress email marketing plugin</strong>.</p>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Subscriber Lists & Segmentation</h3>
+
+          <p><strong>Create Targeted Lists:</strong></p>
+          <ol class="step-list">
+            <li class="step-item">Go to <strong>Newsletter → Lists</strong></li>
+            <li class="step-item">Click <strong>"Add New"</strong></li>
+            <li class="step-item">Name your list (e.g., "Blog Subscribers", "Product Updates")</li>
+            <li class="step-item">Save</li>
+          </ol>
+
+          <p><strong>Use Cases:</strong></p>
+          <ul class="option-list">
+            <li>Separate lists for different content types</li>
+            <li>Segment by interest (tech, design, business)</li>
+            <li>Create VIP subscriber list</li>
+          </ul>
+
+          <p><strong>Send to Specific Lists:</strong><br>
+            Before sending a newsletter, choose <strong>"Match at least one of"</strong> and select specific lists.</p>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Subscriber Management</h3>
+
+          <p><strong>View All Subscribers:</strong></p>
+          <ol class="step-list">
+            <li class="step-item"><strong>Newsletter → Subscribers</strong> (Manage tab or All subscribers option,
+              depends where you are)</li>
+            <li class="step-item">See full list with:</li>
+          </ol>
+          <ul class="option-list">
+            <li>Name</li>
+            <li>Email</li>
+            <li>Subscription date</li>
+            <li>Status (Confirmed, Not confirmed, Unsubscribed)</li>
+          </ul>
+
+          <p><strong>Export / Import Subscribers Tab</strong> lets you upload or download lists of subscribers. But you
+            need to
+            install additional plugin to use it:</p>
+          <ol>
+            <li>Go to <strong>Newsletter → Addons</strong></li>
+            <li>Click <strong>"Download Addons Manager"</strong> button</li>
+            <li>Then click <strong>"Install"</strong> button</li>
+            <li>You're gonna be redirected to <strong>Add Plugins page</strong> (Upload Plugin section), then
+              <strong>choose
+                your previously
+                downloaded
+                Plugin *.zip</strong> and click <strong>"Install Now"</strong> button
+              and then click <strong>"Activate Plugin"</strong> button. Congratulations! You've installed "Newsletter -
+              Addons Manager and Support" plugin. Now you can install "Import and Export" addon.
+            </li>
+
+            <li>Go to <strong>Newsletter → Addons manager</strong></li>
+            <li>Scroll to the bottom of the page and find <strong>Tools section</strong></li>
+            <li>Click on "Install Now" near <strong>"Import and Export"</strong>. Wait for installation to finish.</li>
+            <li>Now you can go to <strong>Newsletter → Subscribers → Import / Export tab</strong> and finally use any of
+              the features below:</li>
+          </ol>
+
+          <figure class="tutorial-figure">
+            <img src="newsletter-import-and-export-subscribers.webp" loading="lazy"
+              alt="Newsletter Import / Export Subscribers" class="tutorial-image">
+            <figcaption class="tutorial-caption">Import and Export Subscribers tab after you installed "Newsletter -
+              Addons Manager and Support" and "Newsletter -
+              Import/Export" addons.</figcaption>
+          </figure>
+
+
+          <div class="subsection">
+            <h3 class="subsection-heading">Analytics & Tracking</h3>
+
+            <p><strong>Track Newsletter Performance:</strong></p>
+            <ol class="step-list">
+              <li class="step-item"><strong>Newsletter → Newsletters</strong></li>
+              <li class="step-item">Click on any sent newsletter <strong>📊 Statistics icon</strong></li>
+              <li class="step-item">View statistics:</li>
+            </ol>
+            <ul class="option-list">
+              <li>Reach: Total people that got this email</li>
+              <li>Opens: How many opened this email</li>
+              <li>Clicks: Link clicks inside this email</li>
+              <li>And so much more... Escpecially if you add "Reports and Retargeting" addon (it's premium addon,
+                subscriptions start from 69$ per year, but
+                there is 30-day money back guarantee).</li>
+            </ul>
+
+            <p>Yet with free version you could still track <strong>Open rate and link clicks inside your
+                newsletters</strong> to make some conclusions about best practices for Subject naming and content.</p>
+          </div>
+
+          <div class="subsection">
+            <h3 class="subsection-heading">GDPR Compliance</h3>
+
+            <p><strong>Built-in GDPR Features:</strong></p>
+
+            <ol class="feature-list">
+              <li class="feature-item">
+                <strong class="feature-term">Privacy Checkbox:</strong>
+                <ul class="option-list">
+                  <li>Newsletter → Forms → Standard Form</li>
+                  <li>Enable "Privacy"</li>
+                  <li>Add link to privacy policy</li>
+                </ul>
+              </li>
+
+              <li class="feature-item">
+                <strong class="feature-term">Double Opt-In</strong> (if you prefer to be "Better safe than sorry". Yet
+                it's not required by law):
+                <ul class="option-list">
+                  <li>Newsletter → Subscription → Confirmation</li>
+                  <li>Customize 2 Tabs: Confirmation Page message + Confirmation email with
+                    <code>{confirmation_url}</code> tag inside.
+                  </li>
+                  <li>Now after user typed his email and agreed to privacy policy on your site already, he will receive
+                    a confirmation email
+                    with confirmation link. After clicking on this link Subscribers will be moved to "Confirmed" status.
+                    <strong>That's what Double Opt-In is.</strong>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="feature-item">
+                <strong class="feature-term">Easy Unsubscribe:</strong>
+                <ul class="option-list">
+                  <li>Every email includes unsubscribe tag-link <code>{unsubscription_url}</code> - this is a link to
+                    unsubscribe page, where user can unsubscribe from your newsletter.</li>
+                  <li>One-click unsubscribe process tag = <code>{unsubscription_confirm_url}</code> - user just clicks
+                    on
+                    unsubscribe link and he will be unsubscribed.</li>
+                </ul>
+              </li>
+
+              <li class="feature-item">
+                Subscribers can request <strong class="feature-term">to See their data / Delete their data:</strong>
+                <ul class="option-list">
+                  <li><strong>To send user their data</strong> - you can go to Subscribers - click on 🖌️ Edit icon next
+                    to their email -
+                    change
+                    status to Complained. Then go to Export tab and choose Status Complained and click "Export" button -
+                    this would export all their data in CSV format, that you could later send them. <em>Just make sure
+                      to check exported CSV file so that it wouldn't have other subscribers data inside. And change
+                      their status back to Confirmed after you sent them their data.</em></li>
+                  <li><strong>Delete is much easier though</strong> - you just go to Subscribers and click on ❌ Delete
+                    icon next to their
+                    email. This would delete them from your database.</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+      </section>
+
+      <section class="post-section" id="troubleshooting">
+        <h2 class="section-heading">Troubleshooting Common Issues</h2>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Problem 1: Emails Not Sending</h3>
+          <p><strong>Solution:</strong></p>
+          <ol class="step-list">
+            <li class="step-item">Check your WordPress email settings</li>
+            <li class="step-item">Install <strong>WP Mail SMTP</strong> plugin</li>
+            <li class="step-item">Configure SMTP (Gmail, SendGrid, etc.)</li>
+            <li class="step-item">Test email delivery</li>
+          </ol>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Problem 2: Form Not Appearing</h3>
+          <p><strong>Solution:</strong></p>
+          <ol class="step-list">
+            <li class="step-item">Verify shortcode is correct: <code>[newsletter_form]</code></li>
+            <li class="step-item">Check page isn't cached (clear cache)</li>
+            <li class="step-item">Ensure plugin is activated</li>
+            <li class="step-item">Try different page builder</li>
+          </ol>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Problem 3: Welcome Email Not Received</h3>
+          <p><strong>Solution:</strong></p>
+          <ol class="step-list">
+            <li class="step-item">Check spam or junk folder</li>
+            <li class="step-item">Verify welcome email is enabled and saved</li>
+            <li class="step-item">Test with different email address</li>
+            <li class="step-item">Check email logs in Newsletter → Help → Logs</li>
+          </ol>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Problem 4: Slow Email Sending</h3>
+          <p><strong>Solution:</strong></p>
+          <ol class="step-list">
+            <li class="step-item">Go to <strong>Newsletter → Settings → General Settings → Sending</strong></li>
+            <li class="step-item">Adjust emails per hour limit</li>
+            <li class="step-item">Consider upgrading hosting if needed</li>
+            <li class="step-item">Use external SMTP service for better delivery</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="post-section" id="faq">
+        <h2 class="section-heading">Frequently Asked Questions</h2>
+
+        <dl class="faq-list">
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>Is Newsletter plugin really free?</strong>
+            </dt>
+            <dd class="faq-answer">
+              Yes, the Newsletter plugin is 100% free with unlimited subscribers and unlimited emails. There are
+              premium
+              addons available for advanced features, but the core plugin has everything most users need.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>How many subscribers can I have?</strong>
+            </dt>
+            <dd class="faq-answer">
+              Unlimited. Unlike MailChimp (500 free limit) or MailPoet (1,000 free limit), Newsletter plugin has no
+              subscriber restrictions on the free version.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>Can I use Newsletter plugin with Elementor?</strong>
+            </dt>
+            <dd class="faq-answer">
+              Yes! You can add the newsletter form to any Elementor page using the Shortcode widget. Just paste
+              <code>[newsletter_form]</code> into the widget.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>Does it work with Gutenberg?</strong>
+            </dt>
+            <dd class="faq-answer">
+              Absolutely. Use the Shortcode block in Gutenberg and paste <code>[newsletter_form]</code> to display the
+              subscription form.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>Is Newsletter plugin GDPR compliant?</strong>
+            </dt>
+            <dd class="faq-answer">
+              Yes. The plugin includes privacy checkboxes, double opt-in confirmation, easy unsubscribe links, and
+              data
+              export/deletion features required for GDPR compliance.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>Can I import subscribers from MailChimp?</strong>
+            </dt>
+            <dd class="faq-answer">
+              Yes. Export your subscribers from MailChimp as a CSV file, then use Newsletter's import feature to
+              upload
+              them. Make sure to map the fields correctly (Name, Email).
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>Why are my emails going to spam?</strong>
+            </dt>
+            <dd class="faq-answer">
+              WordPress's default email function can be unreliable. Install the WP Mail SMTP plugin and configure it
+              with a proper SMTP service (Gmail, SendGrid, etc.) to improve deliverability.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>Can I schedule newsletters?</strong>
+            </dt>
+            <dd class="faq-answer">
+              Yes. When creating a newsletter, you can choose to send immediately or schedule it for a specific date
+              and
+              time.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>How do I customize the form design?</strong>
+            </dt>
+            <dd class="faq-answer">
+              You can customize the form using CSS. Go to Appearance → Customize → Additional CSS and add your custom
+              styles for the form fields and buttons.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>Can I send newsletters to specific groups?</strong>
+            </dt>
+            <dd class="faq-answer">
+              Yes. Create multiple lists (Newsletter → Lists) and assign subscribers to different lists. When sending
+              a
+              newsletter, you can choose which lists to send to.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>Does Newsletter plugin slow down my website?</strong>
+            </dt>
+            <dd class="faq-answer">
+              No. The plugin is lightweight and well-optimized. It only loads necessary resources on pages where the
+              subscription form is displayed.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt class="faq-question">
+              <strong>Can I track email opens and clicks?</strong>
+            </dt>
+            <dd class="faq-answer">
+              Yes. The plugin includes analytics showing opens, clicks, bounces, and unsubscribes for each newsletter
+              you send.
+            </dd>
+          </div>
+        </dl>
+      </section>
+    </div><!-- End .post-content -->
+
+    <footer class="post-footer">
+      <div class="post-conclusion">
+        <h2 class="conclusion-heading">Final Thoughts</h2>
+        <p>
+          The Newsletter plugin is one of the best <strong>free WordPress newsletter plugins</strong> available.
+          With unlimited subscribers, unlimited emails, and powerful features like automation and analytics,
+          it's perfect for bloggers, small businesses, and growing websites.
+        </p>
+        <p>
+          Unlike premium services like MailChimp or MailPoet, you won't hit subscriber limits or monthly fees.
+          Your subscriber data stays in your WordPress database, giving you complete control.
+        </p>
+        <p>
+          Start building your email list today and connect directly with your audience!
+        </p>
+      </div>
+
+      <nav class="post-tags" aria-label="Article tags">
+        <strong>Tags:</strong>
+        <a href="/tag/wordpress" class="tag-link">WordPress</a>
+        <a href="/tag/newsletter" class="tag-link">Newsletter</a>
+        <a href="/tag/email-marketing" class="tag-link">Email Marketing</a>
+        <a href="/tag/plugins" class="tag-link">Plugins</a>
+        <a href="/tag/tutorial" class="tag-link">Tutorial</a>
+      </nav>
+
+      <div class="post-author">
+        <h3 class="author-heading">About the Author</h3>
+        <p>
+          Written by the Kolodych team. We create detailed WordPress tutorials to help you
+          build better websites. Subscribe to our newsletter for more guides like this!
+        </p>
+      </div>
+    </footer>
+
+  </article><!-- End .blog-post -->
+
+
+
+  <div class="container">
+    <div class="box">
+      <i></i>
+      <p>
+        Practical backup and recovery guide for WordPress owners who want zero panic when things break.
+      </p>
+      <a href="#wordpress-backup">
+        <h2>Your WordPress site will fail. <br> Be ready.</h2>
+        <div class="imgcontainer">
+          <img loading="lazy" decoding="async" fetchpriority="low" src="450-creating_a_telegram_bot_token_api.jpg"
+            width="450" height="240" title="This site can't be reached - WordPress Backup Guide"
+            alt="This site can't be reached - WordPress Backup Guide">
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Related Content Section -->
+  <aside class="related-content" aria-label="Related articles">
+    <h2 class="related-content__heading">Related Projects & Articles</h2>
+
+    <div class="section-container">
+      <ol>
+        <li>
+          <!-- WordPress Backup Guide -->
+          <div class="box">
+            <i></i>
+            <p>
+              Practical backup and recovery guide for WordPress owners who want zero panic when things break.
+            </p>
+            <a href="articles/wordpress-backup-guide.html">
+              <h2>Your WordPress site will fail. <br> Be ready. </h2>
+              <div class="imgcontainer">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="your-wordpress-will-crash.webp"
+                  width="450" height="240" title="This site can't be reached - use WPvivid WordPress Backup Plugin"
+                  alt="This site can't be reached - use WPvivid WordPress Backup Plugin">
+              </div>
+            </a>
+          </div>
+        </li>
+
+        <li>
+          <!-- This Site Uses Cookies Item Explore the role of cookies, their potential risks, and how they affect privacy. This article provides insights on compliance with GDPR regulations and managing cookies on your website. -->
+          <div class="box">
+            <i></i>
+            <p class="mar10">
+              Explore the article about cookies.. 🍪
+            </p>
+            <a href="website/this-site-uses-cookies.html">
+              <h2 class="marb mart">Do you agree to use cookies?</h2>
+            </a>
+            <div class="button-container mart10">
+              <button id="yesButton" class="response-button" data-color="green">Yes</button>
+              <button id="noButton" class="response-button" data-color="red">No</button>
+            </div>
+            <!-- Hidden paragraph for feedback -->
+            <p id="feedbackMessage" class="feedback-message none-display">Thank you for your feedback!</p>
+            <a href="website/this-site-uses-cookies.html">
+              <div class="imgcontainer">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="website/450-cookie-image.jpg" width="450"
+                  height="240" title="This Site Uses Cookies (kolodych.com)"
+                  alt="Image of a desktop setup with a laptop, smartphone, mouse, keyboard, and cookies on a plate">
+              </div>
+            </a>
+
+          </div>
+        </li>
+
+        <li>
+          <!-- NGINX -->
+          <div class="box">
+            <i></i>
+            <p>
+              Practical guide to installing and running Nginx for fast, reliable web hosting with improved
+              stability and performance.
+            </p>
+            <a href="articles/nginx.html">
+              <h2>Nginx: What is It and Why Should You Care? </h2>
+              <div class="imgcontainer">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="articles/450-nginx-status.jpg" width="450"
+                  height="240" title="Nginx Installation and Optimization Guide"
+                  alt="A screenshot showing Nginx server configuration steps and optimization settings.">
+              </div>
+            </a>
+          </div>
+        </li>
+    </div>
+  </aside>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__content">
+      <div class="site-footer__section">
+        <h2 class="site-footer__heading">Contact Me</h2>
+        <nav class="social-links" aria-label="Social media links">
+          <a href="mailto:kolodych@hotmail.com" class="social-links__item" aria-label="Email">
+            <img src="../src/mail-part-3-svgrepo-com.svg" width="68" height="68" alt="Email" loading="lazy"
+              decoding="async" fetchpriority="low">
+          </a>
+          <a href="https://www.linkedin.com/in/serhii-kolodych" rel="nofollow" target="_blank"
+            class="social-links__item" aria-label="LinkedIn">
+            <img src="../src/linkedin.svg" width="68" height="68" alt="LinkedIn" loading="lazy" decoding="async"
+              fetchpriority="low">
+          </a>
+          <a href="https://www.facebook.com/serhii.kolodych" rel="nofollow" target="_blank" class="social-links__item"
+            aria-label="Facebook">
+            <img src="../src/social-facebook-svgrepo-com.svg" width="68" height="68" alt="Facebook" loading="lazy"
+              decoding="async" fetchpriority="low">
+          </a>
+          <a href="https://www.instagram.com/serhii_kolodych" rel="nofollow" target="_blank" class="social-links__item"
+            aria-label="Instagram">
+            <img src="../src/social-instagram-svgrepo-com.svg" width="68" height="68" alt="Instagram" loading="lazy"
+              decoding="async" fetchpriority="low">
+          </a>
+          <a href="https://t.me/kolodych" rel="nofollow" target="_blank" class="social-links__item"
+            aria-label="Telegram">
+            <img src="../src/telegram-svgrepo-com.svg" width="68" height="68" alt="Telegram" loading="lazy"
+              decoding="async" fetchpriority="low">
+          </a>
+          <a href="https://wa.me/+37126796193" rel="nofollow" target="_blank" class="social-links__item"
+            aria-label="WhatsApp">
+            <img src="../src/whatsapp-svgrepo-com.svg" width="68" height="68" alt="WhatsApp" loading="lazy"
+              decoding="async" fetchpriority="low">
+          </a>
+        </nav>
+      </div>
+
+      <div class="site-footer__legal">
+        <p>&copy; 2026 Kolodych.com. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="../scripts/table-of-content-scroll.js" defer></script>
+
+  <script src="../scripts/navigation-arrows.js" defer></script>
+  <script src="../scripts/clipboard-copied.js" defer></script>
+
+</body>
+
+</html>

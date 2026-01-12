@@ -1,0 +1,263 @@
+/* Version 2 greyish warmish */
+/* :root{
+--color-text-main: #1C1C1E;
+--color-text-muted: #6A6A6A;
+--color-link: #0A66C2;
+--color-em: #8B4513;
+--color-black: #000000;
+--color-border-light: #DADADA;
+--color-bg-main-start: rgba(252,252,250,1);
+--color-bg-main-end: rgba(244,244,240,1);
+--color-code-bg: #F2F2F0;
+--color-code-bg-alt: #E4E4E0;
+--color-code-text: #141414;
+--color-code-btn: #43A047;
+--color-shadow-light: rgba(0,0,0,0.09);
+--color-shadow-strong: rgba(0,0,0,0.28);
+--color-box-bg-start: rgba(240,240,236,1);
+--color-box-bg-end: rgba(228,228,224,1);
+--color-white: #FFFFFF;
+} */
+
+
+/* Version 5 - greyish */
+/* :root{
+--color-text-main: #111827;
+--color-text-muted: #6B7280;
+--color-link: #2563EB;
+--color-em: #78350F;
+--color-black: #030712;
+--color-border-light: #D1D5DB;
+--color-bg-main-start: rgba(248,248,248,1);
+--color-bg-main-end: rgba(236,236,236,1);
+--color-code-bg: #F3F4F6;
+--color-code-bg-alt: #E5E7EB;
+--color-code-text: #030712;
+--color-code-btn: #16A34A;
+--color-shadow-light: rgba(3,7,18,0.08);
+--color-shadow-strong: rgba(3,7,18,0.35);
+--color-box-bg-start: rgba(243,244,246,1);
+--color-box-bg-end: rgba(229,231,235,1);
+--color-white: #FFFFFF;
+} */
+
+/* Version 1. WHITE. Very formal. Corporate. Neutral. */
+:root{
+  --color-text-main: #0F0F10;
+  --color-text-muted: #5C5C5C;
+  --color-link: #003A8F;
+  --color-em: #5A2E0C;
+  --color-black: #000000;
+  --color-border-light: #D0D0D0;
+  --color-bg-main-start: rgba(255,255,255,0.9);
+  --color-bg-main-end: rgba(250,250,250,0.92);
+  --color-code-bg: #F4F4F4;
+  --color-code-bg-alt: #EAEAEA;
+  --color-code-text: #0A0A0A;
+  --color-code-btn: #2F7D32;
+  --color-shadow-light: rgba(0,0,0,0.06);
+  --color-shadow-strong: rgba(0,0,0,0.22);
+  --color-box-bg-start: rgba(248,248,248,1);
+  --color-box-bg-end: rgba(238,238,238,1);
+  --color-white: #FFFFFF;
+
+/* Option 1 */
+--color-table-header-bg: rgba(170,200,180,1);
+--color-table-footer-bg: rgba(240,210,160,1);
+--color-table-even-col: rgb(239, 240, 230);
+--color-table-odd-col: rgba(200,230,200,1);
+--color-table-odd-even-stripe-even: rgba(240,220,200,1);
+--color-table-odd-even-stripe-odd: rgb(223, 243, 228);
+--color-table-hover: rgba(180,200,230,1);
+--color-text-main: #111111;
+}
+
+/* Version 4. Creative. Warm. Expressive. */
+/* :root{
+--color-text-main: #1B1A17;
+--color-text-muted: #6A655F;
+--color-link: #E5533D;
+--color-em: #9C3B1E;
+--color-black: #000000;
+--color-border-light: #E0D6CC;
+--color-bg-main-start: rgba(255,252,248,1);
+--color-bg-main-end: rgba(245,238,230,1);
+--color-code-bg: #FBF1E8;
+--color-code-bg-alt: #F2E4D8;
+--color-code-text: #2A1F1B;
+--color-code-btn: #E07A1F;
+--color-shadow-light: rgba(42,31,27,0.1);
+--color-shadow-strong: rgba(42,31,27,0.35);
+--color-box-bg-start: rgba(250,242,234,1);
+--color-box-bg-end: rgba(240,226,214,1);
+--color-white: #FFFFFF;
+} */
+
+
+
+a{
+  color: var(--color-link);
+}
+
+a:visited{
+color: var(--color-text-muted);
+}
+
+.post-title{
+color: var(--color-text-main);
+}
+
+.post-section {
+      padding: var(--spacing-xs) 0;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+.blog-post{
+background: linear-gradient(to right, var(--color-bg-main-start), var(--color-bg-main-end));
+border: 1px solid var(--color-border-light);
+color: var(--color-text-main);
+}
+
+.theme-toggle,
+.chapter-nav{
+background: linear-gradient(to right, var(--color-bg-main-start), var(--color-bg-main-end));
+border: 1px solid var(--color-border-light);
+}
+
+.nav-home{
+color: var(--color-black);
+}
+
+.icon{
+stroke: var(--color-black);
+}
+
+.lead-paragraph a{
+color: var(--color-link);
+}
+
+em{
+color: var(--color-em);
+}
+
+.code-block{
+border: 1px solid var(--color-code-text);
+background-color: var(--color-code-bg);
+color: var(--color-code-text);
+box-shadow: 0 2px 6px var(--color-shadow-light);
+}
+
+.code-block__header{
+background-color: var(--color-code-bg);
+color: var(--color-code-text);
+}
+
+.code-block__copy-btn{
+background-color: var(--color-code-btn);
+color: var(--color-white);
+}
+
+.code-block__code{
+background-color: var(--color-code-bg-alt);
+color: var(--color-code-text);
+padding: var(--spacing-xs);
+font-family: 'Courier New', monospace;
+}
+
+.box{
+background: linear-gradient(to right, var(--color-box-bg-start), var(--color-box-bg-end));
+border: 1px solid var(--color-border-light);
+box-shadow: 0 0 20px var(--color-shadow-strong);
+}
+
+.box i,
+.box::before{
+shape-outside: radial-gradient(farthest-side at right, transparent calc(100% - var(--p)), var(--color-white) 0);
+}
+
+
+
+/* Table base */
+.table-wrapper{
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--color-text-main);
+  /* border: 1px solid var(--color-border-light); */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--color-shadow-light);
+  background-color: var(--color-bg-main-start);
+}
+
+/* Table header */
+th {
+  background-color: var(--color-table-header-bg);
+  color: var(--color-text-main);
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* Table body cells */
+td {
+  padding: 0.5rem 1rem;
+  /* border-bottom: 1px solid var(--color-border-light); */
+  color: var(--color-text-main);
+}
+
+/* Column differentiation: strong contrast */
+td:nth-child(odd) {
+  background-color: var(--color-table-odd-col);
+}
+
+td:nth-child(even) {
+  background-color: var(--color-table-even-col);
+}
+
+th:nth-child(even):not(:first-child) {
+  background-color: var(--color-table-odd-even-stripe-even);
+}
+
+
+/* Optional row stripes on top of column colors */
+tbody tr:nth-child(even) td:nth-child(odd) {
+  background-color: var(--color-table-odd-even-stripe-odd);
+}
+tbody tr:nth-child(even) td:nth-child(even) {
+  background-color: var(--color-table-odd-even-stripe-even);
+}
+
+/* Footer */
+tfoot td {
+  background-color: var(--color-table-footer-bg);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+/* Hover highlight for all cells */
+tr:hover td {
+  background-color: var(--color-table-hover) !important;
+  color: var(--color-code-text);
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+  th, td {
+    /* white-space: nowrap; */
+    max-width: 145px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
