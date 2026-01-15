@@ -11,7 +11,90 @@
     <lastmod>2024-08-13T12:36:05+00:00</lastmod>
     <priority>1.00</priority>
   </url>
+  
+<url>
+  <loc>https://kolodych.com/articles/newsletter-plugin-for-wordpress</loc>
+  <lastmod>2026-01-14T17:24:00+00:00</lastmod>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 
+  <!-- Main featured image -->
+  <image:image>
+    <image:loc>https://kolodych.com/articles/newsletter-plugin-free.webp</image:loc>
+    <image:caption>Free WordPress newsletter plugin 2026: No limits, no fees, just powerful email marketing with unlimited subscribers</image:caption>
+    <image:title>Best Free WordPress Email Marketing Plugin - Newsletter by Stefano Lissa</image:title>
+  </image:image>
+
+  <!-- Plugin reviews and ratings -->
+  <image:image>
+    <image:loc>https://kolodych.com/articles/newsletter-plugin-wordpress-reviews-ratings.webp</image:loc>
+    <image:caption>Newsletter plugin for WordPress with 300,000+ active installations, 4.6-star rating, and 24+ languages - trusted by WordPress users worldwide</image:caption>
+    <image:title>Newsletter Plugin Reviews and Ratings - WordPress.org Statistics</image:title>
+  </image:image>
+
+  <!-- Comparison chart -->
+  <image:image>
+    <image:loc>https://kolodych.com/articles/newsletter-plugin-vs-mailchimp-vs-mailpoet-comparison-trends-chart-for-wordpress.webp</image:loc>
+    <image:caption>WordPress newsletter plugin free comparison showing Google Trends data: Newsletter plugin gaining market share against MailChimp and MailPoet as users seek cost-effective alternatives</image:caption>
+    <image:title>MailChimp Alternative for WordPress - Market Trends Comparison Chart</image:title>
+  </image:image>
+
+  <!-- Installation tutorial -->
+  <image:image>
+    <image:loc>https://kolodych.com/articles/newsletter-installing-wordpress-plugin.webp</image:loc>
+    <image:caption>How to add newsletter to WordPress: Step-by-step plugin installation showing Newsletter by Stefano Lissa in WordPress plugin directory with 300,000+ active installations</image:caption>
+    <image:title>Installing Free WordPress Newsletter Plugin - 90-Second Setup Guide</image:title>
+  </image:image>
+
+  <!-- Form configuration -->
+  <image:image>
+    <image:loc>https://kolodych.com/articles/newsletter-plugin-forms-configuration-menu.webp</image:loc>
+    <image:caption>Newsletter subscription form settings menu in WordPress showing Standard Form configuration options for email collection</image:caption>
+    <image:title>WordPress Newsletter Plugin Form Configuration Menu</image:title>
+  </image:image>
+
+  <!-- Form fields setup -->
+  <image:image>
+    <image:loc>https://kolodych.com/articles/newsletter-configuration-form.webp</image:loc>
+    <image:caption>Newsletter plugin WordPress subscription form fields setup: email, name, privacy checkbox configuration with GDPR compliance options and custom field customization</image:caption>
+    <image:title>Free WordPress Newsletter Plugin Form Customization - Email Marketing Setup</image:title>
+  </image:image>
+
+  <!-- Welcome email setup -->
+  <image:image>
+    <image:loc>https://kolodych.com/articles/newsletter-welcome-email-customization.webp</image:loc>
+    <image:caption>Free WordPress email marketing plugin automated welcome message setup showing Composer and Default template options with subject line customization</image:caption>
+    <image:title>WordPress Email Marketing Plugin Free - Welcome Email Automation Configuration</image:title>
+  </image:image>
+
+  <!-- Goodbye message -->
+  <image:image>
+    <image:loc>https://kolodych.com/articles/newsletter-goodbye-message-page-and-email.webp</image:loc>
+    <image:caption>Newsletter goodbye message and email customization interface showing unsubscribe workflow with resubscribe button option to win back subscribers</image:caption>
+    <image:title>WordPress Newsletter Plugin Unsubscribe Page and Goodbye Email Setup</image:title>
+  </image:image>
+
+  <!-- Newsletter creation -->
+  <image:image>
+    <image:loc>https://kolodych.com/articles/newsletter-add-new.webp</image:loc>
+    <image:caption>Create new newsletter in WordPress showing two routes: Add new button and newsletter creation interface with template selection</image:caption>
+    <image:title>How to Send Your First Newsletter with WordPress Newsletter Plugin</image:title>
+  </image:image>
+
+  <!-- Auto-redirect feature -->
+  <image:image>
+    <image:loc>https://kolodych.com/articles/newsletter-auto-redirect-after-confirmation.webp</image:loc>
+    <image:caption>Newsletter auto-redirect HTML code implementation inside WordPress Newsletter page showing JavaScript countdown timer for thank you page redirect</image:caption>
+    <image:title>WordPress Newsletter Plugin Auto-Redirect After Subscription Confirmation</image:title>
+  </image:image>
+
+  <!-- Import/Export subscribers -->
+  <image:image>
+    <image:loc>https://kolodych.com/articles/newsletter-import-and-export-subscribers.webp</image:loc>
+    <image:caption>Newsletter Import and Export subscribers tab after installing Newsletter Addons Manager and Import/Export addon showing CSV upload and download options</image:caption>
+    <image:title>Import MailChimp Subscribers to WordPress Newsletter Plugin - CSV Migration Guide</image:title>
+  </image:image>
+</url>
 
 <url>
   <loc>https://kolodych.com/articles/wordpress-backup-guide.html</loc>

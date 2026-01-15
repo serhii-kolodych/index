@@ -42,34 +42,34 @@
 } */
 
 /* Version 1. WHITE. Very formal. Corporate. Neutral. */
-:root{
+:root {
   --color-text-main: #0F0F10;
   --color-text-muted: #5C5C5C;
   --color-link: #003A8F;
   --color-em: #5A2E0C;
   --color-black: #000000;
   --color-border-light: #D0D0D0;
-  --color-bg-main-start: rgba(255,255,255,0.9);
-  --color-bg-main-end: rgba(250,250,250,0.92);
+  --color-bg-main-start: rgba(255, 255, 255, 0.9);
+  --color-bg-main-end: rgba(250, 250, 250, 0.92);
   --color-code-bg: #F4F4F4;
   --color-code-bg-alt: #EAEAEA;
   --color-code-text: #0A0A0A;
-  --color-code-btn: #2F7D32;
-  --color-shadow-light: rgba(0,0,0,0.06);
-  --color-shadow-strong: rgba(0,0,0,0.22);
-  --color-box-bg-start: rgba(248,248,248,1);
-  --color-box-bg-end: rgba(238,238,238,1);
+  --color-code-btn: #003A8F;
+  --color-shadow-light: rgba(0, 0, 0, 0.06);
+  --color-shadow-strong: rgba(0, 0, 0, 0.22);
+  --color-box-bg-start: rgba(248, 248, 248, 1);
+  --color-box-bg-end: rgba(238, 238, 238, 1);
   --color-white: #FFFFFF;
 
-/* Option 1 */
---color-table-header-bg: rgba(170,200,180,1);
---color-table-footer-bg: rgba(240,210,160,1);
---color-table-even-col: rgb(239, 240, 230);
---color-table-odd-col: rgba(200,230,200,1);
---color-table-odd-even-stripe-even: rgba(240,220,200,1);
---color-table-odd-even-stripe-odd: rgb(223, 243, 228);
---color-table-hover: rgba(180,200,230,1);
---color-text-main: #111111;
+  /* Option 1 */
+  --color-table-header-bg: rgba(170, 200, 180, 1);
+  --color-table-footer-bg: rgba(240, 210, 160, 1);
+  --color-table-even-col: rgb(239, 240, 230);
+  --color-table-odd-col: rgba(200, 230, 200, 1);
+  --color-table-odd-even-stripe-even: rgba(240, 220, 200, 1);
+  --color-table-odd-even-stripe-odd: rgb(223, 243, 228);
+  --color-table-hover: rgba(180, 200, 230, 1);
+  --color-text-main: #111111;
 }
 
 /* Version 4. Creative. Warm. Expressive. */
@@ -95,101 +95,110 @@
 
 
 
-a{
+a {
   color: var(--color-link);
 }
 
-a:visited{
-color: var(--color-text-muted);
+p {
+  color: var(--color-text-main);
 }
 
-.post-title{
-color: var(--color-text-main);
+a:visited {
+  color: var(--color-text-muted);
+}
+
+.yellow-alert {
+  background-color: #fff9e6;
+  border-left: 5px solid #ffcc00;
+}
+
+.quick-answer-box {
+  background: #f0f9ff;
+  border-left: 4px solid #0ea5e9;
+}
+
+.quick-answer-box h3 {
+  color: #0c4a6e;
+}
+
+.post-title,
+.section-heading,
+.related-content__heading,
+.site-footer__heading,
+.site-footer__legal {
+  color: var(--color-text-main);
 }
 
 .post-section {
-      padding: var(--spacing-xs) 0;
-      border-bottom: 1px solid var(--color-border-light);
-    }
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
 
-.blog-post{
-background: linear-gradient(to right, var(--color-bg-main-start), var(--color-bg-main-end));
-border: 1px solid var(--color-border-light);
-color: var(--color-text-main);
+.blog-post {
+  background: linear-gradient(to right, var(--color-bg-main-start), var(--color-bg-main-end));
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-main);
 }
 
 .theme-toggle,
-.chapter-nav{
-background: linear-gradient(to right, var(--color-bg-main-start), var(--color-bg-main-end));
-border: 1px solid var(--color-border-light);
+.chapter-nav {
+  background: linear-gradient(to right, var(--color-bg-main-start), var(--color-bg-main-end));
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-main);
 }
 
-.nav-home{
-color: var(--color-black);
+.nav-home {
+  color: var(--color-black);
 }
 
-.icon{
-stroke: var(--color-black);
+.icon {
+  stroke: var(--color-black);
 }
 
-.lead-paragraph a{
-color: var(--color-link);
+.lead-paragraph a {
+  color: var(--color-link);
 }
 
-em{
-color: var(--color-em);
+em {
+  color: var(--color-em);
 }
 
-.code-block{
-border: 1px solid var(--color-code-text);
-background-color: var(--color-code-bg);
-color: var(--color-code-text);
-box-shadow: 0 2px 6px var(--color-shadow-light);
+.code-block {
+  border: 1px solid var(--color-code-text);
+  background-color: var(--color-code-bg);
+  color: var(--color-code-text);
+  box-shadow: 0 2px 6px var(--color-shadow-light);
 }
 
-.code-block__header{
-background-color: var(--color-code-bg);
-color: var(--color-code-text);
+.code-block__header {
+  background-color: var(--color-code-bg);
+  color: var(--color-code-text);
 }
 
-.code-block__copy-btn{
-background-color: var(--color-code-btn);
-color: var(--color-white);
+.code-block__copy-btn {
+  background-color: var(--color-code-btn);
+  color: var(--color-white);
 }
 
-.code-block__code{
-background-color: var(--color-code-bg-alt);
-color: var(--color-code-text);
-padding: var(--spacing-xs);
-font-family: 'Courier New', monospace;
+.code-block__code {
+  background-color: var(--color-code-bg-alt);
+  color: var(--color-code-text);
+  padding: var(--spacing-xs);
+  font-family: 'Courier New', monospace;
 }
-
-.box{
-background: linear-gradient(to right, var(--color-box-bg-start), var(--color-box-bg-end));
-border: 1px solid var(--color-border-light);
-box-shadow: 0 0 20px var(--color-shadow-strong);
-}
-
-.box i,
-.box::before{
-shape-outside: radial-gradient(farthest-side at right, transparent calc(100% - var(--p)), var(--color-white) 0);
-}
-
 
 
 /* Table base */
-.table-wrapper{
+.table-wrapper {
   border: 1px solid var(--color-border-light);
   border-radius: 8px;
 }
 
 table {
-  width: 100%;
   border-collapse: collapse;
   color: var(--color-text-main);
   /* border: 1px solid var(--color-border-light); */
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 2px 8px var(--color-shadow-light);
   background-color: var(--color-bg-main-start);
 }
@@ -198,9 +207,6 @@ table {
 th {
   background-color: var(--color-table-header-bg);
   color: var(--color-text-main);
-  font-weight: 600;
-  padding: 0.75rem 1rem;
-  text-align: left;
   border-top: 1px solid var(--color-border-light);
 }
 
@@ -229,6 +235,7 @@ th:nth-child(even):not(:first-child) {
 tbody tr:nth-child(even) td:nth-child(odd) {
   background-color: var(--color-table-odd-even-stripe-odd);
 }
+
 tbody tr:nth-child(even) td:nth-child(even) {
   background-color: var(--color-table-odd-even-stripe-even);
 }
@@ -249,15 +256,28 @@ tr:hover td {
 
 
 
-@media (max-width: 768px) {
-  table {
-    display: block;
-    overflow-x: auto;
-  }
-  th, td {
-    /* white-space: nowrap; */
-    max-width: 145px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.box {
+  background: linear-gradient(to right, rgba(242, 242, 242, 1), rgba(230, 230, 230, 1));
+  border: 1px solid #d6d6d6;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+}
+
+.box p {
+  color: var(--color-text-main);
+}
+
+.box i,
+.box::before {
+  shape-outside: radial-gradient(farthest-side at right, transparent calc(100% - var(--p)), #fff 0);
+}
+
+.box i {
+  shape-outside: radial-gradient(farthest-side at left, transparent calc(100% - var(--p)), #fff 0);
+}
+
+.imgcontainer {
+  background: #333;
+  background-color: #fff;
+  border: 1px solid #00ff41;
 }

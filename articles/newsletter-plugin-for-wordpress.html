@@ -2,52 +2,196 @@
 <html lang="en">
 <meta charset="UTF-8">
 
-
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link id="stylesheet" rel="stylesheet" href="../css/article.css" />
-  <!-- <style>
-    body {
-      visibility: hidden;
-      opacity: 0;
+  <link rel="preload" href="../css/ShareTechMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+      font-family: 'Share Tech Mono';
+      src: url('../css/ShareTechMono-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
     }
 
-    body.loaded {
-      visibility: visible;
-      opacity: 1;
-      transition: opacity 0.3s ease-in;
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overscroll-behavior: none;
+      margin: 0;
+      padding: 34px 0 0 0;
+      font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .blog-post {
+      border-width: 1px;
+      border-style: solid;
+      box-sizing: border-box;
+      letter-spacing: -0.01em;
+      line-height: 1.8;
+      width: 90%;
+      position: relative;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      z-index: 4;
+      min-height: 90vh;
+      border-radius: 14px;
+      transform: translateZ(0px);
+
+    }
+
+    .nav-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0;
+    }
+
+    .nav-header__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      gap: 1rem;
+    }
+
+    .nav-home,
+    .chapter-nav,
+    .theme-toggle {
+      pointer-events: auto;
+    }
+
+    .nav-home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-home:hover {
+      transform: translateY(-2px);
+    }
+
+    .chapter-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 10px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .chapter-nav__btn {
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      padding: 0.5rem;
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0.625rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      margin-right: 0.5rem;
+    }
+
+    .post-section {
+      padding: 0.5rem 0;
+    }
+
+    .theme-toggle,
+    .chapter-nav {
+      border-width: 1px;
+      border-style: solid;
+    }
+
+
+    .post-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .lead-paragraph {
+      font-size: 1.25rem;
+    }
+
+    .post-section p {
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .tutorial-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
   </style>
-  <link id="stylesheet" rel="stylesheet" /> -->
 
-  <script>
+  <link rel="stylesheet" href="../css/article.css" media="print" onload="this.media='all'">
+
+  <!-- <script>
     fetch("../shared/head.html")
       .then((r) => r.text())
       .then((html) => document.head.insertAdjacentHTML("beforeend", html))
-      .catch((e) => console.error("Failed to load shared head:", e));
+      .catch((e) => console.error("🚨 Failed to load shared head:", e));
+  </script> -->
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch("../shared/head.html")
+        .then(r => r.text())
+        .then(html => document.head.insertAdjacentHTML("beforeend", html))
+        .catch(e => console.error("🚨 Failed to load shared head:", e));
+    });
   </script>
 
   <script src="../scripts/cookie-check.js" defer></script>
   <script src="../scripts/theme-loader.js" defer></script>
   <!-- clipboard js 1st of 2 parts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+  <script src="../scripts/clipboard-ajax.js" defer></script>
 
   <!-- Primary Meta Tags -->
-  <title>WordPress Newsletter Plugin Tutorial: Complete Setup Guide (2026)</title>
-  <meta name="title" content="WordPress Newsletter Plugin: Free Setup Guide (2026)" />
+  <title>MailChimp Alternative for WordPress: Free & Unlimited (2026)</title>
+  <meta name="title" content="MailChimp Alternative for WordPress: Free & Unlimited (2026)" />
   <meta name="description"
-    content="Complete tutorial for Newsletter plugin for WordPress. Learn setup, custom forms, welcome emails & automation. Free, unlimited subscribers. Step-by-step guide." />
+    content="Stop paying MailChimp $13-$350/month. Newsletter plugin: unlimited subscribers, automated emails, GDPR compliance. 100% free WordPress solution. No limits." />
   <meta name="keywords"
-    content="wordpress news plugin free, wordpress newsletter plugin, newsletter plugin wordpress, wordpress mailchimp plugin, mailpoet alternative wordpress, wordpress plugin email marketing, wordpress email newsletter plugin, best wordpress newsletter plugin, how to add newsletter to wordpress, wordpress email marketing plugin free, embed newsletter form in wordpress, free wordpress newsletter plugin" />
-  <link rel="canonical" href="https://kolodych.com/articles/newsletter-plugin-for-wordpress.html" />
+    content="wordpress, newsletter plugin, Mailchimp alternative, Mailpoet alternative, Email Marketing, embed newsletter form in wordpress, how to add newsletter to wordpress" />
+  <link rel="canonical" href="https://kolodych.com/articles/newsletter-plugin-for-wordpress" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://kolodych.com/articles/newsletter-plugin-for-wordpress.html" />
-  <meta property="og:title" content="WordPress Newsletter Plugin Tutorial: Complete Setup Guide (Free)" />
+  <meta property="og:url" content="https://kolodych.com/articles/newsletter-plugin-for-wordpress" />
+  <meta property="og:title" content="MailChimp Alternative for WordPress: Free & Unlimited (2026)" />
   <meta property="og:description"
-    content="Complete tutorial for Newsletter plugin for WordPress. Learn setup, custom forms, welcome emails & automation. Free, unlimited subscribers. Step-by-step guide." />
+    content="Stop paying MailChimp $13-$350/month. Newsletter plugin: unlimited subscribers, automated emails, GDPR compliance. 100% free WordPress solution. No limits." />
   <!-- Landscape image (default for Facebook/LinkedIn) -->
   <meta property="og:image" content="https://kolodych.com/articles/the-newsletter-plugin-free.webp" />
   <meta property="og:image:width" content="1200" />
@@ -59,106 +203,214 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://kolodych.com/articles/newsletter-plugin-for-wordpress.html" />
-  <meta name="twitter:title" content="WordPress Newsletter Plugin Tutorial: Complete Setup Guide (2026)" />
+  <meta name="twitter:url" content="https://kolodych.com/articles/newsletter-plugin-for-wordpress" />
+  <meta name="twitter:title" content="MailChimp Alternative for WordPress: Free & Unlimited (2026)" />
   <meta name="twitter:description"
-    content="Complete tutorial for Newsletter plugin for WordPress. Learn setup, custom forms, welcome emails & automation. Free, unlimited subscribers. Step-by-step guide" />
+    content="Stop paying MailChimp $13-$350/month. Newsletter plugin: unlimited subscribers, automated emails, GDPR compliance. 100% free WordPress solution. No limits." />
   <meta name="twitter:image" content="https://kolodych.com/articles/the-newsletter-plugin-free.webp" />
   <meta name="twitter:site" content="@serhiikolodych" />
   <meta name="twitter:creator" content="@serhiikolodych" />
 
-  <!-- Schema.org Structured Data -->
+  <!-- Consolidated Schema Markup (No Duplicates) -->
   <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "WordPress Newsletter Plugin: Free Setup Guide (2026)",
-        "description": "Complete tutorial for Newsletter plugin for WordPress. Learn setup, custom forms, welcome emails & automation. Free, unlimited subscribers. Step-by-step guide.",
-        "image": [
-          {
-            "@type": "ImageObject",
-            "url": "https://kolodych.com/articles/the-newsletter-plugin-free.webp",
-            "width": 1200,
-            "height": 628,
-            "caption": "Newsletter plugin for WordPress - free email marketing solution"
-          }
-        ],
-        "author": {
-          "@type": "Person",
-          "name": "Serhii Kolodych",
-          "url": "https://kolodych.com/"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://kolodych.com/articles/newsletter-plugin-for-wordpress#article",
+      "headline": "Unlimited Subscribers, Zero Fees: The Free WordPress Newsletter Plugin That Beats MailChimp",
+      "description": "Stop paying MailChimp $13-$350/month. Newsletter plugin: unlimited subscribers, automated emails, GDPR compliance. 100% free WordPress solution. No limits.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://kolodych.com/articles/the-newsletter-plugin-free.webp",
+        "width": 1200,
+        "height": 628,
+        "caption": "Newsletter plugin for WordPress - free email marketing solution"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://kolodych.com/#person"
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://kolodych.com/#person"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://kolodych.com/articles/newsletter-plugin-for-wordpress"
+      },
+      "keywords": "wordpress newsletter plugin, mailchimp alternative wordpress, free wordpress newsletter plugin, wordpress email marketing plugin free, newsletter plugin wordpress",
+      "articleSection": "WordPress Tutorial",
+      "wordCount": 4278,
+      "datePublished": "2026-01-14T17:24:00+00:00",
+      "dateModified": "2026-01-14T17:24:00+00:00"
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://kolodych.com/articles/newsletter-plugin-for-wordpress#howto",
+      "name": "How to Setup Free WordPress Newsletter Plugin with Unlimited Subscribers",
+      "description": "Complete step-by-step tutorial for installing and configuring Newsletter plugin for WordPress. Learn how to create subscription forms, set up automated welcome emails, and send newsletters — all for free with unlimited subscribers.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://kolodych.com/articles/newsletter-plugin-free.webp",
+        "height": 628,
+        "width": 1200
+      },
+      "totalTime": "PT15M",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "0"
+      },
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "WordPress website (version 6.1 or higher)"
         },
-        "publisher": {
-          "@type": "Person",
-          "name": "Serhii Kolodych",
-          "url": "https://kolodych.com/",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://kolodych.com/favicon/favicon-32x32.png"
-          }
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://kolodych.com/articles/newsletter-plugin-for-wordpress.html"
-        },
-        "keywords": "wordpress news plugin free, wordpress newsletter plugin, newsletter plugin wordpress, wordpress mailchimp plugin, mailpoet alternative wordpress, wordpress plugin email marketing, wordpress email newsletter plugin, best wordpress newsletter plugin, how to add newsletter to wordpress, wordpress email marketing plugin free, embed newsletter form in wordpress, free wordpress newsletter plugin",
-        "articleSection": "WordPress Tutorial",
-        "wordCount": 1850,
-        "datePublished": "2026-01-09T11:34:00Z",
-        "dateModified": "2026-01-09T18:20:00Z"
-      }
-    </script>
-
-  <!-- HowTo Schema for Tutorial -->
-  <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": "How to Setup WordPress Newsletter Plugin",
-        "description": "Complete tutorial for Newsletter plugin for WordPress. Learn setup, custom forms, welcome emails & automation. Free, unlimited subscribers. Step-by-step guide.",
-        "image": [
-          "https://kolodych.com/articles/the-newsletter-plugin-free.webp"
-        ],
-        "totalTime": "PT1H",
-        "estimatedCost": {
-          "@type": "MonetaryAmount",
-          "currency": "USD",
-          "value": "0"
-        },
-        "tool": {
-          "@type": "HowToTool",
-          "name": "WordPress Newsletter Plugin"
+        {
+          "@type": "HowToSupply",
+          "name": "Admin access to WordPress dashboard"
         }
-      }
-    </script>
-
-  <!-- Breadcrumb Schema -->
-  <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://kolodych.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Articles",
-            "item": "https://kolodych.com/#articles"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "WordPress Newsletter Plugin Guide",
-            "item": "https://kolodych.com/articles/newsletter-plugin-for-wordpress.html"
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Newsletter plugin by Stefano Lissa (free)"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Elementor or Gutenberg page builder (optional)"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Install Newsletter Plugin",
+          "text": "Navigate to Plugins → Add Plugin in your WordPress dashboard. Search for 'Newsletter Send awesome emails from WordPress by Stefano Lissa' and click Install Now, then Activate.",
+          "image": "https://kolodych.com/articles/newsletter-installing-wordpress-plugin.webp",
+          "url": "https://kolodych.com/articles/newsletter-plugin-for-wordpress#install"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Create Subscription Form",
+          "text": "Go to Newsletter → Forms and click Configure next to Standard Form. Customize fields (email, name, privacy checkbox), edit labels, and copy the shortcode [newsletter_form].",
+          "image": "https://kolodych.com/articles/newsletter-configuration-form.webp",
+          "url": "https://kolodych.com/articles/newsletter-plugin-for-wordpress#subscription-form"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Embed Form on Your Site",
+          "text": "Add the newsletter form to your website using Elementor (Shortcode widget), Gutenberg (Shortcode block), or Widgets. Paste [newsletter_form] shortcode and publish.",
+          "url": "https://kolodych.com/articles/newsletter-plugin-for-wordpress#elementor"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Set Up Welcome Email",
+          "text": "Navigate to Newsletter → Subscription → Welcome tab. Choose Composer or Default template, write your subject line, customize the email body with merge tags like {name}, and save.",
+          "image": "https://kolodych.com/articles/newsletter-welcome-email-customization.webp",
+          "url": "https://kolodych.com/articles/newsletter-plugin-for-wordpress#welcome-email"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Send Your First Newsletter",
+          "text": "Go to Newsletter → Newsletters → Add New. Choose a template or start from blank. Write your subject line and content, select recipients, then click Send Now or Schedule for later.",
+          "image": "https://kolodych.com/articles/newsletter-add-new.webp",
+          "url": "https://kolodych.com/articles/newsletter-plugin-for-wordpress#send-newsletter"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kolodych.com/articles/newsletter-plugin-for-wordpress#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Newsletter plugin really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the Newsletter plugin is 100% free with unlimited subscribers and unlimited emails. There are premium addons available for advanced features, but the core plugin has everything most users need."
           }
-        ]
+        },
+        {
+          "@type": "Question",
+          "name": "How many subscribers can I have?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unlimited. Unlike MailChimp (500 free limit) or MailPoet (1,000 free limit), Newsletter plugin has no subscriber restrictions on the free version."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Newsletter plugin with Elementor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! You can add the newsletter form to any Elementor page using the Shortcode widget. Just paste [newsletter_form] into the widget."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Newsletter plugin GDPR compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The plugin includes privacy checkboxes, double opt-in confirmation, easy unsubscribe links, and data export/deletion features required for GDPR compliance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I import subscribers from MailChimp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Export your subscribers from MailChimp as a CSV file, then use Newsletter's import feature to upload them. Make sure to map the fields correctly (Name, Email)."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kolodych.com/#person",
+      "name": "Serhii Kolodych",
+      "url": "https://kolodych.com",
+      "image": "https://kolodych.com/favicon/favicon-32x32.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/serhii-kolodych",
+        "https://www.facebook.com/serhii.kolodych",
+        "https://www.instagram.com/serhii_kolodych",
+        "https://t.me/kolodych"
+      ],
+      "jobTitle": "Full-Stack Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Kolodych Web Development"
       }
-    </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kolodych.com/articles/newsletter-plugin-for-wordpress#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kolodych.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://kolodych.com/#articles"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "MailChimp Alternative for WordPress",
+          "item": "https://kolodych.com/articles/newsletter-plugin-for-wordpress"
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 
 </head>
@@ -168,13 +420,18 @@
 
   <!-- Fixed Navigation Header -->
   <header class="nav-header">
+    <nav id="breadcrumb" aria-label="Breadcrumb" class="sr-only-at-top">
+      <span itemscope itemtype="https://schema.org/BreadcrumbList">
+        <link itemprop="itemListElement" href="https://kolodych.com/#articles">
+      </span>
+    </nav>
     <div class="nav-header__container">
 
-      <!-- Home Button -->
-      <a href="/" class="nav-home" aria-label="Back to home" title="Back to home">
+      <!-- Home Button / Scroll to Top -->
+      <a href="/" class="nav-home" id="navHome" aria-label="Back to home" title="Back to home">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-          <polyline points="9 22 9 12 15 12 15 22" />
+          <path id="navIcon" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+          <polyline id="navIconExtra" points="9 22 9 12 15 12 15 22" />
         </svg>
       </a>
 
@@ -223,37 +480,63 @@
   </header>
 
   <!-- Article Container -->
-  <article class="blog-post">
+  <article id="article" class="blog-post">
     <header class="post-header">
-      <h1 class="post-title">WordPress Newsletter Plugin Tutorial: Complete Setup Guide (Free)</h1>
+      <h1 class="post-title"><strong>Unlimited Subscribers, Zero Fees:</strong> The Free WordPress Newsletter Plugin
+        That Beats MailChimp
+      </h1>
       <div class="post-meta">
-        <time class="post-date" datetime="2026-01-09">Published on January 9, 2026</time>
-        <span class="post-reading-time">12 min read</span>
+        <time class="post-date" datetime="2026-01-14">Published on January 14, 2026</time>
+        <span class="post-reading-time">15 min read</span>
       </div>
     </header>
     <div class="post-content">
       <section class="post-section post-intro">
         <p class="lead-paragraph">
-          Looking for a <strong>free WordPress newsletter plugin</strong> that doesn't limit your subscribers? <a
-            href="https://wordpress.org/plugins/newsletter/" target="_blank" rel="noopener">The Newsletter plugin by
-            Stefano
-            Lissa</a>
-          is one of the most powerful <strong>email marketing solutions for WordPress</strong>, with over 400,000
-          active installations.
+          Newsletter by <a href="https://www.satollo.net/" target="_blank" rel="dofollow">Stefano Lissa</a> is the only
+          free WordPress plugin with truly unlimited subscribers—no caps at 500 (MailChimp) or 1,000 (MailPoet). Zero
+          monthly fees, zero limits, zero branding. Here's how to set it up in 15 minutes and why it saves you
+          $300+/year.
         </p>
+        <div class="quick-answer-box">
+          <h2>⚡ Quick Answer:</h2>
+          <ul class="nomargin-list">
+            <li><strong>Setup time:</strong> 5 minutes</li>
+            <li><strong>Subscriber limit:</strong> None</li>
+            <li><strong>Monthly cost:</strong> $0 forever</li>
+            <li><strong>Works with:</strong> Elementor, Gutenberg, WooCommerce</li>
+            <li><strong>Key features:</strong> Automation, analytics, GDPR tools</li>
+          </ul>
+        </div>
         <figure class="tutorial-figure">
-          <img class="tutorial-image" src="newsletter-plugin-free.webp" alt="Newsletter plugin for WordPress"
-            loading="lazy" width="1200" height="628">
+          <img class="tutorial-image" src="newsletter-plugin-free.webp"
+            alt="Newsletter - Best Free WordPress email marketing plugin with unlimited subscribers"
+            fetchpriority="high" title="Best Free WordPress Email Marketing Plugin - Unlimited Subscribers" width="1200"
+            height="628" aspect-ratio="1200/628">
           <figcaption class="tutorial-caption">
-            The Newsletter plugin for WordPress - free email marketing solution
+            Free WordPress newsletter plugin 2026: No limits, no fees, just powerful email marketing
           </figcaption>
         </figure>
-        <p class="lead-paragraph">
-          Unlike MailChimp or MailPoet, this plugin is completely free with unlimited subscribers, unlimited emails,
-          and
-          no
-          hidden fees.
+        <p>
+          Email marketing delivers an average ROI of $36 for every $1 spent, making it one of the <a
+            href="https://www.constantcontact.com/blog/email-marketing-statistics/" target="_blank" rel="noopener">most
+            effective digital marketing channels</a> available — especially when you're not paying monthly fees.
         </p>
+        <div class="yellow-alert">
+          <p>⚠️ <strong>Important Update:</strong> Starting February 17, 2026, Mailchimp’s free plan is dropping to a
+            strict <strong>250-contact limit</strong> and only 500 sends per month.</p>
+          <p><strong>The good news?</strong> This plugin is a 100% free alternative with <strong>unlimited
+              subscribers</strong> and <strong>unlimited emails</strong> sent directly from your WordPress dashboard. No
+            price traps, no hidden fees.</p>
+        </div>
+
+        <p>
+          Before building your email list, make sure your site is protected — check out our <a
+            href="wordpress-backup-guide">WordPress backup guide</a> to avoid losing subscriber data if your site
+          crashes.
+        </p>
+
+
 
         <!-- What You'll Learn Box -->
         <div class="info-box info-box--learning">
@@ -284,7 +567,7 @@
       </section>
 
       <section class="post-section post-navigation">
-        <nav class="toc" aria-label="Table of Contents">
+        <nav id="toc" class="toc" aria-label="Table of Contents">
           <h2 class="toc__title">Quick Navigation:</h2>
           <ol class="toc__list">
             <li><a class="toc__link" href="#what-is">What is Newsletter Plugin?</a></li>
@@ -301,15 +584,17 @@
             <li><a class="toc__link" href="#advanced">Advanced Features</a></li>
             <li><a class="toc__link" href="#troubleshooting">Troubleshooting Common Issues</a></li>
             <li><a class="toc__link" href="#faq">FAQ</a></li>
+            <li><a class="toc__link" href="#conclusion">Conclusion</a></li>
           </ol>
         </nav>
       </section>
       <section class="post-section" id="what-is">
-        <h2 class="section-heading">What is Newsletter Plugin for WordPress?</h2>
+        <h2 class="section-heading">The Ultimate Tool: Meet the Best Free WordPress Newsletter Plugin of 2026</h2>
 
         <p>
           <strong>Newsletter</strong> is a free WordPress email marketing plugin created by Stefano Lissa.
-          It's one of the most popular <strong>WordPress newsletter plugins</strong> with 400,000+ active
+          It's one of the most popular <a href="https://wordpress.org/plugins/newsletter/" target="_blank"
+            rel="noopener">WordPress newsletter plugin</a> with 300,000+ active
           installations and a 4.6-star rating.
         </p>
 
@@ -352,7 +637,8 @@
           </ul>
 
           <figure class="tutorial-figure">
-            <img src="newsletter-plugin-wordpress-reviews-ratings.webp" loading="lazy"
+            <img src="newsletter-plugin-wordpress-reviews-ratings.webp" fetchpriority="high"
+              style="aspect-ratio:1178/330" width="1178" height="330"
               alt="Newsletter plugin for WordPress reviews and ratings" class="tutorial-image">
             <figcaption class="tutorial-caption">Newsletter plugin by Stefano Lissa reviews and ratings</figcaption>
           </figure>
@@ -370,20 +656,37 @@
       </section>
 
       <section class="post-section" id="vs-mailchimp">
-        <h2 class="section-heading">Newsletter Plugin vs MailChimp vs MailPoet: Which is Better?</h2>
+        <h2 class="section-heading"><strong>Best MailChimp Alternative for WordPress:</strong> Why Newsletter Plugin
+          Saves You $300/Year
+        </h2>
+
+        <div class="quick-answer-box">
+          <h3>💰 Cost Comparison:</h3>
+          <ul>
+            <li><strong>Newsletter Plugin:</strong> $0/month forever (unlimited subscribers)</li>
+            <li><strong>MailChimp:</strong> $0 for 500 subscribers, then $13-$350/month</li>
+            <li><strong>MailPoet:</strong> $0 for 1,000 subscribers, then $9-$599/month</li>
+          </ul>
+          <p>
+            ✅ Newsletter plugin saves you $156-$4,200 per year vs. MailChimp or vs. MailPoet.
+          </p>
+        </div>
 
         <figure class="tutorial-figure">
           <img src="newsletter-plugin-vs-mailchimp-vs-mailpoet-comparison-trends-chart-for-wordpress.webp"
-            loading="lazy" alt="Newsletter plugin vs MailChimp vs MailPoet comparison Google trends chart"
-            class="tutorial-image">
-          <figcaption class="tutorial-caption">Newsletter plugin vs MailChimp vs MailPoet comparison Google trends
-            chart
+            loading="lazy" width="1217" height="276"
+            alt="WordPress newsletter plugin free comparison: Newsletter vs MailChimp vs MailPoet Google Trends data"
+            title="MailChimp Alternative for WordPress: Search Interest Comparison" class="tutorial-image">
+          <figcaption class="tutorial-caption">WordPress newsletter plugin free market trends: Newsletter plugin gaining
+            ground against MailChimp and MailPoet
           </figcaption>
         </figure>
 
         <p>
-          Many users search for <strong>"wordpress mailchimp plugin"</strong> or
-          <strong>"mailpoet alternative wordpress"</strong> but Newsletter plugin offers significant advantages:
+          According to <a href="https://trends.google.com/trends/" target="_blank" rel="noopener">Google Trends
+            data</a>, searches for 'mailchimp alternative' have increased 60% since 2024 as users seek
+          cost-effective solutions.
+          Why the <strong>best wordpress newsletter plugin</strong> isn't MailChimp: See the feature comparison below.
         </p>
 
         <div class="table-wrapper">
@@ -458,17 +761,28 @@
       </section>
 
       <section class="post-section" id="install">
-        <h2 class="section-heading">How to Install Newsletter Plugin in WordPress</h2>
+        <h2 id="howto" class="section-heading"><strong>Zero-to-Live:</strong> Get Your WordPress Email System Running in
+          4 Simple
+          Steps</h2>
 
-        <p>
-          Installing the <strong>WordPress email newsletter plugin</strong> takes less than 2 minutes.
-          Follow these steps:
-        </p>
+        <div class="quick-answer-box">
+          <h3>⏱️ Time Required:</h3>
+          <ul>
+            <li>Plugin installation: <strong>2 minutes</strong></li>
+            <li>Form creation: <strong>3 minutes</strong></li>
+            <li>Welcome email setup: <strong>5 minutes</strong></li>
+            <li>First newsletter sent: <strong>5 minutes</strong></li>
+          </ul>
+          <p>
+            ✅ Total setup time: <strong>15 minutes</strong> from zero to sending emails.
+        </div>
 
         <figure class="tutorial-figure">
           <img src="newsletter-installing-wordpress-plugin.webp" loading="lazy"
-            alt="Installing Newsletter plugin in WordPress" class="tutorial-image">
-          <figcaption class="tutorial-caption">Installing Newsletter plugin in WordPress</figcaption>
+            alt="How to add newsletter to wordpress step 1 search for Newsletter plugin" class="tutorial-image"
+            title="How to Install Free WordPress Newsletter Plugin (2-Minute Setup)">
+          <figcaption class="tutorial-caption">Installing the best free WordPress newsletter plugin takes 90 seconds -
+            no technical skills needed</figcaption>
         </figure>
 
         <div class="tutorial-method">
@@ -482,7 +796,8 @@
         <div class="tutorial-method">
           <h3 class="method-heading">Step 2: Search for Newsletter Plugin</h3>
           <ol class="step-list">
-            <li class="step-item">In the search box, type: <strong>"Newsletter awesome"</strong></li>
+            <li class="step-item">In the search box, type: <strong>"Newsletter Send awesome emails from WordPress by
+                Stefano Lissa"</strong></li>
             <li class="step-item">Look for the plugin with 300,000+ active installations by <strong>Stefano
                 Lissa</strong></li>
           </ol>
@@ -511,7 +826,8 @@
 
 
       <section class="post-section" id="subscription-form">
-        <h2 class="section-heading">Creating Your First Subscription Form</h2>
+        <h2 class="section-heading"><strong>Grow Your List:</strong> How to Build a Professional Newsletter Form in
+          Minutes</h2>
 
         <p>
           Now let's <strong>add newsletter to WordPress</strong> by creating a subscription form.
@@ -536,8 +852,10 @@
           <h3 class="method-heading">Step 2: Configure Form Fields</h3>
           <figure class="tutorial-figure">
             <img src="newsletter-configuration-form.webp" loading="lazy"
-              alt="Newsletter subscription form Fields configuration in WordPress" class="tutorial-image">
-            <figcaption class="tutorial-caption">Creating Newsletter subscription form in WordPress</figcaption>
+              alt="Newsletter plugin wordpress form fields setup: email, name, privacy checkbox"
+              title="Free WordPress Newsletter Plugin Form Customization Options" class="tutorial-image">
+            <figcaption class="tutorial-caption">Newsletter plugin WordPress subscription form configuration: Add custom
+              fields and GDPR consent</figcaption>
           </figure>
           <p>Choose which fields to display:</p>
           <ul class="feature-list">
@@ -599,10 +917,12 @@
       </section>
 
       <section class="post-section" id="elementor">
-        <h2 class="section-heading">How to Embed Newsletter Form in WordPress</h2>
+        <h2 class="section-heading">Embedding Your <strong>Free WordPress Email Marketing Plugin</strong> Form: 3 Easy
+          Methods</h2>
 
         <p>
-          Learn how to <strong>embed newsletter form in WordPress</strong> using any of this three simple methods.
+          Here's <strong>how to embed newsletter form in wordpress</strong> using Elementor, Gutenberg, or widgets -
+          pick your favorite.
         </p>
 
         <div class="subsection">
@@ -639,6 +959,10 @@
 
         <div class="subsection">
           <h3 class="subsection-heading">Method 2: Using Elementor</h3>
+          <p>
+            I've used this same integration method on client projects like <a
+              href="../website/vent-build">Vent-Build.com</a> — it works seamlessly with custom Elementor designs.
+          </p>
 
           <div class="tutorial-method">
             <h4 class="method-heading">Step 1: Edit with Elementor</h4>
@@ -699,7 +1023,10 @@
       </section>
 
       <section class="post-section" id="welcome-email">
-        <h2 class="section-heading">Setting Up Welcome Email</h2>
+        <h2 class="section-heading">Automate Welcome Emails with Your <strong>WordPress Newsletter Plugin Free</strong>
+          (5-Minute
+          Setup)
+        </h2>
 
         <p>
           A welcome email is automatically sent when someone subscribes. You can customize it to match your brand.
@@ -707,8 +1034,10 @@
 
         <figure class="tutorial-figure">
           <img src="newsletter-welcome-email-customization.webp" loading="lazy"
-            alt="Newsletter Welcome Email Customization" class="tutorial-image">
-          <figcaption class="tutorial-caption">Newsletter Welcome Email Customization</figcaption>
+            alt="Free wordpress email marketing plugin automated welcome message setup"
+            title="WordPress Email Marketing Plugin Free - Welcome Automation Setup" class="tutorial-image">
+          <figcaption class="tutorial-caption">How to add newsletter to WordPress with automated welcome emails—no
+            coding, just customize and save</figcaption>
         </figure>
 
         <div class="tutorial-method">
@@ -794,7 +1123,8 @@
       </section>
 
       <section class="post-section" id="goodbye-email">
-        <h2 class="section-heading">Goodbye Email and Unsubscribe Workflow</h2>
+        <h2 class="section-heading"><strong>Win Them Back:</strong> Turn Cancellations Into Re-subscriptions with a
+          Smart Workflow</h2>
 
         <figure class="tutorial-figure">
           <img src="newsletter-goodbye-message-page-and-email.webp" loading="lazy"
@@ -858,30 +1188,40 @@
 
         <div class="tutorial-method">
           <h3 class="method-heading">Step 4: Design Goodbye Email</h3>
-          <p>Paste this beautiful template:</p>
+          <p>Copy and Paste this beautiful template to Code tab of Goodbye email on your site:</p>
 
           <div class="code-block">
             <div class="code-block__header">
               <span class="code-block__label">Goodbye email HTML</span>
-              <button class="code-block__copy-btn" data-clipboard-target="#goodbye-email">
+              <button class="code-block__copy-btn" data-clipboard-target="#goodbye-email-code">
                 <span class="copy-btn__text">Copy Code</span>
               </button>
             </div>
             <div class="code-block__content">
-              <pre><code id="goodbye-email" class="code-block__code">&lt;div style="background: #000; color: #fff; padding: 40px; text-align: center; font-family: 'Segoe UI', sans-serif; border-radius: 12px; max-width: 500px; margin: 0 auto;"&gt;
-  &lt;h2 style="margin: 0 0 12px 0; font-size: 26px;"&gt;
-    Goodbye for Now 👋
-  &lt;/h2&gt;
-  &lt;p style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.6;"&gt;
-    You've been unsubscribed successfully.
-  &lt;/p&gt;
-  &lt;p style="margin: 0 0 25px 0; font-size: 15px; opacity: 0.85;"&gt;
-    Changed your mind? We'd love to have you back!
-  &lt;/p&gt;
-  &lt;div&gt;
-    [newsletter_resubscribe_button label="Rejoin Us" /]
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+              <pre><code id="goodbye-email-code" class="code-block__code">&lt;div
+    style="background: #fff5f0;border: 1px solid #ffddd2;color: #4a3728;padding: 50px 20px;text-align: center;border-radius: 20px;margin: 20px auto;max-width: 600px;font-family: sans-serif"&gt;
+    &lt;span style="font-size: 40px"&gt;👋&lt;/span&gt;
+    &lt;h1 style="color: #c2410c;margin-top: 10px"&gt;It's official.&lt;/h1&gt;
+    &lt;h2 style="font-weight: 400;margin-bottom: 20px"&gt;Your subscription has been removed.&lt;/h2&gt;
+
+    &lt;p style="font-size: 15px;line-height: 1.6;margin-bottom: 25px;color: #6b4f3a;padding: 0 20px"&gt;
+      Changed your mind? You can subscribe again anytime! &lt;br&gt;&lt;br&gt;
+      To use our sign-up form again immediately, please &lt;strong&gt;use a different email address&lt;/strong&gt;.
+      If you want to reactivate &lt;em&gt;this&lt;/em&gt; email, please
+      &lt;a href="mailto:{company_address}?subject=Subscribe me back please 🥹&amp;body=I confirm I want to subscribe back"
+        style="color: #c2410c;font-weight: bold;text-decoration: none;border-bottom: 1px solid #c2410c"&gt;
+        click here to send us a message
+      &lt;/a&gt;
+      and we will manually restore your status.
+    &lt;/p&gt;
+
+    &lt;div style="text-align: center;padding: 10px 0"&gt;
+      &lt;a href="{blog_url}/newsletter/"
+        style="background-color: #c2410c;border-radius: 8px;color: #ffffff;font-size: 16px;font-weight: bold;text-decoration: none;padding: 15px 35px"&gt;
+        Rejoin with a new email
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
             </div>
           </div>
         </div>
@@ -904,7 +1244,8 @@
       </section>
 
       <section class="post-section" id="resubscribe">
-        <h2 class="section-heading">Resubscription Workflow Setup</h2>
+        <h2 class="section-heading"><strong>The "Undo" Button:</strong> How to Save Unsubscribing Leads with One Click
+        </h2>
         <p>Let subscribers easily rejoin if they change their mind.</p>
 
         <div class="tutorial-method">
@@ -960,7 +1301,8 @@
       </section>
 
       <section class="post-section" id="send-newsletter">
-        <h2 class="section-heading">How to Send Your First Newsletter</h2>
+        <h2 class="section-heading"><strong>Hit the Inbox:</strong> The Step-by-Step Guide to Your First Newsletter
+          Campaign</h2>
         <p>Now that your forms and emails are set up, let's send a newsletter! And there are actually two ways to do
           this:</p>
 
@@ -1058,7 +1400,8 @@
       </section>
 
       <section class="post-section" id="customize-css">
-        <h2 class="section-heading">Customize Newsletter Forms with CSS</h2>
+        <h2 class="section-heading"><strong>Visual Authority:</strong> Customizing Your Subscription Box Without a
+          Developer</h2>
 
         <p>Make your subscription form match your brand with custom CSS.</p>
 
@@ -1186,7 +1529,9 @@
 
 
       <section class="post-section" id="redirect">
-        <h2 id="#redirect" class="section-heading">Auto-Redirect After Subscribe</h2>
+        <h2 id="#redirect" class="section-heading"><strong>The Perfect Welcome:</strong> How to Auto-Redirect Users to a
+          Custom Thank-You
+          Page</h2>
 
         <p>Automatically redirect users back to the main page or to a thank you page or special offer after they
           subscribe. Here is how to do it:</p>
@@ -1204,18 +1549,16 @@
             <li class="step-item">Go to <strong>Pages → Newsletter → Edit</strong></li>
             <li class="step-item">Click ✚ Add icon to add new element to your page.</li>
             <li class="step-item">Search for <strong>HTML</strong> element and click it.</li>
-            <li class="step-item">Copy and Paste this code inside HTML element:</li>
-            <ul class="nomargin-list">
-              <li>
-                <div class="code-block">
-                  <div class="code-block__header">
-                    <span class="code-block__label">Shortcode</span>
-                    <button class="code-block__copy-btn" data-clipboard-target="#auto-redirect-html-code">
-                      <span class="copy-btn__text">Copy Code</span>
-                    </button>
-                  </div>
-                  <div class="code-block__content">
-                    <pre><code id="auto-redirect-html-code" class="code-block__code">&lt;div class=&quot;thank-you-message&quot;&gt;
+            <li class="step-item">Copy and Paste this code inside HTML element: <br>
+              <div class="code-block">
+                <div class="code-block__header">
+                  <span class="code-block__label">Auto-Redirect HTML code</span>
+                  <button class="code-block__copy-btn" data-clipboard-target="#auto-redirect-html-code">
+                    <span class="copy-btn__text">Copy Code</span>
+                  </button>
+                </div>
+                <div class="code-block__content">
+                  <pre><code id="auto-redirect-html-code" class="code-block__code">&lt;div class=&quot;thank-you-message&quot;&gt;
   &lt;h2&gt;Thank you for subscribing!&lt;/h2&gt;
   &lt;p&gt;Redirecting in &lt;span id=&quot;timer&quot;&gt;5&lt;/span&gt; seconds...&lt;/p&gt;
 &lt;/div&gt;
@@ -1241,10 +1584,9 @@
     document.querySelector('.thank-you-message').style.display = 'none';
   }
 &lt;/script&gt;</code></pre>
-                  </div>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </li>
             <li class="step-item">Click <strong>Save</strong>.</li>
           </ol>
         </div>
@@ -1272,7 +1614,7 @@
 
 
       <section class="post-section" id="advanced">
-        <h2 class="section-heading">Advanced Newsletter Plugin Features</h2>
+        <h2 class="section-heading"><strong>Pro Power-Ups:</strong> Mastering Segmentation, Imports, and Analytics</h2>
 
         <p>Unlock more power from your <strong>WordPress email marketing plugin</strong>.</p>
 
@@ -1373,7 +1715,7 @@
 
             <p><strong>Built-in GDPR Features:</strong></p>
 
-            <ol class="feature-list">
+            <ul class="feature-list">
               <li class="feature-item">
                 <strong class="feature-term">Privacy Checkbox:</strong>
                 <ul class="option-list">
@@ -1425,12 +1767,12 @@
                     email. This would delete them from your database.</li>
                 </ul>
               </li>
-            </ol>
+            </ul>
           </div>
       </section>
 
       <section class="post-section" id="troubleshooting">
-        <h2 class="section-heading">Troubleshooting Common Issues</h2>
+        <h2 class="section-heading"><strong>Tech Support:</strong> Quick Fixes for Forms, SMTP, and Welcome Emails</h2>
 
         <div class="subsection">
           <h3 class="subsection-heading">Problem 1: Emails Not Sending</h3>
@@ -1480,6 +1822,17 @@
       <section class="post-section" id="faq">
         <h2 class="section-heading">Frequently Asked Questions</h2>
 
+        <div class="quick-answer-box">
+          <h3>🔥 Most Asked Questions:</h3>
+          <ul>
+            <li><strong>Is it really free?</strong> Yes, 100% free with unlimited subscribers.</li>
+            <li><strong>Works with Elementor?</strong> Yes, paste <code>[newsletter_form]</code> in Shortcode widget.
+            </li>
+            <li><strong>GDPR compliant?</strong> Yes, includes privacy checkboxes and consent tools.</li>
+            <li><strong>Better than MailChimp?</strong> For free tier, yes — no subscriber limits.</li>
+          </ul>
+        </div>
+
         <dl class="faq-list">
           <div class="faq-item">
             <dt class="faq-question">
@@ -1527,9 +1880,9 @@
               <strong>Is Newsletter plugin GDPR compliant?</strong>
             </dt>
             <dd class="faq-answer">
-              Yes. The plugin includes privacy checkboxes, double opt-in confirmation, easy unsubscribe links, and
-              data
-              export/deletion features required for GDPR compliance.
+              Yes. "The plugin includes privacy checkboxes and double opt-in confirmation to meet <a
+                href="https://gdpr.eu/email-encryption/" target="_blank" rel="noopener">GDPR email marketing
+                requirements</a>, ensuring your newsletter complies with European data protection laws."
             </dd>
           </div>
 
@@ -1607,139 +1960,124 @@
           </div>
         </dl>
       </section>
+      <section id="conclusion" class="post-section">
+        <div class="post-conclusion">
+          <h2 class="section-heading">Final Thoughts</h2>
+          <p>
+            The Newsletter plugin is one of the best <strong>free WordPress newsletter plugins</strong> available.
+            With unlimited subscribers, unlimited emails, and powerful features like automation and analytics,
+            it's perfect for bloggers, small businesses, and growing websites.
+          </p>
+          <p>
+            Unlike premium services like MailChimp or MailPoet, you won't hit subscriber limits or monthly fees.
+            Your subscriber data stays in your WordPress database, giving you complete control.
+          </p>
+          <p>
+            Start building your email list today and connect directly with your audience!
+          </p>
+        </div>
+      </section>
     </div><!-- End .post-content -->
 
     <footer class="post-footer">
-      <div class="post-conclusion">
-        <h2 class="conclusion-heading">Final Thoughts</h2>
-        <p>
-          The Newsletter plugin is one of the best <strong>free WordPress newsletter plugins</strong> available.
-          With unlimited subscribers, unlimited emails, and powerful features like automation and analytics,
-          it's perfect for bloggers, small businesses, and growing websites.
-        </p>
-        <p>
-          Unlike premium services like MailChimp or MailPoet, you won't hit subscriber limits or monthly fees.
-          Your subscriber data stays in your WordPress database, giving you complete control.
-        </p>
-        <p>
-          Start building your email list today and connect directly with your audience!
-        </p>
-      </div>
 
-      <nav class="post-tags" aria-label="Article tags">
+      <!-- <nav class="post-tags" aria-label="Article tags">
         <strong>Tags:</strong>
         <a href="/tag/wordpress" class="tag-link">WordPress</a>
         <a href="/tag/newsletter" class="tag-link">Newsletter</a>
         <a href="/tag/email-marketing" class="tag-link">Email Marketing</a>
         <a href="/tag/plugins" class="tag-link">Plugins</a>
         <a href="/tag/tutorial" class="tag-link">Tutorial</a>
-      </nav>
+      </nav> -->
 
       <div class="post-author">
         <h3 class="author-heading">About the Author</h3>
         <p>
-          Written by the Kolodych team. We create detailed WordPress tutorials to help you
-          build better websites. Subscribe to our newsletter for more guides like this!
+          Serhii Kolodych is a seasoned Full-Stack Developer who has built <a href="../#websites" target="_blank">dozens
+            of WordPress
+            sites</a>, from <a href="../website/bubacat" target="_blank">card game store</a> to <a
+            href="../website/joksglobalsport.com" target="_blank">Football Sport Academy</a>. His tutorials help
+          site owners
+          implement
+          professional features like SEO, Email Marketing, backup and recovery, without expensive developers, while
+          bypassing expensive monthly
+          fees.
+        </p>
+      </div>
+      <div class="post-offer">
+        <h3 class="offer-heading">Interested in a free audit?</h3>
+        <p>
+          I'm currently working on Website Audit Checklist for my clients. If you want a copy or want me to run it on
+          your site to find performance bottlenecks, <a href="#contacts">use one of the contacts below</a> and send me a
+          message with the subject 'Audit'.
         </p>
       </div>
     </footer>
 
   </article><!-- End .blog-post -->
 
-
-
-  <div class="container">
-    <div class="box">
-      <i></i>
-      <p>
-        Practical backup and recovery guide for WordPress owners who want zero panic when things break.
-      </p>
-      <a href="#wordpress-backup">
-        <h2>Your WordPress site will fail. <br> Be ready.</h2>
-        <div class="imgcontainer">
-          <img loading="lazy" decoding="async" fetchpriority="low" src="450-creating_a_telegram_bot_token_api.jpg"
-            width="450" height="240" title="This site can't be reached - WordPress Backup Guide"
-            alt="This site can't be reached - WordPress Backup Guide">
-        </div>
-      </a>
-    </div>
-  </div>
-
-
-  <!-- Related Content Section -->
   <aside class="related-content" aria-label="Related articles">
     <h2 class="related-content__heading">Related Projects & Articles</h2>
 
     <div class="section-container">
-      <ol>
+      <ul class="articles-list">
         <li>
-          <!-- WordPress Backup Guide -->
-          <div class="box">
+          <article class="box">
             <i></i>
             <p>
               Practical backup and recovery guide for WordPress owners who want zero panic when things break.
             </p>
-            <a href="articles/wordpress-backup-guide.html">
-              <h2>Your WordPress site will fail. <br> Be ready. </h2>
-              <div class="imgcontainer">
+            <a href="wordpress-backup-guide" target="_blank">
+              <h2>Your WordPress site will fail. <br> Be ready.</h2>
+              <figure class="imgcontainer">
                 <img loading="lazy" decoding="async" fetchpriority="low" src="your-wordpress-will-crash.webp"
                   width="450" height="240" title="This site can't be reached - use WPvivid WordPress Backup Plugin"
                   alt="This site can't be reached - use WPvivid WordPress Backup Plugin">
-              </div>
+              </figure>
             </a>
-          </div>
+          </article>
         </li>
 
         <li>
-          <!-- This Site Uses Cookies Item Explore the role of cookies, their potential risks, and how they affect privacy. This article provides insights on compliance with GDPR regulations and managing cookies on your website. -->
-          <div class="box">
-            <i></i>
-            <p class="mar10">
-              Explore the article about cookies.. 🍪
-            </p>
-            <a href="website/this-site-uses-cookies.html">
-              <h2 class="marb mart">Do you agree to use cookies?</h2>
-            </a>
-            <div class="button-container mart10">
-              <button id="yesButton" class="response-button" data-color="green">Yes</button>
-              <button id="noButton" class="response-button" data-color="red">No</button>
-            </div>
-            <!-- Hidden paragraph for feedback -->
-            <p id="feedbackMessage" class="feedback-message none-display">Thank you for your feedback!</p>
-            <a href="website/this-site-uses-cookies.html">
-              <div class="imgcontainer">
-                <img loading="lazy" decoding="async" fetchpriority="low" src="website/450-cookie-image.jpg" width="450"
-                  height="240" title="This Site Uses Cookies (kolodych.com)"
-                  alt="Image of a desktop setup with a laptop, smartphone, mouse, keyboard, and cookies on a plate">
-              </div>
-            </a>
-
-          </div>
-        </li>
-
-        <li>
-          <!-- NGINX -->
-          <div class="box">
+          <article class="box">
             <i></i>
             <p>
-              Practical guide to installing and running Nginx for fast, reliable web hosting with improved
-              stability and performance.
+              Lightning-fast Wordpress Elementor site packed with cats, cards & merch.
             </p>
-            <a href="articles/nginx.html">
-              <h2>Nginx: What is It and Why Should You Care? </h2>
-              <div class="imgcontainer">
-                <img loading="lazy" decoding="async" fetchpriority="low" src="articles/450-nginx-status.jpg" width="450"
-                  height="240" title="Nginx Installation and Optimization Guide"
-                  alt="A screenshot showing Nginx server configuration steps and optimization settings.">
-              </div>
+            <a href="../website/bubacat">
+              <h2>Bubacat card game website</h2>
+              <figure class="imgcontainer">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="../website/bubacat-preview.webp"
+                  width="450" height="240" title="Bubacat preview "
+                  alt="A screenshot of the BubaCat.com homepage built with WordPress Elementor.">
+              </figure>
             </a>
-          </div>
+          </article>
         </li>
+
+        <li>
+          <article class="box">
+            <i></i>
+            <p>
+              Transformed client’s Figma vision into a polished WordPress Elementor site with projects,
+              services, forms, and navigation. </p>
+            <a href="../website/vent-build">
+              <h2>Vent-Build.com: Figma design into WordPress Elementor website.</h2>
+              <figure class="imgcontainer">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="../website/vent-build-preview.webp"
+                  width="450" height="240" title="Vent-Build preview "
+                  alt="A screenshot of the Vent-Build.com homepage built with WordPress Elementor.">
+              </figure>
+            </a>
+          </article>
+        </li>
+
+      </ul>
     </div>
   </aside>
 
   <!-- Site Footer -->
-  <footer class="site-footer">
+  <footer id="contacts" class="site-footer">
     <div class="site-footer__content">
       <div class="site-footer__section">
         <h2 class="site-footer__heading">Contact Me</h2>
@@ -1775,7 +2113,16 @@
           </a>
         </nav>
       </div>
-
+      <div class="site-footer__section">
+        <h2 class="site-footer__heading">Let's Work Together</h2>
+        <p class="offer-text">
+          Need WordPress development, newsletter setup, or site optimization? I'm available for projects starting at
+          €50.
+        </p>
+        <p class="small-details">
+          ⚡ Response time: 4 hours • Projects worldwide • Satisfaction guaranteed
+        </p>
+      </div>
       <div class="site-footer__legal">
         <p>&copy; 2026 Kolodych.com. All rights reserved.</p>
       </div>
@@ -1783,10 +2130,14 @@
   </footer>
 
 
+
+
   <script src="../scripts/table-of-content-scroll.js" defer></script>
 
   <script src="../scripts/navigation-arrows.js" defer></script>
   <script src="../scripts/clipboard-copied.js" defer></script>
+
+  <script src="../scripts/nav-home.js" defer></script>
 
 </body>
 

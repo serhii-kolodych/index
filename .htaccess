@@ -1,8 +1,24 @@
 RewriteEngine On
+
+# 1. Redirect /index and /index.html to the root /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index(\.html)?\  [NC]
+RewriteRule ^index(\.html)?$ / [L,R=301]
+
+# 2. Remove .html from all other URLs (e.g., /about.html to /about)
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [L,R=301]
+
+# 3. Internal mapping: link /page to /page.html so it loads correctly
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
 RewriteRule ^articles/?$ /#articles [R=301,L]
 RewriteRule ^website/?$ /#website [R=301,L]
 
 AddDefaultCharset UTF-8
 ErrorDocument 404 /404.html
+
+# Specific Redirects
 Redirect 301 /articles/telegram.html https://kolodych.com/articles/first-telegram-bot.html
 Redirect 301 /bots/ https://kolodych.com/#bots
