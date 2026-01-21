@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        body.loaded {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
+    </style>
+    <link id="stylesheet" rel="stylesheet">
+
+    <script>
+        fetch("shared/head")
+            .then(r => r.text())
+            .then(html => document.head.insertAdjacentHTML("beforeend", html))
+            .catch(e => console.error("Failed to load shared head:", e));
+    </script>
+
+    <script src="scripts/cookie-check.js" charset="utf-8" defer></script>
+
+    <!-- Primary Meta Tags -->
+    <title>Serhii Kolodych - Web Developer | WordPress & Python Automation Expert</title>
+    <meta name="title" content="Serhii Kolodych - Web Developer | WordPress & Python Automation Expert" />
+    <meta name="description"
+        content="Full-stack web developer specializing in WordPress sites, Python automation, Telegram bots, and SEO optimization. View my portfolio of real projects and learn from detailed case studies." />
+    <meta name="keywords"
+        content="WordPress developer, Python automation, Telegram bot development, SEO optimization, web development portfolio, Elementor expert, WooCommerce development, custom web solutions, full-stack developer, frontend development" />
+    <link rel="canonical" href="https://kolodych.com/" />
+    <meta name="author" content="Serhii Kolodych" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kolodych.com/" />
+    <meta property="og:title" content="Serhii Kolodych - Web Developer | WordPress & Python Automation Expert" />
+    <meta property="og:description"
+        content="Full-stack web developer specializing in WordPress sites, Python automation, Telegram bots, and SEO optimization. View my portfolio of real projects." />
+    <meta property="og:site_name" content="Serhii Kolodych Portfolio" />
+
+    <!-- Landscape image (default for Facebook/LinkedIn) - 1200x630 recommended -->
+    <meta property="og:image" content="https://kolodych.com/src/kolodych-portfolio-preview-1200-630.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt"
+        content="Serhii Kolodych - Web Developer Portfolio showcasing WordPress sites and automation projects" />
+
+    <!-- Square image (for Instagram/Facebook when shared) - 1080x1080 -->
+    <meta property="og:image" content="https://kolodych.com/src/kolodych-portfolio-preview-1080-1080.webp" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:alt" content="Serhii Kolodych - WordPress & Python Developer" />
+
+    <!-- Logo -->
+    <meta property="og:logo" content="https://kolodych.com/favicon/favicon-192x192.png" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://kolodych.com/" />
+    <meta name="twitter:title" content="Serhii Kolodych - Web Developer | WordPress & Python Expert" />
+    <meta name="twitter:description"
+        content="Full-stack web developer specializing in WordPress, Python automation, Telegram bots, and SEO. View my portfolio of real projects and case studies." />
+    <meta name="twitter:image" content="https://kolodych.com/src/kolodych-portfolio-preview-1200-630.webp" />
+    <meta name="twitter:image:alt" content="Serhii Kolodych Web Developer Portfolio" />
+    <meta name="twitter:site" content="@serhiikolodych" />
+    <meta name="twitter:creator" content="@serhiikolodych" />
+
+    <!-- LinkedIn Specific (uses OG tags but benefits from specific image) -->
+    <!-- LinkedIn prefers 1200x627 images -->
+
+    <!-- Pinterest Specific -->
+    <meta property="og:image" content="https://kolodych.com/src/kolodych-portfolio-preview-1000-1500.webp" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="1500" />
+
+    <!-- Schema.org Structured Data - Person -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Serhii Kolodych",
+  "url": "https://kolodych.com/",
+  "image": "https://kolodych.com/favicon/favicon-192x192.png",
+  "sameAs": [
+    "https://twitter.com/serhiikolodych",
+    "https://github.com/serhiikolodych",
+    "https://www.linkedin.com/in/serhii-kolodych"
+  ],
+  "jobTitle": "Full-Stack Web Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "description": "Full-stack web developer specializing in WordPress sites, Python automation, Telegram bots, and SEO optimization.",
+  "knowsAbout": [
+    "WordPress Development",
+    "Python Programming",
+    "Telegram Bot Development",
+    "SEO Optimization",
+    "Web Development",
+    "Frontend Development",
+    "Elementor",
+    "WooCommerce"
+  ],
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "Your University/Education"
+  }
+}
+</script>
+
+    <!-- Schema.org Structured Data - Website -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Serhii Kolodych Portfolio",
+  "url": "https://kolodych.com/",
+  "description": "Portfolio showcasing web development projects, WordPress sites, Python automation, and Telegram bots",
+  "author": {
+    "@type": "Person",
+    "name": "Serhii Kolodych"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Serhii Kolodych",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kolodych.com/favicon/favicon-192x192.png"
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://kolodych.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+    <!-- Schema.org Structured Data - Breadcrumb -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://kolodych.com/"
+    }
+  ]
+}
+</script>
+
+    <!-- Schema.org Structured Data - Professional Service -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Serhii Kolodych Web Development",
+  "url": "https://kolodych.com/",
+  "description": "Professional web development services specializing in WordPress, Python automation, and custom web solutions",
+  "founder": {
+    "@type": "Person",
+    "name": "Serhii Kolodych"
+  },
+  "areaServed": "Worldwide",
+  "serviceType": [
+    "WordPress Development",
+    "Python Automation",
+    "Telegram Bot Development",
+    "SEO Optimization",
+    "Web Design",
+    "E-commerce Development"
+  ]
+}
+</script>
+
+    <!-- Additional Meta Tags for Better Indexing -->
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="LV-RIX" />
+    <meta name="geo.placename" content="Riga, Latvia" />
+    <meta name="geo.position" content="56.9496;24.1052" />
+    <meta name="ICBM" content="56.9496, 24.1052" />
+
+    <!-- Favicon and Apple Touch Icons (ensure these exist) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://kolodych.com/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://kolodych.com/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://kolodych.com/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="https://kolodych.com/manifest.json" />
+</head>
+
+<body>
+    <canvas id="c" class="c-5"></canvas>
+
+    <!-- <script src="background-white.js"></script> -->
+    <!-- <script src="zoom.js"></script> -->
+
+    <!-- Load the appropriate background script based on the whiteState -->
+    <script src="scriptIndex.js" charset="utf-8" defer></script>
+    <script src="scripts/index-1.js" charset="utf-8" defer></script>
+
+    <div class="one-row">
+        <h1 class="main-heading" id="heading">Serhii Kolodych</h1>
+        <a href="#" class="theme-logo" id="change-style-icon"><img src="/shared/logo-light.png"
+                alt="sunset / moon logo for theme change" width="96" height="96"></a>
+    </div>
+
+    <h2 class="subtitle">Full-Stack Developer | WordPress, PHP, React, Python automation.</h2>
+
+    <h2 class="sections" id="articles">Articles:</h2>
+    <div class="section-container">
+        <ol>
+            <li>
+                <!-- Newsletter Wordpress Guide -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        No subscriber limits. No hidden fees. The 100% free email marketing solution for your WordPress
+                        site.
+                    </p>
+                    <a href="articles/newsletter-plugin-for-wordpress">
+                        <h2>Unlimited WordPress Newsletters for $0/month</h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low"
+                                src="articles/newsletter-plugin-free.webp" width="450" height="240"
+                                title="This site can't be reached - use WPvivid WordPress Backup Plugin"
+                                alt="This site can't be reached - use WPvivid WordPress Backup Plugin">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <!-- WordPress Backup Guide -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        Practical backup and recovery guide for WordPress owners who want zero panic when things break.
+                    </p>
+                    <a href="articles/wordpress-backup-guide">
+                        <h2>Your WordPress site will fail. <br> Be ready. </h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low"
+                                src="articles/your-wordpress-will-crash.webp" width="450" height="240"
+                                title="This site can't be reached - use WPvivid WordPress Backup Plugin"
+                                alt="This site can't be reached - use WPvivid WordPress Backup Plugin">
+                        </div>
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <!-- This Site Uses Cookies Item Explore the role of cookies, their potential risks, and how they affect privacy. This article provides insights on compliance with GDPR regulations and managing cookies on your website. -->
+                <div class="box">
+                    <i></i>
+                    <p class="mar10">
+                        Explore the article about cookies.. 🍪
+                    </p>
+                    <a href="website/this-site-uses-cookies">
+                        <h2 class="marb mart">Do you agree to use cookies?</h2>
+                    </a>
+                    <div class="button-container mart10">
+                        <button id="yesButton" class="response-button" data-color="green">Yes</button>
+                        <button id="noButton" class="response-button" data-color="red">No</button>
+                    </div>
+                    <!-- Hidden paragraph for feedback -->
+                    <p id="feedbackMessage" class="feedback-message none-display">Thank you for your feedback!</p>
+                    <a href="website/this-site-uses-cookies">
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low" src="website/450-cookie-image.jpg"
+                                width="450" height="240" title="This Site Uses Cookies (kolodych.com)"
+                                alt="Image of a desktop setup with a laptop, smartphone, mouse, keyboard, and cookies on a plate">
+                        </div>
+                    </a>
+
+                </div>
+            </li>
+
+            <li>
+                <!-- NGINX -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        Practical guide to installing and running Nginx for fast, reliable web hosting with improved
+                        stability and performance.
+                    </p>
+                    <a href="articles/nginx">
+                        <h2>Nginx: What is It and Why Should You Care? </h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low" src="articles/450-nginx-status.jpg"
+                                width="450" height="240" title="Nginx Installation and Optimization Guide"
+                                alt="A screenshot showing Nginx server configuration steps and optimization settings.">
+                        </div>
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <!-- Website Development Tools Item -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        Essential tools I use daily for efficiency: Image Resizer, Dead Link Checker, PageSpeed
+                        Insights, Seobility, and GTmetrix for thorough website optimization.
+                    </p>
+                    <a href="website/web-dev-tools">
+                        <h2>My Go-To Web Arsenal</h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low"
+                                src="website/450-website-development-tools-and-services.jpg" width="450" height="240"
+                                title="Website Development Tools list"
+                                alt="Blackboard with Website Development Tools and Services title and teacher">
+                        </div>
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <!-- Google Search Console ITEM  -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        Get started with Search Console and improve your site's search performance. Track SEO success
+                        using Google Analytics. </p>
+                    <a href="https://nuukmedia.com/2024/08/mastering-google-search-console-a-complete-guide-for-beginners/?kolodych.com"
+                        target="_blank">
+                        <h2>Beginner's Guide to Google Search Console</h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low" class="itemIMG" width="450"
+                                height="240" src="website/450-google-search-console-performance-report.webp"
+                                title="Getting Started with Google Search Console"
+                                alt="Visual representation of Google Search Console metrics and analytics">
+                        </div>
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <!-- YouTube Tutorials ITEM -->
+                <div class="box s-389">
+                    <i></i>
+                    <p>
+                        Discover how to build an efficient Python web scraper using JSON. This guide covers scraping
+                        techniques, working with JSON APIs, parsing responses, and saving data in a structured format.
+
+                    </p>
+                    <a href="https://www.youtube.com/@serhiikolodych/videos" target="_blank">
+                        <h2>Watch My YouTube Tutorials</h2>
+                    </a>
+                </div>
+            </li>
+        </ol>
+
+    </div>
+
+
+    <h2 class="sections" id="websites">Websites</h2>
+
+    <div class="section-container">
+        <ol>
+            <li>
+                <!-- Bubacat.com -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        Lightning-fast Wordpress Elementor site packed with cats, cards & merch.
+                    </p>
+                    <a href="website/bubacat">
+                        <h2>BubacatCity.com – Playful Egyptian-Cat Card Game Website (Elementor + Astra)</h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low" src="website/bubacat-preview.webp"
+                                width="450" height="240" title="Bubacat preview "
+                                alt="A screenshot of the BubaCat.com homepage built with WordPress Elementor.">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <!-- Vent-Build.com -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        Transformed client’s Figma vision into a polished WordPress Elementor site with projects,
+                        services, forms, and navigation.
+                    </p>
+                    <a href="website/vent-build">
+                        <h2>Vent-Build.com: Figma design into WordPress Elementor website.</h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low"
+                                src="website/vent-build-preview.webp" width="450" height="240"
+                                title="Vent-Build preview "
+                                alt="A screenshot of the Vent-Build.com homepage built with WordPress Elementor.">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <!-- NoCap Shop -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        Modern frontend with React and Vite: fast loading, responsive UI, optimized browsing, and
+                        flexible scalability.
+                    </p>
+                    <a href="website/nocap">
+                        <h2>NoCap Frontend: React, Vite, and Performance Optimization</h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="high" src="website/450-nocap-react.webp"
+                                width="450" height="240" title="React and Vite integration in NoCap"
+                                alt="A screenshot of the NoCap shop homepage built with React.">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <!-- Virgin Models website -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        Delivered a polished WordPress site combining functionality, aesthetics, and ease of use for the
+                        agency.
+                    </p>
+                    <a href="website/virgincourtesans.com">
+                        <h2>Designing a Modern WordPress Site for Models</h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low"
+                                src="website/450-pagespeed-virgincourtesans.com-august-11-2024.jpg" width="450"
+                                height="240" title="Virgin Models preview"
+                                alt="A screenshot of the Virgin Models homepage built with WordPress.">
+                        </div>
+                    </a>
+                </div>
+            </li>
+
+
+            <li>
+                <!-- JapaLandia ITEM -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        Designed a clean, global consulting site in WordPress with engaging landing page and custom
+                        theme.
+                    </p>
+                    <a href="website/japalandia.com">
+                        <h2>WordPress Site for Global Work Consultation</h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low" class="itemIMG" width="450"
+                                height="240" src="website/450-home-1-screen-japalandia.jpg"
+                                title="Consultation Services WordPress Site for JapaLandia"
+                                alt="Homepage of JapaLandia website showcasing consultation services for work abroad, built with custom WordPress development">
+                        </div>
+                    </a>
+                </div>
+            </li>
+
+            <li>
+
+                <!-- JOKS website ITEM -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        Discover the development of a WordPress blog for JOKS Global Sport Academy with integrated
+                        e-commerce functionality..
+                    </p>
+                    <a rel="nofollow" href="website/joksglobalsport.com">
+                        <h2>WordPress Blog with E-Commerce for JOKS</h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low" class="itemIMG" width="450"
+                                height="240" src="website/450-articles-joksglobalsport.com.jpg"
+                                title="WordPress Blog and E-Commerce Site for JOKS Global Sport Football Academy"
+                                alt="Screenshot of the JOKS Global Sport Football Academy website featuring integrated blog and e-commerce functionalities">
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+
+
+    <h2 class="sections" id="bots">Telegram Bots</h2>
+    <div class="section-container">
+        <ol>
+            <li>
+
+                <!-- Understanding Telegram Bots -->
+                <div class="box">
+                    <i></i>
+                    <p>
+                        Learn how Telegram bots benefit businesses, covering customer support and automated
+                        notifications.
+                    </p>
+                    <a href="articles/first-telegram-bot">
+                        <h2>Understanding Telegram Bots</h2>
+                        <div class="imgcontainer">
+                            <img loading="lazy" decoding="async" fetchpriority="low"
+                                src="articles/450-creating_a_telegram_bot_token_api.jpg" width="450" height="240"
+                                title="Making a Telegram Bot: Tips and Best Practices"
+                                alt="Example of a Telegram chat with BotFather, highlighting the /newbot command and the token for a newly created bot.">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li>
+
+
+                <!-- Muuvies Telegram Bot ITEM -->
+                <div class="box s-455">
+                    <i></i>
+                    <p>
+                        Explore the Muuvies Telegram Bot, a cutting-edge tool designed to transform your movie-watching
+                        journey. This bot provides dynamic movie recommendations, allows you to organize your watchlist,
+                        and integrates Google image fetching to get the latest movie posters. It highlights my
+                        proficiency in Python and automation for Telegram bots, delivering a seamless and interactive
+                        experience for users who love movies.
+
+                    </p>
+                    <a href="https://t.me/muuvies_bot" target="_blank">
+                        <h2>Muuvies Telegram Bot: Your Movie Recommendation Assistant</h2>
+                    </a>
+                </div>
+            </li>
+            <li>
+
+                <!-- ASOS Search Bot ITEM -->
+                <div class="box s-455">
+                    <i></i>
+                    <p>
+                        Unveil the ASOS Search Bot, a cutting-edge Python script designed to monitor and track product
+                        discounts on ASOS, providing users with instant notifications. This tool utilizes automated web
+                        scraping to keep tabs on price changes and delivers timely updates to help users capitalize on
+                        the latest deals, creating an
+                        effective solution for real-time product tracking and alerting.
+
+                    </p>
+                    <a href="https://t.me/asos_search_bot" target="_blank">
+                        <h2>ASOS Search Bot: Real-Time Product Tracking</h2>
+                    </a>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+
+    <h2 class="sections center-text">Prices and contacts:</h2>
+    <div class="container">
+        <!-- About Author -->
+        <div id="person" class="box s-340">
+            <i></i>
+            <h2 class="pad14">About Author</h2>
+            <p>Hi, I'm Serhii Kolodych, a full-stack developer with 3+ years of expertise in WordPress, Python, and
+                Telegram bot
+                development. I'm passionate about creating innovative solutions for businesses and individuals.</p>
+        </div>
+        <!-- Services ITEM -->
+        <div class="box s-340">
+            <i></i>
+            <h2 class="pad14">Service Pricing</h2>
+            <p>Landing Page / Home (WordPress) = 200 Euro</p>
+            <p>Additional Page = 100 Euro</p>
+            <p>Telegram Bot Development = 50 Euro</p>
+            <p>Hourly Rate = 15 Euro</p>
+        </div>
+
+        <div class="box social-container s-340">
+            <i></i>
+            <h2 class="pad14">Contact Me</h2>
+            <a href="mailto:kolodych@hotmail.com">
+                <img class="relative-mail" loading="lazy" decoding="async" fetchpriority="low"
+                    src="src/mail-part-3-svgrepo-com.svg" width="68" height="68" alt="Email">
+            </a>
+            <a href="https://www.linkedin.com/in/serhii-kolodych" rel="nofollow" target="_blank">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="src/linkedin.svg" width="68" height="68"
+                    alt="Linkedin">
+            </a>
+
+            <a href="https://www.facebook.com/serhii.kolodych" rel="nofollow" target="_blank">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="src/social-facebook-svgrepo-com.svg"
+                    width="68" height="68" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/serhii_kolodych" rel="nofollow" target="_blank">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="src/social-instagram-svgrepo-com.svg"
+                    width="68" height="68" alt="Instagram">
+            </a>
+            <a href="https://t.me/kolodych" rel="nofollow" target="_blank">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="src/telegram-svgrepo-com.svg" width="68"
+                    height="68" alt="Telegram">
+            </a>
+            <a href="https://wa.me/+37126796193" rel="nofollow" target="_blank">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="src/whatsapp-svgrepo-com.svg" width="68"
+                    height="68" alt="WhatsApp">
+            </a>
+
+        </div>
+    </div>
+
+    <!-- <script src="scripts/index-2.js"></script> -->
+
+    <!-- <link rel="stylesheet" href="styles-white.css"> -->
+
+    <script src="scripts/index-3.js" charset="utf-8" defer></script>
+    <!-- <script src="scripts/index-3.js"></script> -->
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Function to calculate and update the count for a given section ID
+            function updateSectionCount(headingId, baseText) {
+                const heading = document.getElementById(headingId);
+                if (!heading) return; // Exit if the heading doesn't exist
+
+                // Find the section container immediately following the heading
+                // Since the next element is the correct container, we use nextElementSibling
+                const container = heading.nextElementSibling;
+
+                // Ensure it is a section container
+                if (container && container.classList.contains('section-container')) {
+                    // Count all .box elements (the individual project/article items) inside the container
+                    const boxes = container.querySelectorAll('.box');
+                    const count = boxes.length;
+
+                    // Update the heading text to include the count
+                    heading.innerHTML = `${baseText}: (${count})`;
+                }
+            }
+
+            // Update all three tracked sections
+            updateSectionCount('websites', 'Websites'); // Should display (5)
+            updateSectionCount('bots', 'Telegram Bots'); // Should display (3)
+            updateSectionCount('articles', 'Articles'); // Should display (5)
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.section-container').forEach(box => {
+                box.addEventListener('wheel', function (e) {
+                    // normalize vertical wheel to pixels
+                    const delta = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
+                    const atStart = box.scrollLeft <= 0;
+                    const atEnd = Math.ceil(box.scrollLeft + box.clientWidth) >= box.scrollWidth;
+                    const right = delta > 0;
+                    const left = delta < 0;
+                    if ((right && atEnd) || (left && atStart)) {
+                        // let page scroll when at edge
+                        return;
+                    }
+                    e.preventDefault();
+                    box.scrollLeft += delta;
+                }, { passive: false });
+            });
+        });
+
+    </script>
+
+    <script>
+        // Show body once page is fully loaded
+        window.addEventListener("load", function () {
+            document.body.classList.add("loaded");
+        });
+    </script>
+</body>
+
+</html>
