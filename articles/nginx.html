@@ -19,7 +19,7 @@
         <link id="stylesheet" rel="stylesheet">
 
         <script>
-            fetch("../shared/head.html")
+            fetch("../shared/head")
                 .then(r => r.text())
                 .then(html => document.head.insertAdjacentHTML("beforeend", html))
                 .catch(e => console.error("Failed to load shared head:", e));
@@ -32,7 +32,7 @@
         <meta property="og:title" content="Nginx Configuration Guide: Performance, Optimization & Best Practices" />
         <meta property="og:description"
             content="Step by step NGINX guide for installation, configuration, performance, optimization and best practices. Learn nginx settings high traffic tuning and security." />
-        <meta property="og:url" content="https://kolodych.com/articles/nginx.html">
+        <meta property="og:url" content="https://kolodych.com/articles/nginx">
         <meta property="og:image" content="https://kolodych.com/articles/nginx-status-900.webp">
         <!-- Replace with a relevant image URL -->
         <meta property="og:type" content="article">
@@ -46,7 +46,7 @@
         "@type": "Article",
       "headline": "Nginx Configuration Guide: Performance, Optimization & Best Practices",
       "description": "Step by step NGINX guide for installation, configuration, performance, optimization and best practices. Learn nginx settings high traffic tuning and security.",
-        "url": "https://kolodych.com/articles/nginx.html",
+        "url": "https://kolodych.com/articles/nginx",
         "image": "https://kolodych.com/articles/nginx-status-900.webp", 
         "author": {
             "@type": "Person",
@@ -82,7 +82,7 @@
             content="Step by step NGINX guide for installation, configuration, performance, optimization and best practices. Learn nginx settings high traffic tuning and security." />
         <meta name="keywords"
             content="nginx configuration, nginx guide, nginx performance, nginx optimization, nginx best practices, nginx settings, optimize nginx, nginx configuration guide, nginx documentation, optimize nginx for high traffic, nginx config, nginx performance tuning, nginx security best practices" />
-        <link rel="canonical" href="https://kolodych.com/articles/nginx.html">
+        <link rel="canonical" href="https://kolodych.com/articles/nginx">
     </head>
 
 
@@ -532,11 +532,11 @@ server {<br>
     ssl_trusted_certificate /etc/ssl/ca_bundle.crt;  <em class="red-color"># Your CA bundle</em><br>
 
     root /var/www/<span class="red-color">domain.com</span>;  <em class="red-color"># Your document root</em><br>
-    index index.php index.html;  <em class="red-color"># Ensure index.php is included</em><br>
+    index index.php index;  <em class="red-color"># Ensure index.php is included</em><br>
 
     <em># Error handling</em><br>
-    error_page 404 <span class="red-color">/404.html</span>;  <em class="red-color"># Custom 404 error page</em><br>
-    location = <span class="red-color">/404.html</span> {<br>
+    error_page 404 <span class="red-color">/404</span>;  <em class="red-color"># Custom 404 error page</em><br>
+    location = <span class="red-color">/404</span> {<br>
         root /var/www/<span class="red-color">domain.com</span>;  <em class="red-color"># Location of the 404 error page</em><br>
         internal;  <em># Marks it as internal, so users can't access it directly</em><br>
     }<br>
@@ -599,7 +599,7 @@ server {<br>
             server for performance and security.
         </p>
 
-        <p>Upload your index.html and other site resources to <em>/var/www/<span
+        <p>Upload your index and other site resources to <em>/var/www/<span
                     class="red-color">your-domain.com</span></em> folder</p>
 
         <h3>Test and Reload nginx</h3>
@@ -637,7 +637,7 @@ sudo systemctl reload nginx
             </div>
             <div class="code-row">
                 <code>
-ErrorDocument 404 /404.html <em class="red-color"># Custom error page for 404 errors</em><br>
+ErrorDocument 404 /404 <em class="red-color"># Custom error page for 404 errors</em><br>
 
 AddDefaultCharset UTF-8 <em># Sets the default character encoding for your website to UTF-8</em><br>
 
@@ -819,7 +819,7 @@ Sitemap: https://<span class="red-color">domain.com</span>/sitemap.xml
 &lt;priority&gt;1.00&lt;/priority&gt; <em>&lt;!-- Priority = 1.00 for the main page ONLY --&gt;</em><br>
 &lt;/url&gt; <em>&lt;!-- End URL entry --&gt;</em><br><br>
 &lt;url&gt; <em>&lt;!-- Start another URL entry --&gt;</em><br>
-&lt;loc&gt;https://<span class="red-color">domain.com</span>/<span class="red-color">page1.html</span>&lt;/loc&gt; <em>&lt;!-- Page 1 URL --&gt;</em><br>
+&lt;loc&gt;https://<span class="red-color">domain.com</span>/<span class="red-color">page1</span>&lt;/loc&gt; <em>&lt;!-- Page 1 URL --&gt;</em><br>
 &lt;lastmod&gt;<span class="red-color">2024-10-24T04:19:18+00:00</span>&lt;/lastmod&gt; <em>&lt;!-- Last Modified Date --&gt;</em><br>
 &lt;priority&gt;0.80&lt;/priority&gt; <em>&lt;!-- Priority = 0.8-0.9 for Important pages like Services, Categories --&gt;</em><br>
 &lt;changefreq&gt;monthly&lt;/changefreq&gt; <em>&lt;!-- Change Frequency from never, yearly, monthly, weekly... --&gt;</em><br>
@@ -830,7 +830,7 @@ Sitemap: https://<span class="red-color">domain.com</span>/sitemap.xml
 &lt;/image:image&gt; <em>&lt;!-- End Image --&gt;</em><br>
 &lt;/url&gt; <em>&lt;!-- End URL entry --&gt;</em><br><br>
 &lt;url&gt; <em>&lt;!-- Start another URL entry --&gt;</em><br>
-&lt;loc&gt;https://<span class="red-color">domain.com</span>/<span class="red-color">page2.html</span>&lt;/loc&gt; <em>&lt;!-- Page 2 URL --&gt;</em><br>
+&lt;loc&gt;https://<span class="red-color">domain.com</span>/<span class="red-color">page2</span>&lt;/loc&gt; <em>&lt;!-- Page 2 URL --&gt;</em><br>
 &lt;lastmod&gt;<span class="red-color">2024-08-04</span>&lt;/lastmod&gt; <em>&lt;!-- Last Modified Date --&gt;</em><br>
 &lt;priority&gt;0.6-0.7&lt;/priority&gt; <em>&lt;!-- Priority = 0.6-0.7 for frequently updated pages like blog articles --&gt;</em><br>
 &lt;changefreq&gt;monthly&lt;/changefreq&gt; <em>&lt;!-- Change Frequency ... till daily, hourly, always for live news --&gt;</em><br>
@@ -952,7 +952,7 @@ Sitemap: https://<span class="red-color">domain.com</span>/sitemap.xml
 
 
 
-        <a href="../website/web-dev-tools.html">
+        <a href="../website/web-dev-tools">
             <div class="item">
                 <h3>My Go-To Web Arsenal</h3>
                 <img src="../website/450-website-development-tools-and-services.jpg" width="450" height="240"
@@ -960,7 +960,7 @@ Sitemap: https://<span class="red-color">domain.com</span>/sitemap.xml
             </div>
         </a>
 
-        <a href="../website/bubacat.html">
+        <a href="../website/bubacat">
             <div class="item">
                 <h3>Bubacat card game website</h3>
                 <img src="../website/bubacat-preview.webp" width="450" height="240" alt="Bubacat card game landing page"
@@ -968,7 +968,7 @@ Sitemap: https://<span class="red-color">domain.com</span>/sitemap.xml
             </div>
         </a>
 
-        <a href="../website/joksglobalsport.com.html">
+        <a href="../website/joksglobalsport.com">
             <div class="item">
                 <h3>Football Academy site example</h3>
                 <img src="../website/home-joksglobalsport.com.webp" width="450" height="240"
@@ -977,7 +977,7 @@ Sitemap: https://<span class="red-color">domain.com</span>/sitemap.xml
             </div>
         </a>
 
-        <a href="../website/japalandia.com.html">
+        <a href="../website/japalandia.com">
             <div class="item">
                 <h3>Japalandia work abroad Landing Page</h3>
                 <img src="../website/home-1-screen-japalandia.webp" width="450" height="240"
@@ -986,7 +986,7 @@ Sitemap: https://<span class="red-color">domain.com</span>/sitemap.xml
             </div>
         </a>
 
-        <a href="../website/virgincourtesans.com.html">
+        <a href="../website/virgincourtesans.com">
             <div class="item">
                 <h3>Model Agency site example</h3>
                 <img src="../website/Gallery-preview-using-the-post-grid-plugin-wordpress.webp" width="450" height="240"
@@ -995,7 +995,7 @@ Sitemap: https://<span class="red-color">domain.com</span>/sitemap.xml
             </div>
         </a>
 
-        <a href="../website/vent-build.html">
+        <a href="../website/vent-build">
             <div class="item">
                 <h3>Vent Build construction company site</h3>
                 <img src="../website/vent-build-preview.webp" width="450" height="240"

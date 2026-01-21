@@ -52,6 +52,6 @@ setInterval(draw, 23); // Lower interval (e.g., 20) = faster rain, higher (e.g.,
 // add this near top of your scripts
 document.addEventListener("click", (e) => {
   if (e.target && e.target.id === "c") {
-    location.href = "../index.html";
+    location.href = "../index";
   }
 });

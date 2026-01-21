@@ -3,10 +3,9 @@
 # Default rule for all bots
 User-agent: *
 Disallow: /private/
-Disallow: /scripts/
 Disallow: /tmp/
 Disallow: /backup/
-Disallow: /test/
+Allow: /
 Allow: /articles/
 Allow: /website/
 Allow: /src/

@@ -165,6 +165,9 @@ a:visited {
 .related-content__heading {
   font-size: var(--text-2xl);
   text-align: center;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .conclusion-heading {
@@ -174,17 +177,21 @@ a:visited {
 
 .subsection-heading {
   font-size: var(--text-xl);
-  text-align: left;
+  text-align: center;
   margin-left: var(--spacing-xl);
+  margin-bottom: var(--spacing-xs);
 }
 
 .method-heading {
+  margin-top: var(--spacing-sm);
+  margin-bottom: 0;
   font-size: var(--text-lg);
   text-align: left;
   margin-left: var(--spacing-lg);
 }
 
 .faq-question {
+  margin-top: var(--spacing-xs);
   font-size: var(--text-md);
 }
 
@@ -220,8 +227,71 @@ a:visited {
   font-size: var(--text-sm);
 }
 
+ul,
+ol {
+  margin-top: var(--spacing-xs);
+}
+
 p {
   font-size: var(--text-base);
+  margin: var(--spacing-xs) 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.quote-block {
+  margin: 30px 0;
+  padding: 30px;
+  border-left-width: 5px;
+  border-left-style: solid;
+  border-radius: 8px;
+  position: relative;
+}
+
+.quote-block::before {
+  content: '"';
+  font-size: 80px;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.quote-text {
+  font-size: 20px;
+  line-height: 1.7;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-text em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.quote-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.quote-source {
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.quote-source::before {
+  content: '— ';
+}
+
+.word-nowrap {
+  white-space: nowrap;
 }
 
 .step-list {
@@ -702,10 +772,6 @@ code {
   transform: scale(1.04);
 }
 
-.box p {
-  line-height: 1.45;
-}
-
 .box i,
 .box::before {
   content: '';
@@ -718,12 +784,6 @@ code {
   float: right;
 }
 
-.box h2 {
-  font-size: clamp(17px, 4vw, 18px);
-  text-align: center;
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
 
 .imgcontainer {
   position: absolute;
@@ -778,32 +838,21 @@ article.box {
   margin-bottom: 22px;
 }
 
-article.box:hover {
-  transform: scale(1.04);
-}
-
-article.box p {
-  line-height: 1.45;
-}
-
-article.box i,
-article.box::before {
-  content: '';
-  float: left;
-  height: 100%;
-  width: 50%;
-}
-
-article.box i {
-  float: right;
-}
-
-article.box h2 {
-  font-size: clamp(17px, 4vw, 18px);
+.article-heading {
+  font-size: var(--text-lg);
   text-align: center;
-  margin-top: 12px;
+  margin-top: var(--spacing-xs);
   margin-bottom: 12px;
+  line-height: 1.24;
 }
+
+.article-description {
+  font-size: var(--text-base);
+  margin-top: 12px;
+  line-height: 1.35;
+  margin-bottom: var(--spacing-xs);
+}
+
 
 figure.imgcontainer {
   margin: 0;

@@ -1,0 +1,298 @@
+CLASSES REFERENCE:
+==================
+
+STRUCTURE:
+- blog-post (main article)
+- post-header
+- post-content
+- post-section (main sections)
+- post-intro (introduction section)
+- post-navigation (TOC section)
+- subsection (nested content)
+
+TEXT ELEMENTS:
+- post-title (H1 - only one)
+- section-heading (H2)
+- subsection-heading (H3)
+- method-heading (H3/H4)
+- lead-paragraph (intro text)
+
+SPECIAL BOXES:
+- quick-answer-box (summary/highlights)
+- info-box info-box--learning (learning objectives)
+- info-box info-box--features (feature lists)
+- yellow-alert (warnings/alerts)
+- quote-block (blockquotes)
+
+LISTS:
+- nomargin-list
+- feature-list / feature-item
+- stats-list
+- step-list / step-item
+- sub-step-list
+- option-list
+- toc__list
+
+IMAGES:
+- tutorial-figure
+- tutorial-image
+- tutorial-caption
+
+TABLES:
+- table-wrapper
+- comparison-table
+- table-caption
+- table-header
+- table-row-header
+- table-cell
+
+CODE:
+- code-block
+- code-block__header
+- code-block__label
+- code-block__copy-btn
+- copy-btn__text
+- code-block__content
+- code-block__code
+
+META:
+- post-meta
+- post-date
+- post-reading-time
+
+LINKS:
+- External authority: target="_blank" rel="dofollow"
+- External non-authority: target="_blank" rel="noopener"
+- Internal: no target needed
+
+IMAGES:
+- First image: fetchpriority="high"
+- Other images: loading="lazy"
+- Always include: width, height, alt, title, style="aspect-ratio:W/H"
+
+
+<article class="blog-post">
+
+    <!-- HEADER SECTION -->
+    <header class="post-header">
+        <h1 class="post-title">Main Article Title (Only ONE H1 per page)</h1>
+        <div class="post-meta">
+            <time class="post-date" datetime="2026-01-14">January 14, 2026</time>
+            <span class="post-reading-time">5 min read</span>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="post-content">
+
+        <!-- INTRODUCTION SECTION -->
+        <section class="post-section post-intro">
+
+            <p class="lead-paragraph">
+                Opening paragraph with <strong>keywords bold</strong> and
+                <a href="..." target="_blank" rel="dofollow">external authority link</a>
+            </p>
+
+            <div class="quick-answer-box">
+                <h2>Quick Summary Heading</h2>
+                <ul class="nomargin-list">
+                    <li><strong>Key Point 1:</strong> Description</li>
+                    <li><strong>Key Point 2:</strong> Description</li>
+                </ul>
+            </div>
+
+            <figure class="tutorial-figure">
+                <img class="tutorial-image" src="image.webp" alt="Descriptive alt text with keywords"
+                    fetchpriority="high" title="Image title" width="1200" height="628" style="aspect-ratio:1200/628">
+                <figcaption class="tutorial-caption">Image description</figcaption>
+            </figure>
+
+            <blockquote class="quote-block" cite="https://source.com">
+                <p class="quote-text">
+                    <em>Quote text goes here</em>
+                </p>
+                <footer class="quote-footer">
+                    <cite class="quote-source">
+                        <a href="..." target="_blank" rel="dofollow">Source Name</a>
+                    </cite>
+                </footer>
+            </blockquote>
+
+            <div class="info-box info-box--learning">
+                <h2 class="info-box__title">What You'll Learn</h2>
+                <ul class="info-box__list">
+                    <li>Learning objective 1</li>
+                    <li>Learning objective 2</li>
+                </ul>
+            </div>
+
+            <div class="info-box info-box--features">
+                <h2 class="info-box__title">Key Features</h2>
+                <ul class="info-box__list">
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- TABLE OF CONTENTS -->
+        <section class="post-section post-navigation">
+            <h2 class="toc__title">Table of Contents</h2>
+            <nav id="toc" class="toc" aria-label="Table of Contents">
+                <ol class="toc__list">
+                    <li><a class="toc__link" href="#section1">Section 1</a></li>
+                    <li><a class="toc__link" href="#section2">Section 2</a></li>
+                </ol>
+            </nav>
+        </section>
+
+        <!-- MAIN CONTENT SECTION -->
+        <section class="post-section" id="section1">
+
+            <h2 class="section-heading">
+                <strong>Section Heading with Keywords</strong>
+            </h2>
+
+            <p>Regular paragraph with <strong>bold text</strong> and
+                <a href="..." target="_blank" rel="dofollow">external link</a>
+            </p>
+
+            <!-- SUBSECTION -->
+            <div class="subsection">
+                <h3 class="subsection-heading">Subsection Heading</h3>
+
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <strong class="feature-term">Feature Name:</strong>
+                        <span class="feature-description">Description text</span>
+                    </li>
+                </ul>
+
+                <figure class="tutorial-figure">
+                    <img src="image.webp" loading="lazy" width="800" height="450" alt="Descriptive alt text"
+                        title="Image title" class="tutorial-image" style="aspect-ratio:800/450">
+                    <figcaption class="tutorial-caption">Caption text</figcaption>
+                </figure>
+
+                <ul class="stats-list">
+                    <li>Statistic 1</li>
+                    <li>Statistic 2</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!-- COMPARISON SECTION WITH TABLE -->
+        <section class="post-section" id="comparison">
+
+            <h2 class="section-heading">
+                <strong>Comparison Section</strong>
+            </h2>
+
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <caption class="table-caption">Table Description</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="table-header">Header 1</th>
+                            <th scope="col" class="table-header">Header 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="table-row-header">Row Label</th>
+                            <td class="table-cell">Data 1</td>
+                            <td class="table-cell">Data 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="yellow-alert">
+                <p><strong>Warning:</strong> Important alert message with
+                    <a href="..." target="_blank" rel="dofollow">link</a>
+                </p>
+            </div>
+
+        </section>
+
+        <!-- TUTORIAL SECTION WITH STEPS -->
+        <section class="post-section" id="tutorial">
+
+            <h2 id="howto" class="section-heading">
+                <strong>How to Do Something</strong>
+            </h2>
+
+            <div class="quick-answer-box">
+                <h3>Time Requirements</h3>
+                <ul>
+                    <li><strong>Setup Time:</strong> 10 minutes</li>
+                    <li><strong>Total Time:</strong> 30 minutes</li>
+                </ul>
+                <p><strong>Summary:</strong> Quick overview of what we'll do</p>
+            </div>
+
+            <!-- METHOD 1 -->
+            <div class="tutorial-method">
+                <h3 class="method-heading">Method 1: Option Name</h3>
+                <ol class="step-list">
+                    <li class="step-item">
+                        <strong>Step 1:</strong> Do this thing
+                    </li>
+                    <li class="step-item">
+                        <strong>Step 2:</strong> Do that thing with <code>inline code</code>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- METHOD WITH SUBSECTIONS -->
+            <div class="subsection">
+                <h3 class="subsection-heading">Detailed Method</h3>
+
+                <p>Introduction paragraph</p>
+
+                <div class="tutorial-method">
+                    <h4 class="method-heading">Step Group A</h4>
+                    <ol class="step-list">
+                        <li class="step-item">
+                            <strong>First action</strong>
+                            <ul class="sub-step-list">
+                                <li><strong>Sub-step 1:</strong> Detail</li>
+                                <li><strong>Sub-step 2:</strong> Detail</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CODE BLOCK SECTION -->
+        <section class="post-section" id="code-example">
+
+            <h2 class="section-heading">Code Example</h2>
+
+            <div class="code-block">
+                <div class="code-block__header">
+                    <span class="code-block__label">HTML</span>
+                    <button class="code-block__copy-btn" data-clipboard-target="#code1">
+                        <span class="copy-btn__text">Copy</span>
+                    </button>
+                </div>
+                <div class="code-block__content">
+                    <pre><code id="code1" class="code-block__code">
+&lt;div class="example"&gt;
+  Code goes here
+&lt;/div&gt;
+          </code></pre>
+                </div>
+            </div>
+
+        </section>
+
+    </div> <!-- end post-content -->
+
+</article>

@@ -17,7 +17,7 @@
   <link id="stylesheet" rel="stylesheet" />
 
   <script>
-    fetch("/shared/head.html")
+    fetch("/shared/head")
       .then((r) => r.text())
       .then((html) => document.head.insertAdjacentHTML("beforeend", html))
       .catch((e) => console.error("Failed to load shared head:", e));
@@ -32,11 +32,11 @@
     content="Learn WordPress disaster recovery with WPvivid. Complete guide to creating, testing, and automating backups with cloud storage. Restore your site in minutes." />
   <meta name="keywords"
     content="WordPress backup, WPvivid, WordPress disaster recovery, website backup tutorial, WordPress restore, automated backups, Google Drive backup, WordPress security, site backup plugin, WordPress crash protection, backup testing, remote storage backup" />
-  <link rel="canonical" href="https://kolodych.com/articles/wordpress-backup-guide.html" />
+  <link rel="canonical" href="https://kolodych.com/articles/wordpress-backup-guide" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://kolodych.com/articles/wordpress-backup-guide.html" />
+  <meta property="og:url" content="https://kolodych.com/articles/wordpress-backup-guide" />
   <meta property="og:title" content="Your WordPress site will fail. Be ready." />
   <meta property="og:description"
     content="Protect your WordPress site from disasters with WPvivid. Learn to setup, test, and automate backups with cloud storage. Step-by-step tutorial with real examples." />
@@ -57,7 +57,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://kolodych.com/articles/wordpress-backup-guide.html" />
+  <meta name="twitter:url" content="https://kolodych.com/articles/wordpress-backup-guide" />
   <meta name="twitter:title" content="Your WordPress site will fail. Be ready." />
   <meta name="twitter:description"
     content="Protect your WordPress site from disasters with WPvivid. Step-by-step backup tutorial with cloud storage setup." />
@@ -104,7 +104,7 @@
         },
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://kolodych.com/articles/wordpress-backup-guide.html"
+          "@id": "https://kolodych.com/articles/wordpress-backup-guide"
         },
         "keywords": "WordPress backup, WPvivid, disaster recovery, website backup, WordPress security, automated backups",
         "articleSection": "WordPress Tutorial",
@@ -140,31 +140,31 @@
             "@type": "HowToStep",
             "name": "Install WPvivid Plugin",
             "text": "Install and activate WPvivid plugin from WordPress plugin repository",
-            "url": "https://kolodych.com/articles/wordpress-backup-guide.html#install"
+            "url": "https://kolodych.com/articles/wordpress-backup-guide#install"
           },
           {
             "@type": "HowToStep",
             "name": "Create First Backup",
             "text": "Navigate to WPvivid, select Database + Files, and create your first backup",
-            "url": "https://kolodych.com/articles/wordpress-backup-guide.html#first-backup"
+            "url": "https://kolodych.com/articles/wordpress-backup-guide#first-backup"
           },
           {
             "@type": "HowToStep",
             "name": "Test Restore Process",
             "text": "Upload backup to test site and verify restore works correctly",
-            "url": "https://kolodych.com/articles/wordpress-backup-guide.html#test-restore"
+            "url": "https://kolodych.com/articles/wordpress-backup-guide#test-restore"
           },
           {
             "@type": "HowToStep",
             "name": "Setup Remote Storage",
             "text": "Connect Google Drive or other cloud storage for off-site backups",
-            "url": "https://kolodych.com/articles/wordpress-backup-guide.html#remote-storage"
+            "url": "https://kolodych.com/articles/wordpress-backup-guide#remote-storage"
           },
           {
             "@type": "HowToStep",
             "name": "Configure Automated Schedule",
             "text": "Enable automatic daily or weekly backups to remote storage",
-            "url": "https://kolodych.com/articles/wordpress-backup-guide.html#schedule"
+            "url": "https://kolodych.com/articles/wordpress-backup-guide#schedule"
           }
         ]
       }
@@ -192,7 +192,7 @@
             "@type": "ListItem",
             "position": 3,
             "name": "WordPress Backup Guide",
-            "item": "https://kolodych.com/articles/wordpress-backup-guide.html"
+            "item": "https://kolodych.com/articles/wordpress-backup-guide"
           }
         ]
       }
@@ -544,7 +544,7 @@
       first. Not sometimes. Not for "small" updates. Every. Single. Time.
     </p>
 
-    <a href="../website/web-dev-tools.html">
+    <a href="../website/web-dev-tools">
       <div class="item">
         <h3>My Go-To Web Arsenal</h3>
         <img src="../website/450-website-development-tools-and-services.jpg" alt="Website Development Tools list"
@@ -552,7 +552,7 @@
       </div>
     </a>
 
-    <a href="../website/bubacat.html">
+    <a href="../website/bubacat">
       <div class="item">
         <h3>Bubacat card game website</h3>
         <img src="../website/bubacat-preview.webp"
@@ -561,7 +561,7 @@
       </div>
     </a>
 
-    <a href="../website/vent-build.html">
+    <a href="../website/vent-build">
       <div class="item">
         <h3>Vent Build construction company site</h3>
         <img src="../website/vent-build-preview.webp" alt="Vent Build company site: desktop vs mobile view"
@@ -569,7 +569,7 @@
       </div>
     </a>
 
-    <a href="../articles/nginx.html">
+    <a href="../articles/nginx">
       <div class="item">
         <h3>Nginx web server set up</h3>
         <img src="../articles/nginx-status-900.webp" alt="Nginx running service on Linux server status"

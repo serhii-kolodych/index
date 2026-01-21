@@ -1,35 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="UTF-8">
+
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="../css/ShareTechMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <style>
-    body {
-      visibility: hidden;
-      opacity: 0;
+    @font-face {
+      font-family: 'Share Tech Mono';
+      src: url('../css/ShareTechMono-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
     }
 
-    body.loaded {
-      visibility: visible;
-      opacity: 1;
-      transition: opacity 0.3s ease-in;
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overscroll-behavior: none;
+      margin: 0;
+      padding: 34px 0 0 0;
+      font-family: 'Share Tech Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .blog-post {
+      border-width: 1px;
+      border-style: solid;
+      box-sizing: border-box;
+      letter-spacing: -0.01em;
+      line-height: 1.8;
+      width: 90%;
+      position: relative;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      z-index: 4;
+      min-height: 90vh;
+      border-radius: 14px;
+      transform: translateZ(0px);
+
+    }
+
+    .nav-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0;
+    }
+
+    .nav-header__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      gap: 1rem;
+    }
+
+    .nav-home,
+    .chapter-nav,
+    .theme-toggle {
+      pointer-events: auto;
+    }
+
+    .nav-home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-home:hover {
+      transform: translateY(-2px);
+    }
+
+    .chapter-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 10px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .chapter-nav__btn {
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      padding: 0.5rem;
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0.625rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      margin-right: 0.5rem;
+    }
+
+    .post-section {
+      padding: 0.5rem 0;
+    }
+
+    .theme-toggle,
+    .chapter-nav {
+      border-width: 1px;
+      border-style: solid;
+    }
+
+
+    .post-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .lead-paragraph {
+      font-size: 1.25rem;
+    }
+
+    .post-section p {
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .tutorial-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
   </style>
-  <link id="stylesheet" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/article.css" media="print" onload="this.media='all'">
 
   <script>
-    fetch("/shared/head.html")
-      .then((r) => r.text())
-      .then((html) => document.head.insertAdjacentHTML("beforeend", html))
-      .catch((e) => console.error("Failed to load shared head:", e));
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch("../shared/head")
+        .then(r => r.text())
+        .then(html => document.head.insertAdjacentHTML("beforeend", html))
+        .catch(e => console.error("🚨 Failed to load shared head:", e));
+    });
   </script>
 
-  <script src="/scripts/cookie-check.js" defer></script>
+  <script src="../scripts/cookie-check.js" defer></script>
+  <script src="../scripts/theme-loader.js" defer></script>
+  <!-- clipboard js 1st of 2 parts -->
+  <script src="../scripts/clipboard-ajax.js" defer></script>
+
 
   <!-- Open Graph Tags -->
   <meta property="og:title" content="Vent-Build WordPress Website Setup" />
   <meta property="og:description"
     content="Detailed steps on setting up Vent-Build site with Elementor, plugins, breakpoints, and responsive design adjustments." />
-  <meta property="og:url" content="https://kolodych.com/website/vent-build.html" />
+  <meta property="og:url" content="https://kolodych.com/website/vent-build" />
   <meta property="og:image" content="https://kolodych.com/website/vent-build-preview-9.webp" />
   <meta property="og:type" content="article" />
 
@@ -55,7 +202,7 @@
           }
         },
         "datePublished": "2025-08-08T14:03:00Z",
-        "dateModified": "2025-08-20T14:19:00Z"
+        "dateModified": "2026-01-19T00:19:00Z"
       }
     </script>
 
@@ -72,121 +219,1077 @@
   <meta name="description"
     content="Discover how I built the Vent-Build site: from Figma to WordPress, including plugins, content width, and responsive breakpoints." />
   <meta name="keywords" content="WordPress, Elementor, Website Development, Responsive Design, Vent-Build" />
-  <link rel="canonical" href="https://kolodych.com/website/vent-build.html" />
+  <link rel="canonical" href="https://kolodych.com/website/vent-build" />
 
 </head>
 
 <body>
-  <!-- Accessibility Enhancements (if there are interactive elements) -->
-  <div id="copied" aria-live="polite">Copied.</div>
-  <!-- END Accessibility Enhancements (if there are interactive elements) -->
+  <canvas id="background-canvas" class="site-background" aria-hidden="true" data-action="navigate-home"></canvas>
 
-  <!-- Background Canvas -->
-  <canvas id="c" style="z-index: 0; opacity: 1"></canvas>
+  <!-- Fixed Navigation Header -->
+  <header class="nav-header">
+    <div class="nav-header__container">
 
-  <div id="back-to-home">Back to Home</div>
+      <!-- Home Button / Scroll to Top -->
+      <a href="/" class="nav-home" id="navHome" aria-label="Back to home" title="Back to home">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path id="navIcon" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+          <polyline id="navIconExtra" points="9 22 9 12 15 12 15 22" />
+        </svg>
+      </a>
 
-  <a href="#" class="change-style-logo" id="change-style-icon">White</a>
+      <!-- Chapter Navigation -->
+      <nav class="chapter-nav" aria-label="Chapter navigation">
+        <button class="chapter-nav__btn" id="prev-chapter" aria-label="Previous section" title="Previous section"
+          disabled>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
 
-  <div class="article-container">
-    <h1>Vent-Build WordPress Site Setup</h1>
-    <p><em>Published on August 8, 2025</em></p>
+        <span class="chapter-nav__indicator" id="chapter-indicator">
+          <span class="chapter-nav__current" id="current-chapter">0</span>
+          <span class="chapter-nav__separator">/</span>
+          <span class="chapter-nav__total" id="total-chapters">5</span>
+        </span>
 
-    <p>
-      Developing the
-      <a target="_blank" href="https://vent-build.com">Vent-Build company site</a>
-      <a href="https://gray-stork-635160.hostingersite.com/">(backup site)</a>
-      was an exciting challenge.
-    </p>
+        <button class="chapter-nav__btn" id="next-chapter" aria-label="Next section" title="Next section">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </nav>
 
-    <h2>Elementor Site Settings</h2>
-    <ul>
-      <li>Set up <strong>Global Colors</strong></li>
-      <li>
-        <img src="vent-build-0-global-colors.webp" alt="Vent-Build Elementor Settings"
-          title="Vent-Build Elementor Settings" loading="lazy" style="max-width: 100%; height: auto" />
-      </li>
-      <li>
-        Defined breakpoints: <strong>767px for mobile</strong> and
-        <strong>1230px for tablet/desktop</strong>
-      </li>
-      <li>
-        <img src="vent-build-0-breakpoints.webp" alt="Vent-Build Elementor Settings"
-          title="Vent-Build Elementor Settings" loading="lazy" style="max-width: 100%; height: auto" />
-      </li>
-      <li>
-        Content widths: <strong>420px</strong> for mobile,
-        <strong>800px</strong> for tablets
-      </li>
-      <li>
-        <img src="vent-build-0-layout-mobile-content-width-420.webp" alt="Vent-Build Elementor Settings"
-          title="Vent-Build Elementor Settings" loading="lazy" style="max-width: 100%; height: auto" />
-      </li>
-    </ul>
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true" data-theme="dark">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true" data-theme="light">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+        <span class="theme-toggle__label">Dark</span>
+      </button>
 
-    <h2>Hero Section Setup</h2>
-    <p>
-      Added background image, headings, call-to-action, and button. After
-      arranging the desktop view, adjusted margins, paddings, and font sizes
-      separately for tablet and phone views.
-    </p>
-    <img src="vent-build-1-hero-desktop-view-margins.webp" alt="Vent-Build Elementor Settings"
-      title="Vent-Build Elementor Settings" loading="lazy" style="max-width: 100%; height: auto" />
+    </div>
+  </header>
 
-    <h2>Services Section</h2>
-    <p>Padding decisions per device:</p>
-    <ul>
-      <li>PC > 1230px: 50px left and right (from designer’s Figma file)</li>
-      <li>Tablet: 32px left and right (own adjustment)</li>
-      <li>Phone: 16px left and right (from designer’s Figma file)</li>
-    </ul>
-    <img src="vent-build-1-hero-mobile-margins.webp" alt="Vent-Build Elementor Settings"
-      title="Vent-Build Elementor Settings" loading="lazy" style="max-width: 100%; height: auto" />
-    <h2>Conclusion</h2>
-    <img src="vent-build-preview.webp" alt="Vent-Build Elementor Settings" title="Vent-Build Elementor Settings"
-      loading="lazy" style="max-width: 100%; height: auto" />
-    <p>
-      The Vent-Build site setup combined proper plugin configuration,
-      responsive Elementor adjustments, and precise design values. With a
-      clear workflow, each device type delivers an optimized browsing
-      experience.
-    </p>
 
-    <a href="nocap.html">
-      <div class="item">
-        <h3>NoCap E-Commerce Project</h3>
-        <img src="../website/nocap-home.webp" alt="NoCap Shop Homepage" title="NoCap Shop Homepage" loading="lazy" />
+  <article class="blog-post">
+
+    <header class="post-header">
+      <h1 class="post-title">Complete Guide: Building a Professional Construction Website with WordPress & Elementor
+      </h1>
+      <div class="post-meta">
+        <time class="post-date" datetime="2025-08-08">August 8, 2025</time>
+        <span class="post-reading-time">10 min read</span>
       </div>
-    </a>
+    </header>
 
-    <a href="joksglobalsport.com.html">
-      <div class="item">
-        <h3>Football Academy site example</h3>
-        <img src="../website/home-joksglobalsport.com.webp" alt="joksglobalsport.com football academy hero section"
-          title="joksglobalsport landing page, hero section with banner" loading="lazy" />
+    <div class="post-content">
+
+      <!-- INTRODUCTION -->
+      <section class="post-section post-intro">
+
+        <p class="lead-paragraph">
+          Building a professional <strong>construction company website</strong> requires careful planning and the right
+          tools. In this comprehensive tutorial, I'll walk you through building the <a href="https://vent-build.com"
+            target="_blank" rel="dofollow">Vent-Build construction company website</a>
+          <a href="https://test.vent-build.com/" target="_blank">(backup site)</a> using <strong>WordPress</strong>
+          and <strong>Elementor page builder</strong>. You'll learn <strong>responsive design</strong> implementation,
+          essential <a href="https://wordpress.org/plugins/" target="_blank" rel="dofollow">WordPress plugin</a>
+          configurations, and professional web development practices for construction and service-based websites.
+        </p>
+
+        <div class="quick-answer-box">
+          <h2>What You'll Build</h2>
+          <ul class="nomargin-list">
+            <li><strong>Platform:</strong> WordPress 6.9 with Elementor page builder</li>
+            <li><strong>Website Type:</strong> Professional construction company showcase</li>
+            <li><strong>Key Features:</strong> Responsive design, contact forms, SEO optimization, performance caching
+            </li>
+            <li><strong>Time Required:</strong> 6-8 hours for complete setup</li>
+          </ul>
+        </div>
+
+        <figure class="tutorial-figure">
+          <img class="tutorial-image" src="vent-build-preview.webp"
+            alt="Vent-Build Construction Website Built with WordPress and Elementor" fetchpriority="high"
+            title="Professional Construction Website Example" width="1200" height="628" style="aspect-ratio:1200/628">
+          <figcaption class="tutorial-caption">Final result: Vent-Build construction website with responsive design
+            across all devices</figcaption>
+        </figure>
+
+        <p>The <a href="https://vent-build.com" target="_blank" rel="dofollow">Vent-Build project</a> demonstrates how
+          <strong>WordPress combined with Elementor</strong> can create a stunning, responsive website that converts
+          visitors into clients. This tutorial covers everything from initial <strong>WordPress installation</strong> to
+          final <strong>responsive design adjustments</strong>.
+        </p>
+
+        <div class="info-box info-box--learning">
+          <h2 class="info-box__title">What You'll Learn</h2>
+          <ul class="info-box__list">
+            <li>How to install and configure WordPress for professional websites</li>
+            <li>Essential plugin setup for construction company sites</li>
+            <li>Elementor global settings and responsive breakpoints configuration</li>
+            <li>Building hero sections with compelling CTAs</li>
+            <li>Creating service showcases and project portfolios</li>
+            <li>Implementing mobile-first responsive design</li>
+            <li>Performance optimization and SEO best practices</li>
+            <li>Contact form integration and lead capture systems</li>
+          </ul>
+        </div>
+
+        <div class="info-box info-box--features">
+          <h2 class="info-box__title">Key Features of This Build</h2>
+          <ul class="info-box__list">
+            <li>Fully responsive across mobile, tablet, and desktop devices</li>
+            <li>Lightning-fast load times (under 1 second)</li>
+            <li>SEO-optimized with Rank Math integration</li>
+            <li>Multi-language support with GTranslate</li>
+            <li>Automated backup system for data security</li>
+            <li>Analytics integration (Google Analytics & Microsoft Clarity)</li>
+            <li>Professional contact forms with message storage</li>
+            <li>Project portfolio with filtering capabilities</li>
+          </ul>
+        </div>
+
+        <blockquote class="quote-block" cite="https://wordpress.org">
+          <p class="quote-text">
+            <em>WordPress powers over 43% of all websites on the internet, making it the world's most popular content
+              management system for building professional websites.</em>
+          </p>
+          <footer class="quote-footer">
+            <cite class="quote-source">
+              <a href="https://wordpress.org/about/" target="_blank" rel="dofollow">WordPress.org</a>
+            </cite>
+          </footer>
+        </blockquote>
+
+      </section>
+
+      <!-- TABLE OF CONTENTS -->
+      <section class="post-section post-navigation">
+        <h2 class="toc__title">Table of Contents</h2>
+        <nav id="toc" class="toc" aria-label="Table of Contents">
+          <!-- Table of Contents -->
+          <ol class="toc__list" start="0">
+            <li><a class="toc__link" href="#wordpress-setup">WordPress Installation & Initial Setup</a></li>
+            <li><a class="toc__link" href="#elementor">Elementor Page Builder Installation</a></li>
+            <li><a class="toc__link" href="#contact-form-7">Contact Form 7 Setup</a></li>
+            <li><a class="toc__link" href="#flamingo">Flamingo Message Storage</a></li>
+            <li><a class="toc__link" href="#rank-math">Rank Math SEO Configuration</a></li>
+            <li><a class="toc__link" href="#litespeed-cache">LiteSpeed Cache Optimization</a></li>
+            <li><a class="toc__link" href="#gtranslate">GTranslate Multi-language Support</a></li>
+            <li><a class="toc__link" href="#site-kit-by-google">Site Kit by Google Analytics</a></li>
+            <li><a class="toc__link" href="#microsoft-clarity">Microsoft Clarity User Insights</a></li>
+            <li><a class="toc__link" href="#wpvivid-backup">WPvivid Backup & Security</a></li>
+            <li><a class="toc__link" href="#wpcode-lite">WPCode Custom Code Management</a></li>
+            <li><a class="toc__link" href="#404-solution">404 Solution Error Handling</a></li>
+            <li><a class="toc__link" href="#duplicate-page">Duplicate Page Efficiency Tool</a></li>
+            <li><a class="toc__link" href="#the-post-grid">The Post Grid Portfolio Display</a></li>
+            <li><a class="toc__link" href="#newsletter">Newsletter Email Marketing</a></li>
+            <li><a class="toc__link" href="#conclusion">Final Thoughts & Website Launch</a></li>
+          </ol>
+        </nav>
+      </section>
+
+      <!-- WORDPRESS SETUP -->
+      <section class="post-section" id="wordpress-setup">
+
+        <h2 class="section-heading">
+          <strong>WordPress Installation & Initial Setup</strong>
+        </h2>
+
+        <p>The foundation of any successful <strong>WordPress website</strong> begins with proper installation and
+          hosting configuration. For this <strong>construction company website</strong>, I selected <strong>WordPress
+            6.9</strong> as the content management system, hosted on Hostinger's optimized servers, <a
+            href="https://hostinger.com?REFERRALCODE=HIPSERGEYPBG"> starting from 40 usd per year</a> + 1 free domain
+          included with PROMOCODE = <strong>HIPSERGEYPBG</strong></p>
+
+        <div class="quick-answer-box">
+          <h3>Quick Setup Overview</h3>
+          <ul>
+            <li><strong>Time Required:</strong> 5-10 minutes</li>
+            <li><strong>Requirements:</strong> Web hosting account, domain name</li>
+            <li><strong>Recommended Host:</strong> Hostinger, SiteGround, or Bluehost</li>
+          </ul>
+          <p><strong>Result:</strong> Fresh WordPress installation ready for customization</p>
+        </div>
+
+        <div class="tutorial-method">
+          <h3 class="method-heading">Installation Steps</h3>
+          <ol class="step-list">
+            <li class="step-item">
+              <strong>Access Your Hosting Control Panel:</strong> Log into your Hostinger, cPanel, or hosting dashboard
+            </li>
+            <li class="step-item">
+              <strong>Find Auto Installer:</strong> Look for "WordPress Installer".
+            </li>
+            <li class="step-item">
+              <strong>Select WordPress 6.9:</strong> Choose the latest WordPress version from available CMS options
+            </li>
+            <li class="step-item">
+              <strong>Configure Installation:</strong>
+              <ul class="sub-step-list">
+                <li><strong>Site Title:</strong> "Vent Build" (your company name)</li>
+                <li><strong>Admin Username:</strong> Create a secure username (avoid "admin")</li>
+                <li><strong>Admin Password:</strong> Use a strong password with 16+ characters</li>
+                <li><strong>Admin Email:</strong> Your business email address</li>
+              </ul>
+            </li>
+            <li class="step-item">
+              <strong>Complete Installation:</strong> Click "Install" and wait 2-3 minutes for the process to complete
+            </li>
+            <li class="step-item">
+              <strong>Login to WordPress:</strong> Visit <code>yourdomain.com/wp-admin</code> and enter your credentials
+            </li>
+          </ol>
+        </div>
+
+        <figure class="tutorial-figure">
+          <img src="wordpress-dashboard.webp" loading="lazy" width="1480" height="895"
+            alt="WordPress 6.9 Dashboard After Fresh Installation" title="WordPress Admin Dashboard"
+            class="tutorial-image" style="aspect-ratio:1200/675">
+          <figcaption class="tutorial-caption">WordPress 6.9 admin dashboard immediately after installation</figcaption>
+        </figure>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Initial Configuration Tasks</h3>
+
+          <p>After installation, complete these essential configuration steps to secure and optimize your
+            <strong>WordPress site</strong>:
+          </p>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <strong class="feature-term">Permalink Settings:</strong>
+              <span class="feature-description">Go to Settings → Permalinks and select "Post name" for SEO-friendly
+                URLs</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">Site Title & Tagline:</strong>
+              <span class="feature-description">Update in Settings → General with your company name and slogan</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">Timezone Configuration:</strong>
+              <span class="feature-description">Set correct timezone in Settings → General for accurate post
+                scheduling</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">Delete Sample Content:</strong>
+              <span class="feature-description">Remove default "Hello World" post and sample page</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ESSENTIAL PLUGINS -->
+        <div class="subsection">
+
+          <h2 class="subsection-heading">
+            <strong>Essential WordPress Plugins I used and their configuration.</strong>
+          </h2>
+
+          <p>The right <strong>plugin stack</strong> transforms WordPress from a basic CMS into a powerful website
+            development platform. Here's every <strong>WordPress plugin</strong> I used for the Vent-Build website, with
+            detailed configuration instructions and specific use cases.</p>
+
+          <div class="yellow-alert">
+            <p><strong>Important:</strong> Install plugins one at a time and test functionality before adding more. Too
+              many plugins can slow down your website. The 14 plugins listed here are carefully selected for specific
+              purposes.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ELEMENTOR -->
+      <section class="post-section" id="elementor">
+        <h3 class="section-heading">1. Elementor Page Builder</h3>
+
+        <p><a href="https://wordpress.org/plugins/elementor/" target="_blank" rel="dofollow">Elementor</a> is the
+          cornerstone of modern <strong>WordPress website design</strong>, offering intuitive drag-and-drop
+          functionality without coding requirements. This is the most critical plugin for the entire build.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Complete page layout design, hero sections with background images,
+              services showcase with icon boxes, responsive design across all devices, global color and typography
+              settings</span>
+          </li>
+          <li class="feature-item">
+            <strong class="feature-term">Key Configuration:</strong>
+            <span class="feature-description">Set global colors matching brand identity, defined custom breakpoints
+              (767px mobile, 1230px tablet), configured content widths (420px mobile, 800px tablet)</span>
+          </li>
+          <li class="feature-item">
+            <strong class="feature-term">Version Used:</strong>
+            <span class="feature-description">Elementor 3.34.1 (free version)</span>
+          </li>
+        </ul>
+
+        <div class="tutorial-method">
+          <h4 class="method-heading">Installation Steps</h4>
+          <ol class="step-list">
+            <li class="step-item">
+              <strong>Navigate to Plugins:</strong> Go to Plugins → Add New in WordPress dashboard
+            </li>
+            <li class="step-item">
+              <strong>Search for Elementor:</strong> Type "Elementor" in the search box
+            </li>
+            <li class="step-item">
+              <strong>Install & Activate:</strong> Click "Install Now" then "Activate"
+            </li>
+            <li class="step-item">
+              <strong>Skip Onboarding:</strong> You can skip the setup wizard and configure manually
+            </li>
+          </ol>
+        </div>
+
+        <p>Download: <a href="https://wordpress.org/plugins/elementor/" target="_blank" rel="dofollow">Elementor
+            Page
+            Builder on WordPress.org</a></p>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Elementor Global Settings Configuration</h3>
+
+          <p>After installing Elementor, configure these essential global settings to ensure consistent design
+            across your
+            <strong>construction company website</strong>.
+          </p>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <strong class="feature-term">Global Colors Setup:</strong>
+              <span class="feature-description">Navigate to Elementor → Settings → Style to define your brand color
+                palette. This ensures consistency across all pages and elements.</span>
+            </li>
+          </ul>
+
+          <figure class="tutorial-figure">
+            <img src="vent-build-0-global-colors.webp"
+              alt="Elementor Global Colors Configuration for Vent-Build Website"
+              title="Vent-Build Elementor Global Colors Settings" loading="lazy" class="tutorial-image"
+              style="max-width: 100%; height: auto">
+            <figcaption class="tutorial-caption">Global color palette configuration in Elementor settings
+            </figcaption>
+          </figure>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <strong class="feature-term">Responsive Breakpoints:</strong>
+              <span class="feature-description">Set custom breakpoints to control how your site adapts to different
+                screen
+                sizes: <strong>767px for mobile devices</strong> and <strong>1230px for tablet/desktop
+                  transition</strong></span>
+            </li>
+          </ul>
+
+          <figure class="tutorial-figure">
+            <img src="vent-build-0-breakpoints.webp" alt="Elementor Responsive Breakpoints Configuration"
+              title="Vent-Build Elementor Breakpoints Settings" loading="lazy" class="tutorial-image"
+              style="max-width: 100%; height: auto">
+            <figcaption class="tutorial-caption">Responsive breakpoint configuration for optimal mobile and tablet
+              display
+            </figcaption>
+          </figure>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <strong class="feature-term">Content Width Settings:</strong>
+              <span class="feature-description">Configure maximum content widths for each device type: <strong>420px
+                  for
+                  mobile</strong> and <strong>800px for tablets</strong>. This ensures readable line lengths and
+                proper
+                content presentation.</span>
+            </li>
+          </ul>
+
+          <figure class="tutorial-figure">
+            <img src="vent-build-0-layout-mobile-content-width-420.webp" alt="Elementor Mobile Content Width Settings"
+              title="Vent-Build Elementor Layout Settings" loading="lazy" class="tutorial-image"
+              style="max-width: 100%; height: auto">
+            <figcaption class="tutorial-caption">Mobile content width set to 420px for optimal readability
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Hero Section Design & Implementation</h3>
+
+          <p>The <strong>hero section</strong> is the first element visitors see on your construction company
+            website.
+            Here's how to create an impactful hero section using Elementor's visual editor.</p>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <strong class="feature-term">Desktop Layout Configuration:</strong>
+              <span class="feature-description">Added background image, compelling headings, call-to-action text,
+                and
+                prominent button. Configured margins and paddings for the desktop view first, establishing the
+                baseline
+                design.</span>
+            </li>
+          </ul>
+
+          <figure class="tutorial-figure">
+            <img src="vent-build-1-hero-desktop-view-margins.webp" alt="Hero Section Desktop View Margins and Spacing"
+              title="Vent-Build Hero Section Desktop Configuration" loading="lazy" class="tutorial-image"
+              style="max-width: 100%; height: auto">
+            <figcaption class="tutorial-caption">Hero section desktop view with optimized margins and typography
+            </figcaption>
+          </figure>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <strong class="feature-term">Responsive Adjustments:</strong>
+              <span class="feature-description">After perfecting the desktop layout, individually adjusted margins,
+                paddings, and font sizes for tablet and mobile views to ensure optimal presentation across all
+                devices.</span>
+            </li>
+          </ul>
+
+          <figure class="tutorial-figure">
+            <img src="vent-build-1-hero-mobile-margins.webp" alt="Hero Section Mobile View Margins and Spacing"
+              title="Vent-Build Hero Section Mobile Configuration" loading="lazy" class="tutorial-image"
+              style="max-width: 100%; height: auto">
+            <figcaption class="tutorial-caption">Hero section mobile view with device-specific margin adjustments
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Services Section Layout</h3>
+
+          <p>The services section showcases your construction company's core offerings. Proper padding ensures the
+            content
+            breathes appropriately on each device type.</p>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <strong class="feature-term">Desktop Padding (>1230px):</strong>
+              <span class="feature-description">50px left and right padding, following the specifications from the
+                designer's Figma file</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">Tablet Padding:</strong>
+              <span class="feature-description">32px left and right padding, custom adjustment for optimal tablet
+                viewing
+                experience</span>
+            </li>
+            <li class="feature-item">
+              <strong class="feature-term">Mobile Padding:</strong>
+              <span class="feature-description">16px left and right padding, as specified in the designer's Figma
+                file for
+                mobile devices</span>
+            </li>
+          </ul>
+
+          <p>These progressive padding adjustments ensure the services section maintains visual balance and
+            readability
+            across all screen sizes while preventing content from feeling cramped on smaller devices.</p>
+        </div>
+
+        <div class="subsection">
+          <h3 class="subsection-heading">Final Website Preview</h3>
+
+          <p>After completing all configuration steps, Elementor settings, and responsive adjustments, the
+            Vent-Build
+            construction company website achieves a professional, modern appearance across all devices.</p>
+
+          <figure class="tutorial-figure">
+            <img src="vent-build-preview.webp" alt="Vent-Build Construction Company Website Final Preview"
+              title="Completed Vent-Build Website Design" loading="lazy" class="tutorial-image"
+              style="max-width: 100%; height: auto">
+            <figcaption class="tutorial-caption">Final preview of the completed Vent-Build construction company
+              website
+            </figcaption>
+          </figure>
+
+          <p>The combination of properly configured <strong>Elementor settings</strong>, responsive breakpoints, and
+            device-specific adjustments creates a cohesive, professional website that serves both desktop and mobile
+            visitors effectively.</p>
+        </div>
+
+      </section>
+
+      <!-- CONTACT FORM 7 -->
+      <section class="post-section" id="contact-form-7">
+        <h3 class="section-heading">2. Contact Form 7</h3>
+
+        <p><a href="https://wordpress.org/plugins/contact-form-7/" target="_blank" rel="dofollow">Contact Form 7</a>
+          remains <strong>WordPress's most trusted contact form solution</strong> with over 5 million active
+          installations. It's lightweight, flexible, and perfect for construction company lead capture.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Main contact form in "Get in Touch" section, quote request forms for
+              construction services, newsletter subscription integration, lead capture with email
+              notifications</span>
+          </li>
+          <li class="feature-item">
+            <strong class="feature-term">Forms Created:</strong>
+            <span class="feature-description">Contact form, Quote request form, Newsletter subscription</span>
+          </li>
+        </ul>
+
+        <div class="tutorial-method">
+          <h4 class="method-heading">Basic Configuration</h4>
+          <ol class="step-list">
+            <li class="step-item">
+              <strong>Install Plugin:</strong> Install and activate Contact Form 7 from Plugins → Add New
+            </li>
+            <li class="step-item">
+              <strong>Create New Form:</strong> Go to Contact → Add New
+            </li>
+            <li class="step-item">
+              <strong>Configure Fields:</strong> Add name, email, phone, and message fields with proper validation
+            </li>
+            <li class="step-item">
+              <strong>Set Email Notifications:</strong> Configure admin email and auto-reply messages in Mail tab
+            </li>
+            <li class="step-item">
+              <strong>Copy Shortcode:</strong> Copy the form shortcode like <code>[contact-form-7 id="123"]</code>
+            </li>
+          </ol>
+        </div>
+
+        <p>Download: <a href="https://wordpress.org/plugins/contact-form-7/" target="_blank" rel="dofollow">Contact
+            Form 7 on WordPress.org</a></p>
+      </section>
+
+      <!-- FLAMINGO -->
+      <section class="post-section" id="flamingo">
+        <h3 class="section-heading">3. Flamingo</h3>
+
+        <p><a href="https://wordpress.org/plugins/flamingo/" target="_blank" rel="dofollow">Flamingo</a> provides
+          secure message storage for <strong>Contact Form 7 submissions</strong>, ensuring no lead is lost even if
+          emails fail to deliver.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Storing all contact form submissions in WordPress database, backup
+              system for email delivery failures, managing customer inquiry history, export capabilities for CRM
+              integration</span>
+          </li>
+          <li class="feature-item">
+            <strong class="feature-term">Configuration:</strong>
+            <span class="feature-description">Zero configuration needed - automatically integrates with Contact Form
+              7. Messages appear in WordPress admin under Flamingo menu</span>
+          </li>
+        </ul>
+
+        <p>Download: <a href="https://wordpress.org/plugins/flamingo/" target="_blank" rel="dofollow">Flamingo on
+            WordPress.org</a></p>
+      </section>
+
+      <!-- RANK MATH SEO -->
+      <section class="post-section" id="rank-math">
+        <h3 class="section-heading">4. Rank Math SEO</h3>
+
+        <p><a href="https://wordpress.org/plugins/seo-by-rank-math/" target="_blank" rel="dofollow">Rank Math</a> is
+          the most comprehensive <strong>WordPress SEO plugin</strong>, combining features of multiple tools in one
+          package. It's essential for ranking in search engines.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">On-page SEO optimization for all pages, XML sitemap generation for
+              search engines, schema markup for construction business, meta title and description optimization,
+              local
+              SEO configuration with business location, social media meta tags (Open Graph, Twitter Cards)</span>
+          </li>
+          <li class="feature-item">
+            <strong class="feature-term">Key Settings:</strong>
+            <span class="feature-description">Connected Google Search Console, configured local business schema with
+              company address, enabled breadcrumbs, optimized each page with focus keywords like "construction
+              company," "home building," and "renovation services"</span>
+          </li>
+        </ul>
+
+        <div class="tutorial-method">
+          <h4 class="method-heading">Essential Rank Math Configuration</h4>
+          <ol class="step-list">
+            <li class="step-item">
+              <strong>Run Setup Wizard:</strong> After activation, complete the setup wizard
+            </li>
+            <li class="step-item">
+              <strong>Connect Google:</strong> Link Google Search Console and Analytics
+            </li>
+            <li class="step-item">
+              <strong>Configure Local Business:</strong> Add company name, address, phone in Rank Math → General
+              Settings → Local SEO
+            </li>
+            <li class="step-item">
+              <strong>Set Sitemap:</strong> Enable XML sitemap in Rank Math → Sitemap Settings
+            </li>
+            <li class="step-item">
+              <strong>Optimize Pages:</strong> Use Rank Math meta box on each page to set focus keywords and meta
+              descriptions
+            </li>
+          </ol>
+        </div>
+
+        <figure class="tutorial-figure">
+          <img src="rank-math-seo-for-pages.webp" loading="lazy" width="1240" height="804"
+            alt="Rank Math SEO Plugin Configuration in WordPress Dashboard" title="Rank Math SEO Settings"
+            class="tutorial-image" style="aspect-ratio:1200/675">
+          <figcaption class="tutorial-caption">Rank Math SEO configuration for meta title and description as well as
+            social image</figcaption>
+        </figure>
+
+        <p>Download: <a href="https://wordpress.org/plugins/seo-by-rank-math/" target="_blank" rel="dofollow">Rank
+            Math SEO on WordPress.org</a></p>
+      </section>
+
+      <!-- LITESPEED CACHE -->
+      <section class="post-section" id="litespeed-cache">
+        <h3 class="section-heading">5. LiteSpeed Cache</h3>
+
+        <p><a href="https://wordpress.org/plugins/litespeed-cache/" target="_blank" rel="dofollow">LiteSpeed
+            Cache</a>
+          dramatically improves <strong>website performance</strong> with advanced caching and optimization
+          features.
+          This plugin reduced page load time from 3.2 seconds to 0.8 seconds.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Page caching for faster load times, image optimization and lazy
+              loading,
+              CSS and JavaScript minification, browser caching configuration, critical CSS generation, database
+              optimization</span>
+          </li>
+          <li class="feature-item">
+            <strong class="feature-term">Performance Result:</strong>
+            <span class="feature-description">Page load time reduced from 3.2s to 0.8s, 60% reduction in page
+              size</span>
+          </li>
+        </ul>
+
+        <div class="tutorial-method">
+          <h4 class="method-heading">Quick Configuration for Best Performance</h4>
+          <ol class="step-list">
+            <li class="step-item">
+              <strong>Enable Page Cache:</strong> Go to LiteSpeed Cache → Cache → Enable cache
+            </li>
+            <li class="step-item">
+              <strong>Activate Image Optimization:</strong> LiteSpeed Cache → Image Optimization → Enable lazy
+              loading
+            </li>
+            <li class="step-item">
+              <strong>Minify CSS/JS:</strong> LiteSpeed Cache → Page Optimization → Enable CSS and JS minification
+            </li>
+            <li class="step-item">
+              <strong>Enable GZIP:</strong> LiteSpeed Cache → Advanced → Enable compression
+            </li>
+            <li class="step-item">
+              <strong>Generate Critical CSS:</strong> LiteSpeed Cache → Page Optimization → Generate Critical CSS
+            </li>
+          </ol>
+        </div>
+
+        <p>Download: <a href="https://wordpress.org/plugins/litespeed-cache/" target="_blank" rel="dofollow">LiteSpeed
+            Cache on WordPress.org</a></p>
+      </section>
+
+      <!-- GTRANSLATE -->
+      <section class="post-section" id="gtranslate">
+        <h3 class="section-heading">6. GTranslate</h3>
+
+        <p><a href="https://wordpress.org/plugins/gtranslate/" target="_blank" rel="dofollow">GTranslate</a> makes
+          websites accessible to international audiences through automatic translation to 100+ languages.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Multi-language support for international clients, automatic content
+              translation, language switcher in website header, SEO-friendly URL structure for translations</span>
+          </li>
+        </ul>
+
+        <p>Download: <a href="https://wordpress.org/plugins/gtranslate/" target="_blank" rel="dofollow">GTranslate
+            on
+            WordPress.org</a></p>
+      </section>
+
+      <!-- SITE KIT BY GOOGLE -->
+      <section class="post-section" id="site-kit-by-google">
+        <h3 class="section-heading">7. Site Kit by Google</h3>
+
+        <p><a href="https://wordpress.org/plugins/google-site-kit/" target="_blank" rel="dofollow">Site Kit</a>
+          integrates essential Google services directly into your <strong>WordPress dashboard</strong> for
+          comprehensive analytics and insights.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Google Analytics 4 integration and reporting, Google Search Console
+              performance tracking, PageSpeed Insights monitoring, Tag Manager for conversion tracking</span>
+          </li>
+        </ul>
+
+        <p>Download: <a href="https://wordpress.org/plugins/google-site-kit/" target="_blank" rel="dofollow">Site
+            Kit
+            by Google on WordPress.org</a></p>
+      </section>
+
+      <!-- MICROSOFT CLARITY -->
+      <section class="post-section" id="microsoft-clarity">
+        <h3 class="section-heading">8. Microsoft Clarity</h3>
+
+        <p><a href="https://wordpress.org/plugins/clarity/" target="_blank" rel="dofollow">Microsoft Clarity</a>
+          provides heatmaps and session recordings to understand user behavior and optimize conversions.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Session replay to watch user interactions, heatmap analysis of click
+              patterns, scroll depth tracking, identifying UX issues and friction points</span>
+          </li>
+        </ul>
+
+        <p>Download: <a href="https://wordpress.org/plugins/clarity/" target="_blank" rel="dofollow">Microsoft
+            Clarity
+            on WordPress.org</a></p>
+      </section>
+
+      <!-- WPVIVID BACKUP -->
+      <section class="post-section" id="wpvivid-backup">
+        <h3 class="section-heading">9. WPvivid Backup Plugin</h3>
+
+        <p><a href="https://wordpress.org/plugins/wpvivid-backuprestore/" target="_blank" rel="dofollow">WPvivid
+            Backup</a> protects against data loss with automated backups and enables safe development practices.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Automated daily website backups, remote storage to Google Drive,
+              pre-update backup safety, site migration and cloning</span>
+          </li>
+          <li class="feature-item">
+            <strong class="feature-term">Backup Schedule:</strong>
+            <span class="feature-description">Daily automatic backups at 2 AM, 7-day backup retention, remote
+              storage
+              to Google Drive</span>
+          </li>
+        </ul>
+
+        <p>Download: <a href="https://wordpress.org/plugins/wpvivid-backuprestore/" target="_blank"
+            rel="dofollow">WPvivid
+            Backup on WordPress.org</a></p>
+      </section>
+
+      <!-- WPCODE LITE -->
+      <section class="post-section" id="wpcode-lite">
+        <h3 class="section-heading">10. WPCode Lite</h3>
+
+        <p><a href="https://wordpress.org/plugins/insert-headers-and-footers/" target="_blank" rel="dofollow">WPCode</a>
+          allows safe custom code insertion without theme file editing, perfect for adding
+          tracking scripts and custom styling.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Custom CSS for design refinements, Google Analytics enhanced tracking
+              code, Facebook Pixel integration, custom JavaScript for animations</span>
+          </li>
+        </ul>
+
+        <p>Download: <a href="https://wordpress.org/plugins/insert-headers-and-footers/" target="_blank"
+            rel="dofollow">WPCode on WordPress.org</a></p>
+      </section>
+
+      <!-- 404 SOLUTION -->
+      <section class="post-section" id="404-solution">
+        <h3 class="section-heading">11. 404 Solution</h3>
+
+        <p><a href="https://wordpress.org/plugins/404solution/" target="_blank" rel="dofollow">404 Solution</a>
+          provides intelligent 404 error handling to improve user experience and SEO.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Automatic 404 error logging, smart redirect suggestions, broken link
+              identification, spelling correction for mistyped URLs</span>
+          </li>
+        </ul>
+
+        <p>Download: <a href="https://wordpress.org/plugins/404solution/" target="_blank" rel="dofollow">404
+            Solution
+            on WordPress.org</a></p>
+      </section>
+
+      <!-- DUPLICATE PAGE -->
+      <section class="post-section" id="duplicate-page">
+        <h3 class="section-heading">12. Duplicate Page</h3>
+
+        <p><a href="https://wordpress.org/plugins/duplicate-page/" target="_blank" rel="dofollow">Duplicate Page</a>
+          speeds up development by cloning pages with similar layouts in one click.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Duplicating service pages with consistent layout, creating template
+              variations quickly, A/B testing different page versions</span>
+          </li>
+        </ul>
+
+        <p>Download: <a href="https://wordpress.org/plugins/duplicate-page/" target="_blank" rel="dofollow">Duplicate
+            Page on WordPress.org</a></p>
+      </section>
+
+      <!-- THE POST GRID -->
+      <section class="post-section" id="the-post-grid">
+        <h3 class="section-heading">13. The Post Grid</h3>
+
+        <p><a href="https://wordpress.org/plugins/the-post-grid/" target="_blank" rel="dofollow">The Post Grid</a>
+          creates beautiful project portfolio displays without any coding.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Displaying construction projects in grid layout, portfolio filtering
+              by
+              project type, responsive masonry layout, custom post type integration</span>
+          </li>
+        </ul>
+
+        <p>Download: <a href="https://wordpress.org/plugins/the-post-grid/" target="_blank" rel="dofollow">The Post
+            Grid on WordPress.org</a></p>
+      </section>
+
+      <!-- NEWSLETTER -->
+      <section class="post-section" id="newsletter">
+        <h3 class="section-heading">14. Newsletter</h3>
+
+        <p><a href="https://wordpress.org/plugins/newsletter/" target="_blank" rel="dofollow">Newsletter</a>
+          provides
+          email marketing integration for lead nurturing and client communication.</p>
+
+        <ul class="feature-list">
+          <li class="feature-item">
+            <strong class="feature-term">What I Used It For:</strong>
+            <span class="feature-description">Newsletter subscription forms, email campaign management, subscriber
+              list building, automated welcome emails</span>
+          </li>
+        </ul>
+
+        <p>Download: <a href="https://wordpress.org/plugins/newsletter/" target="_blank" rel="dofollow">Newsletter
+            on
+            WordPress.org</a></p>
+        <p>
+          <a href="../articles/newsletter-plugin-for-wordpress">Read full setup guide for Newsletter plugin for
+            WordPress</a>
+        </p>
+      </section>
+
+      <!-- Conclusion Section -->
+      <section id="conclusion" class="post-section">
+        <div class="post-conclusion">
+          <h2 class="section-heading">Final Thoughts</h2>
+          <p>
+            Building a professional <strong>construction company website with WordPress</strong> doesn't require
+            extensive coding knowledge or expensive agencies. With the right combination of <strong>Elementor</strong>
+            for design, essential plugins for functionality, and proper configuration, you can create a high-performing
+            website that converts visitors into clients.
+          </p>
+          <p>
+            The Vent-Build website showcases what's possible with carefully selected free and premium tools. From
+            responsive design and SEO optimization to lead capture forms and performance caching, every element works
+            together to deliver a seamless user experience and drive business results.
+          </p>
+          <p>
+            Ready to build your own construction website? Start with <a
+              href="https://hostinger.com?REFERRALCODE=HIPSERGEYPBG" target="_blank" rel="nofollow">Hostinger's
+              optimized WordPress hosting</a> using promo code <strong>HIPSERGEYPBG</strong>, install the plugins listed
+            in this guide, and follow the configuration steps to launch your professional online presence.
+          </p>
+        </div>
+      </section>
+      <!-- End .post-content -->
+
+      <footer class="post-footer">
+        <div class="post-author">
+          <h3 class="author-heading">About the Author</h3>
+          <p>
+            <strong>Serhii Kolodych</strong> is a full-stack developer passionate about solving real-world problems
+            through code. Whether it's building <a href="/#websites">WordPress sites that convert visitors into
+              customers</a>,
+            creating <a href="/#bots">automated Telegram bots for product tracking</a>, or optimizing <a
+              href="../articles/nginx">server
+              performance with Nginx</a>, he focuses on practical, working solutions.
+          </p>
+          <p>
+            His hands-on tutorials cover everything from <a href="/articles/wordpress-backup-guide">preventing
+              WordPress disasters with proper
+              backups</a> to <a href="/articles/newsletter-plugin-for-wordpress">implementing free email marketing
+              without subscriber limits</a>. With projects
+            ranging from <a href="/website/virgincourtesans.com">model agency platforms</a> to <a
+              href="/website/japalandia.com">international consulting websites</a>, he
+            brings diverse experience to every tutorial.
+          </p>
+        </div>
+
+        <div class="post-offer">
+          <h3 class="offer-heading">Launch Your Business Website This Month</h3>
+          <p>
+            Ready to take your business online? I offer a complete website package: WordPress installation,
+            Elementor design implementation, all essential plugins configured, SEO optimization, mobile responsiveness,
+            and contact forms—everything covered in this guide, professionally delivered. <strong>Starting at 500 Euro
+              for a complete 3-5 page website</strong>. <a href="#contacts">Get your custom quote today</a>.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </article>
+
+
+
+
+
+
+
+
+
+  <aside class="related-content" aria-label="Related articles">
+    <h2 class="related-content__heading">Related Projects & Articles</h2>
+
+    <div class="section-container">
+      <ul class="articles-list">
+        <li>
+          <article class="box">
+            <i></i>
+            <p class="article-description">
+              Nginx powers 33% of the web for a reason. It handles traffic spikes better than Apache, uses less memory,
+              and setup takes 15 minutes. Here's why you should switch.
+            </p>
+            <a href="../articles/nginx">
+              <h2 class="article-heading">Why Netflix and Airbnb Use Nginx
+                (And You Should Too)</h2>
+              <figure class="imgcontainer">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="../articles/450-nginx-status.jpg"
+                  width="450" height="240"
+                  title="Nginx powers 33% of the web for a reason. It handles traffic spikes better than Apache, uses less memory, and setup takes 15 minutes. Here's why you should switch."
+                  alt="Nginx powers 33% of the web for a reason. It handles traffic spikes better than Apache, uses less memory, and setup takes 15 minutes. Here's why you should switch.">
+              </figure>
+            </a>
+          </article>
+        </li>
+
+        <li>
+          <article class="box">
+            <i></i>
+            <p class="article-description">
+              MailChimp charges $20/month for 500 subscribers. This WordPress plugin? Unlimited subscribers, unlimited
+              emails, $0 forever. No catch.
+            </p>
+            <a href="../articles/newsletter-plugin-for-wordpress">
+              <h2 class="article-heading">Stop Paying for Email Lists.
+                This Plugin is 100% Free</h2>
+              <figure class="imgcontainer">
+                <img loading="lazy" decoding="async" fetchpriority="low" src="../articles/newsletter-plugin-free.webp"
+                  width="450" height="240" title="Newsletter plugin for WordPress - free email marketing solution"
+                  alt="Newsletter plugin for WordPress - free email marketing solution">
+              </figure>
+            </a>
+          </article>
+        </li>
+
+        <li>
+          <article class="box">
+            <i></i>
+            <p class="article-description">
+              Your site loads fast on your laptop but crawls on mobile. Here's how I cut load time from 3.2 seconds to
+              under 1 second using free optimization tools.
+            </p>
+            <a href="../website/web-dev-tools">
+              <h2 class="article-heading">5 Free Tools That Made My Site
+                3x Faster (No Coding)</h2>
+              <figure class="imgcontainer">
+                <img loading="lazy" decoding="async" fetchpriority="low"
+                  src="../website/450-website-development-tools-and-services.jpg" width="450" height="240"
+                  title="5 Free Tools That Made My Site 3x Faster (No Coding)"
+                  alt="5 Free Tools That Made My Site 3x Faster (No Coding)">
+              </figure>
+            </a>
+          </article>
+        </li>
+
+      </ul>
+    </div>
+  </aside>
+
+
+  <!-- Site Footer -->
+  <footer id="contacts" class="site-footer">
+    <div class="site-footer__content">
+      <div class="site-footer__section">
+        <h2 class="site-footer__heading">Contact Me</h2>
+        <nav class="social-links" aria-label="Social media links">
+          <a href="mailto:kolodych@hotmail.com" class="social-links__item" aria-label="Email">
+            <img src="../src/mail-part-3-svgrepo-com.svg" width="68" height="68" alt="Email" loading="lazy"
+              decoding="async" fetchpriority="low">
+          </a>
+          <a href="https://www.linkedin.com/in/serhii-kolodych" rel="nofollow" target="_blank"
+            class="social-links__item" aria-label="LinkedIn">
+            <img src="../src/linkedin.svg" width="68" height="68" alt="LinkedIn" loading="lazy" decoding="async"
+              fetchpriority="low">
+          </a>
+          <a href="https://www.facebook.com/serhii.kolodych" rel="nofollow" target="_blank" class="social-links__item"
+            aria-label="Facebook">
+            <img src="../src/social-facebook-svgrepo-com.svg" width="68" height="68" alt="Facebook" loading="lazy"
+              decoding="async" fetchpriority="low">
+          </a>
+          <a href="https://www.instagram.com/serhii_kolodych" rel="nofollow" target="_blank" class="social-links__item"
+            aria-label="Instagram">
+            <img src="../src/social-instagram-svgrepo-com.svg" width="68" height="68" alt="Instagram" loading="lazy"
+              decoding="async" fetchpriority="low">
+          </a>
+          <a href="https://t.me/kolodych" rel="nofollow" target="_blank" class="social-links__item"
+            aria-label="Telegram">
+            <img src="../src/telegram-svgrepo-com.svg" width="68" height="68" alt="Telegram" loading="lazy"
+              decoding="async" fetchpriority="low">
+          </a>
+          <a href="https://wa.me/+37126796193" rel="nofollow" target="_blank" class="social-links__item"
+            aria-label="WhatsApp">
+            <img src="../src/whatsapp-svgrepo-com.svg" width="68" height="68" alt="WhatsApp" loading="lazy"
+              decoding="async" fetchpriority="low">
+          </a>
+        </nav>
       </div>
-    </a>
-
-    <a href="japalandia.com.html">
-      <div class="item">
-        <h3>Japalandia work abroad Landing Page</h3>
-        <img src="../website/home-1-screen-japalandia.webp" alt="Japalandia home section with Call To Action Button"
-          title="Japalandia landing page, hero section with banner for work abroad" loading="lazy" />
+      <div class="site-footer__section">
+        <h2 class="site-footer__heading">Let's Work Together</h2>
+        <p class="offer-text">
+          Need WordPress development, newsletter setup, or site optimization? I'm available for projects starting
+          at
+          €50.
+        </p>
+        <p class="small-details">
+          ⚡ Response time: 4 hours • Projects worldwide • Satisfaction guaranteed
+        </p>
       </div>
-    </a>
-  </div>
+      <div class="site-footer__legal">
+        <p>&copy; 2026 Kolodych.com. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-  <script src="../scripts/index-1.js"></script>
-  <script src="../scripts/index-3.js"></script>
+  <script src="../scripts/table-of-content-scroll.js" defer></script>
+  <script src="../scripts/navigation-arrows.js" defer></script>
+  <script src="../scripts/clipboard-copied.js" defer></script>
+  <script src="../scripts/nav-home.js" defer></script>
 
-  <script src="../scripts/copy-btn.js"></script>
-
-  <script>
-    // Show body once page is fully loaded
-    window.addEventListener("load", function () {
-      document.body.classList.add("loaded");
-    });
-  </script>
 </body>
 
 </html>

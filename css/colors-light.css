@@ -72,6 +72,7 @@
   --color-text-main: #111111;
 }
 
+
 /* Version 4. Creative. Warm. Expressive. */
 /* :root{
 --color-text-main: #1B1A17;
@@ -106,6 +107,36 @@ p {
 a:visited {
   color: var(--color-text-muted);
 }
+
+
+.quote-block {
+  background: linear-gradient(135deg,
+      var(--color-table-odd-even-stripe-odd) 0%,
+      var(--color-table-odd-col) 100%);
+  border-left-color: #15803D;
+}
+
+.quote-block::before {
+  color: var(--color-table-header-bg);
+  opacity: 0.4;
+}
+
+.quote-block .quote-text {
+  color: #14532D;
+}
+
+.quote-block .quote-footer {
+  border-top-color: #BBF7D0;
+}
+
+.quote-block .quote-source {
+  color: #166534;
+}
+
+.quote-block .quote-source::before {
+  color: #22C55E;
+}
+
 
 .yellow-alert {
   background-color: #fff9e6;
